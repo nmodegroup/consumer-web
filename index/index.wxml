@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="swiper-box">
+    <view class="swiper-location">深圳</view>
+    <swiper indicator-dots="true" class="home-swiper" indicator-active-color="#F8FFF9" indicator-color="#857F89"
+      autoplay="true" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="search-bar">
+      <input class="search-input" placeholder="输入商户名、地点、找商家" placeholder-style="color:#fff"></input>
+    </view>
+  </view>
+  <view class="context-box">
+    <view class="booking-frame">
+      <view class="booking-bar-farme">
+        <view class="booking-frame-l">
+          <view class="booking-text">
+            <view class="booking-name">深圳BBR酒吧</view>
+            <view class="booking-info">
+              8人
+              <view class="vertical-line"></view>
+              包房
+            </view>
+          </view>
+          <view class="booking-btn">已预定</view>
+        </view>
+        <view class="booking-frame-r">
+          <view class="booking-num">Y01</view>
+          <view>预约码</view>
+        </view>
+      </view>
+      <view class="booking-text-frame">
+          <view>
+            <view class="booking-time">到店时间：2019.5.23 20:00</view>
+            <view class="booking-delay">
+              超时时长：-分-秒
+              <view class="booking-delay-tips">（超时30分钟自动取消）</view>
+            </view>
+          </view>
+          <view class="right-arrow-1"></view>
+      </view>
+    </view>
+  </view>
+</view>
