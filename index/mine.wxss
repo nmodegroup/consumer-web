@@ -1,1 +1,105 @@
-/* index/mine.wxss */
+.mine-header {
+  padding: 40rpx 30rpx 40rpx 30rpx;
+}
+.mine-avatar {
+  padding-left: 275rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.avatar-img {
+  width:140rpx;
+  height: 140rpx;
+  border:4rpx solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+}
+.toggle-btn {
+  padding: 0 14rpx 0 24rpx;
+  border:1rpx solid rgba(255,255,255,0.3);
+  border-radius: 29rpx;
+  height: 46rpx;
+  width:50rxp;
+  line-height: 46rpx;
+  color:#fff;
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.icon-change {
+  width:22rpx;
+  height: 18rpx;
+  margin-left:14rpx;
+}
+.mine-name {
+  padding-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color:#fff;
+}
+.mine-menu-body{
+  display: flex;
+  align-items: center;
+  background-color: #11113D;
+  height: 264rpx;
+}
+.menu-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-item>image{
+  width:96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+}
+.menu-item>view{
+  color:#fff;
+  font-size: 28rpx;
+  padding-top:16rpx;
+  opacity: 0.8;
+  text-align: center;
+}
+.menu-vertical {
+  width:4rpx;
+  height: 48rpx;
+  background-color: #fff;
+  opacity: 0.2;
+}
+.mine-list-body {
+  background-color: #11113D;
+  padding-bottom: 88rpx;
+}
+.list-item{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.list-item>image{
+  width:26rpx;
+  height: 26rpx;
+  margin-right: 24rpx;
+} 
+.list-item-context {
+  height: 100rpx;
+  border-bottom: 1rpx solid  rgb(255, 255, 255, .2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.list-item-l {
+  color:rgba(255,255,255,0.8);
+  font-size: 28rpx;
+}
+.list-item-r {
+  color:rgba(255,255,255,0.6);
+  font-size: 24rpx;
+  padding-right: 30rpx;
+}
+.right-arrow-2 {
+  margin-left: 14rpx;
+}

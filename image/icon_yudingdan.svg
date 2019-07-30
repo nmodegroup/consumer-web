@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/icon_yudingdan</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="20.4578286%" x2="0%" y2="94.6940207%" id="linearGradient-1">
+            <stop stop-color="#C60087" stop-opacity="0.2" offset="0%"></stop>
+            <stop stop-color="#0B66CD" stop-opacity="0.483106033" offset="94.3686777%"></stop>
+            <stop stop-color="#006CD1" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-57.1%" y="-46.2%" width="214.3%" height="192.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0862745098   0 0 0 0 0.0823529412   0 0 0 0 0.28627451  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="71.5148814%" y1="0%" x2="0%" y2="163.080762%" id="linearGradient-3">
+            <stop stop-color="#FF26BA" offset="0%"></stop>
+            <stop stop-color="#0084FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="我的页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标_我的页面" transform="translate(-73.000000, -33.000000)" fill-rule="nonzero">
+            <g id="1-copy-2" transform="translate(34.000000, 16.000000)">
+                <g id="Group-6" transform="translate(39.000000, 17.000000)">
+                    <g id="icon_yudingdan">
+                        <circle id="Oval" fill="url(#linearGradient-1)" cx="24" cy="24" r="24"></circle>
+                        <g id="Group-4" filter="url(#filter-2)" transform="translate(13.500000, 10.500000)">
+                            <path d="M9,4.60633329 L9,3 L7.5,3 C6.67157288,3 6,2.32842712 6,1.5 C6,0.671572875 6.67157288,1.52179594e-16 7.5,0 L13.5,0 C14.3284271,-1.52179594e-16 15,0.671572875 15,1.5 C15,2.32842712 14.3284271,3 13.5,3 L12,3 L12,4.60633329 C17.0884412,5.33417778 21,9.71029214 21,15 C21,20.7989899 16.2989899,25.5 10.5,25.5 C4.70101013,25.5 0,20.7989899 0,15 C0,9.71029214 3.91155879,5.33417778 9,4.60633329 Z" id="Combined-Shape" fill="url(#linearGradient-3)"></path>
+                            <rect id="Rectangle" fill="#FFFFFF" x="9.75" y="9" width="1.5" height="6" rx="0.75"></rect>
+                            <path d="M11.6312105,13.2466419 L11.6312105,13.2466419 C12.045424,13.2466419 12.3812105,13.5824283 12.3812105,13.9966419 L12.3812105,18.4966419 C12.3812105,18.9108554 12.045424,19.2466419 11.6312105,19.2466419 L11.6312105,19.2466419 C11.2169969,19.2466419 10.8812105,18.9108554 10.8812105,18.4966419 L10.8812105,13.9966419 C10.8812105,13.5824283 11.2169969,13.2466419 11.6312105,13.2466419 Z" id="Rectangle" fill="#FFFFFF" transform="translate(11.631210, 16.246642) rotate(-30.000000) translate(-11.631210, -16.246642) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

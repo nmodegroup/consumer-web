@@ -1,2 +1,76 @@
-<!--index/mine.wxml-->
-<text>index/mine.wxml</text>
+<view class="container">
+  <view class="mine-header">
+    <view class="mine-avatar">
+      <image class="avatar-img" src="/image/bg-bar.png"></image>
+      <view class="toggle-btn">我是商家
+        <image class="icon-change" src="/image/icon_change.svg"></image>
+      </view>
+    </view>
+    <view class="mine-name">JASON LIU</view>
+  </view>
+  <view class="mine-menu-body">
+    <view class="menu-item">
+      <image src="/image/icon_yudingdan.svg"></image>
+      <view>预订单</view>
+    </view>
+    <view class="menu-vertical"></view>
+    <view class="menu-item">
+      <image src="/image/icon_huodongdang.svg"></image>
+      <view>活动单</view>
+    </view>
+    <view class="menu-vertical"></view>
+    <view class="menu-item">
+      <image src="/image/icon_wodeshouchan.svg"></image>
+      <view>我的收藏</view>
+    </view>
+  </view>
+  <view class="mine-list-body">
+    <view class="list-item">
+      <image src="/image/icon_list_phone.svg"></image>
+      <view class="list-item-context">
+        <view class="list-item-l">手机号</view>
+        <view class="list-item-r">
+          1359****000
+          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="list-item">
+      <image src="/image/icon_list_deal.svg"></image>
+      <view class="list-item-context">
+        <view class="list-item-l">用户协议</view>
+        <view class="list-item-r">
+          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="list-item">
+      <image src="/image/icon_list_help.svg"></image>
+      <view class="list-item-context">
+        <view class="list-item-l">帮助中心</view>
+        <view class="list-item-r">
+          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="list-item">
+      <image src="/image/icon_list_call.svg"></image>
+      <view class="list-item-context">
+        <view class="list-item-l">联系我们</view>
+        <view class="list-item-r">
+          0755-19098421
+          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="list-item">
+      <image src="/image/icon_list_us.svg"></image>
+      <view class="list-item-context">
+        <view class="list-item-l">关于我们</view>
+        <view class="list-item-r">
+          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

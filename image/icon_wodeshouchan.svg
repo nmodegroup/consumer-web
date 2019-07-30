@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/icon_wodeshouchan</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="20.4578286%" x2="0%" y2="94.6940207%" id="linearGradient-1">
+            <stop stop-color="#C60087" stop-opacity="0.2" offset="0%"></stop>
+            <stop stop-color="#0B66CD" stop-opacity="0.483106033" offset="94.3686777%"></stop>
+            <stop stop-color="#006CD1" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-50.0%" y="-57.1%" width="200.0%" height="214.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0862745098   0 0 0 0 0.0823529412   0 0 0 0 0.28627451  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="71.5148814%" y1="0%" x2="0%" y2="163.080762%" id="linearGradient-3">
+            <stop stop-color="#FF26BA" offset="0%"></stop>
+            <stop stop-color="#0084FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="我的页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标_我的页面" transform="translate(-321.000000, -33.000000)" fill-rule="nonzero">
+            <g id="1-copy-2" transform="translate(34.000000, 16.000000)">
+                <g id="Group-8" transform="translate(287.000000, 17.000000)">
+                    <g id="Group-9">
+                        <circle id="Oval-Copy-2" fill="url(#linearGradient-1)" cx="24" cy="24" r="24"></circle>
+                        <g id="Group-5" filter="url(#filter-2)" transform="translate(12.000000, 13.000000)">
+                            <path d="M10.2257096,0.688473452 L11.0856533,3.31152655 C11.2203118,3.72227013 11.6036371,4 12.0358908,4 L23,4 C23.5522847,4 24,4.44771525 24,5 L24,19 C24,20.1045695 23.1045695,21 22,21 L2,21 C0.8954305,21 -1.29674049e-13,20.1045695 -1.29674049e-13,19 L-1.29674049e-13,2 C-1.29674049e-13,0.8954305 0.8954305,-2.62012634e-14 2,-2.62012634e-14 L9.2754722,-2.55351296e-14 C9.70772582,-2.638237e-14 10.0910512,0.277729868 10.2257096,0.688473452 Z" id="Path" fill="url(#linearGradient-3)"></path>
+                            <path d="M7.85786438,13 C6.71404521,11.8561808 6.71404521,10.0016835 7.85786438,8.85786438 C9.00168354,7.71404521 10.8561808,7.71404521 12,8.85786438 C13.1438192,7.71404521 14.9983165,7.71404521 16.1421356,8.85786438 C17.2859548,10.0016835 17.2859548,11.8561808 16.1421356,13 L12.7071068,16.4350288 C12.3165825,16.8255531 11.6834175,16.8255531 11.2928932,16.4350288 L7.85786438,13 Z" id="Path" stroke="#FFFFFF" stroke-linecap="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
