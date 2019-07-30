@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/home_icon_time</title>
+    <desc>Created with Sketch.</desc>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="0.0.1图标" transform="translate(-187.000000, -86.000000)" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="home_icon_time" transform="translate(189.000000, 88.000000)">
+                <circle id="Oval" cx="4.5" cy="4.5" r="4.5"></circle>
+                <polyline id="Path-6" stroke-linecap="round" stroke-linejoin="round" points="4.49965364 1.82018811 4.49965364 4.5874495 6.81047142 4.5874495"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

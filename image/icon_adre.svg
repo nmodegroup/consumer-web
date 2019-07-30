@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/home_icon_location</title>
+    <desc>Created with Sketch.</desc>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="0.0.1图标" transform="translate(-207.000000, -86.000000)" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="home_icon_location" transform="translate(209.000000, 87.000000)">
+                <g id="Group-11-Copy">
+                    <path d="M4.5,11.1550559 C7.5,8.37520621 9,6.15685425 9,4.5 C9,2.01471863 6.98528137,0 4.5,0 C2.01471863,0 0,2.01471863 0,4.5 C0,6.15685425 1.5,8.37520621 4.5,11.1550559 Z" id="Oval"></path>
+                    <circle id="Oval" cx="4.5" cy="4.5" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

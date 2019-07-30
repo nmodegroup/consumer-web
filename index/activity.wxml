@@ -1,1 +1,48 @@
-<view class="intro">接口</view>
+<view class="container">
+  <view class="activity-frame">
+    <view class="activity-item">
+      <view class="activity-bg">
+        <view class="activity-mun">剩余：39桌</view>
+        <image class="bg-activity-img" src="/image/bg-bar.png"></image>
+      </view>
+      <view class="activity-context">
+        <view class="activity-title">
+          <view class="activity-text">霓虹灯之夜 | 派对活动</view>
+          <view class="activity-adre">
+            <image class="icon-location" src="/image/icon_location.svg"></image>
+            <view class="activity-adre-text">南山区</view>
+          </view>
+        </view>
+        <view class="activity-intro">
+          <view>
+            <view class="activity-name">RMK Cocktail Bar</view>
+            <view  class="activity-date">2019.05.20 20:00</view>
+          </view>
+          <view class="activity-guest">特邀嘉宾：Chris Wu | Hackett Chan</view>
+        </view>
+      </view>
+    </view>
+    <view class="activity-item">
+      <view class="activity-bg">
+        <view class="activity-mun">剩余：39桌</view>
+        <image class="bg-activity-img" src="/image/bg-bar.png"></image>
+      </view>
+      <view class="activity-context">
+        <view class="activity-title">
+          <view class="activity-text">霓虹灯之夜 | 派对活动</view>
+          <view class="activity-adre">
+            <image class="icon-location" src="/image/icon_location.svg"></image>
+            <view class="activity-adre-text">南山区</view>
+          </view>
+        </view>
+        <view class="activity-intro">
+          <view>
+            <view class="activity-name">RMK Cocktail Bar</view>
+            <view  class="activity-date">2019.05.20 20:00</view>
+          </view>
+          <view class="activity-guest">特邀嘉宾：Chris Wu | Hackett Chan</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
