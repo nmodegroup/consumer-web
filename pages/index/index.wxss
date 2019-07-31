@@ -212,7 +212,7 @@
 }
 /* 设置点点的层级 ,可以调整小点的位置*/
 .wx-swiper-dots{position:relative;top:326rpx !important;}
-/* 修改vant样式 */
+/* 修改vant下弹出框样式样式start */
 .van-picker__toolbar{
   background:rgba(21,21,62,1);
   height: 100rpx !important;
@@ -276,3 +276,4 @@
 .van-popup{
   background-color: transparent !important;
 }
+/* 修改vant样式end */
