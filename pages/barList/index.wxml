@@ -1,0 +1,61 @@
+<view class="bar-container">
+  <view class="search-bar">
+    <input class="bar-input" placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255,255,255,.5)"></input>
+  </view>
+  <view class="select-bar">
+    <view class="select-bar-title">附近全部
+      <image class="icon-bottom-arrow" src="/image/icon_pulldown.svg"></image>
+    </view>
+    <view class="select-bar-title">酒吧类型
+      <image class="icon-bottom-arrow" src="/image/icon_pulldown.svg"></image>
+    </view>
+    <view class="select-bar-title">智能排序
+      <image class="icon-bottom-arrow" src="/image/icon_pulldown.svg"></image>
+    </view>
+    <view class="drop-down-box">
+      <view class="drop-down-item {{index == 1 ? 'active' : ''}}" wx:for="{{distanceList}}" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="bar-list-frame">
+    <view class="bar-item">
+      <view class="hot-bar-item">
+        <image class="hot-bar-image" src="/image/bg-bar.png"></image>
+        <view class="hot-bar-context">
+          <view>
+            <view class="hot-bar-text">深圳BBR酒吧</view>
+            <view class="bar-btn-1">闹吧</view>
+          </view>
+          <view>
+            <view class="hot-bar-time">
+              <image class="icon-time" src="/image/icon_time.svg"></image>20:00-2:00
+              <view class="btn-operation">营业中</view>
+            </view>
+          </view>
+          <view>
+            <view class="hot-bar-adre">
+              <image class="icon-adre"  src="/image/icon_adre.svg"></image>
+              深圳保利文化广场F3层
+            </view>
+            <view class="hot-bar-distance">1.9km</view>
+          </view>
+        </view>
+      </view>
+      <view class="bar-order-info">
+        <view class="bar-info-text">
+          <view>
+            <view class="btn-full">已满</view>
+            今日已满，可设置空位提醒
+          </view>
+          <view>已有<text class="bar-people-num">8</text>人设置提醒</view>
+        </view>
+        <view class="bar-info-text">
+          <view>
+            <view class="btn-reserve">预订</view>
+            明日剩余可预订桌位数
+          </view>
+          <view><text class="bar-people-num">14</text>桌</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

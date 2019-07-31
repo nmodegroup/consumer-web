@@ -1,8 +1,9 @@
 {
   "pages": [
-    "index/index",
-    "index/activity",
-    "index/mine"
+    "pages/index/index",
+    "pages/barList/index",
+    "pages/index/activity",
+    "pages/index/mine"
   ],
   "tabBar": {
     "custom": true,
@@ -12,19 +13,19 @@
     "backgroundColor": "#0A0A29",
     "list": [
       {
-        "pagePath": "index/index",
+        "pagePath": "pages/index/index",
         "iconPath": "image/icon_tab_home.png",
         "selectedIconPath": "image/icon_tab_home_HL.png",
         "text": "首页"
       },
       {
-        "pagePath": "index/activity",
+        "pagePath": "pages/index/activity",
         "iconPath": "image/icon_tab_activity.png",
         "selectedIconPath": "image/icon_tab_activity_HL.png",
         "text": "活动"
       },
       {
-        "pagePath": "index/mine",
+        "pagePath": "pages/index/mine",
         "iconPath": "image/icon_tab_mine.png",
         "selectedIconPath": "image/icon_tab_mine_HL.png",
         "text": "我的"

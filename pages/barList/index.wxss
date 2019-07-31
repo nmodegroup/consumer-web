@@ -1,0 +1,166 @@
+.bar-container {
+  background:#15153E;
+  min-height: 100%;
+}
+.search-bar {
+  padding: 20rpx 30rpx;
+  border-top:1rpx solid rgba(255, 255, 255, .1);
+  border-bottom:1rpx solid rgba(255, 255, 255, .1);
+}
+.bar-input {
+  width:100%;
+  height: 60rpx;
+  border-radius:51rpx; 
+  font-size: 28rpx;
+  padding-left: 74rpx;
+  color:#fff;
+  background: rgba(35,35,89,1) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAC1klEQVRIS72W24tNcRTHP1+33IskpNxDuZSQ+wN5IFE8IClNPHtQ/AWemAfy4PLIC4lchtzmwTVGLmMiuaTIDC9kXBJZWtPap33O7DP7zMxhP53T+e31Od/1W+u7lvjPjyrlmVlPYCQwCOgH/ABagQ+SflUaJxdoZhOAOcB4oE9GYIe9Bh5Iep4HLgs0s2HAKmBsBDFXA3wKdX2BIcAIIInzDqiT1FwOnAk0s0nAOsCDfgduAo2SvpYGMrMBwDRgUaTbFZ+T1JgFbQcM2EagB9AUL//MS5WZ9QaWA3Pj7HlJ90vfKwJGGreGsuuS6vNAGYr9vlcCf4Cjkt6kz5QCt8SdNUk62VlYct7MlgGLgS/Afkm/k98KwKjGzXFn+yTlprHcHzIzj7sNGAVclnQ7C7gBmFJ6oBsqvZ1cQKuk2iJgNPUuwC++NqsauwI2s+3ROoclvfcYbSk1s9GAF0uLpINdCZ71jpl58XjVXpN0Iw2cCqwHnkk6XkXg7DCPBkl1aeAsYHXY09kqAr0mvDYKQpKUJgqfSjpRReD0cCx3qVNZd9gs6VAVgQvDfe5IupQGenXuBHoBeyV9qwbUzDYB7sunJT0uAKNS3T8nAxcl3e0u0Mzc+HeEiD2SfAgUxoq3hsMc6kPV7ajioVqmJZYCS4CXko61c5pQ6b3oPXlP0oWuqjSz4dHXflVHkqYvUhhAXyFqwnF8kDZ0Fmpm/QM2FHgo6Uw6RtY8nAGsdQOKwVsvyT/nPqHM+85hn4ED6UnRTmES0czcIVYAvji5B7o1vSpHjAJZAMwr2XuuSvJtofB0tNP4LuNKB8dp32VeAB8BXzX8fvy3McC4+O6ZeAS8DUvzraEI2uHWZmbel26+82NfKSsS8Ax4+tumgpnNBNbEqlKA5q6JqTT7MPUZ56oGAt42bhAtrjzps/Q/KoFekXSrYmBuxZQ5kII6a/c/B0Z6J/q2LunJX/uuDy3fKjlBAAAAAElFTkSuQmCC) no-repeat 26rpx center;
+  background-size:28rpx 28rpx;
+}
+.select-bar {
+  border-bottom:1rpx solid rgba(255, 255, 255, .1);
+  height: 80rpx;
+  display: flex;
+  color: rgba(255,255,255,.6);
+  font-size: 26rpx;
+  position: relative;
+}
+.select-bar-title{
+  flex: 1;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 62rpx;
+}
+.icon-bottom-arrow {
+  width:16rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+}
+.bar-list-frame {
+  padding: 20rpx 30rpx 0 30rpx;
+}
+.bar-item {
+  background:#0F0F2D;
+}
+.hot-bar-item {
+  display: flex;
+  height: 212rpx;
+  padding: 32rpx 20rpx 30rpx 20rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, .1)
+}
+.hot-bar-image {
+  width:196rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+}
+.hot-bar-context {
+  padding-left: 16rpx;
+  flex: 1;
+}
+.hot-bar-context>view{
+  display: flex;
+  color:#fff;
+  justify-content: space-between;
+}
+.hot-bar-context>view:nth-child(1){
+  padding-bottom: 30rpx;
+}
+.hot-bar-text {
+  font-size: 32rpx;
+  font-weight: 500;
+  color:rgba(255, 255, 255, .8);
+}
+.hot-bar-time {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  display: flex;
+  align-items: center;
+}
+.hot-bar-adre {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.hot-bar-distance {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  padding-top: 10rpx;
+}
+.bar-order-info {
+  padding:22rpx 18rpx 22rpx 20rpx;
+}
+.bar-info-text {
+  display: flex;
+  justify-content: space-between;
+}
+.bar-info-text>view{
+  display: flex;
+  color:rgba(255, 255, 255, .5);
+  font-size: 24rpx;
+}
+.bar-info-text>view:first-child{
+  padding-bottom: 22rpx;
+}
+.btn-full {
+  background:rgba(218,73,255,1);
+  border-radius:4rpx;
+  font-size: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 12rpx;
+  line-height: 28rpx;
+  height: 28rpx;
+}
+.bar-people-num {
+  color:#fff;
+  padding: 0 10rpx;
+  font-weight: 500;
+}
+.btn-reserve {
+  background:rgba(88,77,255,1);
+  border-radius:4rpx;
+  font-size: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 12rpx;
+  line-height: 28rpx;
+  height: 28rpx;
+}
+.drop-down-box {
+  padding-top: 20rpx;
+  background:rgba(15,15,46,0.8);
+  width:750rpx;
+  position: absolute;
+  top:80rpx;
+  left:0;
+  flex-direction: column;
+  z-index: 1;
+}
+.drop-down-item {
+  height: 80rpx;
+  text-align: center;
+  position: relative;
+  line-height: 80rpx;
+}
+.drop-down-item.active::after{
+  content: '';
+  width:750rpx;
+  height: 1rpx;
+  background: linear-gradient(to right, black , rgba(255, 255, 255, .5), black);
+  position: absolute;
+  top:0;
+  left:0;
+}
+.drop-down-item.active::before{
+  content: '';
+  width:750rpx;
+  height: 1rpx;
+  background: linear-gradient(to right, black , rgba(255, 255, 255, .5), black);
+  position: absolute;
+  top:80rpx;
+  left:0;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/icon_pulldown</title>
+    <desc>Created with Sketch.</desc>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024" stroke-linecap="round" stroke-linejoin="round">
+        <g id="0.0.1图标" transform="translate(-113.000000, -93.000000)" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="选项列表" transform="translate(113.000000, 92.000000)">
+                <g id="Group-2">
+                    <polyline id="icon_pulldown" transform="translate(3.828427, 2.828427) rotate(-225.000000) translate(-3.828427, -2.828427) " points="1.82842712 0.828427125 5.82842712 0.828427125 5.82842712 4.82842712"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

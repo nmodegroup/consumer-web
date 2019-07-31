@@ -27,13 +27,19 @@ view,text,input{
   height:26rpx;
   margin-right: 6rpx;
 }
+.btn-operation {
+  padding: 0 6rpx;
+  border: 1rpx solid rgba(255, 255, 255, .6);
+  border-radius: 2rpx;
+  margin-left: 10rpx;
+}
 .bar-btn-1 {
   width:76rpx;
   height: 36rpx;
   border-radius: 2rpx;
   opacity: 0.8;
-  border:1rpx solid #E9D87C;
-  color:#FFEE82;
+  border:1rpx solid rgba(233, 216, 124, .8);
+  color:rgba(255, 238, 130, .9);
   font-size: 22rpx;
   text-align: center;
 }
@@ -42,8 +48,8 @@ view,text,input{
   height: 36rpx;
   border-radius: 2rpx;
   opacity: 0.8;
-  border:1rpx solid#40A2EC;
-  color:#44B2FF;
+  border:1rpx solid rgba(64, 162, 236, .8);
+  color:rgba(68, 178, 255, .9);
   font-size: 22rpx;
   text-align: center;
 }
@@ -52,8 +58,8 @@ view,text,input{
   height: 36rpx;
   border-radius: 2rpx;
   opacity: 0.8;
-  border:1rpx solid#CE5BEB;
-  color:#E463FF;
+  border:1rpx solid rgba(206, 91, 235, .9);
+  color:rgba(228, 99, 255, .9);
   font-size: 22rpx;
   text-align: center;
 }

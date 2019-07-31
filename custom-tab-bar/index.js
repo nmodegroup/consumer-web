@@ -1,18 +1,19 @@
 Component({
   data: {
+    show: true,
     selected: 0,
     color: "#7A7E83",
     selectedColor: "#3cc51f",
     list: [{
-      pagePath: "/index/index",
+      pagePath: "/pages/index/index",
       iconPath: "/image/icon_tab_home.png",
       selectedIconPath: "/image/icon_tab_home_HL.png"
     }, {
-      pagePath: "/index/activity",
+      pagePath: "/pages/index/activity",
       iconPath: "/image/icon_tab_activity.png",
       selectedIconPath: "/image/icon_tab_activity_HL.png"
       }, {
-        pagePath: "/index/mine",
+        pagePath: "/pages/index/mine",
         iconPath: "/image/icon_tab_mine.png",
         selectedIconPath: "/image/icon_tab_mine_HL.png"
       }]
