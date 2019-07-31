@@ -139,6 +139,7 @@
   left:0;
   flex-direction: column;
   z-index: 1;
+  padding-bottom: 20rpx;
 }
 .drop-down-item {
   height: 80rpx;
