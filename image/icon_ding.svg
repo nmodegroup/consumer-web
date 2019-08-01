@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/icon_title_yudin</title>
+    <desc>Created with Sketch.</desc>
+    <g id="酒吧详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标" transform="translate(-50.000000, -268.000000)">
+            <g id="Group-3" transform="translate(51.000000, 265.000000)">
+                <g id="icon_title_yudin" transform="translate(0.000000, 3.000000)">
+                    <rect id="Rectangle" stroke="#FFFFFF" stroke-width="0.866666667" fill-rule="nonzero" x="0" y="0.864804869" width="13" height="13" rx="0.8"></rect>
+                    <text id="订" font-family="PingFangSC-Medium, PingFang SC" font-size="10.4" font-weight="400" fill="#FFFFFF">
+                        <tspan x="1.3" y="11">订</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

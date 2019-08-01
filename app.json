@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/barDetail/index",
     "pages/index/index",
     "pages/barList/index",
     "pages/index/activity",

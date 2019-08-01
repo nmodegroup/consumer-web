@@ -1,0 +1,120 @@
+<view class="container">
+  <swiper indicator-dots="true" class="bar-detail-swiper" circular="true" indicator-active-color="#F8FFF9" indicator-color="#857F89"
+    autoplay="true" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="bar-context">
+      <view class="bar-info">
+        <view class="bar-name">RMK Cocktail Bar</view>
+        <view class="bar-distance">距离1.4km</view>
+      </view>
+      <view class="bar-price-frame">
+        <view class="bar-btn-2">清吧</view>
+        <view class="bar-price">¥182/人</view>
+      </view>
+    <view class="bar-join-frame">
+      <view class="bar-time-adre">
+        <view class="hot-bar-time">
+           <image class="icon-time" src="/image/icon_time.svg"></image>
+            20:00-2:00
+        </view>
+        <view class="hot-bar-adre">
+          <image class="icon-adre"  src="/image/icon_adre.svg"></image>
+          深圳保利文化广场F3层
+        </view>
+      </view>
+      <view class="vertical-line">
+        <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bar-booking-frame">
+    <view class="bar-booking-head">
+      <view class="bar-booking-l">
+        <image class="icon-ding" src="/image/icon_ding.svg"></image>
+        在线预订
+      </view>
+      <view class="bar-booking-num">1204人订过</view>
+    </view>
+    <view class="bar-booking-body">
+      <view class="bar-booking-date active">
+        <view class="booking-week">今天</view>
+        <view class="booking-date">今日已满</view>
+      </view>
+      <view class="date-vertical-line"></view>
+      <view class="bar-booking-date">
+        <view class="booking-week">周四</view>
+        <view class="booking-date">05-23</view>
+      </view>
+      <view class="date-vertical-line"></view>
+      <view class="bar-booking-date">
+        <view class="booking-week">周五</view>
+        <view class="booking-date">05-24</view>
+      </view>
+      <view class="date-vertical-line"></view>
+      <view class="bar-booking-date">
+        <view class="booking-week">周六</view>
+        <view class="booking-date">05-25</view>
+      </view>
+    </view>
+    <view class="bar-booking-detail">
+      <view>
+        <view class="bar-booking-status">今日预订已满</view>
+        <view class="bar-booking-tips">已有8人设置空位提醒</view>
+      </view>
+      <view class="btn-booking">设置提醒</view>
+    </view>
+  </view>
+  <view class="bar-booking-frame">
+    <view class="bar-booking-head">
+      <view class="bar-booking-l">
+        <image class="icon-ding" src="/image/icon_bartender.svg"></image>
+        调酒师
+      </view>
+    </view>
+    <view class="bar-bartender-frame">
+      <scroll-view  class="scroll-view_H" scroll-x="true" style="width: 100%">
+        <view class="scroll-img-frame">
+          <view class="bartender-name-frame">
+            <view class="bartender-name-en">Hackett Chan</view>
+            <view class="bartender-name-ch">陈侯辛</view>
+          </view>
+          <view class="bartender-intro">调酒师的圈子里的霸主，多次代表中国调酒师出现在各大国际酒水品牌的活动和比赛上。</view>
+          <image mode="aspectFill" src="/image/bg-bar.png"></image>
+        </view>
+        <view class="scroll-img-frame">
+          <view class="bartender-name-frame">
+            <view class="bartender-name-en">Hackett Chan</view>
+            <view class="bartender-name-ch">陈侯辛</view>
+          </view>
+          <view class="bartender-intro">调酒师的圈子里的霸主，多次代表中国调酒师出现在各大国际酒水品牌的活动和比赛上。</view>
+          <image mode="aspectFill" src="/image/bg-bar.png"></image>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="bar-booking-frame">
+    <view class="bar-booking-head">
+      <view class="bar-booking-l">
+        <image class="icon-ding" src="/image/icon_bar_intro.svg"></image>
+        酒吧故事
+      </view>
+    </view>
+    <view class="bar-intro-frame">
+      <view class="bar-intro-text">RMK Cocktail bar 在深圳一共有两家店，首家南山店早已积累了不少人气，如今新店开在市中心极具话题性的商场深业上城，可谓天作之合。RMK 全称是 Rumaku，日文意思是流幕，即舞台上流动的帷幕。 新店延续了旧店轻松的风格，但装修更精致。巨大的酒柜矗立在酒吧正中央，室内座位都环绕而设，客人无论从哪个角度都能看到丰富的藏酒和调酒师娴熟的动作，气氛一流。RMK 的出品非常优秀，因为它家调酒师近年来在各种调酒比赛上都斩获了不错的名次。mars 建议你可以向调酒师询问隐藏酒单，不会失望的。</view>
+    </view>
+  </view>
+  <view class="btn-bottom-frame">
+    <view class="flex-1">
+      <image src="/image/icon_collect.svg"></image>
+    </view>
+    <view class="date-vertical-line"></view>
+    <view class="flex-1">
+      <image src="/image/icon_share.svg"></image>
+    </view>
+  </view>
+</view>

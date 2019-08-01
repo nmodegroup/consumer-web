@@ -5,12 +5,21 @@
   <view class="select-bar">
     <view class="select-bar-title" bindtap="onShowDropDown" data-type="1">附近全部
       <image class="icon-bottom-arrow" src="/image/icon_pulldown.svg"></image>
+      <view class="rect-border" wx:if="{{type == 1 && showDropDown}}">
+        <view class="rect-content"></view>
+      </view>
     </view>
     <view class="select-bar-title" bindtap="onShowDropDown" data-type="2">酒吧类型
       <image class="icon-bottom-arrow" src="/image/icon_pulldown.svg"></image>
+       <view class="rect-border" wx:if="{{type == 2 && showDropDown}}">
+        <view class="rect-content"></view>
+      </view>
     </view>
     <view class="select-bar-title" bindtap="onShowDropDown" data-type="3">智能排序
       <image class="icon-bottom-arrow" src="/image/icon_pulldown.svg"></image>
+      <view class="rect-border" wx:if="{{type == 3 && showDropDown}}">
+        <view class="rect-content"></view>
+      </view>
     </view>
     <view class="drop-down-box" wx:if="{{showDropDown}}">
       <view class="drop-down-item {{index == 1 ? 'active' : ''}}" wx:for="{{distanceList}}" wx:key="{{index}}">{{item.text}}</view>

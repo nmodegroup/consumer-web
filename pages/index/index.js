@@ -13,7 +13,14 @@ Page({
     interval: 5000,
     duration: 1000,
     columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-    selAdre: false
+    selAdre: false,
+    bookingList: [{
+      name: '深圳BBR酒吧',
+      num: 8
+    },{
+      name: '深圳BBR酒吧',
+      num: 8
+    }]
   },
 
   /**

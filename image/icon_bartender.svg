@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/icon_title_tiaojiushi</title>
+    <desc>Created with Sketch.</desc>
+    <g id="酒吧详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标" transform="translate(-50.000000, -228.000000)" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="Group-8" transform="translate(51.000000, 225.000000)">
+                <g id="Group-3">
+                    <g id="icon_title_tiaojiushi" transform="translate(0.000000, 4.000000)">
+                        <ellipse id="Oval" stroke-width="0.8" cx="6.43962848" cy="4.0625" rx="4.0247678" ry="4.0625"></ellipse>
+                        <path d="M2.46468228,8.125 L10.5142179,8.125 C11.8479086,8.125 12.9290786,9.20616995 12.9290786,10.5398607 L12.9290786,13 L0.0498215984,13 L0.0498215984,10.5398607 C0.0498215984,9.20616995 1.13099155,8.125 2.46468228,8.125 Z" id="Rectangle" stroke-width="0.8" stroke-linejoin="round"></path>
+                        <path d="M8.38946188,7.3125 C8.38946188,7.3125 7.73951741,7.67592646 6.43962848,8.40277937 L8.13822313,9.67002871 C8.30571563,8.0983429 8.38946188,7.3125 8.38946188,7.3125 Z" id="Path-7" stroke-width="0.80495356" fill="#FFFFFF" stroke-linejoin="round"></path>
+                        <path d="M6.45757334,7.3125 C6.45757334,7.3125 5.80762887,7.67592646 4.50773994,8.40277937 L6.20633458,9.67002871 C6.37382709,8.0983429 6.45757334,7.3125 6.45757334,7.3125 Z" id="Path-7" stroke-width="0.80495356" fill="#FFFFFF" stroke-linejoin="round" transform="translate(5.482657, 8.491264) scale(-1, 1) translate(-5.482657, -8.491264) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

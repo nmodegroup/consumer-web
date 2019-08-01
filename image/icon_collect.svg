@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/Group 24</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-91.6%" y="-92.6%" width="283.1%" height="285.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-9" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.060385528   0 0 0 0 0.0826403463   0 0 0 0 0.259832058  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="酒吧详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标" transform="translate(-160.000000, -335.000000)">
+            <g id="tab" filter="url(#filter-1)" transform="translate(128.000000, 295.000000)"></g>
+            <g id="Group-24" transform="translate(162.000000, 338.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="1.2">
+                <g id="Group-21">
+                    <path d="M10.5,17.9116211 L5.55019292,18.7802449 C4.89742614,18.8947966 4.27539161,18.4584871 4.16083992,17.8057203 C4.15853924,17.79261 4.15645685,17.7794623 4.15459361,17.7662827 L3.45112946,12.7903169 L1.0954446,8.35119012 C0.784783436,7.76577044 1.00751922,7.03935339 1.5929389,6.72869223 C1.60469661,6.72245283 1.61655732,6.7164095 1.6285161,6.71056474 L6.14355843,4.50387258 L9.63747219,0.891717533 C10.0982398,0.41535658 10.8579326,0.402715688 11.3342936,0.863483311 C11.3438609,0.872737477 11.3532736,0.882150187 11.3625278,0.891717533 L14.8564416,4.50387258 L19.3714839,6.71056474 C19.9669151,7.00157716 20.2136953,7.72018171 19.9226829,8.31561293 C19.9168381,8.32757171 19.9107948,8.33943241 19.9045554,8.35119012 L17.5488705,12.7903169 L16.8454064,17.7662827 C16.7526355,18.4224992 16.1454612,18.8792621 15.4892447,18.7864912 C15.4760651,18.784628 15.4629174,18.7825456 15.4498071,18.7802449 L10.5,17.9116211 Z" id="icon_tab_collect_withoutwords"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -46,6 +46,9 @@
 .context-box {
   padding: 80rpx 30rpx 0 30rpx;
 }
+.booking-swiper {
+  height: 330rpx;
+}
 .booking-frame {
   height: 330rpx;
   background-color: #111841;
