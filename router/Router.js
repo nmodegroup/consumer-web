@@ -2,6 +2,8 @@ export const Index = '/pages/index/index'//登录首页
 export const Activity = '/pages/index/activity'// 活动页面
 export const Mine = '/pages/index/mine'// 我的页面
 export const BarList = '/pages/barList/index'// 酒吧列表页面
+export const BarDetail = '/pages/barDetail/index'// 酒吧详情页
+export const ActivityDetail = '/pages/activityDetail/index'// 酒吧详情页
 /** 生成参数 */
 export function joinPath(paramsObj) {
   const url = paramsObj.url;

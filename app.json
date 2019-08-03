@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/barDetail/index",
     "pages/index/index",
+    "pages/activityDetail/index",
+    "pages/barDetail/index",
     "pages/barList/index",
     "pages/index/activity",
     "pages/index/mine"

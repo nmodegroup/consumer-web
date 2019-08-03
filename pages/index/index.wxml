@@ -56,7 +56,7 @@
       </view>
       <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
     </view>
-    <view class="hot-bar-item">
+    <view class="hot-bar-item" bindtap="onBarDetail">
       <image class="hot-bar-image" src="/image/bg-bar.png"></image>
       <view class="hot-bar-context">
         <view>

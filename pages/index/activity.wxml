@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="activity-frame">
+  <view class="activity-frame" bindtap="onActivityDetail">
     <view class="activity-item">
       <view class="activity-bg">
         <view class="activity-mun">剩余：39桌</view>
