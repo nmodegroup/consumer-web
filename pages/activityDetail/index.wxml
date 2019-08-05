@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="activity-banner-frame">
+    <view class="activity-banner-num">剩余：20桌</view>
+    <image class="activity-banner" src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640"></image>
+  </view>
+  <view class="bar-context">
+      <view class="bar-info">
+        <view class="bar-name">R霓虹灯之夜 | 派对活动</view>
+        <view class="bar-distance">距离1.4km</view>
+      </view>
+      <view class="bar-price-frame">特邀嘉宾：Chris Wu | Hackett Chan</view>
+    <view class="bar-join-frame">
+      <view class="bar-time-adre">
+        <view class="hot-bar-time">
+           <image class="icon-time" src="/image/icon_time.svg"></image>
+            20:00-2:00
+        </view>
+        <view class="hot-bar-adre">
+          <image class="icon-adre"  src="/image/icon_adre.svg"></image>
+          深圳保利文化广场F3层
+        </view>
+      </view>
+      <view class="vertical-line">
+        <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="poster-frame">
+    <image class="poster-img" src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640"></image>
+  </view>
+  <view class="bar-booking-frame">
+    <view class="bar-booking-head">
+      <view class="bar-booking-l">
+        <image class="icon-ding" src="/image/icon_bar_intro.svg"></image>
+        酒吧活动
+      </view>
+      <view class="bar-booking-num">进入酒吧主页
+        <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bar-context">
+    <view class="bar-intro-frame">
+      <view class="bar-info">
+        <view class="bar-name">RMK Cocktail Bar</view>
+      </view>
+      <view class="bar-price-frame">
+        <view class="bar-btn-2">清吧</view>
+        <view class="bar-price">¥182/人</view>
+      </view>
+    </view>
+    <view class="transverse-line"></view>
+    <view class="bar-join-frame">
+      <view class="bar-time-adre">
+        <view class="hot-bar-time">
+           <image class="icon-time" src="/image/icon_time.svg"></image>
+            20:00-2:00
+        </view>
+        <view class="hot-bar-adre">
+          <image class="icon-adre"  src="/image/icon_adre.svg"></image>
+          深圳保利文化广场F3层
+        </view>
+      </view>
+      <view class="vertical-line">
+        <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="btn-bottom-frame">
+    <view class="share-frame">
+      <view class="btn-share">
+        <image class="share-img" src="/image/icon_share.svg"></image>
+      </view>
+    </view>
+    <view class="reserve-frame">
+      <text class="reserve-tips">5分钟前有人预订</text>
+      <view class="btn-reserve">立即预订</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,207 @@
+.container {
+  padding-bottom:198rpx;
+}
+.activity-banner-frame {
+  width:750rpx;
+  height: 360rpx;
+  font-size: 0;
+  position: relative;
+}
+.activity-banner-num {
+  position: absolute;
+  top:0;
+  right:0;
+  padding:6rpx 22rpx 10rpx 26rpx;
+  background-color:rgba(69, 106, 236, 1);
+  border-bottom-left-radius: 16rpx;
+  color:rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+}
+.activity-banner {
+  width:750rpx;
+  height: 360rpx;
+}
+.bar-context {
+  background: rgba(17,24,65,0.62);
+  padding: 20rpx 30rpx;
+}
+.icon-phone {
+  width:40rpx;
+  height: 40rpx;
+}
+.bar-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+.bar-name {
+  font-size: 44rpx;
+  color:#fff;
+  font-weight: 500;
+}
+.bar-distance {
+  color:rgba(255, 255, 255, .5);
+  font-size: 24rpx;
+}
+.bar-price-frame {
+  display: flex;
+  padding-bottom: 30rpx;
+  font-size: 30rpx;
+  color:rgba(255, 255, 255, .8);
+}
+.bar-price {
+  color:rgba(255, 255, 255, .5);
+  font-size: 24rpx;
+  padding-left: 24rpx;
+}
+.bar-join-frame {
+  background:rgba(0,0,0,.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 144rpx;
+  border-radius: 8rpx;
+  padding: 0 60rpx 0 30rpx;
+  opacity: 0.8;
+}
+.hot-bar-time {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  display: flex;
+  align-items: center;
+}
+.hot-bar-adre {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  padding-top: 16rpx;
+  display: flex;
+  align-items: center;
+}
+.vertical-line {
+  padding-left: 64rpx;
+  border-left:2rpx solid rgba(255, 255, 255, .1);
+  display: flex;
+  align-items: center;
+  height: 68rpx;
+}
+.poster-frame{
+  padding: 20rpx 30rpx 16rpx 30rpx;
+}
+.poster-img {
+  width:100%;
+  height: 1206rpx;
+}
+.bar-booking-head {
+  padding: 0 32rpx;
+  height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bar-booking-l {
+  color:rgba(255, 255, 255, 1);
+  font-size: 30rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+}
+.bar-booking-num {
+  font-size: 24rpx;
+  color:rgba(255, 255, 255, .5);
+}
+.icon-ding {
+  width:30rpx;
+  height: 30rpx;
+  margin-right: 12rpx;
+}
+.bar-intro-frame {
+  background:rgba(0,0,0,.2);
+  padding: 30rpx 60rpx 0 30rpx;
+  opacity: 0.8;
+}
+.transverse-line {
+  width:630rpx;
+  height: 2rpx;
+  background-color:rgba(255, 255, 255, .1);
+  margin-left:30rpx;
+}
+.btn-bottom-frame {
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 98rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(115, 127, 194, 0.29);
+  padding: 0 30rpx 0 12rpx;
+}
+.btn-bottom-frame image{
+  width:50rpx;
+  height: 50rpx;
+}
+.share-frame {
+  width:140rpx;
+  height: 76rpx;
+  background:linear-gradient(225deg,rgba(255,64,167,1) 0%,rgba(210,51,255,1) 45%,rgba(45,147,255,1) 100%);
+  border-radius:38rpx;
+  padding:2rpx;
+}
+.btn-share{
+  background:rgba(69,80,138,1);
+  height: 72rpx;
+  width:136rpx;
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reserve-frame {
+  width:550rpx;
+  height: 76rpx;
+  background:linear-gradient(225deg,rgba(255,64,167,1) 0%,rgba(210,51,255,1) 45%,rgba(45,147,255,1) 100%);
+  border-radius:38rpx;
+  padding:2rpx;
+  position: relative;
+}
+.btn-reserve{
+  width:546rpx;
+  height: 72rpx;
+  background:rgba(69,80,138,1);
+  border-radius: 36rpx;
+  text-align: center;
+  line-height: 72rpx;
+  color:rgba(255, 255, 255, 1);
+  font-size: 30rpx;
+}
+.reserve-tips {
+  position: absolute;
+  top:-73rpx;
+  left:50%;
+  margin: auto;
+  background:rgba(69,106,236,1);
+  color:rgba(255, 255, 255, 1);
+  font-size: 22rpx;
+  transform: translate(-50%,0);
+  padding:0 22rpx;
+  line-height:40rpx;
+  border-radius: 6rpx;
+}
+.reserve-tips::after{
+  content: '';
+  width:0; 
+  height:0; 
+  border:15rpx solid transparent;
+  border-top-color: rgba(69, 106, 236, 1);
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: auto;
+  transform: translate(0,100%);
+}
