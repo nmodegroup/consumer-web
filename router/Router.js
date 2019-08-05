@@ -5,6 +5,7 @@ export const BarList = '/pages/barList/index'// 酒吧列表页面
 export const BarDetail = '/pages/barDetail/index'// 酒吧详情页
 export const ActivityDetail = '/pages/activityDetail/index'// 酒吧详情页
 export const Booking = '/pages/booking/index'// 酒吧预订页
+export const BookOrder = '/pages/bookOrder/index'// 我的预订
 /** 生成参数 */
 export function joinPath(paramsObj) {
   const url = paramsObj.url;

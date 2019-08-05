@@ -1,0 +1,95 @@
+<view class="order-container">
+  <view class="order-time-title">下单时间：2019-05-24 16:23:01</view>
+  <view class="order-item">
+    <view class="order-header">
+      <view class="bar-info">
+        <view class="bar-name">RMK Cocktail Bar</view>
+        <view class="order-status">等待确认</view>
+      </view>
+      <view class="room-info">
+        <text>包房</text>
+        <view class="vertical-line"></view>
+        <text>8人</text>
+      </view>
+    </view>
+    <view class="order-body">
+      <view>
+        <view class="go-time">到店时间：2019.05.20 20:00</view>
+        <view class="delay-time">超时时长：-分-秒</view>
+      </view>
+      <view class="cancel-frame">
+        <view class="btn-cancel">取消预订</view>
+      </view>
+    </view>
+  </view>
+  <view class="order-item">
+    <view class="order-header">
+      <view class="bar-info">
+        <view class="bar-name">RMK Cocktail Bar</view>
+        <view class="order-status">已取消</view>
+      </view>
+      <view class="room-info">
+        <text>包房</text>
+        <view class="vertical-line"></view>
+        <text>8人</text>
+      </view>
+    </view>
+    <view class="order-body">
+      <view>
+        <view class="go-time">到店时间：2019.05.20 20:00</view>
+        <view class="delay-time">超时时长：-分-秒</view>
+      </view>
+      <view class="cancel-frame">
+        <view class="btn-cancel">取消预订</view>
+      </view>
+    </view>
+  </view>
+  <view class="order-item">
+    <view class="order-header">
+      <view class="bar-info">
+        <view class="bar-name">RMK Cocktail Bar</view>
+        <view class="order-status">已到店</view>
+      </view>
+      <view class="room-info">
+        <text>包房</text>
+        <view class="vertical-line"></view>
+        <text>8人</text>
+      </view>
+    </view>
+    <view class="order-body">
+      <view>
+        <view class="go-time">到店时间：2019.05.20 20:00</view>
+        <view class="delay-time">超时时长：-分-秒</view>
+      </view>
+      <view class="cancel-frame">
+        <view class="btn-cancel">取消预订</view>
+      </view>
+    </view>
+  </view>
+  <view class="order-time-title">下单时间：2019-05-24 16:23:01</view>
+  <view class="order-item">
+    <view class="order-header">
+      <view class="bar-info">
+        <view class="bar-name">RMK Cocktail Bar</view>
+        <view class="order-status">
+          <text>已有</text> 5
+          <text>人设置提醒</text>
+        </view>
+      </view>
+      <view class="room-info">
+        <text>包房</text>
+        <view class="vertical-line"></view>
+        <text>8人</text>
+      </view>
+    </view>
+    <view class="order-body">
+      <view>
+        <view class="go-time">到店时间：2019.05.20 20:00</view>
+        <view class="delay-time">超时时长：-分-秒</view>
+      </view>
+      <view class="cancel-frame">
+        <view class="btn-cancel">取消预订</view>
+      </view>
+    </view>
+  </view>
+</view>

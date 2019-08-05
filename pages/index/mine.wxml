@@ -9,7 +9,7 @@
     <view class="mine-name">JASON LIU</view>
   </view>
   <view class="mine-menu-body">
-    <view class="menu-item">
+    <view class="menu-item" bindtap="onBookOrder">
       <image src="/image/icon_yudingdan.svg"></image>
       <view>预订单</view>
     </view>

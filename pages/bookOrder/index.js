@@ -1,4 +1,4 @@
-const Router = require("../../router/Router")
+// pages/bookBill/index.js
 Page({
 
   /**
@@ -14,12 +14,7 @@ Page({
   onLoad: function (options) {
 
   },
-  //我的预订页
-  onBookOrder: function () {
-    wx.navigateTo({
-      url: Router.BookOrder
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -31,12 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 2
-      })
-    }
+
   },
 
   /**
