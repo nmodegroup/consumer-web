@@ -18,11 +18,8 @@
   flex-direction: column;
 }
 
-.tab-bar-item cover-image {
+.tab-bar-item image {
   width: 78rpx;
   height:78rpx;
-}
-
-.tab-bar-item cover-view {
-  font-size: 10rpx;
+  display: inline-block;
 }

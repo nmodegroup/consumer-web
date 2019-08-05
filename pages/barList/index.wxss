@@ -185,6 +185,6 @@
   border-style:solid; 
   border-color:transparent transparent rgba(15,15,46,1); 
   position:absolute;
-  left: -15rpx;
+  left: -14rpx;
   top:1rpx;
 }

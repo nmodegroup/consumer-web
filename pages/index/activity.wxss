@@ -1,5 +1,8 @@
 .activity-item {
-  padding: 20rpx 30rpx 98rpx 30rpx;
+  padding: 20rpx 30rpx 10rpx 30rpx;
+}
+.activity-item:last-child{
+  padding-bottom: 98rpx;
 }
 .activity-bg {
   width:690rpx;
