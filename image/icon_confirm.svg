@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/btn_succeed</title>
+    <desc>Created with Sketch.</desc>
+    <g id="酒吧详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标" transform="translate(-193.000000, -54.000000)" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="btn_succeed" transform="translate(194.000000, 55.000000)">
+                <circle id="Oval" stroke-width="0.733333333" opacity="0.5" cx="15" cy="15" r="15"></circle>
+                <polyline id="Path" stroke-width="2" opacity="0.800000012" stroke-linecap="round" stroke-linejoin="round" points="6.77419355 14.2210259 12.7682294 20.3225806 23.2258065 9.67741935"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,17 +1,10 @@
-const Router = require("../../router/Router")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
-    interval: 5000,
-    duration: 1000
+
   },
 
   /**
@@ -20,12 +13,7 @@ Page({
   onLoad: function (options) {
 
   },
-  //跳转酒店预订页面
-  onBooking: function () {
-    wx.navigateTo({
-      url: Router.Booking
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -65,6 +53,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
 
   }
 })

@@ -66,7 +66,8 @@
         <view class="bar-booking-status">今日预订已满</view>
         <view class="bar-booking-tips">已有8人设置空位提醒</view>
       </view>
-      <view class="btn-booking">设置提醒</view>
+      <view class="btn-booking" bindtap="onBooking">立即预订</view>
+      <!-- <image class="icon-confrim" src="/image/icon_confirm.svg"></image> -->
     </view>
   </view>
   <view class="bar-booking-frame">

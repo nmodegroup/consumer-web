@@ -257,3 +257,7 @@
   width:50rpx;
   height: 50rpx;
 }
+.icon-confrim {
+  width:64rpx;
+  height: 64rpx;
+}
