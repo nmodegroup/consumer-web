@@ -11,9 +11,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.toast = this.selectComponent("#toast")
   },
-
+  onToast: function () {
+    this.toast.showToast('预约成功', 'success')
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

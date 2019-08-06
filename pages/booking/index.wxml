@@ -63,7 +63,8 @@
       <text>20:30</text>
     </view>
     <view class="confirm-frame">
-      <view class="btn-confirm">确认</view>
+      <view class="btn-confirm" bindtap="onToast">确认</view>
     </view>
   </view>
+  <Toast id="toast"></Toast>
 </view>

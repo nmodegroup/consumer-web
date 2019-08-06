@@ -1,0 +1,32 @@
+.wx-toast-box{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: fixed;
+  top:50%;
+  left:0;
+  transform: translate(0,-50%);
+  z-index: 999;
+  opacity: 0;
+}
+.wx-toast-content{
+  padding: 40rpx 54rpx;
+  background:rgba(255,255,255,0.3);
+  border-radius:16rpx;
+  max-width: 480rpx;
+}
+.wx-toast-toast{
+  color:rgba(255, 255, 255, .8);
+  font-size: 26rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.tips-img-bar {
+  padding-bottom: 32rpx;
+  display: flex;
+  justify-content: center;
+}
+.tips-img {
+  height: 84rpx;
+  width: 84rpx;
+}

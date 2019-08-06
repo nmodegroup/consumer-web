@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/booking/index",
     "pages/search/index",
     "pages/collect/index",
     "pages/editPhone/index",
     "pages/bookOrder/index",
-    "pages/booking/index",
     "pages/activityDetail/index",
     "pages/barDetail/index",
     "pages/barList/index",
