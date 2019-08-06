@@ -1,36 +1,33 @@
-const Router = require("../../router/Router")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    rightWidth: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setSwipeWidth()
   },
-  //我的预订页
-  onBookOrder: function () {
-    wx.navigateTo({
-      url: Router.BookOrder
+  //动态设置右侧删除滑块宽度
+  setSwipeWidth: function () {
+    let that = this
+    //UI图屏幕宽度750删除滑块180
+    let diff = 750/180
+    let width = ''
+    wx.getSystemInfo({
+      success(res) {
+        width = res.windowWidth / diff
+        that.setData({
+          rightWidth: width
+        })
+      }
     })
-  },
-  //换绑手机号页面
-  onEditPhone: function () {
-    wx.navigateTo({
-      url: Router.EditPhone
-    })
-  },
-  //我的收藏页面
-  onCollect: function () {
-    wx.navigateTo({
-      url: Router.Collect
-    })
+    console.log(this.data.rightWidth)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -43,12 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 2
-      })
-    }
+
   },
 
   /**

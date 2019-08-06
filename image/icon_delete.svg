@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>mdpi/icon_delete</title>
+    <desc>Created with Sketch.</desc>
+    <g id="我的页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024">
+        <g id="0.0.1图标_我的页面" transform="translate(-641.000000, -40.000000)" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="Group-8" transform="translate(640.000000, 41.000000)">
+                <g id="Group-2">
+                    <g id="icon_delete" transform="translate(2.000000, 0.000000)">
+                        <path d="M17.6470588,3.52941176 L17.6470588,17.6470588 C17.6470588,18.9465524 16.5936112,20 15.2941176,20 L4.70588235,20 C3.40638882,20 2.35294118,18.9465524 2.35294118,17.6470588 L2.35294118,3.52941176" id="Rectangle"></path>
+                        <path d="M14.1176471,0 L14.1176471,1.17647059 C14.1176471,1.82621735 13.5909232,2.35294118 12.9411765,2.35294118 L7.05882353,2.35294118 C6.40907676,2.35294118 5.88235294,1.82621735 5.88235294,1.17647059 L5.88235294,0" id="Rectangle" transform="translate(10.000000, 1.176471) scale(1, -1) translate(-10.000000, -1.176471) "></path>
+                        <path d="M2.30926389e-14,2.94117647 L20,2.94117647" id="Path-7" stroke-linecap="round"></path>
+                        <path d="M10,7.05882353 L10,16.2679943" id="Path-8" stroke-linecap="round"></path>
+                        <path d="M6.47058824,8.95903582 L6.47058824,14.9530162" id="Path-8-Copy" stroke-linecap="round"></path>
+                        <path d="M13.5294118,8.95903582 L13.5294118,14.9530162" id="Path-8-Copy-2" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

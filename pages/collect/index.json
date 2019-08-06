@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-swipe-cell": "/dist/swipe-cell/index",
+    "van-cell-group": "/dist/cell-group/index"
+  },
+  "navigationBarTitleText": "我的收藏"
+}

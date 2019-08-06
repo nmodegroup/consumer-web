@@ -1,0 +1,36 @@
+<view class="phone-container">
+  <view class="step-frame">
+    <view class="step-1">
+      <view class="step-1-block">
+        <view class="circle-frame active">
+          <view class="circle active"></view>
+        </view>
+        <text class="step-tips active">验证旧手机</text>
+      </view>
+    </view>
+    <view class="step-2">
+      <view class="step-2-block">
+        <view class="circle-frame">
+          <view class="circle"></view>
+        </view>
+        <text class="step-tips">验证新手机</text>
+      </view>
+    </view>
+  </view>
+  <view class="input-frame">
+    <view class="input-group">
+       <input placeholder="请输入旧手机号" placeholder-style="color:rgba(255, 255, 255, .3)"></input>
+    </view>
+    <view class="input-group">
+      <input placeholder="请输入验证码" placeholder-style="color:rgba(255, 255, 255, .3)"></input>
+      <view class="btn-code" data-second="60" bindtap="getCode">{{codeBtn}}</view>
+    </view>
+  </view>
+  <view class="btn-bar">
+    <view class="btn-frame active">
+      <view class="btn-confirm active">下一步</view>
+    </view>
+  </view>
+  <view class="code-tips">收不到验证码</view>
+  <view class="code-tips">请拨打 ***-***-**** 联系客服</view>
+</view>

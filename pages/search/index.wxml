@@ -1,0 +1,15 @@
+<view class="search-container">
+  <view class="input-bar">
+    <input class="search-input" confirm-type="search" bindconfirm="onGetList" placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255, 255, 255, .5)"></input>
+    <view class="btn-search" bindtap="onBack">取消</view>
+  </view>
+  <view class="history-bar">
+    <view>历史搜索</view>
+    <image class="icon_delete" src="/image/icon_delete.svg"></image>
+  </view>
+  <view class="history-list">
+    <view class="history-item">JUNGLE BAR </view>
+    <view class="history-item">Club bbR </view>
+    <view class="history-item">DreamWall Cocktail & Whisky </view>
+  </view>
+</view>

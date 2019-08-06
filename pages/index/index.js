@@ -72,6 +72,12 @@ Page({
       url: Router.BarDetail
     })
   },
+  //商家搜索
+  onSearch: function () {
+    wx.navigateTo({
+      url: Router.Search
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/search/index",
+    "pages/collect/index",
+    "pages/editPhone/index",
     "pages/bookOrder/index",
     "pages/booking/index",
     "pages/activityDetail/index",

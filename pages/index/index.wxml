@@ -10,7 +10,7 @@
       </block>
     </swiper>
     <view class="search-bar">
-      <input class="search-input" placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255, 255, 255, .6)"></input>
+      <input bindtap="onSearch" class="search-input" placeholder="输入商户名、地点、找商家" disabled="true" placeholder-style="color:rgba(255, 255, 255, .6)"></input>
     </view>
   </view>
   <view class="context-box">

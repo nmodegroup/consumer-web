@@ -1,4 +1,3 @@
-const Router = require("../../router/Router")
 Page({
 
   /**
@@ -7,30 +6,21 @@ Page({
   data: {
 
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
-  //我的预订页
-  onBookOrder: function () {
-    wx.navigateTo({
-      url: Router.BookOrder
+  //返回上一页
+  onBack: function () {
+    wx.navigateBack({
+      delta: 1
     })
   },
-  //换绑手机号页面
-  onEditPhone: function () {
-    wx.navigateTo({
-      url: Router.EditPhone
-    })
-  },
-  //我的收藏页面
-  onCollect: function () {
-    wx.navigateTo({
-      url: Router.Collect
-    })
+  //获取搜索信息
+  onGetList: function () {
+    console.log(11)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -43,12 +33,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 2
-      })
-    }
+
   },
 
   /**
@@ -76,13 +61,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })
