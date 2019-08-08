@@ -1,6 +1,6 @@
 <view class="bar-container">
   <view class="bar-list-frame">
-    <van-swipe-cell right-width="{{rightWidth}}">
+    <van-swipe-cell right-width="{{rightWidth}}" async-close bind:close="onDel">
       <van-cell-group>
         <view class="bar-item">
           <view class="hot-bar-item">
@@ -91,4 +91,5 @@
       </view>
     </view>
   </view>
+  <modal id="modal" bind:get="getResult"></modal>
 </view>

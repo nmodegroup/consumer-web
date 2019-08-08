@@ -14,6 +14,7 @@ Page({
     this.toast = this.selectComponent("#toast")
   },
   onToast: function () {
+    //图标有 success warn fail wait四种
     this.toast.showToast('预约成功', 'success')
   },
   /**

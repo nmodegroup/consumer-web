@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/collect/index",
+    "pages/barDetail/index",
     "pages/booking/index",
     "pages/search/index",
-    "pages/collect/index",
     "pages/editPhone/index",
     "pages/bookOrder/index",
     "pages/activityDetail/index",
-    "pages/barDetail/index",
     "pages/barList/index",
     "pages/index/activity",
     "pages/index/mine"

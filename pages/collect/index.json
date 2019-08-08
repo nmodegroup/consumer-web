@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "van-swipe-cell": "/vant/swipe-cell/index",
-    "van-cell-group": "/vant/cell-group/index"
+    "van-cell-group": "/vant/cell-group/index",
+    "modal": "/component/modal/index"
   },
   "navigationBarTitleText": "我的收藏"
 }
