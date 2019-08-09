@@ -15,7 +15,10 @@ Page({
   },
   onToast: function () {
     //图标有 success warn fail wait四种
-    this.toast.showToast('预约成功', 'success')
+    this.toast.showToast({
+      content: '预订成功',
+      icon: 'success'
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

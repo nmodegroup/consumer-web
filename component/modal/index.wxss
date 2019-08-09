@@ -17,6 +17,17 @@
   border-radius:16rpx;
   width:540rpx;
 }
+.wx-modal-content::after{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background:rgba(255,255,255,0.3);
+  filter:blur(3rpx) saturate(0);
+}
 .wx-modal-toast{
   color:rgba(255, 255, 255, .6);
   font-size: 26rpx;
