@@ -9,20 +9,3 @@ export const BookOrder = '/pages/bookOrder/index'// 我的预订
 export const EditPhone = '/pages/editPhone/index'// 换绑手机号
 export const Collect = '/pages/collect/index'// 我的收藏
 export const Search = '/pages/search/index'// 我的收藏
-/** 生成参数 */
-export function joinPath(paramsObj) {
-  const url = paramsObj.url;
-  const params = paramsObj.params;
-  if (typeof params === 'object') {
-    const keys = Object.keys(params);
-    if (keys && keys.length) {
-      const path = keys.reduce((url, key) => {
-        return `${url}${key}=${params[key]}&`;
-      }, `${url}?`)
-      return path.substring(0, path.length - 1);
-    } else {
-      return url;
-    }
-  }
-  return url;
-}

@@ -1,4 +1,6 @@
 const Router = require("../../router/Router")
+const WxManager = require('../../utils/wxManager')
+const homeService = require('../../service/home')
 Page({
 
   /**
@@ -77,6 +79,12 @@ Page({
       url: Router.Search
     })
   },
+  //首页-获取banner/人气酒吧/附近酒吧
+  getBarList: function () {
+    homeService.barList().then(res => {
+      console.log(res)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -93,6 +101,7 @@ Page({
         selected: 0
       })
     }
+    this.getBarList()
   },
 
   /**
