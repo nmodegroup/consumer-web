@@ -8,4 +8,4 @@ export const Booking = '/pages/booking/index'// 酒吧预订页
 export const BookOrder = '/pages/bookOrder/index'// 我的预订
 export const EditPhone = '/pages/editPhone/index'// 换绑手机号
 export const Collect = '/pages/collect/index'// 我的收藏
-export const Search = '/pages/search/index'// 我的收藏
+export const Search = '/pages/search/index'// 搜索

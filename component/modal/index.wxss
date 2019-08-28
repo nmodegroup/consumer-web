@@ -1,42 +1,48 @@
-.wx-modal-box{
+.wx-modal-box {
   position: fixed;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 999;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.wx-modal-content{
+
+.wx-modal-content {
   position: fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 20rpx 30rpx;
-  background:rgba(255,255,255,0.3);
-  border-radius:16rpx;
-  width:540rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16rpx;
+  width: 72vw;
+  box-sizing: border-box;
 }
-.wx-modal-content::after{
+
+.wx-modal-content::after {
   content: '';
   position: absolute;
   z-index: -1;
-  top:0;
-  left:0;
-  width:100%;
+  top: 0;
+  left: 0;
+  border-radius: 16rpx;
+  width: 100%;
   height: 100%;
-  background:rgba(255,255,255,0.3);
-  filter:blur(3rpx) saturate(0);
+  /* 实时模糊 */
+  backdrop-filter: blur(3px);
+  /* filter: blur(3rpx) saturate(0); */
 }
-.wx-modal-toast{
-  color:rgba(255, 255, 255, .6);
+
+.wx-modal-toast {
+  color: rgba(255, 255, 255, 0.6);
   font-size: 26rpx;
   line-height: 50rpx;
   text-align: center;
   display: block;
 }
 .wx-modal-title {
-  color:rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 30rpx;
   padding: 20rpx 0;
   text-align: center;
@@ -50,11 +56,11 @@
 .btn-cancel {
   flex: 1;
   margin-right: 24rpx;
-  border:1px solid rgba(255,255,255,.5);
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
   height: 60rpx;
   border-radius: 30rpx;
   line-height: 58rpx;
-  color:rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
   font-size: 24rpx;
   text-align: center;
 }
@@ -65,6 +71,6 @@
   text-align: center;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 30rpx;
-  color:rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 1);
   font-size: 24rpx;
 }

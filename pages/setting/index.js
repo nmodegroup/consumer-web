@@ -16,64 +16,33 @@ Page({
   onLoad: function (options) {
 
   },
-  // 微信登录
-  wxLogin() {
-    var that = this
-    WxManager.login().then(res => {
-      if (res) {
-        app.globalData.code = res
-        that.onSetting()
+  // 获取用户信息
+  onGotUserInfo(e) {
+    if (e.detail.userInfo) {
+      let reqData = {
+        code: '',
+        nickName: e.detail.userInfo.nickName,
+        portrait: e.detail.userInfo.avatarUrl,
+        sex: e.detail.userInfo.gender,
+        encryptedData: e.detail.encryptedData,
+        iv: e.detail.iv
       }
-    })
-  },
-  //授权登录
-  onSetting: function () {
-    let that = this
-    WxManager.getUserInfo().then(res => {
-      app.globalData.userInfo = res.userInfo
-      that.userLogin({
-        code: app.globalData.code,
-        nickName: res.userInfo.nickName,
-        portrait: res.userInfo.avatarUrl,
-        sex: res.userInfo.gender,
-        encrypted: res.encryptedData,
-        iv: res.iv
-      })
-    }).catch(() =>{
-      that.setData({
-        showDialog:  true
-      })
-    })
-  },
-  userInfoHandler: function (e) {
-    let that = this
-    let res = e.detail
-    if (res.userInfo == undefined) {
-      wx.showToast({
-        title: "请允许用户授权",
-        icon: 'loading'
-      })
-    } else {
-      that.setData({
-        showDialog: false
-      })
-      app.globalData.userInfo = res.userInfo
-      that.userLogin({
-        code: app.globalData.code,
-        nickName: res.userInfo.nickName,
-        portrait: res.userInfo.avatarUrl,
-        sex: res.userInfo.gender,
-        encrypted: res.encryptedData,
-        iv: res.iv
-      })
+      this.sendLogin(reqData)
     }
   },
-  //用户登录接口
-  userLogin(data) {
-    settingService.userLogin(data).then(res => {
-      wx.navigateBack({
-        delta: 1
-      })
+  sendLogin: function (data) {
+    wx.login({
+      success: (res) => {
+        data.code = res.code
+        settingService.userLogin(data).then(res => {
+          wx.navigateBack({
+            delta: 1
+          })
+        })
+      },
+      fail: (res) => {
+        console.log('login err:', res)
+      }
     })
   },
   /**

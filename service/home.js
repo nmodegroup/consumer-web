@@ -6,7 +6,7 @@ const httpManager = require('../lib/request/httpManager');
 export function barList(params) {
   return new Promise((resolve, reject) => {
     httpManager
-      .get('/mock/12/consumer/homePage', params)
+      .get('/consumer/homePage', params)
       .then(res => {
         resolve(res);
       })

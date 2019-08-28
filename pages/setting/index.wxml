@@ -1,4 +1,3 @@
-<view >
-  <view bindtap="wxLogin">授权登录</view>
-  <button wx:if="{{showDialog}}"  open-type='getUserInfo' bindgetuserinfo="userInfoHandler">授权登录</button>
+<view class="bg-setting">
+  <button class="btn-setting" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo"></button>
 </view>

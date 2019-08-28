@@ -42,6 +42,7 @@ view,text,input{
   color:rgba(255, 238, 130, .9);
   font-size: 22rpx;
   text-align: center;
+  line-height: 34rpx;
 }
 .bar-btn-2 {
   width:76rpx;

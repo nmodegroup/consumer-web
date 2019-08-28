@@ -83,6 +83,8 @@ Page({
   getBarList: function () {
     homeService.barList().then(res => {
       console.log(res)
+    }).catch(error => {
+      
     })
   },
   /**
