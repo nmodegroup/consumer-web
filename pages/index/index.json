@@ -2,6 +2,7 @@
   "navigationBarTitleText": "首页",
   "usingComponents": {
     "van-picker": "/vant/picker/index",
-    "van-popup": "/vant/popup/index"
+    "van-popup": "/vant/popup/index",
+    "modal": "/component/modal/index"
   }
 }

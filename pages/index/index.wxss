@@ -209,12 +209,24 @@
   padding-top: 10rpx;
   display: flex;
   align-items: center;
+  width:382rpx;
+}
+.adre-text {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .hot-bar-distance {
   font-size: 24rpx;
   padding-left: 8rpx;
   color:rgba(255, 255, 255, .6);
   padding-top: 10rpx;
+}
+.time-text {
+  padding-right: 10rpx;
+}
+.time-text:last-child{
+  padding-right: 0;
 }
 /* 设置点点的层级 ,可以调整小点的位置*/
 .wx-swiper-dots{position:relative;top:326rpx !important;}

@@ -1,11 +1,12 @@
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="container">
   <view class="swiper-box">
     <view class="swiper-location" bindtap="onSelAdre">深圳</view>
     <swiper indicator-dots="true" class="home-swiper" circular="true" indicator-active-color="#F8FFF9" indicator-color="#857F89"
       autoplay="true" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <block wx:for="{{banner}}" wx:key="{{index}}">
         <swiper-item>
-          <image src="{{item}}" class="slide-image"/>
+          <image src="{{baseUrl + item.img}}" class="slide-image"/>
         </swiper-item>
       </block>
     </swiper>
@@ -56,47 +57,25 @@
       </view>
       <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
     </view>
-    <view class="hot-bar-item" bindtap="onBarDetail">
-      <image class="hot-bar-image" src="/image/bg-bar.png"></image>
+    <view class="hot-bar-item" bindtap="onBarDetail" wx:for="{{popularBar}}"  wx:key="{{index}}">
+      <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
       <view class="hot-bar-context">
         <view>
-          <view class="hot-bar-text">深圳BBR酒吧</view>
-          <view class="bar-btn-1">闹吧</view>
+          <view class="hot-bar-text">{{item.name}}</view>
+          <view class="bar-btn-1">{{filter.barType(item.type)}}</view>
         </view>
         <view>
           <view class="hot-bar-time">
              <image class="icon-time" src="/image/icon_time.svg"></image>
-              20:00-2:00
+             <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
           </view>
         </view>
         <view>
           <view class="hot-bar-adre">
             <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-            深圳保利文化广场F3层
+            <view class="adre-text">{{item.address}}</view>
           </view>
-          <view class="hot-bar-distance">1.9km</view>
-        </view>
-      </view>
-    </view>
-    <view class="hot-bar-item">
-      <image class="hot-bar-image" src="/image/bg-bar.png"></image>
-      <view class="hot-bar-context">
-        <view>
-          <view class="hot-bar-text">深圳BBR酒吧</view>
-          <view class="bar-btn-2">清吧</view>
-        </view>
-        <view>
-          <view class="hot-bar-time">
-             <image class="icon-time" src="/image/icon_time.svg"></image>
-              20:00-2:00
-          </view>
-        </view>
-        <view>
-          <view class="hot-bar-adre">
-            <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-            深圳保利文化广场F3层
-          </view>
-          <view class="hot-bar-distance">1.9km</view>
+          <view class="hot-bar-distance">{{filter.formatDistance(item.distance)}}</view>
         </view>
       </view>
     </view>
@@ -107,47 +86,25 @@
       </view>
       <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
     </view>
-    <view class="hot-bar-item">
-      <image class="hot-bar-image" src="/image/bg-bar.png"></image>
+    <view class="hot-bar-item"  wx:for="{{nearBar}}"  wx:key="{{index}}">
+      <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
       <view class="hot-bar-context">
         <view>
-          <view class="hot-bar-text">深圳BBR酒吧</view>
-          <view class="bar-btn-2">闹吧</view>
+          <view class="hot-bar-text">{{item.name}}</view>
+          <view class="bar-btn-1">{{filter.barType(item.type)}}</view>
         </view>
         <view>
           <view class="hot-bar-time">
              <image class="icon-time" src="/image/icon_time.svg"></image>
-              20:00-2:00
+             <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
           </view>
         </view>
         <view>
           <view class="hot-bar-adre">
             <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-            深圳保利文化广场F3层
+            <view class="adre-text">{{item.address}}</view>
           </view>
-          <view class="hot-bar-distance">1.9km</view>
-        </view>
-      </view>
-    </view>
-    <view class="hot-bar-item">
-      <image class="hot-bar-image" src="/image/bg-bar.png"></image>
-      <view class="hot-bar-context">
-        <view>
-          <view class="hot-bar-text">深圳BBR酒吧</view>
-          <view class="bar-btn-3">餐吧</view>
-        </view>
-        <view>
-          <view class="hot-bar-time">
-             <image class="icon-time" src="/image/icon_time.svg"></image>
-              20:00-2:00
-          </view>
-        </view>
-        <view>
-          <view class="hot-bar-adre">
-            <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-            深圳保利文化广场F3层
-          </view>
-          <view class="hot-bar-distance">1.9km</view>
+          <view class="hot-bar-distance">{{filter.formatDistance(item.distance)}}</view>
         </view>
       </view>
     </view>
@@ -162,4 +119,5 @@
       bind:cancel="onAdreCancel">
     </van-picker>
   </van-popup>
+  <modal id="modal" bind:get="getResult"></modal>
 </view>

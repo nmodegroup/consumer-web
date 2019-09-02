@@ -15,3 +15,19 @@ export function barList(params) {
       });
   });
 }
+
+/**
+ * 首页-获取banner/人气酒吧/附近酒吧
+ */
+export function setLocation(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .post('/consumer/location', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

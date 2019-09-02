@@ -1,0 +1,24 @@
+
+// 米换算成千米
+function formatDistance(num) {
+  if (num) {
+    var num = (num/1000).toFixed(2) + 'km'
+    return num
+  }
+}
+
+function barType(type) {
+  if (type == 1) {
+    return '餐吧'
+  } else if(type == 2) {
+    return '清吧'
+  } else {
+    return '其他'
+  }
+}
+
+
+module.exports = {
+  formatDistance: formatDistance,
+  barType: barType
+}
