@@ -66,3 +66,13 @@ view,text,input{
   text-align: center;
   line-height: 34rpx;
 }
+button[loading][type="primary"][plain]{
+  border:none;
+  color:#5C5F65;
+  font-size: 26rpx;
+}
+button[type="primary"][plain]{
+  border:none;
+  color:#5C5F65;
+  font-size: 26rpx;
+}

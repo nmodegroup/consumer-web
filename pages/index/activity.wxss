@@ -1,3 +1,6 @@
+.activity-frame{
+  padding-bottom: 132rpx;
+}
 .activity-item {
   padding: 20rpx 30rpx 10rpx 30rpx;
 }

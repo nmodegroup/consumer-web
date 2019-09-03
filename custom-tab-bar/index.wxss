@@ -20,6 +20,6 @@
 }
 
 .tab-bar-item image {
-  width: 78rpx;
-  height:78rpx;
+  width: 90rpx;
+  height:90rpx;
 }

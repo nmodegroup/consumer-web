@@ -1,32 +1,33 @@
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="container">
   <view class="activity-banner-frame">
-    <view class="activity-banner-num">剩余：20桌</view>
-    <image class="activity-banner" src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640"></image>
+    <view class="activity-banner-num">{{filter.activityStatus(activity)}}</view>
+    <image wx:if='{{activity.banner}}' class="activity-banner" src="{{baseUrl + activity.banner}}"></image>
   </view>
   <view class="bar-context">
       <view class="bar-info">
-        <view class="bar-name">R霓虹灯之夜 | 派对活动</view>
-        <view class="bar-distance">距离1.4km</view>
+        <view class="bar-name">{{activity.theme}}</view>
+        <view class="bar-distance">距离{{filter.formatDistance(activity.distance)}}</view>
       </view>
-      <view class="bar-price-frame">特邀嘉宾：Chris Wu | Hackett Chan</view>
+      <view class="bar-price-frame">特邀嘉宾：{{activity.guest}}</view>
     <view class="bar-join-frame">
       <view class="bar-time-adre">
         <view class="hot-bar-time">
-           <image class="icon-time" src="/image/icon_time.svg"></image>
-            20:00-2:00
+          <image class="icon-time" src="/image/icon_time.svg"></image>
+          {{activity.beginTime}}
         </view>
-        <view class="hot-bar-adre">
+        <view class="hot-bar-adre" bindtap="onOpenLocation">
           <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-          深圳保利文化广场F3层
+          <view class="adre-text">{{activity.address}}</view>
         </view>
       </view>
-      <view class="vertical-line">
+      <view class="vertical-line" bindtap="onCall" data-phone="{{activity.phone}}">
         <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
       </view>
     </view>
   </view>
   <view class="poster-frame">
-    <image class="poster-img" src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640"></image>
+    <image wx:if='{{activity.post}}' class="poster-img" src="{{baseUrl + activity.post}}"></image>
   </view>
   <view class="bar-booking-frame">
     <view class="bar-booking-head">
@@ -42,11 +43,11 @@
   <view class="bar-context">
     <view class="bar-intro-frame">
       <view class="bar-info">
-        <view class="bar-name">RMK Cocktail Bar</view>
+        <view class="bar-name">{{activity.bar.name}}</view>
       </view>
       <view class="bar-price-frame">
-        <view class="bar-btn-2">清吧</view>
-        <view class="bar-price">¥182/人</view>
+        <view class="bar-btn-2">{{filter.barType(activity.bar.type)}}</view>
+        <view class="bar-price">¥{{activity.bar.price}}/人</view>
       </view>
     </view>
     <view class="transverse-line"></view>
@@ -54,14 +55,14 @@
       <view class="bar-time-adre">
         <view class="hot-bar-time">
            <image class="icon-time" src="/image/icon_time.svg"></image>
-            20:00-2:00
+           <text class="time-text" wx:for="{{activity.bar.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
         </view>
         <view class="hot-bar-adre">
           <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-          深圳保利文化广场F3层
+          <view class="adre-text">{{activity.bar.address}}</view>
         </view>
       </view>
-      <view class="vertical-line">
+      <view class="vertical-line" bindtap="onCall" data-phone="{{activity.bar.phone}}">
         <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
       </view>
     </view>

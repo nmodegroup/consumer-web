@@ -8,14 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
     interval: 5000,
     duration: 1000,
-    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+    columns: [],//城市名称列表
     selAdre: false,
     bookingList: [{
       name: '深圳BBR酒吧',
@@ -31,7 +26,10 @@ Page({
     baseUrl:'',//图片的url域名
     banner: [],//banner图列表
     popularBar: [],//人气酒吧推荐
-    nearBar: []//附近酒吧推荐
+    nearBar: [],//附近酒吧推荐
+    cityList: [],//城市列表
+    selLocationText: '深圳',//选择城市
+    cid: 440300//默认深圳
   },
 
   /**
@@ -40,6 +38,7 @@ Page({
   onLoad: function (options) {
     this.modal = this.selectComponent("#modal")
     this.getSetting()
+    this.getCityList()
     this.setData({
       baseUrl: app.globalData.baseImgUrl
     })
@@ -54,14 +53,17 @@ Page({
     })
   },
   //选择地址组件改变
-  onAdreChange: function () {
-
+  onAdreChange: function (picker, value, index) {
+    console.log(picker)
   },
   //选择地址确认
-  onAdreConfirm: function () {
+  onAdreConfirm: function (e) {
     this.setData({
-      selAdre: false
+      selAdre: false,
+      selLocationText: e.detail.value,
+      cid: this.data.cityList[e.detail.index].id
     })
+    app.globalData.cid = this.data.cityList[e.detail.index].id
     this.getTabBar().setData({
       show: true
     })
@@ -95,7 +97,7 @@ Page({
   },
   //首页-获取banner/人气酒吧/附近酒吧
   getBarList: function () {
-    homeService.barList().then(res => {
+    homeService.barList({ cid: this.data.cid}).then(res => {
       this.setData({
         banner: res.banner,
         popularBar: res.popularBar,
@@ -103,6 +105,32 @@ Page({
       })
     }).catch(error => {
       
+    })
+  },
+  //获取城市列表
+  getCityList: function () {
+    let that = this
+    homeService.getCityList().then(res => {
+      that.setData({
+        cityList: res
+      })
+      let clom = []
+      for (var i = 0; i < that.data.cityList.length; i ++ ) {
+        clom.push(that.data.cityList[i].name)
+      }
+      that.setData({
+        columns: clom
+      })
+    }).catch(error => {
+
+    })
+  },
+  //获取订单信息
+  getOrder: function () {
+    homeService.getOrder().then(res => {
+      console.log(res)
+    }).catch(error => {
+
     })
   },
   //用户位置上报
@@ -174,6 +202,7 @@ Page({
         selected: 0
       })
     }
+    this.getOrder()
   },
 
   /**

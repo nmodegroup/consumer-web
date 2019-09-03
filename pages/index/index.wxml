@@ -1,7 +1,7 @@
 <wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="container">
   <view class="swiper-box">
-    <view class="swiper-location" bindtap="onSelAdre">深圳</view>
+    <view class="swiper-location" bindtap="onSelAdre">{{selLocationText}}</view>
     <swiper indicator-dots="true" class="home-swiper" circular="true" indicator-active-color="#F8FFF9" indicator-color="#857F89"
       autoplay="true" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{banner}}" wx:key="{{index}}">

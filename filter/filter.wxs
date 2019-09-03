@@ -6,7 +6,7 @@ function formatDistance(num) {
     return num
   }
 }
-
+//酒吧类型
 function barType(type) {
   if (type == 1) {
     return '餐吧'
@@ -16,9 +16,20 @@ function barType(type) {
     return '其他'
   }
 }
-
+//活动状态
+function activityStatus(activity) {
+  console.log()
+  if (activity.onStatus == 1) {
+    return '已暂停预订'
+  } else if (activity.num == -1) {
+    return '剩余：不限 '
+  } else {
+    return '剩余：' + activity.num  + '桌'
+  }
+}
 
 module.exports = {
   formatDistance: formatDistance,
-  barType: barType
+  barType: barType,
+  activityStatus: activityStatus
 }

@@ -17,12 +17,44 @@ export function barList(params) {
 }
 
 /**
- * 首页-获取banner/人气酒吧/附近酒吧
+ * 用户位置上报
  */
 export function setLocation(params) {
   return new Promise((resolve, reject) => {
     httpManager
       .post('/consumer/location', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 获取城市列表
+ */
+export function getCityList(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/city/list', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 获取订单信息
+ */
+export function getOrder(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/homePage/order', params)
       .then(res => {
         resolve(res);
       })

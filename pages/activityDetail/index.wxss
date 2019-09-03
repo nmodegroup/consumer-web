@@ -205,3 +205,15 @@
   margin: auto;
   transform: translate(0,100%);
 }
+.adre-text {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:446rpx;
+}
+.time-text {
+  padding-right: 10rpx;
+}
+.time-text:last-child{
+  padding-right: 0;
+}
