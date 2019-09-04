@@ -1,4 +1,6 @@
 const Router = require("../../router/Router")
+const BarService = require('../../service/bar')
+const app = getApp()
 Page({
 
   /**
@@ -11,20 +13,32 @@ Page({
       'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
     ],
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    baseUrl: '',
+    bar: {}//酒吧详情
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      baseUrl: app.globalData.baseImgUrl
+    })
+    this.getBarDetail(options.id)
   },
   //跳转酒店预订页面
   onBooking: function () {
     wx.navigateTo({
       url: Router.Booking
     })
+  },
+  getBarDetail: function (id) {
+    BarService.getBarDetail({ id: id }).then(res => {
+      this.setData({
+        bar: res
+      })
+    }).catch(error => { })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -5,6 +5,7 @@
     "pages/collect/index",
     "pages/barDetail/index",
     "pages/booking/index",
+    "pages/bookingActivity/index",
     "pages/search/index",
     "pages/editPhone/index",
     "pages/bookOrder/index",

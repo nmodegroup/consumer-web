@@ -51,7 +51,7 @@ Component({
             animationData: animation.export()
           });
         }.bind(this),
-        150000
+        1500
       );
     }
   }

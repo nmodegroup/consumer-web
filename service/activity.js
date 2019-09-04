@@ -31,3 +31,35 @@ export function getActivityDetail(params) {
       });
   });
 }
+
+/**
+ * 活动预订
+ */
+export function activityBooking(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .post('/consumer/activity/order', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 取消活动预订
+ */
+export function cancelBooking(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .put('/consumer/activity/order', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

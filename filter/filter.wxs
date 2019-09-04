@@ -18,18 +18,33 @@ function barType(type) {
 }
 //活动状态
 function activityStatus(activity) {
-  console.log()
   if (activity.onStatus == 1) {
     return '已暂停预订'
   } else if (activity.num == -1) {
     return '剩余：不限 '
+  } else if (activity.num == 0) {
+    return '预订已满'
   } else {
     return '剩余：' + activity.num  + '桌'
+  }
+}
+
+//活动详情底部按钮文字
+function activityDetailText(activity) {
+  if (activity.onStatus == 1) {
+    return '暂停预订'
+  } else if (activity.num == 0) {
+    return '预订已满'
+  } else if (activity.appointStatus == 0) {
+    return '取消预订'
+  } else {
+    return '立即预订'
   }
 }
 
 module.exports = {
   formatDistance: formatDistance,
   barType: barType,
-  activityStatus: activityStatus
+  activityStatus: activityStatus,
+  activityDetailText: activityDetailText
 }

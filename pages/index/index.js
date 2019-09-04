@@ -28,7 +28,7 @@ Page({
     popularBar: [],//人气酒吧推荐
     nearBar: [],//附近酒吧推荐
     cityList: [],//城市列表
-    selLocationText: '深圳',//选择城市
+    selLocationText: '深圳市',//选择城市
     cid: 440300//默认深圳
   },
 
@@ -84,10 +84,9 @@ Page({
     })
   },
   //跳转酒吧详情
-  onBarDetail: function () {
-    wx.navigateTo({
-      url: Router.BarDetail
-    })
+  onBarDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.BarDetail, { id: id })
   },
   //跳转商家搜索
   onSearch: function () {

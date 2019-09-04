@@ -5,6 +5,7 @@ export const BarList = '/pages/barList/index'// 酒吧列表页面
 export const BarDetail = '/pages/barDetail/index'// 酒吧详情页
 export const ActivityDetail = '/pages/activityDetail/index'// 酒吧详情页
 export const Booking = '/pages/booking/index'// 酒吧预订页
+export const BookingActivity = '/pages/bookingActivity/index'// 活动预订选择桌位预订页面
 export const BookOrder = '/pages/bookOrder/index'// 我的预订
 export const EditPhone = '/pages/editPhone/index'// 换绑手机号
 export const Collect = '/pages/collect/index'// 我的收藏

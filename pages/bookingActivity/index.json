@@ -1,6 +1,5 @@
 {
   "usingComponents": {
     "Toast": "/component/toast/index"
-  },
-  "navigationBarTitleText": "活动详情"
+  }
 }

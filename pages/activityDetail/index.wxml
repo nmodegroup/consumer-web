@@ -69,13 +69,14 @@
   </view>
   <view class="btn-bottom-frame">
     <view class="share-frame">
-      <view class="btn-share">
+      <button open-type="share" class="btn-share">
         <image class="share-img" src="/image/icon_share.svg"></image>
-      </view>
+      </button>
     </view>
     <view class="reserve-frame">
       <text class="reserve-tips">5分钟前有人预订</text>
-      <view class="btn-reserve">立即预订</view>
+      <view class="btn-reserve" bindtap="onBooking">{{filter.activityDetailText(activity)}}</view>
     </view>
   </view>
+  <Toast id="toast"></Toast>
 </view>
