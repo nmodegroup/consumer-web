@@ -14,35 +14,41 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.wxLogin()
   },
   // 获取用户信息
   onGotUserInfo(e) {
     if (e.detail.userInfo) {
       let reqData = {
-        code: '',
+        code: this.code,
         nickName: e.detail.userInfo.nickName,
         portrait: e.detail.userInfo.avatarUrl,
         sex: e.detail.userInfo.gender,
-        encryptedData: e.detail.encryptedData,
+        encrypted: e.detail.encryptedData,
         iv: e.detail.iv
       }
       this.sendLogin(reqData)
     }
   },
-  sendLogin: function (data) {
+  //微信登录
+  wxLogin: function () {
     wx.login({
       success: (res) => {
-        data.code = res.code
-        settingService.userLogin(data).then(res => {
-          wx.navigateBack({
-            delta: 1
-          })
-        })
+        this.code = res.code
       },
       fail: (res) => {
         console.log('login err:', res)
       }
+    })
+  },
+  sendLogin: function (data) {
+    settingService.userLogin(data).then(res => {
+      app.globalData.token = res.token
+      app.globalData.phone = res.phone //保存电话号码
+      app.globalData.online = true //保存以登录
+      wx.navigateBack({
+        delta: 1
+      })
     })
   },
   /**

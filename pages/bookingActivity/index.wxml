@@ -1,28 +1,30 @@
 <view class="book-container">
   <view class="date-title">选择桌位</view>
   <view class="seat-content">
-    <view class="seat-title">大厅</view>
-    <view class="flex">
-      <view class="seat-item active">
-        <view class="seat-text">4人桌</view>
-        <view class="seat-num">剩余：6</view>
-      </view>
-      <view class="seat-item">
-        <view class="seat-text">4人桌</view>
-        <view class="seat-num">剩余：6</view>
-      </view>
-      <view class="seat-item">
-        <view class="seat-text">4人桌</view>
-        <view class="seat-num">剩余：6</view>
+    <view wx:for="{{list}}" wx:key="{{index}}">
+      <view class="seat-title">{{item.name}}</view>
+      <view class="flex">
+        <view class="seat-item {{num.num ? '' : 'disable'}}" wx:for="{{item.tables}}" wx:for-item="num" wx:key="*this">
+          <view class="seat-text">{{num.tableNum}}人桌</view>
+          <view class="seat-num">剩余：{{num.num}}</view>
+        </view>
+        <!-- <view class="seat-item active">
+          <view class="seat-text">4人桌</view>
+          <view class="seat-num">剩余：6</view>
+        </view>
+        <view class="seat-item">
+          <view class="seat-text">4人桌</view>
+          <view class="seat-num">剩余：6</view>
+        </view> -->
       </view>
     </view>
-    <view class="seat-title">包房</view>
+    <!-- <view class="seat-title">包房</view>
     <view class="flex">
       <view class="seat-item">
         <view class="seat-text">8人桌</view>
         <view class="seat-num">剩余：6</view>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class="book-info-frame">
     <view class="bar-name">RMK Cocktail Bar</view>
@@ -34,7 +36,7 @@
       <text>20:30</text>
     </view>
     <view class="confirm-frame">
-      <view class="btn-confirm" bindtap="onToast">确认</view>
+      <view class="btn-confirm">确认</view>
     </view>
   </view>
   <Toast id="toast"></Toast>

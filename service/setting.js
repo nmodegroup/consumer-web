@@ -15,3 +15,19 @@ export function userLogin (params) {
       });
   });
 }
+
+/**
+ * 用户授权解析手机号
+ */
+export function setPhone(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .post('/consumer/phone', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

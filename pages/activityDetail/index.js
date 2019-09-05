@@ -1,4 +1,5 @@
 const ActivityService = require('../../service/activity')
+const settingService = require('../../service/setting')
 const WxManager = require('../../utils/wxManager')
 const Router = require("../../router/Router")
 const app = getApp()
@@ -10,7 +11,8 @@ Page({
   data: {
     activity: {},//活动详情
     baseUrl: '',
-    id: ''
+    id: '',
+    phoneLayer: false  //是否展示授权手机号弹框
   },
 
   /**
@@ -56,7 +58,7 @@ Page({
       if (activity.onStatus == 1 || activity.num == 0) {//onStatus启用状态(0开启 1关闭)，当num=0时表示已约满
         return
       } else if (activity.quotaType == 1) {//限制预订数量类型（0不限 1按系统已有桌位限制 2按固定名额限制）
-        WxManager.navigateTo(Router.BookingActivity, { id: activity.id})
+        WxManager.navigateTo(Router.BookingActivity, { id: activity.id, uid: activity.bar.id})
       } else {
         this.setBooking()
       }
@@ -64,7 +66,21 @@ Page({
   },
   //发起活动预订接口
   setBooking: function () {
-    ActivityService.activityBooking({id: this.data.id}).then(res => {
+    if (app.globalData.online) {//如果以登录
+      if (!app.globalData.phone) {//判断登录接口有没有返回手机号 没有返回获取手机号授权
+        this.setData({
+          phoneLayer: true
+        })
+      } else {
+        this.activityBooking()
+      }
+    } else {
+      this.activityBooking()
+    }
+  },
+  //发起预订接口
+  activityBooking: function () {
+    ActivityService.activityBooking({ id: this.data.id }).then(res => {
       this.toast.showToast({
         content: '您已成功预定活动名额',
         icon: 'success'
@@ -82,6 +98,36 @@ Page({
       this.getActivityDetail()
     }).catch(error => {})
   },
+  //获取手机号授权弹框取消按钮
+  phoneCancel: function () {
+    this.setData({
+      phoneLayer: false
+    })
+  },
+  //获取手机号
+  getPhoneNumber: function (e) {
+    this.setData({
+      phoneLayer: false
+    })
+    if (e.detail.errMsg == 'getPhoneNumber:ok') {
+      wx.login({
+        success: (res) => {
+          let form = {
+            code: res.code,
+            encrypted: e.detail.encryptedData,
+            iv: e.detail.iv
+          }
+          settingService.setPhone(form).then(res => {
+            app.globalData.phone = res
+          }).catch(error => {})
+        },
+        fail: (res) => {
+          console.log('login err:', res)
+        }
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

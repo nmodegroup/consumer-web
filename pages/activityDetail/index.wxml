@@ -79,4 +79,14 @@
     </view>
   </view>
   <Toast id="toast"></Toast>
+  <view class='wx-modal-box' wx:if="{{phoneLayer}}">
+    <view class='wx-modal-content'>
+      <view class="wx-modal-title">温馨提示</view>
+      <text class='wx-modal-toast'>您未允许获取您的手机号，将会影响您正常使用小程序；如您需要继续使用，请点击“允许”完成授权</text>
+      <view class="btn-frame">
+        <view class="btn-cancel" bindtap="phoneCancel">退出</view>
+        <button class="btn-confirm"  open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber">允许</button>
+      </view>
+    </view>
+  </view>
 </view>

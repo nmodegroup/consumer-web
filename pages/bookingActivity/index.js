@@ -1,10 +1,14 @@
+const ActivityService = require('../../service/activity')
+const WxManager = require('../../utils/wxManager')
+const Router = require("../../router/Router")
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: []
   },
 
   /**
@@ -12,13 +16,16 @@ Page({
    */
   onLoad: function (options) {
     this.toast = this.selectComponent("#toast")
+    this.getTable(options)
   },
-  onToast: function () {
-    //图标有 success warn fail wait四种
-    this.toast.showToast({
-      content: '预订成功',
-      icon: 'success'
-    })
+  //获取桌位信息
+  getTable: function (data) {
+    ActivityService.getTable(data).then(res => {
+      this.setData({
+        list: res
+      })
+      console.log(this.data.list)
+    }).catch(error => {})
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

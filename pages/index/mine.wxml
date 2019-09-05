@@ -63,7 +63,7 @@
         </view>
       </view>
     </view>
-    <view class="list-item">
+    <!-- <view class="list-item">
       <image src="/image/icon_list_us.svg"></image>
       <view class="list-item-context">
         <view class="list-item-l">关于我们</view>
@@ -71,6 +71,6 @@
           <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
 </view>

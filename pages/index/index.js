@@ -1,6 +1,7 @@
 const Router = require("../../router/Router")
 const WxManager = require('../../utils/wxManager')
 const homeService = require('../../service/home')
+const settingService = require('../../service/setting')
 const app = getApp()
 Page({
 
@@ -41,6 +42,56 @@ Page({
     this.getCityList()
     this.setData({
       baseUrl: app.globalData.baseImgUrl
+    })
+    this.wxLogin()
+  },
+  //微信登录
+  wxLogin: function () {
+    wx.login({
+      success: (res) => {
+        this.code = res.code
+        this.getConfig()
+      },
+      fail: (res) => {
+        console.log('login err:', res)
+      }
+    })
+  },
+  // 获取微信授权信息
+  getConfig: function () {
+    let that = this
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          that.getUserInfo()
+        }
+      }
+    })
+  },
+  //微信用户信息授权
+  getUserInfo() {
+    var that = this;
+    wx.getUserInfo({
+      withCredentials: true,
+      success: res => {
+        that.sendLogin({
+          code: this.code,
+          nickName: res.userInfo.nickName,
+          portrait: res.userInfo.avatarUrl,
+          sex: res.userInfo.gender,
+          encrypted: res.encryptedData,
+          iv: res.iv
+        })
+      },
+      fail: function (res) {
+      }
+    })
+  },
+  sendLogin: function (data) {
+    settingService.userLogin(data).then(res => {
+      app.globalData.token = res.token //保存token
+      app.globalData.phone = res.phone //保存电话号码
+      app.globalData.online = true //保存以登录
     })
   },
   //选择地址

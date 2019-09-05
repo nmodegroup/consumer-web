@@ -63,3 +63,19 @@ export function cancelBooking(params) {
       });
   });
 }
+
+/**
+ * 取消活动预订
+ */
+export function getTable(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/activity/table', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
