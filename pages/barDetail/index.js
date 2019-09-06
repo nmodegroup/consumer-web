@@ -7,11 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
     interval: 5000,
     duration: 1000,
     baseUrl: '',
@@ -26,6 +21,7 @@ Page({
       baseUrl: app.globalData.baseImgUrl
     })
     this.getBarDetail(options.id)
+    this.getBarOrder(options.id)
   },
   //跳转酒店预订页面
   onBooking: function () {
@@ -33,12 +29,33 @@ Page({
       url: Router.Booking
     })
   },
+  //获取酒吧信息
   getBarDetail: function (id) {
     BarService.getBarDetail({ id: id }).then(res => {
       this.setData({
         bar: res
       })
+    }).catch(error => {})
+  },
+  //获取酒吧预订信息
+  getBarOrder: function (id) {
+    BarService.getBarOrder({ id: id }).then(res => {
+      console.log(res)
     }).catch(error => { })
+  },
+  //拨打电话
+  onCall: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phone
+    })
+  },
+  //开始导航
+  onOpenLocation: function () {
+    wx.openLocation({
+      latitude: this.data.bar.lat - 0,
+      longitude: this.data.bar.lng - 0,
+      address: this.data.bar.address
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -80,5 +97,14 @@ Page({
    */
   onReachBottom: function () {
 
+  },
+  /**
+  * 用户点击右上角分享
+  */
+  onShareAppMessage: function (res) {
+    return {
+      title: this.data.bar.name,
+      path: 'pages/index/index' + '?barId=' + this.data.bar.id
+    }
   }
 })

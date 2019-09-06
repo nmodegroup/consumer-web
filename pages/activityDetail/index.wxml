@@ -46,7 +46,7 @@
         <view class="bar-name">{{activity.bar.name}}</view>
       </view>
       <view class="bar-price-frame">
-        <view class="bar-btn-2">{{filter.barType(activity.bar.type)}}</view>
+        <view class="{{filter.barStyle(activity.bar.type)}}">{{filter.barType(activity.bar.type)}}</view>
         <view class="bar-price">¥{{activity.bar.price}}/人</view>
       </view>
     </view>
@@ -79,6 +79,7 @@
     </view>
   </view>
   <Toast id="toast"></Toast>
+  <modal id="modal" bind:get="getResult"></modal>
   <view class='wx-modal-box' wx:if="{{phoneLayer}}">
     <view class='wx-modal-content'>
       <view class="wx-modal-title">温馨提示</view>

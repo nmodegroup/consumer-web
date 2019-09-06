@@ -92,6 +92,7 @@ Page({
       app.globalData.token = res.token //保存token
       app.globalData.phone = res.phone //保存电话号码
       app.globalData.online = true //保存以登录
+      this.getOrder()
     })
   },
   //选择地址
@@ -129,10 +130,10 @@ Page({
     })
   },
   //跳转酒吧列表页 
-  onBarList: function () {
-    wx.navigateTo({
-      url: Router.BarList
-    })
+  onBarList: function (e) {
+    let webtype = e.currentTarget.dataset.webtype
+    console.log(e)
+    WxManager.navigateTo(Router.BarList, { type: webtype })
   },
   //跳转酒吧详情
   onBarDetail: function (e) {

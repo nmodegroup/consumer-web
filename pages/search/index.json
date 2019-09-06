@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "搜索"
+  "usingComponents": {
+    "Toast": "/component/toast/index",
+    "modal": "/component/modal/index"
+  },
+  "navigationBarTitleText": "搜索",
+  "enablePullDownRefresh": true
 }

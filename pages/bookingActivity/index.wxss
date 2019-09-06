@@ -60,25 +60,11 @@
 }
 .book-info-frame {
   width: 750rpx;
-  height: 280rpx;
   position: fixed;
   bottom: 0;
   left:0;
   background-color: rgba(51, 57, 111, 1);
   padding: 22rpx 30rpx 16rpx;
-}
-.bar-name {
-  color:rgba(255, 255, 255, 1);
-  font-weight: 500;
-  font-size:40rpx;
-  padding-bottom: 16rpx;
-}
-.book-info {
-  color:rgba(255, 255, 255, .8);
-  font-size: 26rpx;
-  display: flex;
-  align-items: center;
-  padding-bottom: 46rpx;
 }
 .confirm-frame {
   width:690rpx;

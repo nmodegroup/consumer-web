@@ -245,7 +245,7 @@
   justify-content: center;
   background-color: rgba(10, 10, 41, 0.7);
 }
-.btn-bottom-frame>view{
+.btn-bottom-frame>view,button{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,7 +257,23 @@
   width:50rpx;
   height: 50rpx;
 }
+.bar-detail-share {
+  flex: 1;
+  background-color: transparent;
+}
 .icon-confrim {
   width:64rpx;
   height: 64rpx;
+}
+.adre-text {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:446rpx;
+}
+.time-text {
+  padding-right: 10rpx;
+}
+.time-text:last-child{
+  padding-right: 0;
 }

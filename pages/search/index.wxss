@@ -53,3 +53,9 @@
   margin-right: 20rpx;
   margin-bottom: 20rpx;
 }
+.no-history-text {
+  color:rgba(255, 255, 255, .5);
+  font-size: 26rpx;
+  text-align: center;
+  padding-top: 50rpx;
+}

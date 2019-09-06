@@ -20,6 +20,7 @@ Page({
    */
   onLoad: function (options) {
     this.toast = this.selectComponent("#toast")
+    this.modal = this.selectComponent("#modal")
     this.setData({
       baseUrl: app.globalData.baseImgUrl,
       id: options.id
@@ -36,7 +37,6 @@ Page({
   },
   //拨打电话
   onCall: function (e) {
-    console.log(e)
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phone
     })
@@ -53,12 +53,17 @@ Page({
   onBooking: function () {
     let activity = this.data.activity
     if (activity.appointStatus == 0) {//我的预订状态(0已预定 1已取消  2未预定)，登陆后才有此字段
-      this.cancelBooking()
+      this.modal.showModal({
+        content: '确定要取消预订吗？取消后可能导致没有名额了哦~',
+        title: '温馨提示',
+        cancelText: '再看看',
+        confirmText: '确认取消',
+      })
     } else {
       if (activity.onStatus == 1 || activity.num == 0) {//onStatus启用状态(0开启 1关闭)，当num=0时表示已约满
         return
       } else if (activity.quotaType == 1) {//限制预订数量类型（0不限 1按系统已有桌位限制 2按固定名额限制）
-        WxManager.navigateTo(Router.BookingActivity, { id: activity.id, uid: activity.bar.id})
+        WxManager.navigateTo(Router.BookingActivity, { id: activity.id, theme: activity.theme})
       } else {
         this.setBooking()
       }
@@ -87,6 +92,12 @@ Page({
       })
       this.getActivityDetail()
     }).catch(error => { })
+  },
+  //modal弹框回调
+  getResult: function (e) {
+    if (e.detail.result == 'confirm') {
+      this.cancelBooking()
+    }
   },
   //取消预订接口
   cancelBooking: function () {

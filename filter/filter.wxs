@@ -16,6 +16,18 @@ function barType(type) {
     return '其他'
   }
 }
+
+//酒吧类型样式
+function barStyle(type) {
+  if (type == 1) {
+    return 'bar-btn-3'
+  } else if (type == 2) {
+    return 'bar-btn-2'
+  } else {
+    return 'bar-btn-1'
+  }
+}
+
 //活动状态
 function activityStatus(activity) {
   if (activity.onStatus == 1) {
@@ -45,6 +57,7 @@ function activityDetailText(activity) {
 module.exports = {
   formatDistance: formatDistance,
   barType: barType,
+  barStyle: barStyle,
   activityStatus: activityStatus,
   activityDetailText: activityDetailText
 }

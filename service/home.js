@@ -63,3 +63,35 @@ export function getOrder(params) {
       });
   });
 }
+
+/**
+ * 获取订单信息
+ */
+export function getBarList(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/bar/list', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 获取历史搜索记录
+ */
+export function getHistoryList(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/search/hirstory', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

@@ -15,3 +15,19 @@ export function getBarDetail(params) {
       });
   });
 }
+
+/**
+ * 获取酒吧预订信息
+ */
+export function getBarOrder(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/bar/order', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
