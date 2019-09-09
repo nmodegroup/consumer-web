@@ -11,6 +11,7 @@ Page({
     list: [],//桌位列表
     activity: {},
     selId: '',//选择的桌位id
+    selIdx: '',//选择的座位下标
     form: {
       id: '',//活动id
       tid: '',//桌位区域id，限额类型为按已有桌位限制时必传
@@ -49,7 +50,8 @@ Page({
     } else {
       this.setData({
         selId: e.currentTarget.dataset.id,
-        'form.tableNum': e.currentTarget.dataset.num,
+        selIdx: e.currentTarget.dataset.idx,
+        'form.tableNum': e.currentTarget.dataset.tablenum,
         'form.tableAreaName': e.currentTarget.dataset.name,
       })
     }

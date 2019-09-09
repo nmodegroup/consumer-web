@@ -101,9 +101,9 @@ Page({
   },
   //取消预订接口
   cancelBooking: function () {
-    ActivityService.cancelBooking({id: this.data.activity.id}).then(res => {
+    ActivityService.cancelBooking({ id: this.data.activity.oid}).then(res => {
       this.toast.showToast({
-        content: '您已取消预订可能导致无法再次预订哦',
+        content: '您已取消预订',
         icon: 'warn'
       })
       this.getActivityDetail()

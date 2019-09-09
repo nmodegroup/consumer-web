@@ -27,7 +27,7 @@ Page({
   //获取我的预订列表
   getOrderList: function () {
     let that = this
-    mineService.getTableOrder(this.data.query).then(res => {
+    mineService.getActivityOrder(this.data.query).then(res => {
       if (that.data.query.pageNum == 1) {
         that.setData({
           list: res.list

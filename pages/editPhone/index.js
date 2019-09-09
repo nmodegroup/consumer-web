@@ -94,8 +94,7 @@ Page({
       })
     } else {
       console.log(this.data.type)
-      if (this.data.type == 1) {
-        console.log(11)
+      if (this.data.type == 1) {//下一步
         mineService.validatePhone(this.data.code).then(res => {
           clearTimeout(this.timer)
           this.setData({
@@ -107,7 +106,7 @@ Page({
             codeBtn: '重新获取'
           })
         }).catch(error => {})
-      } else if (this.data.type == 2) {
+      } else if (this.data.type == 2) {//完成
         this.setData({
           'form.newPhone': this.data.code.phone,
           'form.newCode': this.data.code.code
@@ -118,11 +117,7 @@ Page({
             icon: 'success'
           })
           setTimeout(() => {
-            let pages = getCurrentPages()
-            let prevPage = pages[pages.length - 2]; //上一个页面
-            prevPage.setData({
-              phone: this.data.form.newPhone
-            })
+            app.globalData.phone = this.data.form.newPhone
             wx.navigateBack({
               delta: 1
             })

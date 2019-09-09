@@ -45,12 +45,32 @@ function activityStatus(activity) {
 function activityDetailText(activity) {
   if (activity.onStatus == 1) {
     return '暂停预订'
-  } else if (activity.num == 0) {
-    return '预订已满'
   } else if (activity.appointStatus == 0) {
     return '取消预订'
-  } else {
+  } else if (activity.num == 0) {
+    return '预订已满'
+  }  else {
     return '立即预订'
+  }
+}
+
+//今天预订状态
+function TobookStatus(status) {
+  if (status == 1) {
+    return '预订'
+  } else if (status == 2 || status == 3) {
+    return '已满'
+  } else  {
+    return '特殊'
+  } 
+}
+
+//明天预定状态
+function TmbookStatus(status) {
+  if (status == 2 || status == 4) {
+    return '预订'
+  } else if (status == 3 || status == 5) {
+    return '已满'
   }
 }
 
@@ -59,5 +79,7 @@ module.exports = {
   barType: barType,
   barStyle: barStyle,
   activityStatus: activityStatus,
-  activityDetailText: activityDetailText
+  activityDetailText: activityDetailText,
+  TobookStatus: TobookStatus,
+  TmbookStatus: TmbookStatus
 }

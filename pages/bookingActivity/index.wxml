@@ -4,8 +4,8 @@
     <view wx:for="{{list}}" wx:key="{{index}}">
       <view class="seat-title">{{item.name}}</view>
       <view class="flex">
-        <view class="seat-item {{num.num ? (selId == item.id ? 'active' : '') : 'disable'}}" wx:for="{{item.tables}}" wx:for-item="num" wx:key="*this" 
-        bindtap="onSelTable" data-id="{{item.id}}" data-name="{{item.name}}" data-num = "{{num.tableNum}}" >
+        <view class="seat-item {{num.num ? (selId == item.id && selIdx === index ? 'active' : '') : 'disable'}}" wx:for="{{item.tables}}" wx:for-item="num" wx:key="*this" 
+        bindtap="onSelTable" data-id="{{item.id}}" data-name="{{item.name}}" data-num="{{num.num}}" data-tablenum = "{{num.tableNum}}" data-idx="{{index}}">
           <view class="seat-text">{{num.tableNum}}人桌</view>
           <view class="seat-num">剩余：{{num.num}}</view>
         </view>

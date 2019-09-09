@@ -1,10 +1,23 @@
+const Router = require("../../router/Router")
+const WxManager = require('../../utils/wxManager')
+const mineService = require('../../service/mine')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    rightWidth: ''
+    rightWidth: '',
+    list: [],//列表
+    baseUrl: '',//图片的url域名
+    query: {
+      pageNum: 1,
+      pageSize: 4
+    },
+    moreBtn: false,//正在载入更多提示
+    noMoreBtn: false,//没有更多提示
+    goMore: true // 加载更多,
   },
 
   /**
@@ -13,6 +26,9 @@ Page({
   onLoad: function (options) {
     this.setSwipeWidth()
     this.modal = this.selectComponent("#modal")
+    this.setData({
+      baseUrl: app.globalData.baseImgUrl
+    })
   },
   //动态设置右侧删除滑块宽度
   setSwipeWidth: function () {
@@ -47,6 +63,34 @@ Page({
       hideCancel: true
     })
   },
+  //获取活动列表
+  getCollect: function () {
+    let that = this
+    mineService.getCollectOrder(this.data.query).then(res => {
+      if (that.data.query.pageNum == 1) {
+        that.setData({
+          list: res.list
+        })
+      } else {
+        if (that.data.list.length < res.totalSize) {
+          let list = that.data.list
+          list = list.concat(res.list)
+          that.setData({
+            list: list,
+            goMore: true,
+            moreBtn: false,
+            noMoreBtn: false
+          })
+        } else {
+          that.setData({
+            goMore: false,
+            moreBtn: false,
+            noMoreBtn: true
+          })
+        }
+      }
+    }).catch(error => { })
+  },
   //删除操作回调 confirm确认 cancel取消
   getResult: function (e) {
     this.instance.close()
@@ -63,7 +107,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCollect()
   },
 
   /**
@@ -84,14 +128,29 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      'query.pageNum': 1,
+      goMore: true,
+      moreBtn: false,
+      noMoreBtn: false
+    })
+    this.getCollect()
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let that = this
+    if (this.data.goMore) {
+      this.setData({
+        moreBtn: true,
+        'query.pageNum': that.data.query.pageNum + 1,
+        goMore: false
+      })
+      this.getCollect()
+    }
   },
 
   /**

@@ -1,44 +1,49 @@
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="bar-container">
   <view class="bar-list-frame">
     <van-swipe-cell right-width="{{rightWidth}}" async-close bind:close="onDel">
       <van-cell-group>
-        <view class="bar-item">
+        <view class="bar-item" wx:for="{{list}}" wx:key="{{index}}">
           <view class="hot-bar-item">
-            <image class="hot-bar-image" src="/image/bg-bar.png"></image>
+            <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
             <view class="hot-bar-context">
               <view>
-                <view class="hot-bar-text">深圳BBR酒吧</view>
-                <view class="bar-btn-1">闹吧</view>
+                <view class="hot-bar-text">{{item.name}}</view>
+                <view class="bar-btn-1">{{filter.barType(item.type)}}</view>
               </view>
               <view>
                 <view class="hot-bar-time">
-                  <image class="icon-time" src="/image/icon_time.svg"></image>20:00-2:00
-                  <view class="btn-operation">营业中</view>
+                  <image class="icon-time" src="/image/icon_time.svg"></image>
+                  <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+                  <view class="btn-operation">{{item.businessStatus ? '休业中' : '营业中'}}</view>
                 </view>
               </view>
               <view>
                 <view class="hot-bar-adre">
                   <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-                  深圳保利文化广场F3层
+                  <view class="adre-text">{{item.address}}</view>
                 </view>
-                <view class="hot-bar-distance">1.9km</view>
+                <view class="hot-bar-distance">{{filter.formatDistance(item.distance)}}</view>
               </view>
             </view>
           </view>
+          <!-- 可预约类型  1今日可预约    2今日已约满 ，明日可预约  3今日已约满，明日已约满   4今日是特殊日期，明日可预约  5今日是特殊日期，明日已约满 -->
           <view class="bar-order-info">
             <view class="bar-info-text">
               <view>
-                <view class="btn-full">已满</view>
-                今日已满，可设置空位提醒
+                <view class="btn-full">{{filter.TobookStatus(item.appointType)}}</view>
+                <text wx:if="{{item.appointType == 2 || item.appointType == 3}}">今日已满，可设置空位提醒</text>
+                <text wx:if="{{item.appointType == 1}}">今日剩余可预订桌位数</text>
               </view>
-              <view>已有<text class="bar-people-num">8</text>人设置提醒</view>
+              <view wx:if="{{item.appointType == 2 || item.appointType == 3}}">已有<text class="bar-people-num">{{item.remindNum}}</text>人设置提醒</view>
+              <view wx:if="{{item.appointType == 1}}"><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
             </view>
-            <view class="bar-info-text">
+            <view class="bar-info-text" wx:if="{{item.appointType != 1}}">
               <view>
-                <view class="btn-reserve">预订</view>
-                明日剩余可预订桌位数
+                <view class="btn-reserve">{{filter.TmbookStatus(item.appointType)}}</view>
+                <text>明日剩余可预订桌位数</text>
               </view>
-              <view><text class="bar-people-num">14</text>桌</view>
+              <view><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
             </view>
           </view>
         </view>
@@ -50,7 +55,7 @@
         </view>
       </view>
     </van-swipe-cell>
-    <view class="bar-item">
+    <!-- <view class="bar-item">
       <view class="hot-bar-item">
         <image class="hot-bar-image" src="/image/bg-bar.png"></image>
         <view class="hot-bar-context">
@@ -89,7 +94,7 @@
           <view><text class="bar-people-num">14</text>桌</view>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
   <modal id="modal" bind:get="getResult"></modal>
 </view>
