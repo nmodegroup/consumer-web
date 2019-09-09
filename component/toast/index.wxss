@@ -7,7 +7,6 @@
   left: 0;
   transform: translate(0, -50%);
   z-index: 999;
-  opacity: 0;
 }
 
 .wx-toast-content-base {

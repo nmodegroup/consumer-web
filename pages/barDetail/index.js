@@ -22,6 +22,7 @@ Page({
     })
     this.getBarDetail(options.id)
     this.getBarOrder(options.id)
+    this.toast = this.selectComponent("#toast")
   },
   //跳转酒店预订页面
   onBooking: function () {
@@ -56,6 +57,28 @@ Page({
       longitude: this.data.bar.lng - 0,
       address: this.data.bar.address
     })
+  },
+  //收藏取消收藏
+  onCollect: function () {
+    console.log(this.data.isCollect)
+    let id = this.data.bar.id
+    if (this.data.bar.isCollect == 1) {
+      BarService.cancelCollect({ id:  id}).then(res => {
+        this.getBarDetail(id)
+        this.toast.showToast({
+          content: '已取消收藏',
+          icon: 'success'
+        })
+      }).catch(error => {})
+    } else if (this.data.bar.isCollect === 0) {
+      BarService.setCollect({ id: id }).then(res => {
+        this.getBarDetail(id)
+        this.toast.showToast({
+          content: '收藏成功',
+          icon: 'success'
+        })
+      }).catch(error => {})
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

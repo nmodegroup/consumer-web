@@ -111,12 +111,13 @@
     </view>
   </view>
   <view class="btn-bottom-frame">
-    <view class="flex-1">
-      <image src="/image/icon_collect.svg"></image>
+    <view class="flex-1" bindtap="onCollect">
+      <image src="{{bar.isCollect ? '/image/icon_collect_active.svg' : '/image/icon_collect.svg'}}"></image>
     </view>
     <view class="date-vertical-line"></view>
     <button class="bar-detail-share" open-type="share">
       <image src="/image/icon_share.svg"></image>
     </button>
   </view>
+  <Toast id="toast"></Toast>
 </view>

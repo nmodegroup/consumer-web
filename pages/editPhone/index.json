@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "Toast": "/component/toast/index"
+  },
   "navigationBarTitleText": "换绑手机号"
 }

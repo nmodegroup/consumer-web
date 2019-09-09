@@ -31,3 +31,35 @@ export function getBarOrder(params) {
       });
   });
 }
+
+/**
+ * 酒吧收藏
+ */
+export function setCollect(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .post('/consumer/bar/collect', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 取消收藏
+ */
+export function cancelCollect(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .put('/consumer/bar/collect', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

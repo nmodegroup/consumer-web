@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_tab_collect_withoutwords_click</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-91.6%" y="-92.6%" width="283.1%" height="285.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-9" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.060385528   0 0 0 0 0.0826403463   0 0 0 0 0.259832058  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="酒吧详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标" transform="translate(-162.000000, -371.000000)">
+            <g id="tab" filter="url(#filter-1)" transform="translate(128.000000, 295.000000)"></g>
+            <g id="Group-24" transform="translate(162.000000, 337.000000)"></g>
+            <path d="M172.5,389.911621 L167.550193,390.780245 C166.897426,390.894797 166.275392,390.458487 166.16084,389.80572 C166.158539,389.79261 166.156457,389.779462 166.154594,389.766283 L165.451129,384.790317 L163.095445,380.35119 C162.784783,379.76577 163.007519,379.039353 163.592939,378.728692 C163.604697,378.722453 163.616557,378.71641 163.628516,378.710565 L168.143558,376.503873 L171.637472,372.891718 C172.09824,372.415357 172.857933,372.402716 173.334294,372.863483 C173.343861,372.872737 173.353274,372.88215 173.362528,372.891718 L176.856442,376.503873 L181.371484,378.710565 C181.966915,379.001577 182.213695,379.720182 181.922683,380.315613 C181.916838,380.327572 181.910795,380.339432 181.904555,380.35119 L179.548871,384.790317 L178.845406,389.766283 C178.752635,390.422499 178.145461,390.879262 177.489245,390.786491 C177.476065,390.784628 177.462917,390.782546 177.449807,390.780245 L172.5,389.911621 Z" id="icon_tab_collect_withoutwords-copy" stroke="#FFFFFF" stroke-width="1.2" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

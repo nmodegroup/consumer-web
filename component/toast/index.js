@@ -8,7 +8,7 @@ Component({
    */
   data: {
     // 弹窗显示控制
-    animationData: {},
+    show: false,
     content: '提示内容',
     // 多行提示时，因为单个view换行文字不居中
     extraContent: '',
@@ -29,14 +29,8 @@ Component({
      */
     showToast({ content, multContent, icon }) {
       let iconImg = icon ? this.data.icon[icon] : '';
-      var animation = wx.createAnimation({
-        duration: 300,
-        timingFunction: 'ease'
-      });
-      this.animation = animation;
-      animation.opacity(1).step();
       this.setData({
-        animationData: animation.export(),
+        show: true,
         content: content,
         multContent: multContent || '',
         iconImg: iconImg
@@ -46,9 +40,8 @@ Component({
        */
       setTimeout(
         function () {
-          animation.opacity(0).step();
           this.setData({
-            animationData: animation.export()
+            show: false
           });
         }.bind(this),
         1500

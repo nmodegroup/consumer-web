@@ -1,4 +1,7 @@
-// pages/editPhone/index.js
+const Router = require("../../router/Router")
+const WxManager = require('../../utils/wxManager')
+const mineService = require('../../service/mine')
+const app = getApp()
 Page({
 
   /**
@@ -6,52 +9,125 @@ Page({
    */
   data: {
     codeBtn: '获取验证码',
-    runing: true//是否可以点击获取验证码
+    runing: true,//是否可以点击获取验证码
+    form: {
+      newPhone: '',
+      newCode: '',
+      oldCode: ''
+    },
+    code: {
+      phone: '',
+      code: ''
+    },
+    type: 1,//1用户端小程序旧手机验证发送短信, 2用户端小程序新手机绑定发送短信
+    oldCode: ''//旧验证码
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.toast = this.selectComponent("#toast")
   },
   //获取验证码
-  getCode: function () {
-    if (this.data.code.phone) {
+  getCode: function (e) {
+    let that = this
+    let rmobile = /^1(3|4|5|7|8|6|9)\d{9}$/
+    if (!rmobile.test(this.data.code.phone)) {
+      this.toast.showToast({
+        content: '请填写正确的手机号码',
+        icon: 'warn'
+      })
+    } else {
       let second = e.currentTarget.dataset.second
-      let that = this
-      if (validate.valiPhone(this.data.code.phone)) {
-        if (that.data.runing) {
-          let reqData = {
-            phone: that.data.code.phone.replace(/\s+/g, ""),
-            type: that.data.codeApi.type
-          }
-          let requestData = {
-            url: this.data.codeApi.api,
-            data: reqData,
-            success: res => {
-              that.setData({
-                runing: false,
-                codeBtn: second + 's',
-                focusCode: true
-              })
-              that.data.timer = setInterval(function () {
-                --second
-                that.setData({
-                  codeBtn: second + 's'
-                })
-                if (second <= 0) {
-                  clearTimeout(that.data.timer)
-                  that.setData({
-                    runing: true,
-                    codeBtn: '重新获取'
-                  })
-                }
-              }, 1000)
-            }
-          }
-          ApiManager.send(requestData, this.data.codeApi.method)
+      if (that.data.runing) {
+        let form = {
+          phone: that.data.code.phone,
+          type: that.data.type
         }
+        mineService.getCode(form).then(res => {
+          that.setData({
+            runing: false,
+            codeBtn: second + 's'
+          })
+          that.timer = setInterval(function () {
+            --second
+            that.setData({
+              codeBtn: second + 's'
+            })
+            if (second <= 0) {
+              clearTimeout(that.timer)
+              that.setData({
+                runing: true,
+                codeBtn: '重新获取'
+              })
+            }
+          }, 1000)
+        }).catch(error => { })
+      }
+    }
+  },
+  //手机号码
+  bindPhoneInput: function (e) {
+    this.setData({
+      'code.phone': e.detail.value
+    })
+  },
+  //验证码
+  bindCodeInput: function (e) {
+    this.setData({
+      'code.code': e.detail.value
+    })
+  },
+  //提交
+  onConfirm: function () {
+    let rmobile = /^1(3|4|5|7|8|6|9)\d{9}$/
+    if (!rmobile.test(this.data.code.phone)) {
+      this.toast.showToast({
+        content: '请填写正确的手机号码',
+        icon: 'warn'
+      })
+    } else if (!this.data.code.code) {
+      this.toast.showToast({
+        content: '请输入验证码',
+        icon: 'warn'
+      })
+    } else {
+      console.log(this.data.type)
+      if (this.data.type == 1) {
+        console.log(11)
+        mineService.validatePhone(this.data.code).then(res => {
+          clearTimeout(this.timer)
+          this.setData({
+            type: 2,
+            'form.oldCode': this.data.code.code,
+            'code.phone': '',
+            'code.code': '',
+            runing: true,
+            codeBtn: '重新获取'
+          })
+        }).catch(error => {})
+      } else if (this.data.type == 2) {
+        this.setData({
+          'form.newPhone': this.data.code.phone,
+          'form.newCode': this.data.code.code
+        })
+        mineService.bindPhone(this.data.form).then(res => {
+          this.toast.showToast({
+            content: '您的手机号换绑成功',
+            icon: 'success'
+          })
+          setTimeout(() => {
+            let pages = getCurrentPages()
+            let prevPage = pages[pages.length - 2]; //上一个页面
+            prevPage.setData({
+              phone: this.data.form.newPhone
+            })
+            wx.navigateBack({
+              delta: 1
+            })
+          })
+        }).catch(error => { })
       }
     }
   },

@@ -1,18 +1,21 @@
 const Router = require("../../router/Router")
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    phone: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      phone: app.globalData.phone
+    })
   },
   //我的预订页
   onBookOrder: function () {
@@ -30,6 +33,18 @@ Page({
   onCollect: function () {
     wx.navigateTo({
       url: Router.Collect
+    })
+  },
+  //我的活动页面
+  onActivityOrder: function () {
+    wx.navigateTo({
+      url: Router.ActivityOrder
+    })
+  },
+  //拨打电话
+  onCall: function () {
+    wx.makePhoneCall({
+      phoneNumber: '0755-19098421'
     })
   },
   /**

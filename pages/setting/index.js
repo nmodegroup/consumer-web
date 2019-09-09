@@ -19,6 +19,7 @@ Page({
   // 获取用户信息
   onGotUserInfo(e) {
     if (e.detail.userInfo) {
+      app.globalData.userInfo = e.detail.userInfo
       let reqData = {
         code: this.code,
         nickName: e.detail.userInfo.nickName,

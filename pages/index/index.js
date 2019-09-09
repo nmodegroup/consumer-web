@@ -74,6 +74,7 @@ Page({
     wx.getUserInfo({
       withCredentials: true,
       success: res => {
+        app.globalData.userInfo = res.userInfo
         that.sendLogin({
           code: this.code,
           nickName: res.userInfo.nickName,

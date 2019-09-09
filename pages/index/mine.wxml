@@ -14,7 +14,7 @@
       <view>预订单</view>
     </view>
     <view class="menu-vertical"></view>
-    <view class="menu-item">
+    <view class="menu-item" bindtap="onActivityOrder">
       <image src="/image/icon_huodongdang.svg"></image>
       <view>活动单</view>
     </view>
@@ -30,12 +30,12 @@
       <view class="list-item-context">
         <view class="list-item-l">手机号</view>
         <view class="list-item-r">
-          1359****000
+          {{phone}}
           <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
         </view>
       </view>
     </view>
-    <view class="list-item">
+    <!-- <view class="list-item">
       <image src="/image/icon_list_deal.svg"></image>
       <view class="list-item-context">
         <view class="list-item-l">用户协议</view>
@@ -43,7 +43,7 @@
           <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
         </view>
       </view>
-    </view>
+    </view> -->
     <view class="list-item">
       <image src="/image/icon_list_help.svg"></image>
       <view class="list-item-context">
@@ -53,7 +53,7 @@
         </view>
       </view>
     </view>
-    <view class="list-item">
+    <view class="list-item" bindtap="onCall">
       <image src="/image/icon_list_call.svg"></image>
       <view class="list-item-context">
         <view class="list-item-l">联系我们</view>
