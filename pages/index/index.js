@@ -13,13 +13,6 @@ Page({
     duration: 1000,
     columns: [],//城市名称列表
     selAdre: false,
-    bookingList: [{
-      name: '深圳BBR酒吧',
-      num: 8
-    },{
-      name: '深圳BBR酒吧',
-      num: 8
-    }],
     initLocation: {//默认位置
       lng: '114.054860',
       lat: '22.532840'
@@ -30,7 +23,10 @@ Page({
     nearBar: [],//附近酒吧推荐
     cityList: [],//城市列表
     selLocationText: '深圳市',//选择城市
-    cid: 440300//默认深圳
+    cid: 440300,//默认深圳
+    remindOrder: [],//排位订单
+    activityOrder: [],//活动预订订单
+    tableOrder: []//桌位预订订单
   },
 
   /**
@@ -180,7 +176,11 @@ Page({
   //获取订单信息
   getOrder: function () {
     homeService.getOrder().then(res => {
-      console.log(res)
+      this.setData({
+        tableOrder: res.tableOrder || [],
+        activityOrder: res.activityOrder || [],
+        remindOrder: res.remindOrder || []
+      })
     }).catch(error => {
 
     })

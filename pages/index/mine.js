@@ -1,21 +1,23 @@
 const Router = require("../../router/Router")
 const app = getApp()
+const settingService = require('../../service/setting')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    phone: ''
+    phone: '',
+    nickName: '',//用户微信名
+    avatarUrl: '',//用户头像
+    phoneLayer: false//是否显示获取手机号弹框
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      phone: app.globalData.phone
-    })
+  
   },
   //我的预订页
   onBookOrder: function () {
@@ -47,6 +49,50 @@ Page({
       phoneNumber: '0755-19098421'
     })
   },
+  //授权页面
+  onSetting: function () {
+    wx.navigateTo({
+      url: Router.Setting
+    })
+  },
+  //获取手机号
+  onGetPhone: function () {
+    this.setData({
+      phoneLayer: true
+    })
+  },
+  //获取手机号授权弹框取消按钮
+  phoneCancel: function () {
+    this.setData({
+      phoneLayer: false
+    })
+  },
+  //获取手机号
+  getPhoneNumber: function (e) {
+    this.setData({
+      phoneLayer: false
+    })
+    if (e.detail.errMsg == 'getPhoneNumber:ok') {
+      wx.login({
+        success: (res) => {
+          let form = {
+            code: res.code,
+            encrypted: e.detail.encryptedData,
+            iv: e.detail.iv
+          }
+          settingService.setPhone(form).then(res => {
+            this.setData({
+              phone:  res
+            })
+          }).catch(error => { })
+        },
+        fail: (res) => {
+          console.log('login err:', res)
+        }
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -64,6 +110,11 @@ Page({
         selected: 2
       })
     }
+    this.setData({
+      phone: app.globalData.phone || '',
+      avatarUrl: app.globalData.userInfo.avatarUrl || '',
+      nickName: app.globalData.userInfo.nickName || '',
+    })
   },
 
   /**

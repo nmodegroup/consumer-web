@@ -1,12 +1,15 @@
 <view class="container">
   <view class="mine-header">
     <view class="mine-avatar">
-      <image class="avatar-img" src="/image/bg-bar.png"></image>
+      <image class="avatar-img" src="{{avatarUrl ? avatarUrl : '/image/avatar.png'}}"></image>
       <view class="toggle-btn">我是商家
         <image class="icon-change" src="/image/icon_change.svg"></image>
       </view>
     </view>
-    <view class="mine-name">JASON LIU</view>
+    <view class="mine-name">
+      <text wx:if="{{nickName}}">{{nickName}}</text>
+      <text wx:if="{{!nickName}}" bindtap="onSetting">登录/注册</text>
+    </view>
   </view>
   <view class="mine-menu-body">
     <view class="menu-item" bindtap="onBookOrder">
@@ -30,7 +33,8 @@
       <view class="list-item-context">
         <view class="list-item-l">手机号</view>
         <view class="list-item-r">
-          {{phone}}
+          <text wx:if="{{phone}}">{{phone}}</text>
+          <text wx:if="{{!phone}}" catchtap="onGetPhone">获取手机号</text>
           <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
         </view>
       </view>
@@ -72,5 +76,15 @@
         </view>
       </view>
     </view> -->
+  </view>
+  <view class='wx-modal-box' wx:if="{{phoneLayer}}">
+    <view class='wx-modal-content'>
+      <view class="wx-modal-title">温馨提示</view>
+      <text class='wx-modal-toast'>您未允许获取您的手机号，将会影响您正常使用小程序；如您需要继续使用，请点击“允许”完成授权</text>
+      <view class="btn-frame">
+        <view class="btn-cancel" bindtap="phoneCancel">退出</view>
+        <button class="btn-confirm"  open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber">允许</button>
+      </view>
+    </view>
   </view>
 </view>

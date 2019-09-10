@@ -16,16 +16,75 @@
   </view>
   <view class="context-box">
     <swiper class="booking-swiper">
-      <block wx:for="{{bookingList}}" wx:key="{{index}}">
+      <!-- 桌位预订订单 -->
+      <!-- <block>
         <swiper-item>
           <view class="booking-frame">
             <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
             <view class="booking-bar-farme">
               <view class="booking-frame-l">
                 <view class="booking-text">
-                  <view class="booking-name">{{item.name}}</view>
+                  <view class="booking-name">酒吧</view>
                   <view class="booking-info">
-                    {{item.num}}人
+                    10人
+                    <view class="vertical-line"></view>
+                    包房
+                  </view>
+                </view>
+                <view class="booking-btn">已预定</view>
+              </view>
+              <view class="booking-frame-r">
+                <view class="booking-num">Y01</view>
+                <view>预约码</view>
+              </view>
+            </view>
+            <view class="booking-text-frame">
+                <view>
+                  <view class="booking-time">到店时间：2019.5.23 20:00</view>
+                  <view class="booking-delay">超时时长：-分-秒
+                    <view class="booking-delay-tips">（超时30分钟自动取消）</view>
+                  </view>
+                </view>
+                <image class="right-arrow-1" src="/image/icon_right_arrow.svg"></image>
+            </view>
+          </view>
+        </swiper-item>
+      </block> -->
+      <!-- 活动订单 -->
+      <block wx:for="{{activityOrder}}" wx:key="{{index}}">
+        <swiper-item>
+          <view class="booking-frame">
+            <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
+            <view class="booking-bar-farme">
+              <view class="booking-frame-activity">
+                <view class="booking-text-activity">
+                  <view class="booking-name">{{item.name}}</view>
+                  <view class="booking-btn success">已预定</view>
+                </view>
+                <view class="booking-activity-name">{{item.theme}}</view>
+              </view>
+            </view>
+            <view class="booking-text-frame">
+                <view>
+                  <view class="booking-time">活动时间：{{item.beginTime}}</view>
+                  <view class="booking-delay">活动地址：{{item.address}}</view>
+                </view>
+                <image class="right-arrow-1" src="/image/icon_right_arrow.svg"></image>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+      <!-- 排位订单 -->
+      <block>
+        <swiper-item>
+          <view class="booking-frame">
+            <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
+            <view class="booking-bar-farme">
+              <view class="booking-frame-l">
+                <view class="booking-text">
+                  <view class="booking-name">酒吧</view>
+                  <view class="booking-info">
+                    10人
                     <view class="vertical-line"></view>
                     包房
                   </view>

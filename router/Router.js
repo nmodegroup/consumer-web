@@ -11,3 +11,4 @@ export const ActivityOrder = '/pages/activityOrder/index'// 我的活动
 export const EditPhone = '/pages/editPhone/index'// 换绑手机号
 export const Collect = '/pages/collect/index'// 我的收藏
 export const Search = '/pages/search/index'// 搜索
+export const Setting = '/pages/setting/index'// 授权页面
