@@ -21,6 +21,7 @@ view,text,input{
   width:26rpx;
   height: 26rpx;
   margin-right: 6rpx;
+  margin-top: 5rpx;
 } 
 .icon-adre {
   width:26rpx;
@@ -32,6 +33,9 @@ view,text,input{
   border: 1rpx solid rgba(255, 255, 255, .6);
   border-radius: 2rpx;
   margin-left: 10rpx;
+  height: 24rpx;
+  font-size: 16rpx;
+  margin-top: 5rpx;
 }
 .bar-btn-1 {
   width:76rpx;

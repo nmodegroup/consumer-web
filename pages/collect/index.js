@@ -1,6 +1,7 @@
 const Router = require("../../router/Router")
 const WxManager = require('../../utils/wxManager')
 const mineService = require('../../service/mine')
+const BarService = require('../../service/bar')
 const app = getApp()
 Page({
 
@@ -13,11 +14,12 @@ Page({
     baseUrl: '',//图片的url域名
     query: {
       pageNum: 1,
-      pageSize: 4
+      pageSize: 6
     },
     moreBtn: false,//正在载入更多提示
     noMoreBtn: false,//没有更多提示
-    goMore: true // 加载更多,
+    goMore: true, // 加载更多
+    delId: ''//删除的id
   },
 
   /**
@@ -26,6 +28,7 @@ Page({
   onLoad: function (options) {
     this.setSwipeWidth()
     this.modal = this.selectComponent("#modal")
+    this.toast = this.selectComponent("#toast")
     this.setData({
       baseUrl: app.globalData.baseImgUrl
     })
@@ -44,17 +47,13 @@ Page({
         })
       }
     })
-    console.log(this.data.rightWidth)
   },
   //删除收藏
   onDel: function (event) {
     this.instance = event.detail.instance
-    //showModal传参对象参数
-    // content：提示内容\n换行
-    // hideCancel：是否显示取消按钮 true隐藏 默认显示
-    //cancelText 默认‘取消’
-    //confirmText 默认‘确认’
-    // title 默认‘提示’
+    this.setData({
+      delId: event.currentTarget.dataset.id
+    })
     this.modal.showModal({ 
       content: '确定要删除此收藏吗？\n删除就没有了哦~',
       title: '温馨提示',
@@ -94,7 +93,20 @@ Page({
   //删除操作回调 confirm确认 cancel取消
   getResult: function (e) {
     this.instance.close()
-    console.log(e.detail)
+    if (e.detail.result == 'confirm') {
+      BarService.cancelCollect({ id: this.data.delId }).then(res => {
+        this.getCollect()
+        this.toast.showToast({
+          content: '删除成功',
+          icon: 'success'
+        })
+      }).catch(error => {})
+    }
+  },
+  //跳转酒吧详情
+  onBarDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.BarDetail, { id: id })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,6 +1,7 @@
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="search-container">
   <view class="input-bar">
-    <input class="search-input" confirm-type="search"  value="{{query.queryStr}}" bindinput='onInput' placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255, 255, 255, .5)"></input>
+    <input class="search-input" confirm-type="search"  value="{{query.queryStr}}" bindinput='onInput' placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255, 255, 255, .5)" confirm-type="search" bindconfirm="getBarList"></input>
     <view class="btn-search" bindtap="getBarList">搜索</view>
   </view>
   <view class="history-bar" wx:if="{{historyList.length}}">
@@ -12,5 +13,55 @@
     <view class="history-item" wx:for="{{historyList}}" wx:key="{{index}}"
     bindtap="onGetHistory" data-key="{{item}}">{{item}}</view>
   </view>
-  <modal id="modal" bind:get="getResult"></modal>
+
+  <view class="bar-item" bindtap="onBarDetail" data-id="{{item.id}}" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}">
+    <view class="hot-bar-item">
+      <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
+      <view class="hot-bar-context">
+        <view>
+          <view class="hot-bar-text">{{item.name}}</view>
+          <view class="bar-btn-1">{{filter.barType(item.type)}}</view>
+        </view>
+        <view>
+          <view class="hot-bar-time">
+            <image class="icon-time" src="/image/icon_time.svg"></image>
+            <view class="time-text-frame">
+              <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+            </view>
+            <view class="btn-operation">{{item.businessStatus ? '休业中' : '营业中'}}</view>
+          </view>
+        </view>
+        <view>
+          <view class="hot-bar-adre">
+            <image class="icon-adre"  src="/image/icon_adre.svg"></image>
+            <view class="adre-text">{{item.address}}</view>
+          </view>
+          <view class="hot-bar-distance">{{filter.formatDistance(item.distance)}}</view>
+        </view>
+        </view>
+      </view>
+      <!-- 可预约类型  1今日可预约    2今日已约满 ，明日可预约  3今日已约满，明日已约满   4今日是特殊日期，明日可预约  5今日是特殊日期，明日已约满 -->
+      <view class="bar-order-info">
+        <view class="bar-info-text">
+          <view>
+            <view class="btn-full">{{filter.TobookStatus(item.appointType)}}</view>
+            <text wx:if="{{item.appointType == 2 || item.appointType == 3}}">今日已满，可设置空位提醒</text>
+            <text wx:if="{{item.appointType == 1}}">今日剩余可预订桌位数</text>
+          </view>
+          <view wx:if="{{item.appointType == 2 || item.appointType == 3}}">已有<text class="bar-people-num">{{item.remindNum}}</text>人设置提醒</view>
+          <view wx:if="{{item.appointType == 1}}"><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
+        </view>
+        <view class="bar-info-text" wx:if="{{item.appointType != 1}}">
+          <view>
+            <view class="btn-reserve">{{filter.TmbookStatus(item.appointType)}}</view>
+            <text>明日剩余可预订桌位数</text>
+          </view>
+          <view><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
+        </view>
+      </view>
+    </view>
+    <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
+    <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
+    <modal id="modal" bind:get="getResult"></modal>
+    <Toast id="toast"></Toast>
 </view>

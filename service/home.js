@@ -95,3 +95,19 @@ export function getHistoryList(params) {
       });
   });
 }
+
+/**
+ * 删除历史搜索记录
+ */
+export function delHistoryList(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      ._delete('/consumer/search/hirstory', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

@@ -1,9 +1,9 @@
 <wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="bar-container">
   <view class="bar-list-frame">
-    <van-swipe-cell right-width="{{rightWidth}}" async-close bind:close="onDel">
+    <van-swipe-cell right-width="{{rightWidth}}" async-close bind:close="onDel" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}">
       <van-cell-group>
-        <view class="bar-item" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="bar-item" bindtap="onBarDetail" data-id="{{item.id}}">
           <view class="hot-bar-item">
             <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
             <view class="hot-bar-context">
@@ -14,7 +14,9 @@
               <view>
                 <view class="hot-bar-time">
                   <image class="icon-time" src="/image/icon_time.svg"></image>
-                  <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+                  <view class="time-text-frame">
+                    <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+                  </view>
                   <view class="btn-operation">{{item.businessStatus ? '休业中' : '营业中'}}</view>
                 </view>
               </view>
@@ -95,6 +97,9 @@
         </view>
       </view>
     </view> -->
+    <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
+    <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
   </view>
   <modal id="modal" bind:get="getResult"></modal>
+  <Toast id="toast"></Toast>
 </view>

@@ -1,6 +1,7 @@
 const Router = require("../../router/Router")
 const WxManager = require('../../utils/wxManager')
 const mineService = require('../../service/mine')
+const ActivityService = require('../../service/activity')
 const app = getApp()
 Page({
 
@@ -11,7 +12,7 @@ Page({
     list: [],
     query: {
       pageNum: 1,
-      pageSize: 4
+      pageSize: 6
     },
     moreBtn: false,//正在载入更多提示
     noMoreBtn: false,//没有更多提示
@@ -22,7 +23,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.toast = this.selectComponent("#toast")
+    this.modal = this.selectComponent("#modal")
   },
   //获取我的预订列表
   getOrderList: function () {
@@ -50,6 +52,34 @@ Page({
           })
         }
       }
+    }).catch(error => { })
+  },
+  //取消预订
+  onCancel: function (e) {
+    this.setData({
+      selId: e.currentTarget.dataset.id
+    })
+    this.modal.showModal({
+      content: '确定要取消预订吗？取消后可能导致没有名额了哦~',
+      title: '温馨提示',
+      cancelText: '再看看',
+      confirmText: '确认取消',
+    })
+  },
+  //modal弹框回调
+  getResult: function (e) {
+    if (e.detail.result == 'confirm') {
+      this.cancelBooking()
+    }
+  },
+  //取消预订接口
+  cancelBooking: function () {
+    ActivityService.cancelBooking({ id: this.data.selId }).then(res => {
+      this.toast.showToast({
+        content: '您已取消预订',
+        icon: 'warn'
+      })
+      this.getOrderList()
     }).catch(error => { })
   },
   /**

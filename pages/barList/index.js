@@ -26,6 +26,11 @@ Page({
       barType: 0,//全部类型 （0所有 1餐吧 2清吧 3其它）
       sortType: 0,//排序类型 （0智能排序  1距离最近  2人气最高  3人均从高到低  4人均从低到高）
     },
+    selType: '',//选择的是 1附近全部、或者2酒吧类型、或3智能排序
+    selIdx: '',//选择下拉框的下标
+    nearText: '附近全部',
+    barText: '酒吧类型',
+    sortText: '智能排序'
   },
   searchItem: [[{
       text: '附近全部',
@@ -119,7 +124,8 @@ Page({
     }
     this.setData({
       'query.webType': options.type,
-      'query.cid': app.globalData.cid
+      'query.cid': app.globalData.cid,
+      baseUrl: app.globalData.baseImgUrl
     })
     this.getBarList()
   },
@@ -153,20 +159,33 @@ Page({
     if (e.currentTarget.dataset.seltype == 1) {
       this.setData({
         'query.nearType': e.currentTarget.dataset.id,
-        'query.pageNum': 1
+        'query.pageNum': 1,
+        nearText: e.currentTarget.dataset.text
       })
     } else if (e.currentTarget.dataset.seltype == 2) {
       this.setData({
         'query.barType': e.currentTarget.dataset.id,
-        'query.pageNum': 1
+        'query.pageNum': 1,
+        barText: e.currentTarget.dataset.text
       })
     } else if (e.currentTarget.dataset.seltype == 3) {
       this.setData({
         'query.sortType': e.currentTarget.dataset.id,
-        'query.pageNum': 1
+        'query.pageNum': 1,
+        sortText: e.currentTarget.dataset.text
       })
     }
+    this.setData({
+      selType: e.currentTarget.dataset.seltype,
+      selIdx: e.currentTarget.dataset.selidx
+    })
     this.getBarList()
+  },
+  //监听输入框搜索
+  onInput: function (e) {
+    this.setData({
+      'query.queryStr': e.detail.value
+    })
   },
   //获取酒吧列表
   getBarList: function () {
@@ -198,6 +217,11 @@ Page({
         noResult: !!res.list
       })
     }).catch(error => { })
+  },
+  //跳转酒吧详情
+  onBarDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.BarDetail, { id: id })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

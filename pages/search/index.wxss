@@ -1,7 +1,7 @@
 .search-container {
   background-color: rgba(21, 21, 62, 1);
   min-height: 100%;
-  padding:30rpx 30rpx 0;
+  padding:30rpx 30rpx 20rpx;
 }
 .input-bar{
   padding-bottom:60rpx;
@@ -58,4 +58,133 @@
   font-size: 26rpx;
   text-align: center;
   padding-top: 50rpx;
+}
+
+.bar-item {
+  padding-bottom: 20rpx;
+}
+.hot-bar-item {
+  display: flex;
+  padding: 32rpx 20rpx 30rpx 20rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, .1);
+  background-color:rgba(0, 0, 0, 0.27);
+}
+.hot-bar-image {
+  width:196rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+}
+.hot-bar-context {
+  padding-left: 16rpx;
+  flex: 1;
+}
+.hot-bar-context>view{
+  display: flex;
+  color:#fff;
+  justify-content: space-between;
+}
+.hot-bar-context>view:nth-child(1){
+  padding-bottom: 30rpx;
+}
+.hot-bar-text {
+  font-size: 32rpx;
+  font-weight: 500;
+  color:rgba(255, 255, 255, .8);
+}
+.hot-bar-time {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  display: flex;
+  align-items: top;
+}
+.hot-bar-adre {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.hot-bar-distance {
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  color:rgba(255, 255, 255, .6);
+  padding-top: 10rpx;
+}
+.bar-order-info {
+  padding:22rpx 18rpx 22rpx 20rpx;
+  background-color:rgba(0, 0, 0, 0.1);
+}
+.bar-info-text {
+  display: flex;
+  justify-content: space-between;
+}
+.bar-info-text>view{
+  display: flex;
+  color:rgba(255, 255, 255, .5);
+  font-size: 24rpx;
+}
+.bar-info-text>view:first-child{
+  padding-bottom: 22rpx;
+}
+.btn-full {
+  background:rgba(218,73,255,1);
+  border-radius:4rpx;
+  font-size: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 12rpx;
+  line-height: 28rpx;
+  height: 28rpx;
+}
+.bar-people-num {
+  color:#fff;
+  padding: 0 10rpx;
+  font-weight: 500;
+}
+.btn-reserve {
+  background:rgba(88,77,255,1);
+  border-radius:4rpx;
+  font-size: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 12rpx;
+  line-height: 28rpx;
+  height: 28rpx;
+}
+/* 修改vant样式 */
+.van-hairline--top-bottom::after {
+  border-width:0 !important;
+}
+.van-swipe-cell__right {
+  height: 100%;
+  background-color: rgba(69, 106, 236, .8);
+  color:rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon_delete {
+  width:44rpx;
+  height: 44rpx;
+}
+.delete-text {
+  padding-top: 10rpx;
+}
+.adre-text {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:280rpx;
+}
+.time-text {
+  padding-right: 10rpx;
+}
+.time-text:last-child{
+  padding-right: 0;
+}
+.time-text-frame {
+  display: flex;
+  flex-wrap:wrap;
+  max-width: 300rpx;
 }

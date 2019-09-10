@@ -1,6 +1,7 @@
 .bar-container {
   background:#15153E;
   min-height: 100%;
+  padding-bottom: 20rpx;
 }
 .bar-list-frame {
   padding: 30rpx 30rpx 0 30rpx;
@@ -10,7 +11,6 @@
 }
 .hot-bar-item {
   display: flex;
-  height: 212rpx;
   padding: 32rpx 20rpx 30rpx 20rpx;
   border-bottom: 1rpx solid rgba(255, 255, 255, .1);
   background-color:rgba(0, 0, 0, 0.27);
@@ -42,7 +42,7 @@
   padding-left: 8rpx;
   color:rgba(255, 255, 255, .6);
   display: flex;
-  align-items: center;
+  align-items: top;
 }
 .hot-bar-adre {
   font-size: 24rpx;
@@ -128,4 +128,9 @@
 }
 .time-text:last-child{
   padding-right: 0;
+}
+.time-text-frame {
+  display: flex;
+  flex-wrap:wrap;
+  max-width: 300rpx;
 }

@@ -2,7 +2,8 @@
   "usingComponents": {
     "van-swipe-cell": "/vant/swipe-cell/index",
     "van-cell-group": "/vant/cell-group/index",
-    "modal": "/component/modal/index"
+    "modal": "/component/modal/index",
+    "Toast": "/component/toast/index"
   },
   "navigationBarTitleText": "我的收藏"
 }

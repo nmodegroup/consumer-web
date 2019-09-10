@@ -17,7 +17,8 @@ Page({
       pageNum: 1,
       pageSize: 8,
       queryStr: '',//关键字
-      webType: 0//页面入口类型（0搜索  1人气酒吧  2附近酒吧）
+      webType: 0,//页面入口类型（0搜索  1人气酒吧  2附近酒吧）
+      cid: ''//定位城市id
     },
     historyList: []//历史记录列表
   },
@@ -26,8 +27,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHistoryList()
     this.modal = this.selectComponent("#modal")
+    this.toast = this.selectComponent("#toast")
+    this.setData({
+      'query.cid': app.globalData.cid,
+      baseUrl: app.globalData.baseImgUrl
+    })
+    this.getHistoryList()
   },
   //监听输入框搜索
   onInput: function (e) {
@@ -94,6 +100,11 @@ Page({
     let id = e.currentTarget.dataset.id
     WxManager.navigateTo(Router.BarDetail, { id: id })
   },
+  //跳转酒吧详情
+  onBarDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.BarDetail, { id: id })
+  },
   //删除历史记录确认
   onLayer: function () {
     this.modal.showModal({
@@ -111,7 +122,14 @@ Page({
   },
   //删除记录历史
   onDelHistory: function () {
-    
+    console.log(111)
+    homeService.delHistoryList().then(res => {
+      this.toast.showToast({
+        content: '历史记录删除成功',
+        icon: 'success'
+      })
+      this.getHistoryList()
+    }).catch(error => { })
   },
   onResetInput: function () {
     this.setData({

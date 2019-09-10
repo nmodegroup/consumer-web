@@ -21,11 +21,13 @@
           </view>
         </view>
         <view class="cancel-frame" wx:if="{{!item.status}}">
-          <view class="btn-cancel">取消预订</view>
+          <view class="btn-cancel" bindtap="onCancel" data-id="{{item.oid}}">取消预订</view>
         </view>
       </view>
     </view>
   </view>
+  <Toast id="toast"></Toast>
+  <modal id="modal" bind:get="getResult"></modal>
   <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
   <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
 </view>
