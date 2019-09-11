@@ -26,7 +26,11 @@ Page({
     cid: 440300,//默认深圳
     remindOrder: [],//排位订单
     activityOrder: [],//活动预订订单
-    tableOrder: []//桌位预订订单
+    tableOrder: [],//桌位预订订单
+    routerInfo: {
+      barId: null,//酒吧id
+      activityId: null//活动id
+    }
   },
 
   /**
@@ -37,7 +41,9 @@ Page({
     this.getSetting()
     this.getCityList()
     this.setData({
-      baseUrl: app.globalData.baseImgUrl
+      baseUrl: app.globalData.baseImgUrl,
+      'routerInfo.barId': options.barId || null,
+      'routerInfo.activityId': options.activityId || null
     })
     this.wxLogin()
   },
@@ -63,6 +69,7 @@ Page({
         }
       }
     })
+    this.routerGo()
   },
   //微信用户信息授权
   getUserInfo() {
@@ -90,7 +97,16 @@ Page({
       app.globalData.phone = res.phone //保存电话号码
       app.globalData.online = true //保存以登录
       this.getOrder()
+      this.routerGo()
     })
+  },
+  // 转发传参跳转
+  routerGo: function () {
+    if (this.data.routerInfo.barId) {
+      WxManager.navigateTo(Router.BarDetail, { id: this.data.routerInfo.barId})
+    } else if (this.data.routerInfo.activityId) {
+      WxManager.navigateTo(Router.ActivityDetail, { id: this.data.routerInfo.activityId })
+    }
   },
   //选择地址
   onSelAdre: function () {
@@ -142,6 +158,11 @@ Page({
     wx.navigateTo({
       url: Router.Search
     })
+  },
+  //活动详情页
+  onActivityDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.ActivityDetail, { id: id })
   },
   //首页-获取banner/人气酒吧/附近酒吧
   getBarList: function () {

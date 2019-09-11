@@ -82,6 +82,11 @@ Page({
       this.getOrderList()
     }).catch(error => { })
   },
+  //活动详情页
+  onActivityDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.ActivityDetail, { id: id })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -15,26 +15,26 @@
     </view>
   </view>
   <view class="context-box">
-    <swiper class="booking-swiper">
+    <swiper class="booking-swiper" wx:if="{{tableOrder.length || activityOrder.length || remindOrder.length}}">
       <!-- 桌位预订订单 -->
-      <!-- <block>
+      <block wx:for="{{tableOrder}}" wx:key="{{index}}">
         <swiper-item>
-          <view class="booking-frame">
+          <view class="booking-frame" bindtap="onBarDetail" data-id="{{item.mid}}">
             <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
             <view class="booking-bar-farme">
               <view class="booking-frame-l">
                 <view class="booking-text">
-                  <view class="booking-name">酒吧</view>
+                  <view class="booking-name">{{item.name}}</view>
                   <view class="booking-info">
-                    10人
+                    {{item.tableNum}}人
                     <view class="vertical-line"></view>
-                    包房
+                    {{item.tableAreaName}}
                   </view>
                 </view>
-                <view class="booking-btn">已预定</view>
+                <view class="booking-btn {{item.status == 0 ? 'wait' : (item.status == 6 ? 'warn' : 'success')}}">{{filter.orderStatus(item.status)}}</view>
               </view>
               <view class="booking-frame-r">
-                <view class="booking-num">Y01</view>
+                <view class="booking-num">{{item.confirmCode ? item.confirmCode : '--'}}</view>
                 <view>预约码</view>
               </view>
             </view>
@@ -49,11 +49,11 @@
             </view>
           </view>
         </swiper-item>
-      </block> -->
+      </block>
       <!-- 活动订单 -->
       <block wx:for="{{activityOrder}}" wx:key="{{index}}">
         <swiper-item>
-          <view class="booking-frame">
+          <view class="booking-frame" bindtap="onActivityDetail" data-id="{{item.aid}}">
             <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
             <view class="booking-bar-farme">
               <view class="booking-frame-activity">
@@ -75,32 +75,27 @@
         </swiper-item>
       </block>
       <!-- 排位订单 -->
-      <block>
+      <block wx:for="{{remindOrder}}" wx:key="{{index}}">
         <swiper-item>
-          <view class="booking-frame">
+          <view class="booking-frame" bindtap="onBarDetail" data-id="{{item.mid}}">
             <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
             <view class="booking-bar-farme">
               <view class="booking-frame-l">
                 <view class="booking-text">
-                  <view class="booking-name">酒吧</view>
-                  <view class="booking-info">
-                    10人
-                    <view class="vertical-line"></view>
-                    包房
-                  </view>
+                  <view class="booking-name">{{item.name}}</view>
                 </view>
-                <view class="booking-btn">已预定</view>
+                <view class="booking-btn wait">已有{{item.num}}人设置提醒</view>
               </view>
               <view class="booking-frame-r">
-                <view class="booking-num">Y01</view>
+                <view class="booking-num">--</view>
                 <view>预约码</view>
               </view>
             </view>
             <view class="booking-text-frame">
                 <view>
-                  <view class="booking-time">到店时间：2019.5.23 20:00</view>
-                  <view class="booking-delay">超时时长：-分-秒
-                    <view class="booking-delay-tips">（超时30分钟自动取消）</view>
+                  <view class="booking-time">提醒日期：{{item.appointTime}}</view>
+                  <view class="booking-delay">
+                    <view class="booking-delay-tips">系统将在{{item.redoTime}}(营业结束)自动取消</view>
                   </view>
                 </view>
                 <image class="right-arrow-1" src="/image/icon_right_arrow.svg"></image>

@@ -74,6 +74,25 @@ function TmbookStatus(status) {
   }
 }
 
+//订单信息状态
+function orderStatus(status) {
+  if (status == 0) {
+    return '待确认'
+  } else if (status == 1) {
+    return '已预订'
+  } else if (status == 2) {
+    return '确认不通过'
+  } else if (status == 3) {
+    return '用户取消'
+  } else if (status == 4) {
+    return '超时取消'
+  } else if (status == 5) {
+    return '已到店'
+  } else if (status == 6) {
+    return '到店超时'
+  }
+}
+
 module.exports = {
   formatDistance: formatDistance,
   barType: barType,
@@ -81,5 +100,6 @@ module.exports = {
   activityStatus: activityStatus,
   activityDetailText: activityDetailText,
   TobookStatus: TobookStatus,
-  TmbookStatus: TmbookStatus
+  TmbookStatus: TmbookStatus,
+  orderStatus: orderStatus
 }
