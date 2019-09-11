@@ -93,6 +93,23 @@ function orderStatus(status) {
   }
 }
 
+function delayTime(time) {
+  var nowDate = getDate().getTime()
+  var bookTime = getDate(time).getTime()
+  if (nowDate <= bookTime) {
+    return '-分-秒'
+  } else {
+    var diff = ((nowDate - bookTime) / 1000).toFixed(0)
+    if (diff < 60) {
+      return '-分' + diff + '秒'
+    } else if (diff >= 60) {
+      var mySecond = diff % 60
+      var myMinuts = (diff - mySecond) / 60
+      return myMinuts + '分' + mySecond + '秒'
+    }
+  }
+}
+
 module.exports = {
   formatDistance: formatDistance,
   barType: barType,
@@ -101,5 +118,6 @@ module.exports = {
   activityDetailText: activityDetailText,
   TobookStatus: TobookStatus,
   TmbookStatus: TmbookStatus,
-  orderStatus: orderStatus
+  orderStatus: orderStatus,
+  delayTime: delayTime
 }

@@ -10,7 +10,8 @@ Page({
     interval: 5000,
     duration: 1000,
     baseUrl: '',
-    bar: {}//酒吧详情
+    bar: {},//酒吧详情
+    orderList: []//获取订单信息
   },
 
   /**
@@ -41,7 +42,9 @@ Page({
   //获取酒吧预订信息
   getBarOrder: function (id) {
     BarService.getBarOrder({ id: id }).then(res => {
-      console.log(res)
+      this.setData({
+        orderList: res
+      })
     }).catch(error => { })
   },
   //拨打电话

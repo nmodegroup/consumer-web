@@ -102,7 +102,7 @@ export function getHistoryList(params) {
 export function delHistoryList(params) {
   return new Promise((resolve, reject) => {
     httpManager
-      ._delete('/consumer/search/hirstory', params)
+      .put('/consumer/search/hirstory', params)
       .then(res => {
         resolve(res);
       })

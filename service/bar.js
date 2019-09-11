@@ -63,3 +63,35 @@ export function cancelCollect(params) {
       });
   });
 }
+
+/**
+ * 取消提醒
+ */
+export function cancelRemind(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .put('/consumer/bar/remind', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 设置提醒
+ */
+export function setRemind(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .post('/consumer/bar/remind', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
