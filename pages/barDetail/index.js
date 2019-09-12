@@ -11,7 +11,8 @@ Page({
     duration: 1000,
     baseUrl: '',
     bar: {},//酒吧详情
-    orderList: []//获取订单信息
+    orderList: [],//获取订单信息
+    idx: 0,//订单选择日期的下标默认今天的下标
   },
 
   /**
@@ -82,6 +83,12 @@ Page({
         })
       }).catch(error => {})
     }
+  },
+  //选择日期
+  onSelDate: function (e) {
+    this.setData({
+      idx: e.currentTarget.dataset.idx
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

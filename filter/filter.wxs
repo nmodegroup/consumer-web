@@ -93,6 +93,35 @@ function orderStatus(status) {
   }
 }
 
+//可预约类型
+function appointType (item) {
+  if (item) {
+    if (item.appointType == 0) {
+      return item.date
+    } else if (item.appointType == 1) {
+      return '预订已满'
+    } else if (item.appointType == 2) {
+      return '已设置提醒'
+    } else if (item.appointType == 3) {
+      return '已预订'
+    }
+  }
+}
+
+//酒吧详情在线预订按钮
+function appointBtn (type) {
+  console.log(type)
+  if (type == 0) {
+    return '立即预定'
+  } else if (type == 1) {
+    return '设置提醒'
+  } else if (type == 2) {
+    return '取消提醒'
+  } else if (type == 3) {
+    return '取消预订'
+  }
+}
+
 function delayTime(time) {
   var nowDate = getDate().getTime()
   var bookTime = getDate(time).getTime()
@@ -119,5 +148,7 @@ module.exports = {
   TobookStatus: TobookStatus,
   TmbookStatus: TmbookStatus,
   orderStatus: orderStatus,
-  delayTime: delayTime
+  delayTime: delayTime,
+  appointType: appointType,
+  appointBtn: appointBtn
 }

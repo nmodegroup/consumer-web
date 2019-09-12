@@ -42,32 +42,54 @@
       <view class="bar-booking-num">1204人订过</view>
     </view>
     <view class="bar-booking-body">
-      <view class="bar-booking-date active">
+      <view class="bar-booking-date {{idx == 0 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "0">
         <view class="booking-week">今天</view>
-        <view class="booking-date">今日已满</view>
+        <view class="booking-date">{{filter.appointType(orderList[0])}}</view>
       </view>
       <view class="date-vertical-line"></view>
-      <view class="bar-booking-date">
-        <view class="booking-week">周四</view>
-        <view class="booking-date">05-23</view>
+      <view class="bar-booking-date {{idx == 1 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "1">
+        <view class="booking-week">{{orderList[1].week}}</view>
+        <view class="booking-date">{{filter.appointType(orderList[1])}}</view>
       </view>
       <view class="date-vertical-line"></view>
-      <view class="bar-booking-date">
-        <view class="booking-week">周五</view>
-        <view class="booking-date">05-24</view>
+      <view class="bar-booking-date {{idx == 2 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "2">
+        <view class="booking-week">{{orderList[2].week}}</view>
+        <view class="booking-date">{{filter.appointType(orderList[2])}}</view>
       </view>
       <view class="date-vertical-line"></view>
-      <view class="bar-booking-date">
-        <view class="booking-week">周六</view>
-        <view class="booking-date">05-25</view>
+      <view class="bar-booking-date {{idx == 3 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "3">
+        <view class="booking-week">{{orderList[3].week}}</view>
+        <view class="booking-date">{{filter.appointType(orderList[3])}}</view>
       </view>
     </view>
     <view class="bar-booking-detail">
       <view>
-        <view class="bar-booking-status">今日预订已满</view>
-        <view class="bar-booking-tips">已有8人设置空位提醒</view>
+        <!-- 预订已满 -->
+        <view wx:if="{{orderList[idx].appointType == 1}}">
+          <view class="bar-booking-status">今日预订已满</view>
+          <view class="bar-booking-tips">已有{{orderList[idx].remindNum}}人设置空位提醒</view>
+        </view>
+        <!-- 可预约 -->
+        <view wx:if="{{orderList[idx].appointType == 0}}">
+          <view class="bar-booking-status">剩余桌位：{{orderList[idx].num}}</view>
+          <view class="bar-booking-tips">无最低消费限制</view>
+        </view>
+        <!-- 已设置提醒 -->
+        <view wx:if="{{orderList[idx].appointType == 2}}">
+          <view class="bar-booking-status">您已设置 {{orderList[idx].date}} 空位提醒</view>
+          <view class="bar-booking-tips">将在次日凌晨2:00自动取消</view>
+        </view>
+        <!-- 已预订 -->
+        <view wx:if="{{orderList[idx].appointType == 3}}">
+          <view class="bar-booking-status">您预订 {{orderList[idx].tableAreaName}} {{orderList[idx].date}} {{orderList[idx].appointArriveTime}} 到店</view>
+          <view class="bar-booking-tips">
+            <text class="bar-booking-tag">确认码：{{orderList[idx].confirmCode}}</text>
+            {{filter.delayTime(item.appointArriveTime)}}后系统自动取消
+          </view>
+        </view>
+        <!-- 已到店 -->
       </view>
-      <view class="btn-booking" bindtap="onBooking">立即预订</view>
+      <view class="btn-booking" bindtap="onBooking">{{filter.appointBtn(orderList[idx].appointType)}}</view>
       <!-- <image class="icon-confrim" src="/image/icon_confirm.svg"></image> -->
     </view>
   </view>
