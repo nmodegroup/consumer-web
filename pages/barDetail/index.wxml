@@ -89,7 +89,7 @@
         </view>
         <!-- 已到店 -->
       </view>
-      <view class="btn-booking" bindtap="onBooking">{{filter.appointBtn(orderList[idx].appointType)}}</view>
+      <view class="btn-booking" bindtap="onBooking" data-item = "{{orderList[idx]}}">{{filter.appointBtn(orderList[idx].appointType)}}</view>
       <!-- <image class="icon-confrim" src="/image/icon_confirm.svg"></image> -->
     </view>
   </view>
@@ -142,4 +142,32 @@
     </button>
   </view>
   <Toast id="toast"></Toast>
+  <modal id="modal" bind:get="getResult"></modal>
+  <!-- 获取手机号 -->
+  <view class='wx-modal-box' wx:if="{{phoneLayer}}">
+    <view class='wx-modal-content'>
+      <view class="wx-modal-title">温馨提示</view>
+      <text class='wx-modal-toast'>您未允许获取您的手机号，将会影响您正常使用小程序；如您需要继续使用，请点击“允许”完成授权</text>
+      <view class="btn-frame">
+        <view class="btn-cancel" bindtap="phoneCancel">退出</view>
+        <button class="btn-confirm"  open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber">允许</button>
+      </view>
+    </view>
+  </view>
+  <!-- 设置提醒 -->
+  <view class='wx-modal-box' wx:if="{{remindLayer}}">
+    <view class='wx-modal-content'>
+      <view class="wx-modal-title">设置提醒</view>
+      <input class="remind-input" bindinput='onInput' placeholder="请输入您的手机号" type="number" maxlength="11"></input>
+      <view class="btn-frame">
+        <view class="btn-cancel" bindtap="remindCancel">退出</view>
+        <view class="btn-confirm" bindtap="remindConfirm">允许</view>
+      </view>
+      <view class="remind-tips-frame">
+        <view>温馨提示：</view>
+        <view>1.防止错过空位，请填写正确的手机号</view>
+        <view>2.系统仅对您选择的日期进行空位提醒</view>
+      </view>
+    </view>
+  </view>
 </view>

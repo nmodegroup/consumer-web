@@ -277,3 +277,20 @@
 .time-text:last-child{
   padding-right: 0;
 }
+
+.remind-input {
+  height: 72rpx;
+  border:1rpx solid rgba(255, 255, 255, .2);
+  border-radius: 36rpx;
+  font-size: 26rpx;
+  padding: 0 40rpx;
+  color:rgba(255, 255, 255, .5);
+}
+.remind-tips-frame {
+  padding-top: 20rpx;
+}
+.remind-tips-frame view{
+  font-size: 20rpx;
+  color:rgba(255, 255, 255, .5);
+  line-height: 30rpx;
+}

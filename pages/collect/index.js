@@ -58,8 +58,7 @@ Page({
       content: '确定要删除此收藏吗？\n删除就没有了哦~',
       title: '温馨提示',
       cancelText: '拒绝',
-      confirmText: '残忍删除',
-      hideCancel: true
+      confirmText: '残忍删除'
     })
   },
   //获取活动列表

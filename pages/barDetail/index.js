@@ -1,5 +1,7 @@
 const Router = require("../../router/Router")
 const BarService = require('../../service/bar')
+const settingService = require('../../service/setting')
+const WxManager = require('../../utils/wxManager')
 const app = getApp()
 Page({
 
@@ -13,6 +15,9 @@ Page({
     bar: {},//酒吧详情
     orderList: [],//获取订单信息
     idx: 0,//订单选择日期的下标默认今天的下标
+    phoneLayer: false,
+    remindPhone: '',//设置提醒电话号码
+    selOrder: {}//选中的订单
   },
 
   /**
@@ -25,12 +30,49 @@ Page({
     this.getBarDetail(options.id)
     this.getBarOrder(options.id)
     this.toast = this.selectComponent("#toast")
+    this.modal = this.selectComponent("#modal")
   },
   //跳转酒店预订页面
-  onBooking: function () {
-    wx.navigateTo({
-      url: Router.Booking
+  onBooking: function (e) {
+    let item = e.currentTarget.dataset.item
+    if (app.globalData.online) {//如果以登录
+      if (!app.globalData.phone) {//判断登录接口有没有返回手机号 没有返回获取手机号授权
+        this.setData({
+          phoneLayer: true
+        })
+      } else {
+        this.inBooking(item)
+      }
+    } else {
+      this.inBooking(item)
+    }
+  },
+  //调用接口
+  inBooking: function (item) {
+    this.setData({
+      selOrder: item
     })
+    if (item.appointType == 0) {
+      WxManager.navigateTo(Router.Booking)
+    } else if (item.appointType == 1) {
+      this.setData({
+        remindLayer: true,
+      })
+    } else if (item.appointType == 2) {
+      this.modal.showModal({
+        content: '确定要取消提醒吗？\n取消后将无法获取空位提醒哦~',
+        title: '温馨提示',
+        cancelText: '再看看',
+        confirmText: '确认取消',
+      })
+    } else if (item.appointType == 3) {
+      this.modal.showModal({
+        content: '确定要取消预订吗？\n取消后可能导致没有桌位了哦~',
+        title: '温馨提示',
+        cancelText: '再看看',
+        confirmText: '确认取消',
+      })
+    }
   },
   //获取酒吧信息
   getBarDetail: function (id) {
@@ -38,7 +80,7 @@ Page({
       this.setData({
         bar: res
       })
-    }).catch(error => {})
+    }).catch(error => { })
   },
   //获取酒吧预订信息
   getBarOrder: function (id) {
@@ -67,13 +109,13 @@ Page({
     console.log(this.data.isCollect)
     let id = this.data.bar.id
     if (this.data.bar.isCollect == 1) {
-      BarService.cancelCollect({ id:  id}).then(res => {
+      BarService.cancelCollect({ id: id }).then(res => {
         this.getBarDetail(id)
         this.toast.showToast({
           content: '已取消收藏',
           icon: 'success'
         })
-      }).catch(error => {})
+      }).catch(error => { })
     } else if (this.data.bar.isCollect === 0) {
       BarService.setCollect({ id: id }).then(res => {
         this.getBarDetail(id)
@@ -81,7 +123,7 @@ Page({
           content: '收藏成功',
           icon: 'success'
         })
-      }).catch(error => {})
+      }).catch(error => { })
     }
   },
   //选择日期
@@ -89,6 +131,100 @@ Page({
     this.setData({
       idx: e.currentTarget.dataset.idx
     })
+  },
+  //获取手机号授权弹框取消按钮
+  phoneCancel: function () {
+    this.setData({
+      phoneLayer: false
+    })
+  },
+  //获取手机号
+  getPhoneNumber: function (e) {
+    this.setData({
+      phoneLayer: false
+    })
+    if (e.detail.errMsg == 'getPhoneNumber:ok') {
+      wx.login({
+        success: (res) => {
+          let form = {
+            code: res.code,
+            encrypted: e.detail.encryptedData,
+            iv: e.detail.iv
+          }
+          settingService.setPhone(form).then(res => {
+            app.globalData.phone = res
+          }).catch(error => { })
+        },
+        fail: (res) => {
+          console.log('login err:', res)
+        }
+      })
+    }
+  },
+  //监听手机号输入
+  onInput: function (e) {
+    this.setData({
+      remindPhone: e.detail.value
+    })
+  },
+  //设置提醒取消
+  remindCancel: function () {
+    this.setData({
+      remindLayer: false,
+      remindPhone: ''
+    })
+  },
+  //设置提醒确认
+  remindConfirm: function (item) {
+    if (!this.data.remindPhone) {
+      this.toast.showToast({
+        content: '请输入设置提醒手机号',
+        icon: 'warn'
+      })
+    } else {
+      let form = {
+        id: this.data.bar.id,
+        date: item.date,
+        remindPhone: this.data.remindPhone
+      }
+      BarService.setRemind(form).then(res => {
+        this.toast.showToast({
+          content: '空位提醒设置成功',
+          icon: 'success'
+        })
+        this.getBarOrder()
+      }).catch(error => { })
+    }
+  },
+  //取消提醒
+  cancelRemind: function () {
+    BarService.cancelRemind({ id: this.data.selOrder.id }).then(res => {
+      this.toast.showToast({
+        content: '取消提醒成功',
+        icon: 'success'
+      })
+      this.getBarOrder()
+    }).catch(error => { })
+  },
+  //酒吧预订取消
+  cancelBarOrder: function () {
+    BarService.cancelBarOrder({ id: this.data.selOrder.id }).then(res => {
+      this.toast.showToast({
+        content: '取消预订成功',
+        icon: 'success'
+      })
+      this.getBarOrder()
+    }).catch(error => { })
+  },
+  //modal弹框回调
+  getResult: function (e) {
+    if (e.detail.result == 'confirm') {
+      if (this.data.selOrder.appointType == 2) {
+        this.cancelRemind()
+      } else if (this.data.selOrder.appointType == 3) {
+        this.cancelBarOrder()
+      }
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

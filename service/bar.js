@@ -95,3 +95,36 @@ export function setRemind(params) {
       });
   });
 }
+
+
+/**
+ * 酒吧预订确认
+ */
+export function bookBarOrder(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .post('/consumer/bar/reserve', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 酒吧预订取消
+ */
+export function cancelBarOrder(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .put('/consumer/bar/reserve', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

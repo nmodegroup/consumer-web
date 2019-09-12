@@ -110,7 +110,6 @@ function appointType (item) {
 
 //酒吧详情在线预订按钮
 function appointBtn (type) {
-  console.log(type)
   if (type == 0) {
     return '立即预定'
   } else if (type == 1) {

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "Toast": "/component/toast/index"
+    "Toast": "/component/toast/index",
+    "modal": "/component/modal/index"
   },
   "navigationBarTitleText": "酒吧详情"
 }
