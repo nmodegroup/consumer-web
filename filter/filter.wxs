@@ -139,7 +139,6 @@ function delayTime(time) {
 }
 
 function cancelTime(time) {
-  console.log(time)
   var nowDate = getDate().getTime()
   var cancelTime = getDate(time).getTime()
   if (cancelTime > nowDate) {

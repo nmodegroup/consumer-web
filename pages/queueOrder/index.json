@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "Toast": "/component/toast/index",
-    "modal": "/component/modal/index"
-  },
-  "enablePullDownRefresh": true,
-  "navigationBarTitleText": "排位订单"
-}

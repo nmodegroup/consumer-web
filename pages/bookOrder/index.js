@@ -16,7 +16,8 @@ Page({
     },
     moreBtn: false,//正在载入更多提示
     noMoreBtn: false,//没有更多提示
-    goMore: true // 加载更多,
+    goMore: true, // 加载更多
+    tabType: 1//1我的预订 2我的排位
   },
 
   /**
@@ -65,10 +66,31 @@ Page({
       confirmText: '确认取消',
     })
   },
+  onTab: function (e) {
+    let type = e.currentTarget.dataset.type
+    this.setData({
+      tabType: type,
+      'query.pageNum': 1,
+      goMore: true,
+      moreBtn: false,
+      noMoreBtn: false,
+      list: []
+    })
+    if (this.data.tabType == 1) {
+      this.getOrderList()
+    } else if (this.data.tabType == 2) {
+      this.getRemindList()
+    }
+  },
   //modal弹框回调
   getResult: function (e) {
     if (e.detail.result == 'confirm') {
-      this.cancelBooking()
+      if (this.data.tabType == 1) {
+        this.cancelBooking()
+      } else if (this.data.tabType == 2) {
+        this.onRemindCancel()
+      }
+      
     }
   },
   //取消预订接口
@@ -78,6 +100,12 @@ Page({
         content: '您已取消预订',
         icon: 'success'
       })
+      this.setData({
+        'query.pageNum': 1,
+        goMore: true,
+        moreBtn: false,
+        noMoreBtn: false
+      })
       this.getOrderList()
     }).catch(error => { })
   },
@@ -85,6 +113,62 @@ Page({
   onBarDetail: function (e) {
     let id = e.currentTarget.dataset.id
     WxManager.navigateTo(Router.BarDetail, { id: id })
+  },
+
+  //获取我的预订列表
+  getRemindList: function () {
+    let that = this
+    mineService.getRemindOrder(this.data.query).then(res => {
+      if (that.data.query.pageNum == 1) {
+        that.setData({
+          list: res.list
+        })
+      } else {
+        if (that.data.list.length < res.totalSize) {
+          let list = that.data.list
+          list = list.concat(res.list)
+          that.setData({
+            list: list,
+            goMore: true,
+            moreBtn: false,
+            noMoreBtn: false
+          })
+        } else {
+          that.setData({
+            goMore: false,
+            moreBtn: false,
+            noMoreBtn: true
+          })
+        }
+      }
+    }).catch(error => { })
+  },
+  onRemindCancel: function (e) {
+    this.setData({
+      selId: e.currentTarget.dataset.id
+    })
+    this.modal.showModal({
+      content: '确定要取消提醒吗？',
+      title: '温馨提示',
+      cancelText: '再看看',
+      confirmText: '确认取消',
+    })
+  },
+  //取消排位接口
+  cancelRemind: function () {
+    BarService.cancelRemind({ id: this.data.selId }).then(res => {
+      this.toast.showToast({
+        content: '您已取消提醒',
+        icon: 'success'
+      })
+      this.setData({
+        'query.pageNum': 1,
+        goMore: true,
+        moreBtn: false,
+        noMoreBtn: false
+      })
+      this.getRemindList()
+    }).catch(error => { })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -97,7 +181,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getOrderList()
+    if (this.data.tabType == 1) {
+      this.getOrderList()
+    } else if (this.data.tabType == 2) {
+      this.getRemindList()
+    }
   },
 
   /**
@@ -124,7 +212,11 @@ Page({
       moreBtn: false,
       noMoreBtn: false
     })
-    this.getOrderList()
+    if (this.data.tabType == 1) {
+      this.getOrderList()
+    } else if (this.data.tabType == 2) {
+      this.getRemindList()
+    }
     wx.stopPullDownRefresh()
   },
 
@@ -139,7 +231,11 @@ Page({
         'query.pageNum': that.data.query.pageNum + 1,
         goMore: false
       })
-      this.getOrderList()
+      if (this.data.tabType == 1) {
+        this.getOrderList()
+      } else if (this.data.tabType == 2) {
+        this.getRemindList()
+      }
     }
   }
 })
