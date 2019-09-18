@@ -29,7 +29,7 @@
             <view class="delay-time">超时时长：{{filter.delayTime(item.appointArriveTime)}}</view>
           </view>
           <view class="cancel-frame" wx:if="{{item.status == 0 || item.status == 1 || item.status == 6}}">
-            <view class="btn-cancel" bindtap="onCancel" data-id="{{item.id}}">取消预订</view>
+            <view class="btn-cancel" catchtap="onCancel" data-id="{{item.id}}">取消预订</view>
           </view>
         </view>
       </view>
@@ -55,7 +55,7 @@
             <view class="delay-time">系统在{{item.redoTime}}取消</view>
           </view>
           <view class="cancel-frame" wx:if="{{item.status == 0}}">
-            <view class="btn-cancel" bindtap="onRemindCancel" data-id="{{item.id}}">取消提醒</view>
+            <view class="btn-cancel" catchtap="onRemindCancel" data-id="{{item.id}}">取消提醒</view>
           </view>
         </view>
       </view>
