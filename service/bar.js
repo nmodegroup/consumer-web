@@ -128,3 +128,35 @@ export function cancelBarOrder(params) {
       });
   });
 }
+
+/**
+ * 根据日期获取桌位列表
+ */
+export function getBarTable(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/bar/table', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+
+/**
+ * 根据日期获取桌位列表
+ */
+export function getBarTime(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/bar/time', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

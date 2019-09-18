@@ -25,6 +25,12 @@ Page({
       url: Router.BookOrder
     })
   },
+  //我的排位页面
+  onQueueOrder: function () {
+    wx.navigateTo({
+      url: Router.QueueOrder
+    })
+  },
   //换绑手机号页面
   onEditPhone: function () {
     wx.navigateTo({

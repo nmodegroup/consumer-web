@@ -294,3 +294,15 @@
   color:rgba(255, 255, 255, .5);
   line-height: 30rpx;
 }
+.bar-booking-tag {
+  padding:0 10rpx;
+  border:1rpx solid rgba(255,255,255,1);
+  height: 32rpx;
+  line-height: 32rpx;
+  color:rgba(255, 255, 255, 1);
+}
+.bar-cancel-time {
+  color:rgba(255, 255, 255, 1);
+  padding-left:14rpx;
+  padding-right: 4rpx;
+}

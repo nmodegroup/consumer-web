@@ -35,12 +35,12 @@
         <image class="icon-ding" src="/image/icon_bar_intro.svg"></image>
         酒吧活动
       </view>
-      <view class="bar-booking-num">进入酒吧主页
+      <view class="bar-booking-num" bindtap="onBarDetail" data-id="{{activity.bar.id}}">进入酒吧主页
         <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
       </view>
     </view>
   </view>
-  <view class="bar-context">
+  <view class="bar-context" bindtap="onBarDetail" data-id="{{activity.bar.id}}">
     <view class="bar-intro-frame">
       <view class="bar-info">
         <view class="bar-name">{{activity.bar.name}}</view>

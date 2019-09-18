@@ -21,7 +21,7 @@
           </view>
         </view>
         <view class="cancel-frame" wx:if="{{!item.status}}">
-          <view class="btn-cancel" bindtap="onCancel" data-id="{{item.id}}">取消预订</view>
+          <view class="btn-cancel" catchtap="onCancel" data-id="{{item.id}}">取消预订</view>
         </view>
       </view>
     </view>

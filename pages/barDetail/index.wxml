@@ -84,13 +84,17 @@
           <view class="bar-booking-status">您预订 {{orderList[idx].tableAreaName}} {{orderList[idx].date}} {{orderList[idx].appointArriveTime}} 到店</view>
           <view class="bar-booking-tips">
             <text class="bar-booking-tag">确认码：{{orderList[idx].confirmCode}}</text>
-            {{filter.delayTime(item.appointArriveTime)}}后系统自动取消
+            <text class="bar-cancel-time">{{filter.cancelTime(orderList[idx].redoTime)}}</text> 后系统自动取消
           </view>
         </view>
         <!-- 已到店 -->
+        <view wx:if="{{orderList[idx].appointType == 3 && orderList[idx].status == 5}}">
+          <view class="bar-booking-status">已到店，商家完成确认</view>
+          <view class="bar-booking-tips">感谢您的光临</view>
+        </view>
       </view>
-      <view class="btn-booking" bindtap="onBooking" data-item = "{{orderList[idx]}}">{{filter.appointBtn(orderList[idx].appointType)}}</view>
-      <!-- <image class="icon-confrim" src="/image/icon_confirm.svg"></image> -->
+      <view class="btn-booking" wx:if="{{orderList[idx].appointType != 3 && orderList[idx].status != 5}}" bindtap="onBooking" data-item = "{{orderList[idx]}}">{{filter.appointBtn(orderList[idx].appointType)}}</view>
+      <image wx:if="{{orderList[idx].appointType == 3 && orderList[idx].status == 5}}" class="icon-confrim" src="/image/icon_confirm.svg"></image>
     </view>
   </view>
   <view class="bar-booking-frame">
@@ -104,20 +108,12 @@
       <scroll-view  class="scroll-view_H" scroll-x="true" style="width: 100%">
         <view class="scroll-img-frame" wx:for="{{bar.bartenders}}" wx:key="index">
           <view class="bartender-name-frame">
-            <view class="bartender-name-en">Hackett Chan</view>
-            <view class="bartender-name-ch">陈侯辛</view>
+            <view class="bartender-name-en">{{item.enName}}</view>
+            <view class="bartender-name-ch">{{item.chName}}</view>
           </view>
           <view class="bartender-intro">{{item.desc}}</view>
           <image mode="aspectFill" wx:if="{{item.img}}" src="{{baseUrl +  item.img}}"></image>
         </view>
-        <!-- <view class="scroll-img-frame">
-          <view class="bartender-name-frame">
-            <view class="bartender-name-en">Hackett Chan</view>
-            <view class="bartender-name-ch">陈侯辛</view>
-          </view>
-          <view class="bartender-intro">调酒师的圈子里的霸主，多次代表中国调酒师出现在各大国际酒水品牌的活动和比赛上。</view>
-          <image mode="aspectFill" src="/image/bg-bar.png"></image>
-        </view> -->
       </scroll-view>
     </view>
   </view>

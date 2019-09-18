@@ -1,6 +1,7 @@
 const Router = require("../../router/Router")
 const WxManager = require('../../utils/wxManager')
 const mineService = require('../../service/mine')
+const BarService = require('../../service/bar')
 const app = getApp()
 Page({
 
@@ -22,7 +23,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.toast = this.selectComponent("#toast")
+    this.modal = this.selectComponent("#modal")
   },
   //获取我的预订列表
   getOrderList: function () {
@@ -51,6 +53,38 @@ Page({
         }
       }
     }).catch(error => { })
+  },
+  onCancel: function (e) {
+    this.setData({
+      selId: e.currentTarget.dataset.id
+    })
+    this.modal.showModal({
+      content: '确定要取消预订吗？取消后可能导致没有名额了哦~',
+      title: '温馨提示',
+      cancelText: '再看看',
+      confirmText: '确认取消',
+    })
+  },
+  //modal弹框回调
+  getResult: function (e) {
+    if (e.detail.result == 'confirm') {
+      this.cancelBooking()
+    }
+  },
+  //取消预订接口
+  cancelBooking: function () {
+    BarService.cancelBarOrder({ id: this.data.selId }).then(res => {
+      this.toast.showToast({
+        content: '您已取消预订',
+        icon: 'success'
+      })
+      this.getOrderList()
+    }).catch(error => { })
+  },
+  //跳转酒吧详情
+  onBarDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.BarDetail, { id: id })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -107,12 +141,5 @@ Page({
       })
       this.getOrderList()
     }
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

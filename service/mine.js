@@ -65,6 +65,22 @@ export function getTableOrder(params) {
 }
 
 /**
+ * 获取我的排位单列表
+ */
+export function getRemindOrder(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/remind/order', params)
+      .then(res => {
+        resolve(res)
+      })
+      .catch(e => {
+        reject(e)
+      })
+  })
+}
+
+/**
  * 获取我的活动单列表
  */
 export function getActivityOrder(params) {

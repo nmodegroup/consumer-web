@@ -1,6 +1,7 @@
 .book-container {
   background-color: rgba(21, 21, 62, 1);
   padding: 40rpx 30rpx 280rpx;
+  min-height: 100%;
 }
 .date-title {
   color:rgba(255, 255, 255, .8);

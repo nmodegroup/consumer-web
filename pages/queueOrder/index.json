@@ -4,5 +4,5 @@
     "modal": "/component/modal/index"
   },
   "enablePullDownRefresh": true,
-  "navigationBarTitleText": "我的预订"
+  "navigationBarTitleText": "排位订单"
 }

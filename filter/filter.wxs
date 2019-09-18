@@ -138,6 +138,22 @@ function delayTime(time) {
   }
 }
 
+function cancelTime(time) {
+  console.log(time)
+  var nowDate = getDate().getTime()
+  var cancelTime = getDate(time).getTime()
+  if (cancelTime > nowDate) {
+    var diff = ((cancelTime - nowDate) / 1000).toFixed(0)
+    if (diff < 60) {
+      return '-分' + diff + '秒'
+    } else if (diff >= 60) {
+      var mySecond = diff % 60
+      var myMinuts = (diff - mySecond) / 60
+      return myMinuts + '分' + mySecond + '秒'
+    }
+  }
+}
+
 module.exports = {
   formatDistance: formatDistance,
   barType: barType,
@@ -149,5 +165,6 @@ module.exports = {
   orderStatus: orderStatus,
   delayTime: delayTime,
   appointType: appointType,
-  appointBtn: appointBtn
+  appointBtn: appointBtn,
+  cancelTime: cancelTime
 }

@@ -1,7 +1,7 @@
 const Router = require("../../router/Router")
 const WxManager = require('../../utils/wxManager')
 const mineService = require('../../service/mine')
-const ActivityService = require('../../service/activity')
+const BarService = require('../../service/bar')
 const app = getApp()
 Page({
 
@@ -12,7 +12,7 @@ Page({
     list: [],
     query: {
       pageNum: 1,
-      pageSize: 6
+      pageSize: 4
     },
     moreBtn: false,//正在载入更多提示
     noMoreBtn: false,//没有更多提示
@@ -27,9 +27,9 @@ Page({
     this.modal = this.selectComponent("#modal")
   },
   //获取我的预订列表
-  getOrderList: function () {
+  getRemindList: function () {
     let that = this
-    mineService.getActivityOrder(this.data.query).then(res => {
+    mineService.getRemindOrder(this.data.query).then(res => {
       if (that.data.query.pageNum == 1) {
         that.setData({
           list: res.list
@@ -54,13 +54,12 @@ Page({
       }
     }).catch(error => { })
   },
-  //取消预订
   onCancel: function (e) {
     this.setData({
       selId: e.currentTarget.dataset.id
     })
     this.modal.showModal({
-      content: '确定要取消预订吗？取消后可能导致没有名额了哦~',
+      content: '确定要取消提醒吗？',
       title: '温馨提示',
       cancelText: '再看看',
       confirmText: '确认取消',
@@ -74,18 +73,18 @@ Page({
   },
   //取消预订接口
   cancelBooking: function () {
-    ActivityService.cancelBooking({ id: this.data.selId }).then(res => {
+    BarService.cancelRemind({ id: this.data.selId }).then(res => {
       this.toast.showToast({
-        content: '您已取消预订',
+        content: '您已取消提醒',
         icon: 'success'
       })
-      this.getOrderList()
+      this.getRemindList()
     }).catch(error => { })
   },
-  //活动详情页
-  onActivityDetail: function (e) {
+  //跳转酒吧详情
+  onBarDetail: function (e) {
     let id = e.currentTarget.dataset.id
-    WxManager.navigateTo(Router.ActivityDetail, { id: id })
+    WxManager.navigateTo(Router.BarDetail, { id: id })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -98,7 +97,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getOrderList()
+    this.getRemindList()
   },
 
   /**
@@ -125,7 +124,7 @@ Page({
       moreBtn: false,
       noMoreBtn: false
     })
-    this.getOrderList()
+    this.getRemindList()
     wx.stopPullDownRefresh()
   },
 
@@ -140,14 +139,7 @@ Page({
         'query.pageNum': that.data.query.pageNum + 1,
         goMore: false
       })
-      this.getOrderList()
+      this.getRemindList()
     }
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

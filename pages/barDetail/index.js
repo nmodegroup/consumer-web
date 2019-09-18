@@ -53,7 +53,7 @@ Page({
       selOrder: item
     })
     if (item.appointType == 0) {
-      WxManager.navigateTo(Router.Booking)
+      WxManager.navigateTo(Router.Booking, { id: this.data.bar.id })
     } else if (item.appointType == 1) {
       this.setData({
         remindLayer: true,
@@ -84,7 +84,8 @@ Page({
   },
   //获取酒吧预订信息
   getBarOrder: function (id) {
-    BarService.getBarOrder({ id: id }).then(res => {
+    let barId = id || this.data.bar.id
+    BarService.getBarOrder({ id: barId }).then(res => {
       this.setData({
         orderList: res
       })

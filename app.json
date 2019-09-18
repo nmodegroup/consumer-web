@@ -9,6 +9,7 @@
     "pages/search/index",
     "pages/editPhone/index",
     "pages/bookOrder/index",
+    "pages/queueOrder/index",
     "pages/activityOrder/index",
     "pages/activityDetail/index",
     "pages/barList/index",

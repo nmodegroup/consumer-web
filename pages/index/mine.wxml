@@ -17,6 +17,11 @@
       <view>预订单</view>
     </view>
     <view class="menu-vertical"></view>
+    <view class="menu-item" bindtap="onQueueOrder">
+      <image src="/image/icon_huodongdang.svg"></image>
+      <view>排位单</view>
+    </view>
+    <view class="menu-vertical"></view>
     <view class="menu-item" bindtap="onActivityOrder">
       <image src="/image/icon_huodongdang.svg"></image>
       <view>活动单</view>

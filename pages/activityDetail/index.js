@@ -138,7 +138,11 @@ Page({
       })
     }
   },
-
+  //跳转酒吧详情
+  onBarDetail: function (e) {
+    let id = e.currentTarget.dataset.id
+    WxManager.navigateTo(Router.BarDetail, { id: id })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
