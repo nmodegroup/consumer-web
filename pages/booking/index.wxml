@@ -3,7 +3,7 @@
   <view  class="date-content">
     <view class="date-item {{item.appointType != 0 ?  'disable' : (selDate == item.date ? 'active' : '')}}" wx:for="{{orderList}}" wx:key="index" bindtap="onSelDate" data-date="{{item.date}}" data-businessDate="{{item.businessDate}}" data-week="{{item.week}}">
       <view class="date-day">{{item.date}}</view>
-      <view class="date-weeek">{{item.appointType == 0 ? item.week : '不可预订'}}{{selDate}}</view>
+      <view class="date-weeek">{{item.appointType == 0 ? item.week : '不可预订'}}</view>
     </view>
     <!-- <view class="date-item disable">
       <view class="date-day">5月23日</view>

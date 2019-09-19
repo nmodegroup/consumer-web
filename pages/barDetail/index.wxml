@@ -39,7 +39,7 @@
         <image class="icon-ding" src="/image/icon_ding.svg"></image>
         在线预订
       </view>
-      <view class="bar-booking-num">1204人订过</view>
+      <view class="bar-booking-num">{{bar.orderNum}}人订过</view>
     </view>
     <view class="bar-booking-body">
       <view class="bar-booking-date {{idx == 0 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "0">
