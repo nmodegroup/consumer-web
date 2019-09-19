@@ -53,7 +53,7 @@ Page({
       selOrder: item
     })
     if (item.appointType == 0) {
-      WxManager.navigateTo(Router.Booking, { id: this.data.bar.id })
+      WxManager.navigateTo(Router.Booking, { id: this.data.bar.id, name:this.data.bar.name })
     } else if (item.appointType == 1) {
       this.setData({
         remindLayer: true,

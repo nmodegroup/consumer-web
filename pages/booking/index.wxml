@@ -53,7 +53,7 @@
     <view class="time-item">22:00</view> -->
   </view>
   <view class="book-info-frame">
-    <view class="bar-name">RMK Cocktail Bar</view>
+    <view class="bar-name">{{barName}}</view>
     <view class="book-info">
       <text>{{form.date}} ({{selWeek}})</text>
       <view class="vertical-line"></view>

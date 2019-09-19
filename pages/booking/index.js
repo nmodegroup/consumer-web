@@ -17,6 +17,7 @@ Page({
       tableNum: '',//桌位人数
       appointArriveTimeId: ''//预订单点时间id
     },
+    barName: '',//酒吧名称
     selId: '',//选择的桌位id
     selIdx: '',//选择的座位下标
     selDate: '',//选择的日期
@@ -33,7 +34,8 @@ Page({
     this.toast = this.selectComponent("#toast")
     this.getBarOrder(options.id)
     this.setData({
-      'form.id': options.id
+      'form.id': options.id,
+      barName: options.name
     })
     this.getBarTime()
   },
