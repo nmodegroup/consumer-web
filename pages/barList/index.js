@@ -61,7 +61,7 @@ Page({
       text: '5km',
       id: 5,
       selType: 1
-    },{
+    }, {
       text: '其他',
       id: 6,
       selType: 1
@@ -159,25 +159,26 @@ Page({
     if (e.currentTarget.dataset.seltype == 1) {
       this.setData({
         'query.nearType': e.currentTarget.dataset.id,
-        'query.pageNum': 1,
         nearText: e.currentTarget.dataset.text
       })
     } else if (e.currentTarget.dataset.seltype == 2) {
       this.setData({
         'query.barType': e.currentTarget.dataset.id,
-        'query.pageNum': 1,
         barText: e.currentTarget.dataset.text
       })
     } else if (e.currentTarget.dataset.seltype == 3) {
       this.setData({
         'query.sortType': e.currentTarget.dataset.id,
-        'query.pageNum': 1,
         sortText: e.currentTarget.dataset.text
       })
     }
     this.setData({
       selType: e.currentTarget.dataset.seltype,
-      selIdx: e.currentTarget.dataset.selidx
+      selIdx: e.currentTarget.dataset.selidx,
+      'query.pageNum': 1,
+      goMore: true,
+      moreBtn: false,
+      noMoreBtn: false
     })
     this.getBarList()
   },
