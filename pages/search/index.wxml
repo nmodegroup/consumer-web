@@ -4,16 +4,16 @@
     <input class="search-input" confirm-type="search"  value="{{query.queryStr}}" bindinput='onInput' placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255, 255, 255, .5)" confirm-type="search" bindconfirm="getBarList"></input>
     <view class="btn-search" bindtap="getBarList">搜索</view>
   </view>
-  <view class="history-bar" wx:if="{{historyList.length}}">
+  <view class="history-bar" wx:if="{{!noResult}}">
     <view>历史搜索</view>
-    <image bindtap="onLayer" class="icon_delete" src="/image/icon_delete.svg"></image>
+    <image wx:if="{{historyList.length}}" bindtap="onLayer" class="icon_delete" src="/image/icon_delete.svg"></image>
   </view>
   <view class="no-history-text" wx:if="{{noResult && !list.length}}">没有酒吧哦</view>
+  <view class="no-history-text" wx:if="{{!historyList.length && !noResult}}">暂无历史记录</view>
   <view class="history-list" wx:if="{{historyList.length}}">
     <view class="history-item" wx:for="{{historyList}}" wx:key="{{index}}"
     bindtap="onGetHistory" data-key="{{item}}">{{item}}</view>
   </view>
-
   <view class="bar-item" bindtap="onBarDetail" data-id="{{item.id}}" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}">
     <view class="hot-bar-item">
       <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
