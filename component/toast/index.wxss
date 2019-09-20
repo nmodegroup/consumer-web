@@ -6,7 +6,7 @@
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
-  z-index: 999;
+  z-index: 1000;
 }
 
 .wx-toast-content-base {

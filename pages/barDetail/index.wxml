@@ -144,8 +144,8 @@
       <image src="/image/icon_share.svg"></image>
     </button>
   </view>
-  <Toast id="toast"></Toast>
   <modal id="modal" bind:get="getResult"></modal>
+  <Toast id="toast"></Toast>
   <!-- 获取手机号 -->
   <view class='wx-modal-box' wx:if="{{phoneLayer}}">
     <view class='wx-modal-content'>
