@@ -177,21 +177,25 @@ Page({
   },
   //设置提醒确认
   remindConfirm: function (item) {
-    if (!this.data.remindPhone) {
+    let rmobile = /^1(3|4|5|7|8|6|9)\d{9}$/
+    if (!rmobile.test(this.data.remindPhone)) {
       this.toast.showToast({
-        content: '请输入设置提醒手机号',
+        content: '请输入正确的设置提醒手机号',
         icon: 'warn'
       })
     } else {
       let form = {
         id: this.data.bar.id,
-        date: item.date,
+        date: this.data.selOrder.businessDate,
         remindPhone: this.data.remindPhone
       }
       BarService.setRemind(form).then(res => {
         this.toast.showToast({
           content: '空位提醒设置成功',
           icon: 'success'
+        })
+        this.setData({
+          remindLayer: false
         })
         this.getBarOrder()
       }).catch(error => { })

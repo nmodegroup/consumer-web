@@ -87,7 +87,7 @@
           </view>
         </view>
         <!-- 已预订 -->
-        <view wx:if="{{orderList[idx].appointType == 3  && orderList[idx].status == 1}}">
+        <view wx:if="{{orderList[idx].appointType == 3  && (orderList[idx].status == 1 || orderList[idx].status == 6)}}">
           <view class="bar-booking-status">您预订 {{orderList[idx].tableAreaName}}{{orderList[idx].appointArriveTime}} 到店</view>
           <view class="bar-booking-tips">
             <text class="bar-booking-tag">确认码：{{orderList[idx].confirmCode}}</text>
@@ -164,7 +164,7 @@
       <input class="remind-input" bindinput='onInput' placeholder="请输入您的手机号" type="number" maxlength="11"></input>
       <view class="btn-frame">
         <view class="btn-cancel" bindtap="remindCancel">退出</view>
-        <view class="btn-confirm" bindtap="remindConfirm">允许</view>
+        <view class="btn-confirm" bindtap="remindConfirm">提交</view>
       </view>
       <view class="remind-tips-frame">
         <view>温馨提示：</view>
