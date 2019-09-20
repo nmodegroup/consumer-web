@@ -1,26 +1,10 @@
 <view class="book-container">
   <view class="date-title">日期</view>
   <view  class="date-content">
-    <view class="date-item {{item.appointType != 0 ?  'disable' : (selDate == item.date ? 'active' : '')}}" wx:for="{{orderList}}" wx:key="index" bindtap="onSelDate" data-date="{{item.date}}" data-businessDate="{{item.businessDate}}" data-week="{{item.week}}">
+    <view class="date-item {{item.appointType != 0 ?  'disable' : (selDate == item.date ? 'active' : '')}}" wx:for="{{orderList}}" wx:key="index" bindtap="onSelDate" data-item="{{item}}">
       <view class="date-day">{{item.date}}</view>
       <view class="date-weeek">{{item.appointType == 0 ? item.week : '不可预订'}}</view>
     </view>
-    <!-- <view class="date-item disable">
-      <view class="date-day">5月23日</view>
-      <view class="date-weeek">不可预订</view>
-    </view>
-    <view class="date-item active">
-      <view class="date-day">5月24日</view>
-      <view class="date-weeek">星期五</view>
-    </view>
-    <view class="date-item">
-      <view class="date-day">5月25日</view>
-      <view class="date-weeek">星期六</view>
-    </view>
-    <view class="date-item">
-      <view class="date-day">5月26日</view>
-      <view class="date-weeek">星期日</view>
-    </view> -->
   </view>
   <view class="date-title">选择桌位</view>
   <view class="seat-content">
@@ -34,33 +18,23 @@
         </view>
       </view>
     </view>
-    <!-- <view class="seat-title">包房</view>
-    <view class="flex">
-      <view class="seat-item">
-        <view class="seat-text">8人桌</view>
-        <view class="seat-num">剩余：6</view>
-      </view>
-    </view> -->
   </view>
   <view class="time-title">到店时间
     <text class="time-tips">免费保留半小时</text>
   </view>
   <view class="flex">
     <view class="time-item {{form.appointArriveTimeId == item.id ? 'active' : ''}}" wx:for="{{timeList}}" wx:key="index" bindtap="onSelTime" data-id="{{item.id}}" data-time="{{item.time}}">{{item.time}}</view>
-    <!-- <view class="time-item">20:30</view>
-    <view class="time-item">21:00</view>
-    <view class="time-item">21:30</view>
-    <view class="time-item">22:00</view> -->
   </view>
   <view class="book-info-frame">
     <view class="bar-name">{{barName}}</view>
-    <view class="book-info">
+    <view class="book-info" wx:if="{{form.date && form.areaId && form.appointArriveTimeId}}">
       <text>{{form.date}} ({{selWeek}})</text>
       <view class="vertical-line"></view>
       <text>{{form.tableAreaName}} ({{form.tableNum}}人桌)</text>
       <view class="vertical-line"></view>
       <text>{{selTime}}</text>
     </view>
+    <view class="book-info" wx:if="{{!form.date || !form.areaId || !form.appointArriveTimeId}}">请完善预约信息</view>
     <view class="confirm-frame">
       <view class="btn-confirm" bindtap="onBooking">确认</view>
     </view>

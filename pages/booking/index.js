@@ -56,20 +56,28 @@ Page({
   },
   //选择日期
   onSelDate: function (e) {
-    this.setData({
-      tableList: [],
-      selIdx: '',
-      'form.areaId': ''
-    })
-    this.setData({
-      selDate: e.currentTarget.dataset.date,
-      selWeek: e.currentTarget.dataset.week,
-      'form.date': e.currentTarget.dataset.businessdate
-    })
-    this.getBarTable({
-      id:this.data.form.id,
-      data: e.currentTarget.dataset.date
-    })
+    console.log(e.currentTarget.dataset.item)
+    if (e.currentTarget.dataset.item.appointType == 0) {
+      this.setData({
+        tableList: [],
+        selIdx: '',
+        'form.areaId': ''
+      })
+      this.setData({
+        selDate: e.currentTarget.dataset.item.date,
+        selWeek: e.currentTarget.dataset.item.week,
+        'form.date': e.currentTarget.dataset.item.businessDate
+      })
+      this.getBarTable({
+        id: this.data.form.id,
+        data: e.currentTarget.dataset.item.date
+      })
+    } else {
+      this.toast.showToast({
+        content: '不可预约',
+        icon: 'warn'
+      })
+    }
   },
   //获取桌位列表
   getBarTable: function (form) {

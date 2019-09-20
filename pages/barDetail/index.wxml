@@ -79,9 +79,16 @@
           <view class="bar-booking-status">您已设置 {{orderList[idx].date}} 空位提醒</view>
           <view class="bar-booking-tips">将在次日凌晨2:00自动取消</view>
         </view>
+        <!-- 已预订待确认 -->
+        <view wx:if="{{orderList[idx].appointType == 3 && orderList[idx].status == 0}}">
+          <view class="bar-booking-status">您预订 {{orderList[idx].tableAreaName}}{{orderList[idx].appointArriveTime}} 到店</view>
+          <view class="bar-booking-tips">
+            <text class="bar-booking-tag">等待商家确认中...</text>
+          </view>
+        </view>
         <!-- 已预订 -->
-        <view wx:if="{{orderList[idx].appointType == 3}}">
-          <view class="bar-booking-status">您预订 {{orderList[idx].tableAreaName}} {{orderList[idx].date}} {{orderList[idx].appointArriveTime}} 到店</view>
+        <view wx:if="{{orderList[idx].appointType == 3  && orderList[idx].status == 1}}">
+          <view class="bar-booking-status">您预订 {{orderList[idx].tableAreaName}}{{orderList[idx].appointArriveTime}} 到店</view>
           <view class="bar-booking-tips">
             <text class="bar-booking-tag">确认码：{{orderList[idx].confirmCode}}</text>
             <text class="bar-cancel-time">{{filter.cancelTime(orderList[idx].redoTime)}}</text> 后系统自动取消
@@ -93,7 +100,7 @@
           <view class="bar-booking-tips">感谢您的光临</view>
         </view>
       </view>
-      <view class="btn-booking" wx:if="{{orderList[idx].appointType != 3 && orderList[idx].status != 5}}" bindtap="onBooking" data-item = "{{orderList[idx]}}">{{filter.appointBtn(orderList[idx].appointType)}}</view>
+      <view class="btn-booking" wx:if="{{orderList[idx].status != 5 && orderList[idx].status != 6}}" bindtap="onBooking" data-item = "{{orderList[idx]}}">{{filter.appointBtn(orderList[idx].appointType)}}</view>
       <image wx:if="{{orderList[idx].appointType == 3 && orderList[idx].status == 5}}" class="icon-confrim" src="/image/icon_confirm.svg"></image>
     </view>
   </view>
