@@ -7,7 +7,7 @@
           <view class="bar-name">{{item.name}}</view>
           <view class="order-status">{{item.status == 1 ? '已取消' : '已预订'}}</view>
         </view>
-        <view class="room-info">{{item.theme}}</view>
+        <view class="room-info">{{item.theme}}（{{item.area}}）</view>
       </view>
       <view class="order-body">
         <view>
