@@ -32,6 +32,6 @@
     </view>
   </view>
   <view class="code-tips">收不到验证码</view>
-  <view class="code-tips">请拨打 ***-***-**** 联系客服</view>
+  <view class="code-tips" bindtap="onCall">请拨打 13025437441 联系客服</view>
   <Toast id="toast"></Toast>
 </view>

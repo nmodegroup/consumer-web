@@ -103,7 +103,7 @@ Page({
             'code.phone': '',
             'code.code': '',
             runing: true,
-            codeBtn: '重新获取'
+            codeBtn: '获取验证码'
           })
         }).catch(error => {})
       } else if (this.data.type == 2) {//完成
@@ -125,6 +125,12 @@ Page({
         }).catch(error => { })
       }
     }
+  },
+  //拨打电话
+  onCall: function () {
+    wx.makePhoneCall({
+      phoneNumber: '13025437441'
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

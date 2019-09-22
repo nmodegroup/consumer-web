@@ -52,7 +52,13 @@ Page({
   //拨打电话
   onCall: function () {
     wx.makePhoneCall({
-      phoneNumber: '0755-19098421'
+      phoneNumber: '13025437441'
+    })
+  },
+  //用户协议页面
+  onProtocol: function () {
+    wx.navigateTo({
+      url: Router.Protocol
     })
   },
   //授权页面

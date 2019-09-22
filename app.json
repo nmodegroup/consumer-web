@@ -13,6 +13,7 @@
     "pages/activityDetail/index",
     "pages/barList/index",
     "pages/index/activity",
+    "pages/protocol/protocol",
     "pages/index/mine"
   ],
   "permission": {
