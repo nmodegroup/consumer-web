@@ -70,6 +70,7 @@
   opacity: 0.5;
   width:202rpx;
   margin-right: 22rpx;
+  margin-bottom: 22rpx;
 }
 .seat-item:last-child{
   margin-right: 0;

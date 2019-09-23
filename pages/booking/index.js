@@ -56,7 +56,6 @@ Page({
   },
   //选择日期
   onSelDate: function (e) {
-    console.log(e.currentTarget.dataset.item)
     if (e.currentTarget.dataset.item.appointType == 0) {
       this.setData({
         tableList: [],
@@ -138,10 +137,17 @@ Page({
       })
     } else {
       BarService.bookBarOrder(this.data.form).then(res => {
-        this.toast.showToast({
-          content: '您已成功预定桌位',
-          icon: 'success'
-        })
+        if (res.autoReceipt) {
+          this.toast.showToast({
+            content: '您已成功预定桌位',
+            icon: 'success'
+          })
+        } else {
+          this.toast.showToast({
+            content: '您预订的桌位需要商家确认\n请耐心等待',
+            icon: 'wait'
+          })
+        }
         setTimeout(() => {
           let pages = getCurrentPages()
           let prevPage = pages[pages.length - 2]; //上一个页面

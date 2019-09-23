@@ -42,7 +42,7 @@
                 <view>
                   <view class="booking-time">到店时间：{{item.appointArriveTime}}</view>
                   <view class="booking-delay" wx:if="{{item.status}}">超时时长：{{filter.delayTime(item)}}
-                    <view class="booking-delay-tips" wx:if ="{{item.status == 6}}">（超时30分钟自动取消）</view>
+                    <view class="booking-delay-tips">（超时30分钟自动取消）</view>
                   </view>
                   <view class="booking-delay" wx:if="{{item.status === 0}}">您的预订需要商家确认，请您耐心等待</view>
                 </view>
