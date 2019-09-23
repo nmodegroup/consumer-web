@@ -42,7 +42,14 @@
       <view class="bar-booking-num">{{bar.orderNum}}人订过</view>
     </view>
     <view class="bar-booking-body">
-      <view class="bar-booking-date {{idx == 0 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "0">
+     <view wx:for="{{orderList}}" wx:key="index" class="bar-order">
+        <view class="bar-booking-date {{idx == index ? 'active' : ''}}" bindtap="onSelDate" data-idx = "{{index}}">
+          <view class="booking-week">{{item.week}}</view>
+          <view class="booking-date">{{filter.appointType(item)}}</view>
+        </view>
+        <view class="date-vertical-line" wx:if="{{index < 4}}"></view>
+      </view>
+      <!-- <view class="bar-booking-date {{idx == 0 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "0">
         <view class="booking-week">{{orderList[0].week}}</view>
         <view class="booking-date">{{filter.appointType(orderList[0])}}</view>
       </view>
@@ -60,7 +67,7 @@
       <view class="bar-booking-date {{idx == 3 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "3">
         <view class="booking-week">{{orderList[3].week}}</view>
         <view class="booking-date">{{filter.appointType(orderList[3])}}</view>
-      </view>
+      </view> -->
     </view>
     <view class="bar-booking-detail">
       <view>

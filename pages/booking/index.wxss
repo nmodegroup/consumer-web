@@ -57,6 +57,7 @@
 .flex{
   display: flex;
   padding-bottom: 30rpx;
+  flex-wrap:wrap;
 }
 .seat-item {
   background-color: rgba(69, 106, 236, 1);
@@ -117,6 +118,7 @@
   text-align: center;
   margin-right: 20rpx;
   opacity: 0.5;
+  margin-bottom: 20rpx;
 }
 .time-item.disable{
   opacity: 0.2;
