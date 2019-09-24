@@ -111,8 +111,16 @@ Page({
   },
   //跳转酒吧详情
   onBarDetail: function (e) {
-    let id = e.currentTarget.dataset.id
-    WxManager.navigateTo(Router.BarDetail, { id: id })
+    let id = e.currentTarget.dataset.item.mid
+    let isForbid = e.currentTarget.dataset.item.isForbid
+    if (isForbid) {
+      this.toast.showToast({
+        content: '提示该商家已下架，暂时无法查看',
+        icon: 'warn'
+      })
+    } else {
+      WxManager.navigateTo(Router.BarDetail, { id: id })
+    }
   },
 
   //获取我的预订列表

@@ -84,8 +84,16 @@ Page({
   },
   //活动详情页
   onActivityDetail: function (e) {
-    let id = e.currentTarget.dataset.id
-    WxManager.navigateTo(Router.ActivityDetail, { id: id })
+    let id = e.currentTarget.dataset.item.aid
+    let isForbid = e.currentTarget.dataset.item.isForbid
+    if (isForbid) {
+      this.toast.showToast({
+        content: '活动已下架，暂时无法查看',
+        icon: 'warn'
+      })
+    } else {
+      WxManager.navigateTo(Router.ActivityDetail, { id: id })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
