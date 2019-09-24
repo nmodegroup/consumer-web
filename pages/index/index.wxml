@@ -6,7 +6,7 @@
       autoplay="true" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{banner}}" wx:key="{{index}}">
         <swiper-item>
-          <image src="{{baseUrl + item.img}}" class="slide-image"/>
+          <image bindtap="onDetail" data-item="{{item}}" src="{{baseUrl + item.img}}" class="slide-image"/>
         </swiper-item>
       </block>
     </swiper>

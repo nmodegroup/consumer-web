@@ -159,6 +159,16 @@ Page({
       url: Router.Search
     })
   },
+  //点击banner图跳转
+  onDetail: function (e) {
+    let type = e.currentTarget.dataset.item.type //关联类型（0商家 1活动）
+    let objId = e.currentTarget.dataset.item.objId// 商铺或活动id
+    if (type === 1) {
+      WxManager.navigateTo(Router.ActivityDetail, { id: objId })
+    } else if (type === 0) {
+      WxManager.navigateTo(Router.BarDetail, { id: objId })
+    }
+  },
   //活动详情页
   onActivityDetail: function (e) {
     let id = e.currentTarget.dataset.id
