@@ -49,25 +49,6 @@
         </view>
         <view class="date-vertical-line" wx:if="{{index < 4}}"></view>
       </view>
-      <!-- <view class="bar-booking-date {{idx == 0 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "0">
-        <view class="booking-week">{{orderList[0].week}}</view>
-        <view class="booking-date">{{filter.appointType(orderList[0])}}</view>
-      </view>
-      <view class="date-vertical-line"></view>
-      <view class="bar-booking-date {{idx == 1 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "1">
-        <view class="booking-week">{{orderList[1].week}}</view>
-        <view class="booking-date">{{filter.appointType(orderList[1])}}</view>
-      </view>
-      <view class="date-vertical-line"></view>
-      <view class="bar-booking-date {{idx == 2 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "2">
-        <view class="booking-week">{{orderList[2].week}}</view>
-        <view class="booking-date">{{filter.appointType(orderList[2])}}</view>
-      </view>
-      <view class="date-vertical-line"></view>
-      <view class="bar-booking-date {{idx == 3 ? 'active' : ''}}" bindtap="onSelDate" data-idx = "3">
-        <view class="booking-week">{{orderList[3].week}}</view>
-        <view class="booking-date">{{filter.appointType(orderList[3])}}</view>
-      </view> -->
     </view>
     <view class="bar-booking-detail">
       <view>

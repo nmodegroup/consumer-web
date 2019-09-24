@@ -9,23 +9,8 @@
           <view class="seat-text">{{num.tableNum}}人桌</view>
           <view class="seat-num">剩余：{{num.num}}</view>
         </view>
-        <!-- <view class="seat-item active">
-          <view class="seat-text">4人桌</view>
-          <view class="seat-num">剩余：6</view>
-        </view>
-        <view class="seat-item">
-          <view class="seat-text">4人桌</view>
-          <view class="seat-num">剩余：6</view>
-        </view> -->
       </view>
     </view>
-    <!-- <view class="seat-title">包房</view>
-    <view class="flex">
-      <view class="seat-item">
-        <view class="seat-text">8人桌</view>
-        <view class="seat-num">剩余：6</view>
-      </view>
-    </view> -->
   </view>
   <view class="book-info-frame">
     <view class="confirm-frame">

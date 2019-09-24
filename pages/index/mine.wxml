@@ -39,15 +39,6 @@
         </view>
       </view>
     </view>
-    <!-- <view class="list-item">
-      <image src="/image/icon_list_deal.svg"></image>
-      <view class="list-item-context">
-        <view class="list-item-l">用户协议</view>
-        <view class="list-item-r">
-          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
-        </view>
-      </view>
-    </view> -->
     <view class="list-item" bindtap="onProtocol">
       <image src="/image/icon_list_help.svg"></image>
       <view class="list-item-context">
@@ -67,15 +58,6 @@
         </view>
       </view>
     </view>
-    <!-- <view class="list-item">
-      <image src="/image/icon_list_us.svg"></image>
-      <view class="list-item-context">
-        <view class="list-item-l">关于我们</view>
-        <view class="list-item-r">
-          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
-        </view>
-      </view>
-    </view> -->
   </view>
   <view class='wx-modal-box' wx:if="{{phoneLayer}}">
     <view class='wx-modal-content'>

@@ -112,7 +112,7 @@ Page({
   //跳转酒吧详情
   onBarDetail: function (e) {
     let id = e.currentTarget.dataset.item.mid
-    let isForbid = e.currentTarget.dataset.item.isForbid
+    let isForbid = e.currentTarget.dataset.item.isForbid //是否禁用（true 已被禁用  false 未被禁用）
     if (isForbid) {
       this.toast.showToast({
         content: '提示该商家已下架，暂时无法查看',
