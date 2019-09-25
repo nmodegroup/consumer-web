@@ -196,7 +196,7 @@ Page({
     homeService.barList({ cid: this.data.cid}).then(res => {
       this.setData({
         banner: res.banner || [],
-        popularBar: res.popularBa || [],
+        popularBar: res.popularBar || [],
         nearBar: res.nearBar || []
       })
     }).catch(error => {
