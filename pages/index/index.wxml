@@ -19,7 +19,7 @@
       <!-- 桌位预订订单 -->
       <block wx:for="{{tableOrder}}" wx:key="{{index}}">
         <swiper-item>
-          <view class="booking-frame" bindtap="onBarDetail" data-id="{{item.mid}}">
+          <view class="booking-frame" bindtap="onBarDetail" data-item="{{item}}">
             <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
             <view class="booking-bar-farme">
               <view class="booking-frame-l">
@@ -54,7 +54,7 @@
       <!-- 活动订单 -->
       <block wx:for="{{activityOrder}}" wx:key="{{index}}">
         <swiper-item>
-          <view class="booking-frame" bindtap="onActivityDetail" data-id="{{item.aid}}">
+          <view class="booking-frame" bindtap="onActivityDetail" data-item="{{item}}">
             <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
             <view class="booking-bar-farme">
               <view class="booking-frame-activity">
@@ -78,7 +78,7 @@
       <!-- 排位订单 -->
       <block wx:for="{{remindOrder}}" wx:key="{{index}}">
         <swiper-item>
-          <view class="booking-frame" bindtap="onBarDetail" data-id="{{item.mid}}">
+          <view class="booking-frame" bindtap="onBarDetail" data-item="{{item}}">
             <image class="bg-booking" src="/image/home_card_bg.jpg"></image>
             <view class="booking-bar-farme">
               <view class="booking-frame-l">

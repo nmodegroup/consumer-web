@@ -150,8 +150,16 @@ Page({
   },
   //跳转酒吧详情
   onBarDetail: function (e) {
-    let id = e.currentTarget.dataset.id
-    WxManager.navigateTo(Router.BarDetail, { id: id })
+    let id = e.currentTarget.dataset.item.mid
+    let isForbid = e.currentTarget.dataset.item.isForbid //是否禁用（true 已被禁用  false 未被禁用）
+    if (isForbid) {
+      this.toast.showToast({
+        content: '该商家已下架，暂时无法查看',
+        icon: 'warn'
+      })
+    } else {
+      WxManager.navigateTo(Router.BarDetail, { id: id })
+    }
   },
   //跳转商家搜索
   onSearch: function () {
@@ -171,8 +179,16 @@ Page({
   },
   //活动详情页
   onActivityDetail: function (e) {
-    let id = e.currentTarget.dataset.id
-    WxManager.navigateTo(Router.ActivityDetail, { id: id })
+    let id = e.currentTarget.dataset.item.aid
+    let isForbid = e.currentTarget.dataset.item.isForbid
+    if (isForbid) {
+      this.toast.showToast({
+        content: '活动已下架，暂时无法查看',
+        icon: 'warn'
+      })
+    } else {
+      WxManager.navigateTo(Router.ActivityDetail, { id: id })
+    }
   },
   //首页-获取banner/人气酒吧/附近酒吧
   getBarList: function () {

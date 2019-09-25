@@ -108,7 +108,7 @@ Page({
     let isForbid = e.currentTarget.dataset.item.isForbid
     if (isForbid) {
       this.toast.showToast({
-        content: '提示该商家已下架，暂时无法查看',
+        content: '该商家已下架，暂时无法查看',
         icon: 'warn'
       })
     } else {

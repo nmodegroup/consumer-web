@@ -115,7 +115,7 @@ Page({
     let isForbid = e.currentTarget.dataset.item.isForbid //是否禁用（true 已被禁用  false 未被禁用）
     if (isForbid) {
       this.toast.showToast({
-        content: '提示该商家已下架，暂时无法查看',
+        content: '该商家已下架，暂时无法查看',
         icon: 'warn'
       })
     } else {
