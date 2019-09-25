@@ -95,6 +95,10 @@
   font-size: 40rpx;
   font-weight: 500;
   color:#fff;
+  max-width:320rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .booking-info {
   padding-left: 18rpx;

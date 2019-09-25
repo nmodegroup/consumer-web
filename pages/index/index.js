@@ -38,6 +38,7 @@ Page({
    */
   onLoad: function (options) {
     this.modal = this.selectComponent("#modal")
+    this.toast = this.selectComponent("#toast")
     this.getSetting()
     this.getCityList()
     this.setData({
@@ -150,7 +151,7 @@ Page({
   },
   //跳转酒吧详情
   onBarDetail: function (e) {
-    let id = e.currentTarget.dataset.item.mid
+    let id = e.currentTarget.dataset.item.mid || e.currentTarget.dataset.item.id//订单的酒吧id是mid字段，酒吧列表的id是id字段
     let isForbid = e.currentTarget.dataset.item.isForbid //是否禁用（true 已被禁用  false 未被禁用）
     if (isForbid) {
       this.toast.showToast({

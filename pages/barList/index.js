@@ -117,7 +117,7 @@ Page({
       wx.setNavigationBarTitle({
         title: '人气酒吧'
       })
-    } else if (options.type == 1) {
+    } else if (options.type == 2) {
       wx.setNavigationBarTitle({
         title: '附近酒吧'
       })
@@ -155,7 +155,6 @@ Page({
   },
   //选择条件
   onSel: function (e) {
-    console.log(e)
     if (e.currentTarget.dataset.seltype == 1) {
       this.setData({
         'query.nearType': e.currentTarget.dataset.id,

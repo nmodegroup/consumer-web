@@ -3,6 +3,7 @@
   "usingComponents": {
     "van-picker": "/vant/picker/index",
     "van-popup": "/vant/popup/index",
-    "modal": "/component/modal/index"
+    "modal": "/component/modal/index",
+    "Toast": "/component/toast/index"
   }
 }

@@ -112,7 +112,7 @@
       </view>
       <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
     </view>
-    <view class="hot-bar-item" bindtap="onBarDetail" wx:for="{{popularBar}}"  wx:key="{{index}}" data-id="{{item.id}}">
+    <view class="hot-bar-item" bindtap="onBarDetail" wx:for="{{popularBar}}"  wx:key="{{index}}" data-item="{{item}}">
       <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
       <view class="hot-bar-context">
         <view>
@@ -141,7 +141,7 @@
       </view>
       <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
     </view>
-    <view class="hot-bar-item" bindtap="onBarDetail"  wx:for="{{nearBar}}"  wx:key="{{index}}" data-id="{{item.id}}">
+    <view class="hot-bar-item" bindtap="onBarDetail"  wx:for="{{nearBar}}"  wx:key="{{index}}" data-item="{{item}}">
       <image class="hot-bar-image" src="{{baseUrl + item.img}}"></image>
       <view class="hot-bar-context">
         <view>
@@ -175,4 +175,5 @@
     </van-picker>
   </van-popup>
   <modal id="modal" bind:get="getResult"></modal>
+  <Toast id="toast"></Toast>
 </view>
