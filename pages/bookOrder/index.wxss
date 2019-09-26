@@ -45,6 +45,10 @@
   font-size: 28rpx;
   line-height: 40rpx;
 }
+.bottom-line {
+  color:rgba(255, 255, 255, 1);
+  text-decoration:underline;
+}
 .order-status text{
   color:rgba(255, 255, 255, .8);
   font-size: 24rpx;

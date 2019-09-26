@@ -62,4 +62,5 @@
   </view>
   <modal id="modal" bind:get="getResult"></modal>
   <Toast id="toast"></Toast>
+  <view class="no-collect-text" wx:if="{{!list.length}}">暂无收藏记录</view>
 </view>
