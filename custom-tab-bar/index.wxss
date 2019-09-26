@@ -5,6 +5,7 @@
   right: 0;
   height: 98rpx;
   background:rgba(10,10,41,0.7);
+  backdrop-filter: blur(3px);
   display: flex;
   padding-bottom: calc(env(safe-area-inset-bottom)/2);
   box-sizing: content-box;

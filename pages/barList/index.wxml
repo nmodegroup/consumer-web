@@ -1,7 +1,7 @@
 <wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="bar-container" bindtap="onHideDropDown">
   <view class="search-bar">
-    <input class="bar-input" value="{{query.queryStr}}" bindinput='onInput' placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255,255,255,.5)" confirm-type="search" bindconfirm="getBarList"></input>
+    <input class="bar-input" value="{{query.queryStr}}" bindtap="onInput" disabled="true" placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255,255,255,.5)"></input>
   </view>
   <view class="select-bar">
     <view class="select-bar-title" catchtap="onShowDropDown" data-type="1">{{nearText}}
@@ -34,13 +34,13 @@
         <view class="hot-bar-context">
           <view>
             <view class="hot-bar-text">{{item.name}}</view>
-            <view class="bar-btn-1">{{filter.barType(item.type)}}</view>
+            <view class="{{filter.barStyle(item.type)}}">{{filter.barType(item.type)}}</view>
           </view>
           <view>
             <view class="hot-bar-time">
               <image class="icon-time" src="/image/icon_time.svg"></image>
               <view class="time-text-frame">
-                <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+                <text class="time-text" wx:for="{{item.times}}" wx:if="{{index < 1}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
               </view>
               <view class="btn-operation">{{item.businessStatus ? '休业中' : '营业中'}}</view>
             </view>
@@ -75,6 +75,7 @@
       </view>
     </view>
   </view>
+  <view class="no-history-text" wx:if="{{!list.length}}">没有酒吧哦</view>
   <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
   <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
 </view>

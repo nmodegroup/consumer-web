@@ -181,10 +181,10 @@ Page({
     })
     this.getBarList()
   },
-  //监听输入框搜索
-  onInput: function (e) {
-    this.setData({
-      'query.queryStr': e.detail.value
+  //点击搜索框
+  onInput: function () {
+    wx.navigateTo({
+      url: Router.Search
     })
   },
   //获取酒吧列表

@@ -57,7 +57,7 @@ function activityDetailText(activity) {
 //今天预订状态
 function TobookStatus(status) {
   if (status == 1) {
-    return '预订'
+    return '可订'
   } else if (status == 2 || status == 3) {
     return '已满'
   } else  {

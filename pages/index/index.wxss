@@ -40,6 +40,7 @@
   color:#fff;
   border-radius:51rpx;
   padding: 0 94rpx;
+  backdrop-filter: blur(3px);
   background: rgba(5,5,18,0.5) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEr0lEQVRYR8WXXWwUVRTH//fc7e7M0BVaQVpsSLFqSghGoSpGjFs11hJioj4oIfEjRIqRByAQCX2AaHwgEoyYSMJXDILx48GQmBJ4KaIQq10/SDQm2mpFm7YRE1pm5u527xlzYbZst91lFyjO0+zsuef85j/3fFwBgFDi1dHRUZFIJJpisdhCAHUAHACe1vrvTCZzpqurK9nc3Jwu0d1FM1EKgOu6iyzLWktETwG4qUiAYWb+TGu9KxqN/lAKSFGAc+fO3VpVVfW2EOLpENb47GHm0wD6AfwLoBpALREtBXBbGDQA8LHneRumTZs2WAykIIBS6olYLHYQwM0AUsy8x/O8PfF4/OdCDkdGRhodxzFKrQIQBTColFph2/YXhdZMCpDJZFZKKQ8AiARBcHx4eHjNjBkz+kqR1Ngopeqj0ej7QoiHzE+t9bORSOTzydZPAAjf/IgJzsw79+3bt7mtrU2XGjxrZzZsS0vLLiJaDcD3ff8Rx3G+yfczDsB88+rq6u+N7Ca4lHJTuYHz7YMgMJ9xJYDfe3t772loaBjJtRkHwMyfCCGeMbLv3bt3+dW8eT5Ad3e3tXjx4i8BLGLmt6SUmycFMKkWSpQ+f/78/HK++ZVU8n1/qWVZZiN6g4OD82pqav7JrhlTQGt9gIheYOZ3pZTrruS03P+ZuUMI0cLMm6SUO8cBmA3T2to6ZIrMhQsXFhZLtXIDZ+0zmcwKKeUhAKfD7LhcCT3Pe8C27a9MkRFC3Hm1QYqt6+/vr66trR0AoJPJZFVTU5MaK8Va69VEtJuZP5BSvjgVAMYnM/8mhJjnuu5dlZWVP+UCvE5E7cy8XUq5ZQoBTgkhliilHrNtuzMXYAcRrWfm16SUO6YKwKQ3gEdTqVSrZVnm/lI31FrfEAWCIDgDYIHv+w86jvN1LkAbEb3HzAellC9NhQLbtm2jrVu3mvyf7rpubWVlpcm6SwrkZEGvEOKOqQAYHR29PxKJmDZ+VghRP64OdHZ2RhOJhOnbpg4siMfjv1xvCK31m0S0mZn3SylNg7pcB8xdTiXcLaVcez0B+vr6ps+dO/dX0+SUUs22bZ+cAJBOp++uqKjoBjCaSqXmW5b1x/WC0Fq/QURbgiD4loiW5Pod1w2DIDgM4DkAJ48ePfr4smXLRq8Vwvf9hy3LOmbmC6VUIqy4Y27HAbiuO9txHDMPzDYjmJTylWsBUErdHovFTgGYCeAdIcSGfH8TJqKQuAOABeBwMplcna3b5cCEfj4NZ8ofT5w4sWSykb3QTLhcSvkRABvAd0qp9fnSFYIxG66urm4jEZlpqgKAmZADrfWaSCSy/4oKZA08z7vPtu0PAcwzz4IgOGaa1dDQ0LE5c+aYcXzsMkWmvb39XiJ6koheDt86MLMFgL+IaHshiKLngp6ennh9fX07Eb0anoIuZmwQBH+akVsI4QKoCU9J07NEZrenUqmNWdW01uuIyPSYCUqUdDIaGBiYOWvWrOfDk1FTOPPnq3mWmY+n0+lDuXmeNSoEURJAbiQzZDY2NjZIKW8RQlQwszmO9WZre7GNOhlE2QDlZMJktnkQq244QFj2s3ui638BMBCmTgghzv4H6Q0WnV3fZ1oAAAAASUVORK5CYII=) no-repeat 32rpx center;
   background-size:37rpx 37rpx;
 }
@@ -48,6 +49,7 @@
 }
 .booking-swiper {
   height: 330rpx;
+  padding-bottom: 60rpx;
 }
 .booking-frame {
   height: 330rpx;
@@ -179,10 +181,12 @@
   color:rgba(255, 255, 255, .6);
 }
 .hot-bar-title {
-  padding-top:60rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.near-bar {
+   padding-top:60rpx;
 }
 .hot-bar-title > view{
   display: flex;
@@ -216,6 +220,7 @@
   display: flex;
   color:#fff;
   justify-content: space-between;
+  align-items: center;
 }
 .hot-bar-context>view:nth-child(1){
   padding-bottom: 30rpx;
@@ -224,6 +229,10 @@
   font-size: 32rpx;
   font-weight: 500;
   color:rgba(255, 255, 255, .8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width:400rpx;
 }
 .hot-bar-time {
   font-size: 24rpx;

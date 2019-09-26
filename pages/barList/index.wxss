@@ -43,6 +43,7 @@
 }
 .bar-item {
   background:#0F0F2D;
+  margin-top: 20rpx;
 }
 .hot-bar-item {
   display: flex;
@@ -63,6 +64,7 @@
   display: flex;
   color:#fff;
   justify-content: space-between;
+  align-items: center;
 }
 .hot-bar-context>view:nth-child(1){
   padding-bottom: 30rpx;
@@ -71,13 +73,17 @@
   font-size: 32rpx;
   font-weight: 500;
   color:rgba(255, 255, 255, .8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width:400rpx;
 }
 .hot-bar-time {
   font-size: 24rpx;
   padding-left: 8rpx;
   color:rgba(255, 255, 255, .6);
   display: flex;
-  align-items: top;
+  align-items: center;
 }
 .hot-bar-adre {
   font-size: 24rpx;
@@ -158,6 +164,7 @@
   flex-direction: column;
   z-index: 1;
   padding-bottom: 20rpx;
+  backdrop-filter: blur(3px);
 }
 .drop-down-item {
   height: 80rpx;
@@ -204,4 +211,10 @@
   position:absolute;
   left: -14rpx;
   top:1rpx;
+}
+.no-history-text {
+  color: rgba(255, 255, 255, .5);
+  font-size: 26rpx;
+  text-align: center;
+  padding-top: 50rpx;
 }

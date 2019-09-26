@@ -181,7 +181,11 @@
 }
 .scroll-view_H {
   height: 782rpx;
-  white-space: nowrap;
+  text-align: center;
+  /* white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 .scroll-view-item{
   height: 782rpx;

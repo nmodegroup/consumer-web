@@ -122,7 +122,7 @@
         <view>
           <view class="hot-bar-time">
              <image class="icon-time" src="/image/icon_time.svg"></image>
-             <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+             <text class="time-text" wx:for="{{item.times}}" wx:if="{{index < 1}}" wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
           </view>
         </view>
         <view>
@@ -134,7 +134,7 @@
         </view>
       </view>
     </view>
-    <view class="hot-bar-title" bindtap="onBarList" data-webType="2">
+    <view class="hot-bar-title near-bar" bindtap="onBarList" data-webType="2">
       <view>
         <image class="icon-hot" src="/image/icon_title_fujinjiuba.svg"></image>
         <view class="hot-bar-text">附近酒吧</view>
@@ -151,7 +151,7 @@
         <view>
           <view class="hot-bar-time">
              <image class="icon-time" src="/image/icon_time.svg"></image>
-             <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+             <text class="time-text" wx:for="{{item.times}}" wx:if="{{index < 1}}" wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
           </view>
         </view>
         <view>

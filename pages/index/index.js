@@ -67,10 +67,11 @@ Page({
       success(res) {
         if (res.authSetting['scope.userInfo']) {
           that.getUserInfo()
+        } else {
+          that.routerGo()
         }
       }
     })
-    this.routerGo()
   },
   //微信用户信息授权
   getUserInfo() {
