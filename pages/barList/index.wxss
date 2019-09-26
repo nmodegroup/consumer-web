@@ -44,6 +44,7 @@
 .bar-item {
   background:#0F0F2D;
   margin-top: 20rpx;
+  border-radius:8rpx;
 }
 .hot-bar-item {
   display: flex;
@@ -127,12 +128,22 @@
   display: flex;
   color:rgba(255, 255, 255, .5);
   font-size: 24rpx;
+  align-items: center;
 }
 .bar-info-text>view:first-child{
   padding-bottom: 22rpx;
 }
 .btn-full {
   background:rgba(218,73,255,1);
+  border-radius:4rpx;
+  font-size: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 12rpx;
+  line-height: 28rpx;
+  height: 28rpx;
+}
+.btn-booking{
+  background:rgba(88, 77, 255, 1);
   border-radius:4rpx;
   font-size: 20rpx;
   padding: 0 8rpx;

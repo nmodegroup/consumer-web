@@ -58,7 +58,7 @@
       <view class="bar-order-info">
         <view class="bar-info-text">
           <view>
-            <view class="btn-full">{{filter.TobookStatus(item.appointType)}}</view>
+            <view class="{{item.appointType == 1 ? 'btn-booking' : 'btn-full'}}">{{filter.TobookStatus(item.appointType)}}</view>
             <text wx:if="{{item.appointType == 2 || item.appointType == 3}}">今日已满，可设置空位提醒</text>
             <text wx:if="{{item.appointType == 1}}">今日剩余可预订桌位数</text>
           </view>

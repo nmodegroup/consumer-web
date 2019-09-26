@@ -16,6 +16,7 @@
 .bg-activity-img {
   width:690rpx;
   height: 320rpx;
+  border-radius:8rpx 8rpx 0 0;
 }
 .activity-mun {
   position: absolute;
@@ -27,8 +28,8 @@
 .activity-context {
   width:100%;
   height: 256rpx;
-  background:rgba(37,29,58, .4);
   padding: 0 28rpx 24rpx 20rpx;
+  backdrop-filter: blur(3px);
 }
 .activity-title {
   display: flex;
@@ -74,6 +75,8 @@
 .activity-date {
   color:rgba(255,255,255,.7);
   font-size: 22rpx;
+  display: flex;
+  align-items: center;
 }
 .activity-guest {
   color:rgba(255,255,255,.7);

@@ -143,6 +143,15 @@
   line-height: 28rpx;
   height: 28rpx;
 }
+.btn-booking{
+  background:rgba(88, 77, 255, 1);
+  border-radius:4rpx;
+  font-size: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 12rpx;
+  line-height: 28rpx;
+  height: 28rpx;
+}
 .bar-people-num {
   color:#fff;
   padding: 0 10rpx;

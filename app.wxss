@@ -33,6 +33,7 @@ view,text,input{
   border-radius: 2rpx;
   margin-left: 10rpx;
   height: 24rpx;
+  line-height: 22rpx;
   font-size: 16rpx;
   margin-top: 5rpx;
 }

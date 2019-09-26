@@ -2,7 +2,7 @@
 <view class="container">
   <view class="swiper-box">
     <view class="swiper-location" bindtap="onSelAdre">{{selLocationText}}</view>
-    <swiper indicator-dots="true" class="home-swiper" circular="true" indicator-active-color="#F8FFF9" indicator-color="#857F89"
+    <swiper indicator-dots="{{banner.length > 1 ? true : false}}" class="home-swiper" circular="true" indicator-active-color="#F8FFF9" indicator-color="#857F89"
       autoplay="true" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{banner}}" wx:key="{{index}}">
         <swiper-item>

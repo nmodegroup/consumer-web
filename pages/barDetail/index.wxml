@@ -1,6 +1,6 @@
 <wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="container">
-  <swiper indicator-dots="true" class="bar-detail-swiper" circular="true" indicator-active-color="#F8FFF9" indicator-color="#857F89"
+  <swiper indicator-dots="{{bar.covers.length > 1 ? true : false}}" class="bar-detail-swiper" circular="true" indicator-active-color="#F8FFF9" indicator-color="#857F89"
     autoplay="true" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{bar.covers}}" wx:key="{{index}}">
       <swiper-item>
