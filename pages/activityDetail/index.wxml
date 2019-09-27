@@ -63,7 +63,7 @@
             <view class="adre-text">{{activity.bar.address}}</view>
           </view>
         </view>
-        <view class="vertical-line" bindtap="onCall" data-phone="{{activity.bar.phone}}">
+        <view class="vertical-line" catchtap="onCall" data-phone="{{activity.bar.phone}}">
           <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
         </view>
       </view>
