@@ -174,7 +174,10 @@
   font-size: 24rpx;
   color:rgba(255, 255, 255, .8);
   line-height: 34rpx;
-  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 600rpx;
 }
 .booking-delay-tips {
   font-size: 20rpx;

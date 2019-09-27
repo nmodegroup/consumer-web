@@ -74,6 +74,10 @@
 .activity-name {
   color:rgba(255,255,255,.8);
   font-size: 30rpx;
+  width:360rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .activity-date {
   color:rgba(255,255,255,.7);
