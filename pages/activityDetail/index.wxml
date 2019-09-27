@@ -1,69 +1,71 @@
 <wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="container">
-  <view class="activity-banner-frame">
-    <view class="activity-banner-num">{{filter.activityStatus(activity)}}</view>
-    <image wx:if='{{activity.banner}}' class="activity-banner" src="{{baseUrl + activity.banner}}"></image>
-  </view>
-  <view class="bar-context">
-      <view class="bar-info">
-        <view class="bar-name">{{activity.theme}}</view>
-        <view class="bar-distance">距离{{filter.formatDistance(activity.distance)}}</view>
-      </view>
-      <view class="bar-price-frame">特邀嘉宾：{{activity.guest}}</view>
-    <view class="bar-join-frame">
-      <view class="bar-time-adre">
-        <view class="hot-bar-time">
-          <image class="icon-time" src="/image/icon_time.svg"></image>
-          {{activity.beginTime}}
+  <view class="bg-filter">
+    <view class="activity-banner-frame">
+      <view class="activity-banner-num">{{filter.activityStatus(activity)}}</view>
+      <image wx:if='{{activity.banner}}' class="activity-banner" src="{{baseUrl + activity.banner}}"></image>
+    </view>
+    <view class="bar-context">
+        <view class="bar-info">
+          <view class="bar-name">{{activity.theme}}</view>
+          <view class="bar-distance">距离{{filter.formatDistance(activity.distance)}}</view>
         </view>
-        <view class="hot-bar-adre" bindtap="onOpenLocation">
-          <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-          <view class="adre-text">{{activity.address}}</view>
+        <view class="bar-price-frame">特邀嘉宾：{{activity.guest}}</view>
+      <view class="bar-join-frame">
+        <view class="bar-time-adre">
+          <view class="hot-bar-time">
+            <image class="icon-time" src="/image/icon_time.svg"></image>
+            {{activity.beginTime}}
+          </view>
+          <view class="hot-bar-adre" bindtap="onOpenLocation">
+            <image class="icon-adre"  src="/image/icon_adre.svg"></image>
+            <view class="adre-text">{{activity.address}}</view>
+          </view>
         </view>
-      </view>
-      <view class="vertical-line" bindtap="onCall" data-phone="{{activity.phone}}">
-        <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
+        <view class="vertical-line" bindtap="onCall" data-phone="{{activity.phone}}">
+          <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
+        </view>
       </view>
     </view>
-  </view>
-  <view class="poster-frame">
-    <image wx:if='{{activity.post}}' class="poster-img" src="{{baseUrl + activity.post}}"></image>
-  </view>
-  <view class="bar-booking-frame">
-    <view class="bar-booking-head">
-      <view class="bar-booking-l">
-        <image class="icon-ding" src="/image/icon_bar_intro.svg"></image>
-        酒吧活动
-      </view>
-      <view class="bar-booking-num" bindtap="onBarDetail" data-id="{{activity.bar.id}}">进入酒吧主页
-        <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
-      </view>
+    <view class="poster-frame">
+      <image wx:if='{{activity.post}}' class="poster-img" src="{{baseUrl + activity.post}}"></image>
     </view>
-  </view>
-  <view class="bar-context" bindtap="onBarDetail" data-id="{{activity.bar.id}}">
-    <view class="bar-intro-frame">
-      <view class="bar-info">
-        <view class="bar-name">{{activity.bar.name}}</view>
-      </view>
-      <view class="bar-price-frame">
-        <view class="{{filter.barStyle(activity.bar.type)}}">{{filter.barType(activity.bar.type)}}</view>
-        <view class="bar-price">¥{{activity.bar.price}}/人</view>
-      </view>
-    </view>
-    <view class="transverse-line"></view>
-    <view class="bar-join-frame">
-      <view class="bar-time-adre">
-        <view class="hot-bar-time">
-           <image class="icon-time" src="/image/icon_time.svg"></image>
-           <text class="time-text" wx:for="{{activity.bar.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+    <view class="bar-booking-frame">
+      <view class="bar-booking-head">
+        <view class="bar-booking-l">
+          <image class="icon-ding" src="/image/icon_bar_intro.svg"></image>
+          活动酒吧
         </view>
-        <view class="hot-bar-adre">
-          <image class="icon-adre"  src="/image/icon_adre.svg"></image>
-          <view class="adre-text">{{activity.bar.address}}</view>
+        <view class="bar-booking-num" bindtap="onBarDetail" data-id="{{activity.bar.id}}">进入酒吧主页
+          <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
         </view>
       </view>
-      <view class="vertical-line" bindtap="onCall" data-phone="{{activity.bar.phone}}">
-        <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
+    </view>
+    <view class="bar-context-bottom" bindtap="onBarDetail" data-id="{{activity.bar.id}}">
+      <view class="bar-intro-frame">
+        <view class="bar-info">
+          <view class="bar-name">{{activity.bar.name}}</view>
+        </view>
+        <view class="bar-price-frame">
+          <view class="{{filter.barStyle(activity.bar.type)}}">{{filter.barType(activity.bar.type)}}</view>
+          <view class="bar-price">¥{{activity.bar.price}}/人</view>
+        </view>
+      </view>
+      <view class="transverse-line"></view>
+      <view class="bar-join-frame-bottom">
+        <view class="bar-time-adre">
+          <view class="hot-bar-time">
+            <image class="icon-time" src="/image/icon_time.svg"></image>
+            <text class="time-text" wx:for="{{activity.bar.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+          </view>
+          <view class="hot-bar-adre">
+            <image class="icon-adre"  src="/image/icon_adre.svg"></image>
+            <view class="adre-text">{{activity.bar.address}}</view>
+          </view>
+        </view>
+        <view class="vertical-line" bindtap="onCall" data-phone="{{activity.bar.phone}}">
+          <image class="icon-phone" src="/image/icon_barDetail_phone.svg"></image>
+        </view>
       </view>
     </view>
   </view>
