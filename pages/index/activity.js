@@ -31,8 +31,9 @@ Page({
   },
   //活动详情页
   onActivityDetail: function (e) {
-    let id = e.currentTarget.dataset.id
-    WxManager.navigateTo(Router.ActivityDetail, {id: id})
+    let id = e.currentTarget.dataset.item.id
+    let status = e.currentTarget.dataset.item.status
+    WxManager.navigateTo(Router.ActivityDetail, { id: id })
   },
   //获取活动列表
   getActivity: function () {

@@ -13,7 +13,7 @@ function barType(type) {
   } else if(type == 2) {
     return '清吧'
   } else {
-    return '其他'
+    return '闹吧'
   }
 }
 
@@ -30,14 +30,20 @@ function barStyle(type) {
 
 //活动状态
 function activityStatus(activity) {
-  if (activity.onStatus == 1) {
-    return '已暂停预订'
-  } else if (activity.num == -1) {
-    return '剩余：不限 '
-  } else if (activity.num == 0) {
+  if (activity.status == 0) {
     return '预订已满'
-  } else {
-    return '剩余：' + activity.num  + '桌'
+  } else if (activity.status == 1) {
+    return '暂停预订'
+  } else if (activity.status == 2) {
+    if (activity.num == -1) {
+      return '剩余：不限 '
+    } else {
+      return '剩余：' + activity.num + '桌'
+    }
+  } else if (activity.status == 3) {
+    return '活动中'
+  } else if (activity.status == 4) {
+    return '活动已结束'
   }
 }
 

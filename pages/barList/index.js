@@ -61,10 +61,6 @@ Page({
       text: '5km',
       id: 5,
       selType: 1
-    }, {
-      text: '其他',
-      id: 6,
-      selType: 1
     }],[{
       text: '全部类型',
       id: 0,
@@ -81,7 +77,7 @@ Page({
       selType: 2
     },
     {
-      text: '其他',
+      text: '闹吧',
       id: 3,
       selType: 2
     }],[{

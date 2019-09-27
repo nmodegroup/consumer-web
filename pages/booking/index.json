@@ -2,5 +2,5 @@
   "usingComponents": {
     "Toast": "/component/toast/index"
   },
-  "navigationBarTitleText": "酒吧预订"
+  "navigationBarTitleText": "预订详情"
 }

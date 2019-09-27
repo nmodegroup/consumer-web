@@ -6,7 +6,7 @@
       <view class="date-weeek">{{item.appointType == 0 ? item.week : '不可预订'}}</view>
     </view>
   </view>
-  <view class="date-title">选择桌位</view>
+  <view class="date-title data-title-40">选择桌位</view>
   <view class="seat-content">
     <view wx:for="{{tableList}}" wx:key="index" data-date="{{item.date}}">
       <view class="seat-title">{{item.name}}</view>
@@ -19,7 +19,7 @@
       </view>
     </view>
   </view>
-  <view class="time-title">到店时间
+  <view class="time-title data-title-40">到店时间
     <text class="time-tips">免费保留半小时</text>
   </view>
   <view class="flex">
@@ -35,8 +35,8 @@
       <text>{{selTime}}</text>
     </view>
     <view class="book-info" wx:if="{{!form.date || !form.areaId || !form.appointArriveTimeId}}">请完善预约信息</view>
-    <view class="confirm-frame">
-      <view class="btn-confirm" bindtap="onBooking">确认</view>
+    <view class="confirm-frame {{form.date && form.areaId && form.appointArriveTimeId ? '' : 'disable'}}">
+      <view class="btn-confirm {{form.date && form.areaId && form.appointArriveTimeId ? '' : 'disable'}}" bindtap="onBooking">确认</view>
     </view>
   </view>
   <Toast id="toast"></Toast>

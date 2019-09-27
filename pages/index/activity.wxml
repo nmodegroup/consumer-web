@@ -1,7 +1,7 @@
 <wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="container">
   <view class="activity-frame">
-    <view class="activity-item" bindtap="onActivityDetail" data-id="{{item.id}}" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="activity-item" bindtap="onActivityDetail" data-item="{{item}}" wx:for="{{list}}" wx:key="{{index}}">
       <view class="activity-bg">
         <view class="activity-mun">{{filter.activityStatus(item)}}</view>
         <image class="bg-activity-img" src="{{baseUrl + item.banner}}"></image>

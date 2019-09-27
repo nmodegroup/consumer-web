@@ -75,7 +75,12 @@
       </view>
     </view>
   </view>
-  <view class="no-history-text" wx:if="{{!list.length}}">没有酒吧哦</view>
+  <view class="no-history-text" wx:if="{{!list.length}}">
+    <view>
+      <image class="icon-empty" src="/image/icon_empty.svg"></image>
+    </view>
+    Sorry 暂时未有这家酒吧的信息哦
+  </view>
   <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
   <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
 </view>

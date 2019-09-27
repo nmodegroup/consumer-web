@@ -249,7 +249,7 @@ Page({
     wx.getSetting({
       success(res) {
         //用户包含获取当前位置授权或者没有当前位置授权字段说明是第一次授权都调用微信获取授权 否则调用小程序设置界面去打开授权
-        if (res.authSetting['scope.userLocation'] || res.authSetting['scope.userLocation'] == undefined) {
+        if (res.authSetting['scope.userLocation'] == undefined) {
           that.modal.showModal({
             content: '您未开启定位服务，可能会影响小程序部分功能的使用，如获取推荐商家等功能。请点击“开启位置”进行授权（如未开启，系统将为您设置默认地理位置）',
             title: '温馨提示',

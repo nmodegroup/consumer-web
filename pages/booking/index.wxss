@@ -8,6 +8,9 @@
   font-size:28rpx;
   padding-bottom: 20rpx;
 }
+.data-title-40{
+  padding-top: 40rpx;
+}
 .date-content {
   display: flex;
   padding-bottom: 10rpx;

@@ -219,11 +219,16 @@
   border-color:transparent transparent rgba(15,15,46,1); 
   position:absolute;
   left: -14rpx;
-  top:1rpx;
+  top:2rpx;
 }
 .no-history-text {
   color: rgba(255, 255, 255, .5);
   font-size: 26rpx;
   text-align: center;
   padding-top: 50rpx;
+}
+.icon-empty {
+  width:68rrpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
 }

@@ -60,8 +60,11 @@ Page({
         confirmText: '确认取消',
       })
     } else {
-      if (activity.onStatus == 1 || activity.num == 0) {//onStatus启用状态(0开启 1关闭)，当num=0时表示已约满
-        return
+      if (activity.status != 2) {// //0已约满  1已暂停  2预定中  3活动中  4活动已结束 只有status=2的时候能预定活动
+        this.toast.showToast({
+          content: '当前活动不可预订',
+          icon: 'warn'
+        })
       } else if (activity.quotaType == 1) {//限制预订数量类型（0不限 1按系统已有桌位限制 2按固定名额限制）
         WxManager.navigateTo(Router.BookingActivity, { id: activity.id, theme: activity.theme})
       } else {

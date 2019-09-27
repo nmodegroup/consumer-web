@@ -1,15 +1,25 @@
 <wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="search-container">
   <view class="input-bar">
-    <input class="search-input" confirm-type="search"  value="{{query.queryStr}}" bindinput='onInput' placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255, 255, 255, .5)" confirm-type="search" bindconfirm="getBarList"></input>
-    <view class="btn-search" bindtap="getBarList">搜索</view>
+    <input class="search-input" confirm-type="search"  value="{{query.queryStr}}" bindinput='onInput' placeholder="输入商户名、地点、找商家" placeholder-style="color:rgba(255, 255, 255, .5)" confirm-type="search" bindconfirm="getSearchList"></input>
+    <view class="btn-search" bindtap="getSearchList">搜索</view>
   </view>
   <view class="history-bar" wx:if="{{!noResult}}">
     <view>历史搜索</view>
     <image wx:if="{{historyList.length}}" bindtap="onLayer" class="icon_delete" src="/image/icon_delete.svg"></image>
   </view>
-  <view class="no-history-text" wx:if="{{noResult && !list.length}}">没有酒吧哦</view>
-  <view class="no-history-text" wx:if="{{!historyList.length && !noResult}}">暂无历史记录</view>
+  <view class="no-history-text" wx:if="{{noResult && !list.length}}">
+    <view>
+      <image class="icon-empty" src="/image/icon_empty.svg"></image>
+    </view>
+    Sorry 暂时未有这家酒吧的信息哦
+  </view>
+  <view class="no-history-text" wx:if="{{!historyList.length && !noResult}}">
+    <view>
+      <image class="icon-empty" src="/image/icon_empty.svg"></image>
+    </view>
+    暂无历史记录
+  </view>
   <view class="history-list" wx:if="{{historyList.length}}">
     <view class="history-item" wx:for="{{historyList}}" wx:key="{{index}}"
     bindtap="onGetHistory" data-key="{{item}}">{{item}}</view>
