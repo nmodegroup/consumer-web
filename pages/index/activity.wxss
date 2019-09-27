@@ -1,8 +1,11 @@
 .activity-frame{
-  padding-bottom: 132rpx;
+  padding: 20rpx 30rpx 132rpx;
 }
 .activity-item {
-  padding: 20rpx 30rpx 10rpx 30rpx;
+  background-color: rgba(255, 255, 255, .05);
+  border-radius: 8rpx;
+  backdrop-filter: blur(3px);
+  margin-bottom: 30rpx;
 }
 .activity-item:last-child{
   padding-bottom: 98rpx;

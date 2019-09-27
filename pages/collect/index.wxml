@@ -15,7 +15,7 @@
                 <view class="hot-bar-time">
                   <image class="icon-time" src="/image/icon_time.svg"></image>
                   <view class="time-text-frame">
-                    <text class="time-text" wx:for="{{item.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+                    <text class="time-text" wx:for="{{item.times}}" wx:if="{{index < 1}}" wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
                   </view>
                   <view class="btn-operation">{{item.businessStatus ? '休业中' : '营业中'}}</view>
                 </view>
@@ -33,14 +33,14 @@
           <view class="bar-order-info">
             <view class="bar-info-text">
               <view>
-                <view class="btn-full">{{filter.TobookStatus(item.appointType)}}</view>
+                <view class="{{item.appointType == 1 ? 'btn-booking' : 'btn-full'}}">{{filter.TobookStatus(item.appointType)}}</view>
                 <text wx:if="{{item.appointType == 2 || item.appointType == 3}}">今日已满，可设置空位提醒</text>
                 <text wx:if="{{item.appointType == 1}}">今日剩余可预订桌位数</text>
               </view>
               <view wx:if="{{item.appointType == 2 || item.appointType == 3}}">已有<text class="bar-people-num">{{item.remindNum}}</text>人设置提醒</view>
               <view wx:if="{{item.appointType == 1}}"><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
             </view>
-            <view class="bar-info-text" wx:if="{{item.appointType != 1}}">
+            <view class="bar-info-text last-info-test" wx:if="{{item.appointType != 1}}">
               <view>
                 <view class="btn-reserve">{{filter.TmbookStatus(item.appointType)}}</view>
                 <text>明日剩余可预订桌位数</text>

@@ -120,7 +120,7 @@ function appointBtn (type) {
     return '取消预订'
   }
 }
-
+//延迟时长
 function delayTime(item) {
   var nowDate = getDate().getTime()
   var bookTime = getDate(item.appointArriveTime).getTime()
@@ -155,7 +155,7 @@ function delayTime(item) {
     }
   }
 }
-
+//系统自动取消时间
 function cancelTime(time) {
   var nowDate = getDate().getTime()
   var cancelTime = getDate(time).getTime()
@@ -175,7 +175,20 @@ function cancelTime(time) {
     }
   }
 }
-
+//判断是不是今天
+function isToday(item) {
+  var itemDate = item.businessDate
+  var myYear = getDate().getFullYear()
+  var myDate = getDate().getDate()
+  myDate = myDate < 10 ? ('0' + myDate) : myDate
+  var myMouth = getDate().getMonth() + 1
+  myMouth = myMouth < 10 ? ('0' + myMouth) : myMouth
+  if (itemDate.indexOf(myYear) != -1 && itemDate.indexOf(myMouth) != -1 && itemDate.indexOf(myDate) != -1) {
+    return '今天'
+  } else {
+    return item.week
+  }
+}
 
 module.exports = {
   formatDistance: formatDistance,
@@ -189,5 +202,6 @@ module.exports = {
   delayTime: delayTime,
   appointType: appointType,
   appointBtn: appointBtn,
-  cancelTime: cancelTime
+  cancelTime: cancelTime,
+  isToday: isToday
 }

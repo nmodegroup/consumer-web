@@ -144,6 +144,9 @@
   font-weight: 500;
   font-size:40rpx;
   padding-bottom: 16rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .book-info {
   color:rgba(255, 255, 255, .8);

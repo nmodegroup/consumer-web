@@ -51,7 +51,7 @@
           <view wx:if="{{item.appointType == 2 || item.appointType == 3}}">已有<text class="bar-people-num">{{item.remindNum}}</text>人设置提醒</view>
           <view wx:if="{{item.appointType == 1}}"><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
         </view>
-        <view class="bar-info-text" wx:if="{{item.appointType != 1}}">
+        <view class="bar-info-text last-info-test" wx:if="{{item.appointType != 1}}">
           <view>
             <view class="btn-reserve">{{filter.TmbookStatus(item.appointType)}}</view>
             <text>明日剩余可预订桌位数</text>

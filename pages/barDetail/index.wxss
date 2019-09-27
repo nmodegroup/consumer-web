@@ -7,7 +7,7 @@
   height: 360rpx;
 }
 .bar-context {
-  background: rgba(17,24,65,0.62);
+  background-color: rgba(255, 255, 255, .05);
   padding: 20rpx 30rpx;
   backdrop-filter: blur(3px);
 }
@@ -76,7 +76,7 @@
 }
 .bar-booking-frame {
   margin-top: 20rpx;
-  background:rgba(0,0,0,.2);
+  background-color: rgba(255, 255, 255, .05);
   backdrop-filter: blur(3px);
 }
 .bar-booking-head {
@@ -258,6 +258,8 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(10, 10, 41, 0.7);
+  backdrop-filter: blur(3px);
+  padding-bottom: calc(env(safe-area-inset-bottom)/2);
 }
 .btn-bottom-frame>view,button{
   display: flex;

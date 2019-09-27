@@ -44,7 +44,7 @@
     <view class="bar-booking-body">
      <view wx:for="{{orderList}}" wx:key="index" class="bar-order">
         <view class="bar-booking-date {{idx == index ? 'active' : ''}}" bindtap="onSelDate" data-idx = "{{index}}">
-          <view class="booking-week">{{item.week}}</view>
+          <view class="booking-week">{{filter.isToday(item)}}</view>
           <view class="booking-date">{{filter.appointType(item)}}</view>
         </view>
         <view class="date-vertical-line" wx:if="{{index < 4}}"></view>

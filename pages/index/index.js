@@ -134,6 +134,7 @@ Page({
     this.getTabBar().setData({
       show: true
     })
+    this.getBarList()
   },
   //选择地址取消
   onAdreCancel: function () {
@@ -147,7 +148,6 @@ Page({
   //跳转酒吧列表页 
   onBarList: function (e) {
     let webtype = e.currentTarget.dataset.webtype
-    console.log(e)
     WxManager.navigateTo(Router.BarList, { type: webtype })
   },
   //跳转酒吧详情
