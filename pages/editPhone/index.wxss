@@ -12,6 +12,12 @@
   background-color: rgba(255, 255, 255, .2);
   position: relative;
 }
+.step-1.active{
+  background-color: rgba(190, 63, 204, 1);
+}
+.step-2.active{
+  background-color: rgba(190, 63, 204, 1);
+}
 .step-1-block{
   display: flex;
   flex-direction: column;
@@ -35,7 +41,9 @@
   height: 22rpx;
   border-radius: 50%;
   background-color: #434364;
-  padding: 4rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .circle-frame.active{
   background: linear-gradient(206deg, rgba(255,38,186,1), rgba(0,132,255,1));

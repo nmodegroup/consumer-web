@@ -67,7 +67,7 @@
 .booking-bar-farme {
   padding: 44rpx 40rpx 36rpx 30rpx;
   background:linear-gradient(225deg,rgba(198,0,135,1) 0%,rgba(0,108,209,1) 100%);
-  opacity:0.8;
+  opacity:0.9;
   display: flex;
   justify-content: space-between;
   height: 200rpx;
@@ -178,6 +178,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 600rpx;
+  display: flex;
 }
 .booking-delay-tips {
   font-size: 20rpx;

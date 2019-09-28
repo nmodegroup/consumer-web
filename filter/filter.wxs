@@ -129,7 +129,9 @@ function appointBtn (type) {
 //延迟时长
 function delayTime(item) {
   var nowDate = getDate().getTime()
-  var bookTime = getDate(item.appointArriveTime).getTime()
+  var bookTime = getDate(item.appointArriveTime.toString().replace(getRegExp("-", "g"), "/")).getTime()
+  console.log('nowDate', nowDate)
+  console.log('bookTime', bookTime)
   if (item.arriveTime) {
     var arriveTime = getDate(item.arriveTime).getTime()
     if (arriveTime > bookTime) {
@@ -164,7 +166,7 @@ function delayTime(item) {
 //系统自动取消时间
 function cancelTime(time) {
   var nowDate = getDate().getTime()
-  var cancelTime = getDate(time).getTime()
+  var cancelTime = getDate(time.toString().replace(getRegExp("-", "g"), "/")).getTime()
   if (cancelTime > nowDate) {
     var diff = ((cancelTime - nowDate) / 1000).toFixed(0)
     if (diff < 60) {

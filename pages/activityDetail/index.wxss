@@ -50,6 +50,7 @@
   font-size: 44rpx;
   color:#fff;
   font-weight: 500;
+  max-width: 520rpx;
 }
 .bar-distance {
   color:rgba(255, 255, 255, .5);

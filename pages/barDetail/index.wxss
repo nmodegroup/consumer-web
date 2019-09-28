@@ -26,9 +26,6 @@
   color:#fff;
   font-weight: 500;
   max-width:520rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .bar-distance {
   color:rgba(255, 255, 255, .5);
@@ -53,14 +50,24 @@
   padding: 0 60rpx 0 30rpx;
 }
 .hot-bar-time {
-  font-size: 24rpx;
+  font-size: 30rpx;
   padding-left: 8rpx;
   color:rgba(255, 255, 255, .8);
   display: flex;
   align-items: center;
 }
+.icon-time {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 6rpx;
+}
+.icon-adre {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 6rpx;
+}
 .hot-bar-adre {
-  font-size: 24rpx;
+  font-size: 30rpx;
   padding-left: 8rpx;
   color:rgba(255, 255, 255, .8);
   padding-top: 16rpx;
