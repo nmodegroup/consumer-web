@@ -63,5 +63,10 @@
   </view>
   <modal id="modal" bind:get="getResult"></modal>
   <Toast id="toast"></Toast>
-  <view class="no-collect-text" wx:if="{{!list.length}}">暂无收藏记录</view>
+  <view class="no-collect-text" wx:if="{{!list.length}}">
+    <view>
+      <image class="icon-empty" src="/image/icon_empty.svg"></image>
+    </view>
+    暂无收藏记录
+  </view>
 </view>

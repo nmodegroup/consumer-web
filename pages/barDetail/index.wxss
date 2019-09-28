@@ -223,6 +223,7 @@
   position: absolute;
   top:30rpx;
   left:30rpx;
+  text-align: left;
 }
 .bartender-name-en,.bartender-name-ch{
   color:rgba(255, 255, 255, 1);
@@ -244,6 +245,7 @@
   font-size: 28rpx;
   white-space: normal;
   line-height: 58rpx;
+  text-align: left;
 }
 .bar-intro-frame {
   padding: 18rpx 30rpx 178rpx 30rpx;

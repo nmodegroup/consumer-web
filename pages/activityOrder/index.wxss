@@ -36,9 +36,10 @@
   color:rgba(255, 255, 255, 1);
   font-weight: 500;
   line-height: 44rpx;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 480rpx;
 }
 .order-status {
   color:rgba(255, 255, 255, 1);

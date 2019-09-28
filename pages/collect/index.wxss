@@ -154,3 +154,8 @@
   text-align: center;
   padding-top: 50rpx;
 }
+.icon-empty {
+  width:68rrpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
