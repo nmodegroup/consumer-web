@@ -130,8 +130,6 @@ function appointBtn (type) {
 function delayTime(item) {
   var nowDate = getDate().getTime()
   var bookTime = getDate(item.appointArriveTime.toString().replace(getRegExp("-", "g"), "/")).getTime()
-  console.log('nowDate', nowDate)
-  console.log('bookTime', bookTime)
   if (item.arriveTime) {
     var arriveTime = getDate(item.arriveTime).getTime()
     if (arriveTime > bookTime) {

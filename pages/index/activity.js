@@ -80,6 +80,12 @@ Page({
         selected: 1
       })
     }
+    this.setData({
+      'query.pageNum': 1,
+      goMore: true,
+      moreBtn: false,
+      noMoreBtn: false
+    })
     this.getActivity()
   },
 

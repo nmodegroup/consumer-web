@@ -76,7 +76,7 @@
       </button>
     </view>
     <view class="reserve-frame">
-      <text class="reserve-tips">5分钟前有人预订</text>
+      <!-- <text class="reserve-tips">5分钟前有人预订</text> -->
       <view class="btn-reserve" bindtap="onBooking">{{filter.activityDetailText(activity)}}</view>
     </view>
   </view>

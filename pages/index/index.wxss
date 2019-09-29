@@ -53,7 +53,7 @@
 }
 .booking-frame {
   height: 330rpx;
-  background-color: #111841;
+  background-color: rgba(0, 0, 0, 0.34);
   position: relative;
 }
 .bg-booking {

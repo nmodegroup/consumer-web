@@ -192,7 +192,7 @@ Page({
           list: res.list
         })
       } else {
-        if (that.data.list.length < res.totalCount) {
+        if (that.data.list.length < res.totalSize) {
           let list = that.data.list
           list = list.concat(res.list)
           that.setData({
