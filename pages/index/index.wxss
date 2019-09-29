@@ -55,6 +55,7 @@
   height: 330rpx;
   background-color: rgba(0, 0, 0, 0.34);
   position: relative;
+  border-radius: 8rpx;
 }
 .bg-booking {
   position: absolute;
@@ -62,7 +63,8 @@
   left:0;
   width:100%;
   height: 200rpx;
-  border-radius: 4rpx;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
 }
 .booking-bar-farme {
   padding: 44rpx 40rpx 36rpx 30rpx;
