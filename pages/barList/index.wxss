@@ -124,7 +124,7 @@
 }
 .bar-info-text>view{
   display: flex;
-  color:rgba(255, 255, 255, .5);
+  color:rgba(255, 255, 255,1);
   font-size: 24rpx;
   align-items: center;
 }

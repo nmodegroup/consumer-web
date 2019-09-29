@@ -56,7 +56,7 @@
       </view>
       <!-- 可预约类型  1今日可预约    2今日已约满 ，明日可预约  3今日已约满，明日已约满   4今日是特殊日期，明日可预约  5今日是特殊日期，明日已约满 -->
       <view class="bar-order-info">
-        <view class="bar-info-text">
+        <view class="bar-info-text" wx:if="{{item.appointType != 4 &&  item.appointType != 5}}">
           <view>
             <view class="{{item.appointType == 1 ? 'btn-booking' : 'btn-full'}}">{{filter.TobookStatus(item.appointType)}}</view>
             <text wx:if="{{item.appointType == 2 || item.appointType == 3}}">今日已满，可设置空位提醒</text>
@@ -70,7 +70,7 @@
             <view class="btn-reserve">{{filter.TmbookStatus(item.appointType)}}</view>
             <text>明日剩余可预订桌位数</text>
           </view>
-          <view><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
+          <view><text class="bar-people-num">{{item.tableNum || 0}}</text>桌</view>
         </view>
       </view>
     </view>
