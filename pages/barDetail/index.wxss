@@ -279,8 +279,8 @@
   flex: 1;
 }
 .btn-bottom-frame image{
-  width:50rpx;
-  height: 50rpx;
+  width:42rpx;
+  height:42rpx;
 }
 .bar-detail-share {
   flex: 1;

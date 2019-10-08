@@ -142,7 +142,6 @@ Page({
   },
   //收藏取消收藏
   onCollect: function() {
-    console.log(this.data.isCollect);
     let id = this.data.bar.id;
     if (this.data.bar.isCollect == 1) {
       BarService.cancelCollect({ id: id })
@@ -302,7 +301,10 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {},
+  onPullDownRefresh: function() {
+    this.getBarOrder()
+    wx.stopPullDownRefresh()
+  },
 
   /**
    * 页面上拉触底事件的处理函数

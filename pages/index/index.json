@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "首页",
+  "navigationBarTitleText": "Night Mode",
   "usingComponents": {
     "van-picker": "/vant/picker/index",
     "van-popup": "/vant/popup/index",

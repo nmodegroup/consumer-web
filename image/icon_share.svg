@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
-    <title>share</title>
+    <title>mdpi/icon_tab_share_withoutwords</title>
     <desc>Created with Sketch.</desc>
-    <g id="活动列表页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
-        <g id="0.0.1图标" transform="translate(-75.000000, -272.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="1.2">
-            <g id="tab" transform="translate(48.000000, 226.000000)">
-                <g id="btn_tab_share" transform="translate(0.000000, 35.000000)">
-                    <g id="Group-25" transform="translate(28.000000, 12.000000)">
-                        <g id="Group-21-Copy-2">
-                            <g id="share">
-                                <path d="M14,7 L14,13.125 C14,13.6082492 13.6082492,14 13.125,14 L0.875,14 C0.391750844,14 0,13.6082492 0,13.125 L0,0.875 C0,0.391750844 0.391750844,8.87714298e-17 0.875,0 L7,0" id="Path"></path>
-                                <polyline id="Rectangle" points="9.625 0 14 0 14 4.375"></polyline>
-                                <path d="M7,7.06072941 L13.5692372,0.491492233" id="Path-5"></path>
-                            </g>
-                        </g>
+    <defs>
+        <filter x="-91.6%" y="-92.6%" width="283.1%" height="285.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-9" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.060385528   0 0 0 0 0.0826403463   0 0 0 0 0.259832058  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="酒吧详情" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0.1图标" transform="translate(-214.000000, -337.000000)">
+            <g id="tab" filter="url(#filter-1)" transform="translate(128.000000, 295.000000)"></g>
+            <g id="icon_tab_share_withoutwords" transform="translate(216.000000, 340.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-linecap="round" stroke-width="1.2">
+                <g id="Group-21-Copy-2">
+                    <g id="Group-14">
+                        <path d="M17,8.5 L17,15.9375 C17,16.5243025 16.5243025,17 15.9375,17 L1.0625,17 C0.475697453,17 0,16.5243025 0,15.9375 L0,1.0625 C0,0.475697453 0.475697453,1.07793879e-16 1.0625,0 L8.5,0" id="Path"></path>
+                        <polyline id="Rectangle" points="11.6875 0 17 0 17 5.3125"></polyline>
+                        <path d="M8.5,8.57374286 L16.4769309,0.596811997" id="Path-5"></path>
                     </g>
                 </g>
             </g>

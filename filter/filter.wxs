@@ -177,7 +177,7 @@ function cancelTime(time) {
       var mySecond = diff % 60
       var myMinuts = ((diff - mySecond) % 3600) / 60
       var myHours = parseInt(diff/3600)
-      return myHours + '小时' + myMinuts + '分' + mySecond + '秒'
+      return myHours + '小时' + myMinuts + '分'
     }
   }
 }
