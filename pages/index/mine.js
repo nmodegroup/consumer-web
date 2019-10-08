@@ -104,7 +104,15 @@ Page({
       })
     }
   },
-
+  //跳转到商家端
+  onMch: function () {
+    wx.navigateToMiniProgram({
+      appId: 'wxf07f687748208034',
+      path: '/pages/home/home',
+      success(res) {
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

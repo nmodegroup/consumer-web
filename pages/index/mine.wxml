@@ -2,7 +2,7 @@
   <view class="mine-header">
     <view class="mine-avatar">
       <image class="avatar-img" src="{{avatarUrl ? avatarUrl : '/image/avatar.png'}}"></image>
-      <view class="toggle-btn">我是商家
+      <view class="toggle-btn" bindtap="onMch">我是商家
         <image class="icon-change" src="/image/icon_change.svg"></image>
       </view>
     </view>
