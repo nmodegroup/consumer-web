@@ -25,7 +25,6 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      'query.cid': app.globalData.cid,
       baseUrl: app.globalData.baseImgUrl
     })
   },
@@ -82,6 +81,7 @@ Page({
     }
     this.setData({
       'query.pageNum': 1,
+      'query.cid': app.globalData.cid,
       goMore: true,
       moreBtn: false,
       noMoreBtn: false

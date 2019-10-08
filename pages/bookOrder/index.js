@@ -88,7 +88,7 @@ Page({
       if (this.data.tabType == 1) {
         this.cancelBooking()
       } else if (this.data.tabType == 2) {
-        this.onRemindCancel()
+        this.cancelRemind()
       }
       
     }
@@ -123,7 +123,7 @@ Page({
     }
   },
 
-  //获取我的预订列表
+  //获取我的排位列表
   getRemindList: function () {
     let that = this
     mineService.getRemindOrder(this.data.query).then(res => {
