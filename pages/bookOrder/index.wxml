@@ -55,7 +55,7 @@
             <view class="go-time">提醒日期：{{item.appointTime}}</view>
             <view class="delay-time">系统在{{item.redoTime}}取消</view>
           </view>
-          <view class="cancel-frame" wx:if="{{item.status == 0}}">
+          <view class="cancel-frame" wx:if="{{item.status == 0 &&  remindStatus == 0}}">
             <view class="btn-cancel" catchtap="onRemindCancel" data-id="{{item.id}}">取消提醒</view>
           </view>
         </view>
