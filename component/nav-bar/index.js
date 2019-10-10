@@ -1,5 +1,4 @@
 // components/nav-bar/index.js
-const PathConstant = require('../../constant/page');
 const wxManager = require('../../utils/wxManager');
 
 Component({
@@ -103,12 +102,6 @@ Component({
         return this.showGiveUpModal(false);
       }
       this.goHome();
-    },
-
-    goHome() {
-      wx.switchTab({
-        url: PathConstant.HOME_URL
-      });
     }
   }
 });

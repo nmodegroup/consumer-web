@@ -189,7 +189,7 @@ function isToday(item) {
   myDate = myDate < 10 ? ('0' + myDate) : myDate
   var myMouth = getDate().getMonth() + 1
   myMouth = myMouth < 10 ? ('0' + myMouth) : myMouth
-  if (itemDate.indexOf(myYear) != -1 && itemDate.indexOf(myMouth) != -1 && itemDate.indexOf(myDate) != -1) {
+  if ((myYear + '-' + myMouth + '-' + myDate) == itemDate) {
     return '今天'
   } else {
     return item.week

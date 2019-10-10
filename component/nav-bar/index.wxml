@@ -9,7 +9,7 @@
           </view>
         </block>
         <block wx:if="{{home}}">
-          <view bindtap="handleGoHome">
+          <view>
             <image src="../../image/global/nav_home.svg" />
           </view>
         </block>
