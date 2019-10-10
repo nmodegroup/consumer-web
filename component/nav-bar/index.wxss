@@ -1,0 +1,58 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.title-container {
+  position: relative;
+}
+
+.capsule {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  height: 30px;
+  border: 1rpx solid #999;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.capsule > view {
+  width: 45px;
+  height: 50%;
+  position: relative;
+}
+
+.capsule > view:nth-child(2) {
+  border-left: 1rpx solid #999;
+}
+
+.capsule > view > image {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 34rpx;
+  font-weight: 500;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

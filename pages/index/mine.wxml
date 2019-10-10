@@ -1,4 +1,5 @@
 <view class="container">
+  <nav-bar title="我的" showHolder="{{ false }}" bgColor="{{ navBgColor }}"></nav-bar>
   <view class="mine-header">
     <view class="mine-avatar">
       <image class="avatar-img" src="{{avatarUrl ? avatarUrl : '/image/avatar.png'}}"></image>

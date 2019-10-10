@@ -4,7 +4,7 @@
   background-size: 750rpx 1334rpx;
 }
 .mine-header {
-  padding: 40rpx 30rpx 40rpx 30rpx;
+  padding: 168rpx 30rpx 40rpx 30rpx;
 }
 .mine-avatar {
   display: flex;
