@@ -31,6 +31,7 @@
 .bar-context-bottom{
   margin:30rpx 30rpx 0 30rpx;
   background: rgba(0,0,0,.34);
+  border-radius: 8rpx;
 }
 .icon-phone {
   width:40rpx;

@@ -19,9 +19,9 @@
       </view>
     <view class="bar-join-frame">
       <view class="bar-time-adre">
-        <view class="hot-bar-time">
-          <image class="icon-time" src="/image/icon_time.svg"></image>
-          <text class="time-text" wx:for="{{bar.times}}"  wx:for-item="time" wx:key="*this">{{time.begin}}-{{time.end}}</text>
+        <view class="hot-bar-time" wx:for="{{bar.times}}"  wx:for-item="time" wx:key="*this">
+          <image wx:if="{{index < 1}}" class="icon-time" src="/image/icon_time.svg"></image>
+          <view class="time-text">{{time.week}} {{time.begin}}-{{time.end}}</view>
         </view>
         <view class="hot-bar-adre" bindtap="onOpenLocation">
           <image class="icon-adre"  src="/image/icon_adre.svg"></image>
