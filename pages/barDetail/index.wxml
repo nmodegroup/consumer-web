@@ -33,6 +33,7 @@
       </view>
     </view>
   </view>
+  <view class="gap-line"></view>
   <view class="bar-booking-frame">
     <view class="bar-booking-head">
       <view class="bar-booking-l">
@@ -92,6 +93,7 @@
       <image wx:if="{{orderList[idx].appointType == 3 && orderList[idx].status == 5}}" class="icon-confrim" src="/image/icon_confirm.svg"></image>
     </view>
   </view>
+  <view class="gap-line"></view>
   <view class="bar-booking-frame">
     <view class="bar-booking-head">
       <view class="bar-booking-l">
@@ -112,6 +114,7 @@
       </scroll-view>
     </view>
   </view>
+  <view class="gap-line"></view>
   <view class="bar-booking-frame">
     <view class="bar-booking-head">
       <view class="bar-booking-l">

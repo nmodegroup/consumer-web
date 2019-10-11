@@ -20,7 +20,7 @@
             <view class="adre-text">{{item.address}}</view>
           </view>
         </view>
-        <view class="cancel-frame" wx:if="{{!item.status}}">
+        <view class="cancel-frame" wx:if="{{item.status == 0 && item.orderStatus == 0}}">
           <view class="btn-cancel" catchtap="onCancel" data-id="{{item.id}}">取消预订</view>
         </view>
       </view>

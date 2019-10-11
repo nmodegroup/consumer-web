@@ -3,7 +3,7 @@
   <view class="tab-bar">
     <view class="tab-item {{tabType == 1 ? 'active' : ''}}" bindtap="onTab" data-type="1">我的预订</view>
     <view class="tab-line"></view>
-    <view class="tab-item {{tabType == 2 ? 'active' : ''}}" bindtap="onTab" data-type="2">我的排位</view>
+    <view class="tab-item {{tabType == 2 ? 'active' : ''}}" bindtap="onTab" data-type="2">我的提醒</view>
   </view>
   <view wx:if="{{tabType == 1}}">
     <view wx:for="{{list}}" wx:key="{{index}}">

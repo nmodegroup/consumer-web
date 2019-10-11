@@ -63,6 +63,7 @@
 }
 .room-info>view{
   display: flex;
+  align-items: center;
 }
 .confirm-code{
   color:rgba(255, 255, 255, 1);

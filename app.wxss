@@ -45,8 +45,9 @@ view,text,input{
   border:1rpx solid rgba(233, 216, 124, .8);
   color:rgba(255, 238, 130, .9);
   font-size: 22rpx;
-  text-align: center;
-  line-height: 34rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .bar-btn-2 {
   width:76rpx;
@@ -55,19 +56,20 @@ view,text,input{
   border:1rpx solid rgba(64, 162, 236, .8);
   color:rgba(68, 178, 255, .9);
   font-size: 22rpx;
-  text-align: center;
-  line-height: 34rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .bar-btn-3 {
   width:76rpx;
   height: 36rpx;
   border-radius: 2rpx;
-
   border:1rpx solid rgba(206, 91, 235, .8);
   color:rgba(228, 99, 255, .9);
   font-size: 22rpx;
-  text-align: center;
-  line-height: 34rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 button[loading][type="primary"][plain]{
   border:none;
