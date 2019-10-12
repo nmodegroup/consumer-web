@@ -96,6 +96,7 @@
   margin-right: 12rpx;
   line-height: 28rpx;
   height: 28rpx;
+  color:rgba(255, 255, 255, 1) !important;
 }
 .bar-people-num {
   color:#fff;

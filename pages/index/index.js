@@ -200,9 +200,15 @@ Page({
         popularBar: res.popularBar || [],
         nearBar: res.nearBar || []
       })
-    }).catch(error => {
-      
-    })
+      if (!res.nearBar.length) {
+        this.modal.showModal({
+          content: '您的定位城市暂无酒吧入驻\n您可先了解其他城市的酒吧推荐',
+          title: '温馨提示',
+          cancelText: '重新选择',
+          confirmText: '去看看',
+        })
+      }
+    }).catch(error => {})
   },
   //获取城市列表
   getCityList: function () {
@@ -219,7 +225,9 @@ Page({
         columns: clom
       })
     }).catch(error => {
-
+      this.toast.showToast({
+        content: error.msg
+      })
     })
   },
   //获取订单信息
@@ -231,7 +239,9 @@ Page({
         remindOrder: res.remindOrder || []
       })
     }).catch(error => {
-
+      this.toast.showToast({
+        content: error.msg
+      })
     })
   },
   //用户位置上报
@@ -240,7 +250,9 @@ Page({
       app.globalData.m_token = res
       this.getBarList()
     }).catch(error => {
-
+      this.toast.showToast({
+        content: error.msg
+      })
     })
   },
   //获取用户当前授权状态
@@ -265,9 +277,22 @@ Page({
   //弹框回调
   getResult: function (e) {
     if (e.detail.result == 'confirm') {
-      this.getLocation()
+      if (!this.data.nearBar.length && this.data.cid != 440300) {
+        this.setData({
+          cid: 440300,
+          selLocationText: '深圳'
+        })
+        app.globalData.cid = 440300
+        this.setLocation(this.data.initLocation)
+      } else {
+        this.getLocation()
+      }
     } else if (e.detail.result == 'cancel') {
-      this.setLocation(this.data.initLocation)
+      if (!this.data.nearBar.length && this.data.cid != 440300) {
+        this.onSelAdre()
+      } else {
+        this.setLocation(this.data.initLocation)
+      }
     }
   },
   //获取当前位置

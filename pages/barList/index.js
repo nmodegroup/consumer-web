@@ -109,6 +109,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.toast = this.selectComponent('#toast')
     if (options.type == 1) {
       wx.setNavigationBarTitle({
         title: '人气酒吧'
@@ -212,7 +213,11 @@ Page({
         historyList: [],
         noResult: !!res.list
       })
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //跳转酒吧详情
   onBarDetail: function (e) {

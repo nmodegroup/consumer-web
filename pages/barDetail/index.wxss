@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   border-radius: 8rpx;
-  padding: 21rpx 60rpx 29rpx 30rpx;
+  padding: 21rpx 164rpx 29rpx 30rpx;
   position: relative;
 }
 .hot-bar-time {
@@ -300,7 +300,7 @@
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
-  width:446rpx;
+  width:430rpx;
 }
 .time-text {
   padding-right: 10rpx;

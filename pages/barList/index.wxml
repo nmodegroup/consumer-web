@@ -63,7 +63,7 @@
             <text wx:if="{{item.appointType == 1}}">今日剩余可预订桌位数</text>
           </view>
           <view wx:if="{{item.appointType == 2 || item.appointType == 3}}">已有<text class="bar-people-num">{{item.remindNum}}</text>人设置提醒</view>
-          <view wx:if="{{item.appointType == 1}}"><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
+          <view wx:if="{{item.appointType == 1}}"><view class="bar-people-num">{{item.tableNum}}</view>桌</view>
         </view>
         <view class="bar-info-text last-info-test" wx:if="{{item.appointType != 1}}">
           <view>
@@ -79,8 +79,9 @@
     <view>
       <image class="icon-empty" src="/image/icon_empty.svg"></image>
     </view>
-    Sorry 暂时未有这家酒吧的信息哦
+    您所选择的条件范围内未有入驻酒吧
   </view>
+  <Toast id="toast"></Toast>
   <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
-  <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
+  <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">已经到底啦</button>
 </view>

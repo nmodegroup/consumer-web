@@ -53,7 +53,11 @@ Page({
           })
         }
       }
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   onCancel: function (e) {
     this.setData({
@@ -107,7 +111,11 @@ Page({
         noMoreBtn: false
       })
       this.getOrderList()
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //跳转酒吧详情
   onBarDetail: function (e) {
@@ -149,7 +157,11 @@ Page({
           })
         }
       }
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   onRemindCancel: function (e) {
     this.setData({
@@ -176,7 +188,11 @@ Page({
         noMoreBtn: false
       })
       this.getRemindList()
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

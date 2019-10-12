@@ -24,6 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.toast = this.selectComponent("#toast")
     this.setData({
       baseUrl: app.globalData.baseImgUrl
     })
@@ -60,7 +61,11 @@ Page({
           })
         }
       }
-    }).catch(error => {})
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -124,7 +124,7 @@
 }
 .bar-info-text>view{
   display: flex;
-  color:rgba(255, 255, 255,1);
+  color:rgba(255, 255, 255,.5);
   font-size: 24rpx;
   align-items: center;
 }
@@ -148,6 +148,7 @@
   margin-right: 12rpx;
   line-height: 28rpx;
   height: 28rpx;
+  color:rgba(255, 255, 255, 1) !important;
 }
 .bar-people-num {
   color:#fff;
@@ -180,6 +181,10 @@
   text-align: center;
   position: relative;
   line-height: 80rpx;
+}
+.drop-down-item.active{
+  font-weight:500;
+  color:rgba(255,255,255,1);
 }
 .drop-down-item.active::after{
   content: '';

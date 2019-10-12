@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "Toast": "/component/toast/index"
+  },
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "活动"
 }

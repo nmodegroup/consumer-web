@@ -70,4 +70,5 @@
       </view>
     </view>
   </view>
+  <Toast id="toast"></Toast>
 </view>

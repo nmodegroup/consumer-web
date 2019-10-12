@@ -52,7 +52,11 @@ Page({
           })
         }
       }
-    }).catch(error => { })
+    }).catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      })
   },
   //取消预订
   onCancel: function (e) {
@@ -80,7 +84,11 @@ Page({
         icon: 'success'
       })
       this.getOrderList()
-    }).catch(error => { })
+    }).catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      })
   },
   //活动详情页
   onActivityDetail: function (e) {

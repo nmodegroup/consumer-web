@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "nav-bar": "/component/nav-bar/index"
+    "nav-bar": "/component/nav-bar/index",
+    "Toast": "/component/toast/index"
   },
   "navigationStyle": "custom"
 }

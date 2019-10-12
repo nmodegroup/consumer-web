@@ -9,7 +9,7 @@
             <view class="hot-bar-context">
               <view>
                 <view class="hot-bar-text">{{item.name}}</view>
-                <view class="bar-btn-1">{{filter.barType(item.type)}}</view>
+                <view class="{{filter.barStyle(item.type)}}">{{filter.barType(item.type)}}</view>
               </view>
               <view>
                 <view class="hot-bar-time">
@@ -39,7 +39,7 @@
                 <text wx:if="{{item.appointType == 1}}">今日剩余可预订桌位数</text>
               </view>
               <view wx:if="{{item.appointType == 2 || item.appointType == 3}}">已有<text class="bar-people-num">{{item.remindNum}}</text>人设置提醒</view>
-              <view wx:if="{{item.appointType == 1}}"><text class="bar-people-num">{{item.tableNum}}</text>桌</view>
+              <view wx:if="{{item.appointType == 1}}"><view class="bar-people-num">{{item.tableNum}}</view>桌</view>
             </view>
             <view class="bar-info-text last-info-test" wx:if="{{item.appointType != 1}}">
               <view>
@@ -59,7 +59,7 @@
       </view>
     </van-swipe-cell>
     <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
-    <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
+    <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">已经到底啦</button>
   </view>
   <modal id="modal" bind:get="getResult"></modal>
   <Toast id="toast"></Toast>

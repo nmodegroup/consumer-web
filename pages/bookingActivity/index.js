@@ -38,7 +38,11 @@ Page({
         list: res,
         'form.id': data.id
       })
-    }).catch(error => {})
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //选择桌位
   onSelTable: function (e) {
@@ -95,7 +99,11 @@ Page({
           delta: 1
         })
       },1500)
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //获取手机号授权弹框取消按钮
   phoneCancel: function () {
@@ -118,7 +126,11 @@ Page({
           }
           settingService.setPhone(form).then(res => {
             app.globalData.phone = res
-          }).catch(error => { })
+          }).catch(error => {
+            this.toast.showToast({
+              content: error.msg
+            })
+          })
         },
         fail: (res) => {
           console.log('login err:', res)

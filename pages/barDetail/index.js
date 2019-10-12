@@ -52,8 +52,8 @@ Page({
     this.setData({
       baseUrl: app.globalData.baseImgUrl
     });
-    this.toast = this.selectComponent('#toast');
-    this.modal = this.selectComponent('#modal');
+    this.toast = this.selectComponent('#toast')
+    this.modal = this.selectComponent('#modal')
   },
 
   requestBarInfo(barId) {
@@ -113,7 +113,11 @@ Page({
           bar: res
         });
       })
-      .catch(error => {});
+      .catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      });
   },
   //获取酒吧预订信息
   getBarOrder: function(id) {
@@ -124,7 +128,11 @@ Page({
           orderList: res
         });
       })
-      .catch(error => {});
+      .catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      });
   },
   //拨打电话
   onCall: function(e) {
@@ -152,7 +160,11 @@ Page({
             icon: 'success'
           });
         })
-        .catch(error => {});
+        .catch(error => {
+          this.toast.showToast({
+            content: error.msg
+          })
+        });
     } else if (this.data.bar.isCollect === 0) {
       BarService.setCollect({ id: id })
         .then(res => {
@@ -162,7 +174,11 @@ Page({
             icon: 'success'
           });
         })
-        .catch(error => {});
+        .catch(error => {
+          this.toast.showToast({
+            content: error.msg
+          })
+        });
     }
   },
   //选择日期
@@ -195,7 +211,11 @@ Page({
             .then(res => {
               app.globalData.phone = res;
             })
-            .catch(error => {});
+            .catch(error => {
+              this.toast.showToast({
+                content: error.msg
+              })
+            });
         },
         fail: res => {
           console.log('login err:', res);
@@ -241,7 +261,11 @@ Page({
           });
           this.getBarOrder();
         })
-        .catch(error => {});
+        .catch(error => {
+          this.toast.showToast({
+            content: error.msg
+          })
+        });
     }
   },
   //取消提醒
@@ -254,7 +278,11 @@ Page({
         });
         this.getBarOrder();
       })
-      .catch(error => {});
+      .catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      });
   },
   //酒吧预订取消
   cancelBarOrder: function() {
@@ -266,7 +294,11 @@ Page({
         });
         this.getBarOrder();
       })
-      .catch(error => {});
+      .catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      });
   },
   //modal弹框回调
   getResult: function(e) {

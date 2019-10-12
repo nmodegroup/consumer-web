@@ -33,7 +33,11 @@ Page({
       this.setData({
         activity: res
       })
-    }).catch(error => {})
+    }).catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      })
   },
   //拨打电话
   onCall: function (e) {
@@ -94,7 +98,11 @@ Page({
         icon: 'success'
       })
       this.getActivityDetail()
-    }).catch(error => { })
+    }).catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      })
   },
   //modal弹框回调
   getResult: function (e) {
@@ -110,7 +118,11 @@ Page({
         icon: 'warn'
       })
       this.getActivityDetail()
-    }).catch(error => {})
+    }).catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      })
   },
   //获取手机号授权弹框取消按钮
   phoneCancel: function () {
@@ -133,7 +145,11 @@ Page({
           }
           settingService.setPhone(form).then(res => {
             app.globalData.phone = res
-          }).catch(error => {})
+          }).catch(error => {
+            this.toast.showToast({
+              content: error.msg
+            })
+          })
         },
         fail: (res) => {
           console.log('login err:', res)

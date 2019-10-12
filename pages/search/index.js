@@ -77,7 +77,11 @@ Page({
         historyList: [],
         noResult: !!res.list
       })
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //点击搜索按钮或键盘搜索按钮
   getSearchList: function () {
@@ -93,7 +97,11 @@ Page({
       this.setData({
         historyList: res
       })
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //跳转酒吧详情
   onBarDetail: function (e) {
@@ -129,9 +137,14 @@ Page({
         icon: 'success'
       })
       this.getHistoryList()
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   onResetInput: function () {
+    console.log(11)
     this.setData({
       'query.queryStr': ''
     })

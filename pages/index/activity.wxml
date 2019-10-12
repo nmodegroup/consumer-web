@@ -24,6 +24,7 @@
       </view>
     </view>
     <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
-    <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">没有更多了</button>
+    <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">已经到底啦</button>
+    <Toast id="toast"></Toast>
   </view>
 </view>

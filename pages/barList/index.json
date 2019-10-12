@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "Toast": "/component/toast/index"
+  },
   "navigationBarTitleText": "人气酒吧",
   "enablePullDownRefresh": true
 }

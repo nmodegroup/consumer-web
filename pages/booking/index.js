@@ -52,7 +52,11 @@ Page({
       this.setData({
         orderList: res
       })
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //选择日期
   onSelDate: function (e) {
@@ -84,7 +88,11 @@ Page({
       this.setData({
         tableList: res
       })
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //获取到店时间列表
   getBarTime: function () {
@@ -92,7 +100,11 @@ Page({
       this.setData({
         timeList: res
       })
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //选择桌位
   onSelTable: function (e) {
@@ -156,7 +168,11 @@ Page({
             delta: 1
           })
         }, 1500)
-      }).catch(error => { })
+      }).catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      })
     }
   },
   /**

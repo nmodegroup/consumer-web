@@ -63,7 +63,11 @@ Page({
               })
             }
           }, 1000)
-        }).catch(error => { })
+        }).catch(error => {
+          this.toast.showToast({
+            content: error.msg
+          })
+        })
       }
     }
   },
@@ -105,7 +109,11 @@ Page({
             runing: true,
             codeBtn: '获取验证码'
           })
-        }).catch(error => {})
+        }).catch(error => {
+          this.toast.showToast({
+            content: error.msg
+          })
+        })
       } else if (this.data.type == 2) {//完成
         this.setData({
           'form.newPhone': this.data.code.phone,
@@ -122,7 +130,11 @@ Page({
               delta: 1
             })
           })
-        }).catch(error => { })
+        }).catch(error => {
+          this.toast.showToast({
+            content: error.msg
+          })
+        })
       }
     }
   },

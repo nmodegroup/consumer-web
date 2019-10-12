@@ -17,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.toast = this.selectComponent("#toast")
   },
   //我的预订页
   onBookOrder: function () {
@@ -96,7 +96,11 @@ Page({
             this.setData({
               phone:  res
             })
-          }).catch(error => { })
+          }).catch(error => {
+            this.toast.showToast({
+              content: error.msg
+            })
+          })
         },
         fail: (res) => {
           console.log('login err:', res)

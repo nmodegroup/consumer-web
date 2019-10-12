@@ -57,8 +57,8 @@ Page({
     this.modal.showModal({ 
       content: '确定要删除此收藏吗？\n删除就没有了哦~',
       title: '温馨提示',
-      cancelText: '拒绝',
-      confirmText: '残忍删除'
+      cancelText: '取消',
+      confirmText: '删除'
     })
   },
   //获取活动列表
@@ -87,7 +87,11 @@ Page({
           })
         }
       }
-    }).catch(error => { })
+    }).catch(error => {
+      this.toast.showToast({
+        content: error.msg
+      })
+    })
   },
   //删除操作回调 confirm确认 cancel取消
   getResult: function (e) {
@@ -99,7 +103,11 @@ Page({
           content: '删除成功',
           icon: 'success'
         })
-      }).catch(error => {})
+      }).catch(error => {
+        this.toast.showToast({
+          content: error.msg
+        })
+      })
     }
   },
   //跳转酒吧详情
