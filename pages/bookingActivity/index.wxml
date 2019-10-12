@@ -1,7 +1,7 @@
 <view class="book-container">
   <view class="date-title">选择桌位</view>
   <view class="seat-content">
-    <view wx:for="{{list}}" wx:key="{{index}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" wx:if="{{item.tables.length}}">
       <view class="seat-title">{{item.name}}</view>
       <view class="flex">
         <view class="seat-item {{num.num ? (selId == item.id && selIdx === index ? 'active' : '') : 'disable'}}" wx:for="{{item.tables}}" wx:for-item="num" wx:key="*this" 
@@ -13,8 +13,8 @@
     </view>
   </view>
   <view class="book-info-frame">
-    <view class="confirm-frame">
-      <view class="btn-confirm" bindtap="onBooking">确认</view>
+    <view class="confirm-frame {{selId ? '' : 'disable'}}">
+      <view class="btn-confirm {{selId ? '' : 'disable'}}" bindtap="onBooking">确认</view>
     </view>
   </view>
   <Toast id="toast"></Toast>

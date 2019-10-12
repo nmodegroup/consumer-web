@@ -5,5 +5,6 @@
     "modal": "/component/modal/index",
     "Toast": "/component/toast/index"
   },
-  "navigationBarTitleText": "我的收藏"
+  "navigationBarTitleText": "我的收藏",
+  "enablePullDownRefresh": true
 }

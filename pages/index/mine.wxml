@@ -54,7 +54,7 @@
       <view class="list-item-context">
         <view class="list-item-l">联系我们</view>
         <view class="list-item-r">
-          13025437441
+          <text>13025437441</text>
           <image class="right-arrow-2" src="/image/icon_right_arrow.svg"></image>
         </view>
       </view>

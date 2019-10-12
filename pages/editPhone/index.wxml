@@ -1,11 +1,11 @@
 <view class="phone-container">
   <view class="step-frame">
-    <view class="step-1 {{type == 1 ? 'active' : ''}}">
+    <view class="step-1 active}}">
       <view class="step-1-block">
-        <view class="circle-frame {{type == 1 ? 'active' : ''}}">
-          <view class="circle {{type == 1 ? 'active' : ''}}"></view>
+        <view class="circle-frame active}}">
+          <view class="circle active}}"></view>
         </view>
-        <text class="step-tips {{type == 1 ? 'active' : ''}}">验证旧手机</text>
+        <text class="step-tips active}}">验证旧手机</text>
       </view>
     </view>
     <view class="step-2 {{type == 2 ? 'active' : ''}}">

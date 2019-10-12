@@ -1,7 +1,6 @@
 .bar-container {
   background:#15153E;
   min-height: 100%;
-  padding-bottom: 20rpx;
 }
 .bar-list-frame {
   padding: 30rpx 30rpx 0 30rpx;

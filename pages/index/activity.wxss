@@ -13,9 +13,6 @@
   margin-bottom: 30rpx;
   overflow: hidden;
 }
-.activity-item:last-child{
-  padding-bottom: 98rpx;
-}
 .activity-bg {
   width:690rpx;
   height: 320rpx;
