@@ -84,7 +84,8 @@ Page({
       selOrder: item
     });
     if (item.appointType == 0) {
-      WxManager.navigateTo(Router.Booking, { id: this.data.bar.id, name: this.data.bar.name });
+      let name = this.data.bar.name.replace(/\&/g, "@")
+      WxManager.navigateTo(Router.Booking, { id: this.data.bar.id, name: name});
     } else if (item.appointType == 1) {
       this.setData({
         remindLayer: true

@@ -31,11 +31,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let name = options.name.replace(/\@/g, "&")
     this.toast = this.selectComponent("#toast")
     this.getBarOrder(options.id)
     this.setData({
       'form.id': options.id,
-      barName: options.name
+      barName: name
     })
     this.getBarTime()
   },
