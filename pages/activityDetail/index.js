@@ -27,16 +27,17 @@ Page({
       id: options.id
     })
     this.getActivityDetail()
+    this.getSystemInfo()
   },
   //获取机型修改底部样式
   getSystemInfo() {
-    wxManager.getSystemInfoSync().then(({ model, screenHeight }) => {
-      const iphoneX = /iphone x/i.test(model);
-      const iphoneNew = /iPhone11/i.test(model) && screenHeight === 812;
+    WxManager.getSystemInfoSync().then(({ model, screenHeight }) => {
+      const iphoneX = /iphone x/i.test(model)
+      const iphoneNew = /iPhone11/i.test(model) && screenHeight === 812
       this.setData({
         isIphoneX: iphoneX || iphoneNew
-      });
-    });
+      })
+    })
   },
   //获取活动详情
   getActivityDetail: function () {
