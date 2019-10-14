@@ -12,7 +12,8 @@ Page({
     activity: {},//活动详情
     baseUrl: '',
     id: '',
-    phoneLayer: false  //是否展示授权手机号弹框
+    phoneLayer: false,  //是否展示授权手机号弹框
+    isIphoneX: false
   },
 
   /**
@@ -26,6 +27,16 @@ Page({
       id: options.id
     })
     this.getActivityDetail()
+  },
+  //获取机型修改底部样式
+  getSystemInfo() {
+    wxManager.getSystemInfoSync().then(({ model, screenHeight }) => {
+      const iphoneX = /iphone x/i.test(model);
+      const iphoneNew = /iPhone11/i.test(model) && screenHeight === 812;
+      this.setData({
+        isIphoneX: iphoneX || iphoneNew
+      });
+    });
   },
   //获取活动详情
   getActivityDetail: function () {

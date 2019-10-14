@@ -164,3 +164,7 @@ button::after {
   border: none;
 }
 /* 弹框样式end */
+/* 底部兼容iphoneX */
+.safe-area__padding {
+  padding-bottom: 34px;
+}

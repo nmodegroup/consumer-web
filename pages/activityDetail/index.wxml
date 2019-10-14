@@ -69,7 +69,7 @@
       </view>
     </view>
   </view>
-  <view class="btn-bottom-frame">
+  <view class="btn-bottom-frame {{ isIphoneX ? 'safe-area__padding' : '' }}">
     <view class="share-frame">
       <button open-type="share" class="btn-share">
         <image class="share-img" src="/image/icon_share.svg"></image>
