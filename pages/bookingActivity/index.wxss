@@ -15,12 +15,12 @@
 }
 .seat-title {
   font-size: 24rpx;
-  padding-bottom: 12rpx;
   color:rgba(255, 255, 255, .8);
 }
 .flex{
   display: flex;
   padding-bottom: 30rpx;
+  flex-wrap:wrap;
 }
 .seat-item {
   background-color: rgba(69, 106, 236, 1);
@@ -33,6 +33,10 @@
   opacity: 0.5;
   width:202rpx;
   margin-right: 22rpx;
+  margin-top: 12rpx;
+}
+.seat-item:nth-child(3n) {
+  margin-right:0;
 }
 .seat-item:last-child{
   margin-right: 0;

@@ -29,6 +29,23 @@
     <view class="poster-frame">
       <image wx:if='{{activity.post}}' class="poster-img" src="{{baseUrl + activity.post}}"></image>
     </view>
+    <view class="bar-booking-frame" wx:if="{{activity.appointStatus == 0}}">
+      <view class="activity-booking-head">
+        <view class="bar-booking-l">
+          <image class="icon-ding" src="/image/icon_ding.svg"></image>
+          在线预订
+        </view>
+        <view class="bar-booking-num">{{activity.orderNum}}人已订
+        </view>
+      </view>
+    </view>
+    <view class="activity-frame" wx:if="{{activity.appointStatus == 0}}">
+      <view>
+        <view class="activity-booking-info">您已成功预订活动，请准时到店参加</view>
+        <view class="activity-booking-table" wx:if="{{activity.appointStatus == 0 && activity.quotaType == 1}}">预订桌位：{{activity.tableAreaName}} - {{activity.tableNum}}人桌</view>
+      </view>
+      <image  class="icon-confrim" src="/image/icon_confirm.svg"></image>
+    </view>
     <view class="bar-booking-frame">
       <view class="bar-booking-head">
         <view class="bar-booking-l">
