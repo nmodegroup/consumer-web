@@ -35,7 +35,7 @@
       <view class="hot-bar-context">
         <view>
           <view class="hot-bar-text">{{item.name}}</view>
-          <view class="bar-btn-1">{{filter.barType(item.type)}}</view>
+          <view class="{{filter.barStyle(item.type)}}">{{filter.barType(item.type)}}</view>
         </view>
         <view>
           <view class="hot-bar-time">
