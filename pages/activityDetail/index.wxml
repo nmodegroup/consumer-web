@@ -14,8 +14,7 @@
       <view class="bar-join-frame">
         <view class="bar-time-adre">
           <view class="hot-bar-time">
-            <image class="icon-time" src="/image/icon_time.svg"></image>
-            {{activity.beginTime}}
+            <image class="icon-time" src="/image/icon_time.svg"></image>{{activity.beginTime}}
           </view>
           <view class="hot-bar-adre" bindtap="onOpenLocation">
             <image class="icon-adre"  src="/image/icon_adre.svg"></image>

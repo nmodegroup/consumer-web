@@ -145,6 +145,7 @@
   display: flex;
   color:rgba(255, 255, 255, .5);
   font-size: 24rpx;
+  align-items: center;
 }
 .last-info-test {
   padding-top: 22rpx;
@@ -155,8 +156,11 @@
   font-size: 20rpx;
   padding: 0 8rpx;
   margin-right: 12rpx;
-  line-height: 28rpx;
   height: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgba(255,255,255,1);
 }
 .btn-booking{
   background:rgba(88, 77, 255, 1);
@@ -164,8 +168,10 @@
   font-size: 20rpx;
   padding: 0 8rpx;
   margin-right: 12rpx;
-  line-height: 28rpx;
   height: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color:rgba(255, 255, 255, 1) !important;
 }
 .bar-people-num {
@@ -179,8 +185,11 @@
   font-size: 20rpx;
   padding: 0 8rpx;
   margin-right: 12rpx;
-  line-height: 28rpx;
   height: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgba(255,255,255,1);
 }
 /* 修改vant样式 */
 .van-hairline--top-bottom::after {
