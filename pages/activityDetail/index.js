@@ -70,7 +70,7 @@ Page({
     let activity = this.data.activity
     if (activity.appointStatus == 0) {//我的预订状态(0已预定 1已取消  2未预定)，登陆后才有此字段
       this.modal.showModal({
-        content: '确定要取消预订吗？取消后可能导致没有名额了哦~',
+        content: '确定要取消预订吗？\n取消后可能导致没有名额了哦~',
         title: '温馨提示',
         cancelText: '再看看',
         confirmText: '确认取消',
