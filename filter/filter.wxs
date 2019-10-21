@@ -49,7 +49,7 @@ function activityStatus(activity) {
 
 //活动详情底部按钮文字
 function activityDetailText(activity) {
-  if (activity.onStatus == 1) {
+  if (activity.status == 1) {
     return '暂停预订'
   } else if (activity.appointStatus == 0) {
     return '取消预订'
