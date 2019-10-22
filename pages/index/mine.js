@@ -112,7 +112,7 @@ Page({
   onMch: function () {
     wx.navigateToMiniProgram({
       appId: 'wxf07f687748208034',
-      path: '/pages/home/home',
+      path: '/pages/auth/auth',
       success(res) {
       }
     })
