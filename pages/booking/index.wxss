@@ -75,6 +75,9 @@
   margin-right: 22rpx;
   margin-bottom: 22rpx;
 }
+.seat-item:nth-child(3n){
+  margin-right: 0;
+}
 .seat-item:last-child{
   margin-right: 0;
 }
