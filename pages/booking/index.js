@@ -74,7 +74,7 @@ Page({
       })
       this.getBarTable({
         id: this.data.form.id,
-        data: e.currentTarget.dataset.item.businessDate
+        date: e.currentTarget.dataset.item.businessDate
       })
     } else {
       this.toast.showToast({
