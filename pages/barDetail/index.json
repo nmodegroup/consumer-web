@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "Toast": "/component/toast/index",
-    "modal": "/component/modal/index"
+    "modal": "/component/modal/index",
+    "van-datetime-picker": "/vant/datetime-picker/index",
+    "van-popup": "/vant/popup/index"
   },
   "navigationBarTitleText": "酒吧详情",
   "enablePullDownRefresh": true

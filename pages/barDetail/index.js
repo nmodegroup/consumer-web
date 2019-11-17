@@ -31,7 +31,8 @@ Page({
     idx: 0, //订单选择日期的下标默认今天的下标
     phoneLayer: false,
     remindPhone: '', //设置提醒电话号码
-    selOrder: {} //选中的订单
+    selOrder: {}, //选中的订单
+    visiblePicker: false
   },
 
   /**
@@ -310,6 +311,12 @@ Page({
         this.cancelBarOrder();
       }
     }
+  },
+  //选择提醒时间
+  onSelTime () {
+    this.setData({
+      visiblePicker: true
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

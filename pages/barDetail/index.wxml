@@ -148,11 +148,13 @@
       </view>
     </view>
   </view>
-  <!-- 设置提醒 -->
+  <!-- 设置提醒-->
   <view class='wx-modal-box' wx:if="{{remindLayer}}">
     <view class='wx-modal-content'>
       <view class="wx-modal-title">设置提醒</view>
       <input class="remind-input" bindinput='onInput' placeholder="请输入您的手机号" type="number" maxlength="11"></input>
+      <input class="remind-input" bindinput='onNumInput' placeholder="请输入到店人数" type="number" maxlength="11"></input>
+      <input class="remind-input" style="margin:0;" bindtap="onSelTime" disabled="{{true}}" placeholder="请选择到店时间"></input>
       <view class="btn-frame">
         <view class="btn-cancel" bindtap="remindCancel">退出</view>
         <view class="btn-confirm" bindtap="remindConfirm">提交</view>
@@ -164,4 +166,8 @@
       </view>
     </view>
   </view>
+  <van-popup show="{{visiblePicker}}" position="bottom" overlay-style="background:rgba(0,0,0,0.5)">
+        <van-datetime-picker type="time" value="{{ currentDate }}" min-date="{{ minDate }}" bind:input="onInput"
+            bind:confirm="handleConfirm" bind:cancel="handleCancel" />
+    </van-popup>
 </view>
