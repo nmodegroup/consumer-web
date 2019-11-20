@@ -30,7 +30,11 @@ Page({
     orderList: [], //获取订单信息
     idx: 0, //订单选择日期的下标默认今天的下标
     phoneLayer: false,
-    remindPhone: '', //设置提醒电话号码
+    remindForm: {
+      remindPhone: '', //设置提醒电话号码
+      date: '',//可接受到店时间
+      remindNum: ''//预计到店人数
+    },
     selOrder: {}, //选中的订单
     visiblePicker: false
   },
@@ -228,29 +232,55 @@ Page({
   //监听手机号输入
   onInput: function(e) {
     this.setData({
-      remindPhone: e.detail.value
+      'remindForm.remindPhone': e.detail.value
     });
   },
+  //监听设置提醒预计人数
+  onNumInput: function (e) {
+    this.setData({
+      'remindForm.remindNum': e.detail.value
+    });
+  },
+  //监听选择时间
+  onTimeInput (e) {
+    this.setData({
+      'remindForm.date': e.detail
+    })
+  },
+
   //设置提醒取消
   remindCancel: function() {
     this.setData({
       remindLayer: false,
-      remindPhone: ''
+      'remindForm.remindPhone': '',
+      'remindForm.date': '',
+      'remindNum': ''
     });
   },
   //设置提醒确认
   remindConfirm: function(item) {
     let rmobile = /^1(3|4|5|7|8|6|9)\d{9}$/;
-    if (!rmobile.test(this.data.remindPhone)) {
+    if (!rmobile.test(this.data.remindForm.remindPhone)) {
       this.toast.showToast({
         content: '请输入正确的设置提醒手机号',
         icon: 'warn'
       });
+    } else if (!this.data.remindForm.remindNum) {
+      this.toast.showToast({
+        content: '请输入到店人数',
+        icon: 'warn'
+      });
+    } else if (!this.data.remindForm.date) {
+      this.toast.showToast({
+        content: '请选择到店时间',
+        icon: 'warn'
+      });
     } else {
+      let date = this.data.selOrder.businessDate + this.data.remindForm.date
       let form = {
         id: this.data.bar.id,
-        date: this.data.selOrder.businessDate,
-        remindPhone: this.data.remindPhone
+        date: date,
+        remindPhone: this.data.remindForm.remindPhone
       };
       BarService.setRemind(form)
         .then(res => {
@@ -316,6 +346,18 @@ Page({
   onSelTime () {
     this.setData({
       visiblePicker: true
+    })
+  },
+  //选择提醒时间弹框取消
+  handleCancel () {
+    this.setData({
+      visiblePicker: false
+    })
+  },
+  //选择提醒时间弹框确认
+  handleConfirm () {
+    this.setData({
+      visiblePicker: false
     })
   },
   /**

@@ -43,17 +43,19 @@
         <view class="order-header">
           <view class="bar-info">
             <view class="bar-name">{{item.name}}</view>
-            <view class="order-status" wx:if="{{item.status}}">{{item.status == 1 ? '自行取消' : '系统取消'}}</view>
+            <view class="order-status" wx:if="{{item.status}}">{{filter.remindStatus(item.status)}}</view>
             <view class="order-status" wx:if="{{!item.status}}">已有 <text class="bottom-line">{{item.num}}</text> 人设置提醒</view>
           </view>
           <view class="room-info">
             <view>{{item.remindStatus == 1 ? '已提醒' : '未提醒'}}</view>
+            <view>{{item.num}}人</view>
           </view>
         </view>
         <view class="order-body">
           <view>
-            <view class="go-time">提醒日期：{{item.appointTime}}</view>
-            <view class="delay-time">系统在{{item.redoTime}}取消</view>
+            <view class="go-time">预计到店时间：{{item.appointTime}}</view>
+            <view class="delay-time" wx:if="{{item.status != 3}}">系统在{{item.redoTime}}取消</view>
+            <view class="delay-time" wx:if="{{item.status == 3}}">商家已在{{item.covertTime}}转预订单</view>
           </view>
           <view class="cancel-frame" wx:if="{{item.status == 0 &&  remindStatus == 0}}">
             <view class="btn-cancel" catchtap="onRemindCancel" data-id="{{item.id}}">取消提醒</view>
