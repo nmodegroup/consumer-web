@@ -276,10 +276,11 @@ Page({
         icon: 'warn'
       });
     } else {
-      let date = this.data.selOrder.businessDate + this.data.remindForm.date
+      let date = `${this.data.selOrder.businessDate} ${this.data.remindForm.date}`
       let form = {
         id: this.data.bar.id,
         date: date,
+        remindNum: this.data.remindForm.remindNum,
         remindPhone: this.data.remindForm.remindPhone
       };
       BarService.setRemind(form)
