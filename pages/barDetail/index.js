@@ -241,12 +241,6 @@ Page({
       'remindForm.remindNum': e.detail.value
     });
   },
-  //监听选择时间
-  onTimeInput (e) {
-    this.setData({
-      'remindForm.date': e.detail
-    })
-  },
 
   //设置提醒取消
   remindCancel: function() {
@@ -356,9 +350,10 @@ Page({
     })
   },
   //选择提醒时间弹框确认
-  handleConfirm () {
+  handleConfirm (e) {
     this.setData({
-      visiblePicker: false
+      visiblePicker: false,
+      'remindForm.date': e.detail
     })
   },
   /**
