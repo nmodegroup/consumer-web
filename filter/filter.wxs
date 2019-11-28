@@ -123,8 +123,10 @@ function appointType (item) {
       return '预订已满'
     } else if (item.appointType == 2) {
       return '已设置提醒'
-    } else if (item.appointType == 3) {
+    } else if (item.appointType == 3 && item.status) {
       return '已预订'
+    } else if (item.appointType == 3 && !item.status) {
+      return '等待确认'
     }
   }
 }
