@@ -24,7 +24,14 @@ Page({
     selWeek: '',//选择的week
     selTime: '',//选择的时间
     tableList: [],//桌位列表
-    timeList: []//时间列表
+    timeList: [],//时间列表
+    idx: 0, //订单选择日期的下标默认今天的下标
+    remindLayer: false,
+    remindForm: {
+      remindPhone: '', //设置提醒电话号码
+      date: '',//可接受到店时间
+      remindNum: ''//预计到店人数
+    },
   },
 
   /**
@@ -33,6 +40,7 @@ Page({
   onLoad: function (options) {
     let name = options.name.replace(/\@/g, "&")
     this.toast = this.selectComponent("#toast")
+    this.modal = this.selectComponent("#modal")
     this.getBarOrder(options.id)
     this.setData({
       'form.id': options.id,
@@ -110,9 +118,11 @@ Page({
   //选择桌位
   onSelTable: function (e) {
     if (!e.currentTarget.dataset.num) {
-      this.toast.showToast({
-        content: '当前桌位已满请重新选择',
-        icon: 'warn'
+      this.modal.showModal({
+        content: '想订的座位没有空为了？来进入排位吧',
+        title: '温馨提示',
+        cancelText: '取消',
+        confirmText: '进入排位'
       })
     } else {
       this.setData({
@@ -122,6 +132,107 @@ Page({
         'form.tableAreaName': e.currentTarget.dataset.name,
         'form.areaId': e.currentTarget.dataset.id
       })
+    }
+  },
+  //弹框回调
+  getResult: function (e) {
+    if (e.detail.result == 'confirm') {
+      this.setData({
+        remindLayer: true
+      })
+    }
+  },
+
+  //选择提醒时间
+  onSelRemindTime() {
+    this.setData({
+      visiblePicker: true
+    })
+  },
+  //选择提醒时间弹框取消
+  handleCancel() {
+    this.setData({
+      visiblePicker: false
+    })
+  },
+  //选择提醒时间弹框确认
+  handleConfirm(e) {
+    this.setData({
+      visiblePicker: false,
+      'remindForm.date': e.detail
+    })
+  },
+  //监听手机号输入
+  onInput: function (e) {
+    this.setData({
+      'remindForm.remindPhone': e.detail.value
+    });
+  },
+  //监听设置提醒预计人数
+  onNumInput: function (e) {
+    this.setData({
+      'remindForm.remindNum': e.detail.value
+    });
+  },
+
+  //设置提醒取消
+  remindCancel: function () {
+    this.setData({
+      remindLayer: false,
+      'remindForm.remindPhone': '',
+      'remindForm.date': '',
+      'remindNum': ''
+    });
+  },
+  //设置提醒确认
+  remindConfirm: function (item) {
+    let rmobile = /^1(3|4|5|7|8|6|9)\d{9}$/;
+    if (!rmobile.test(this.data.remindForm.remindPhone)) {
+      this.toast.showToast({
+        content: '请输入正确的设置提醒手机号',
+        icon: 'warn'
+      });
+    } else if (!this.data.remindForm.remindNum) {
+      this.toast.showToast({
+        content: '请输入到店人数',
+        icon: 'warn'
+      });
+    } else if (!this.data.remindForm.date) {
+      this.toast.showToast({
+        content: '请选择到店时间',
+        icon: 'warn'
+      });
+    } else {
+      let date = `${this.data.form.date} ${this.data.remindForm.date}`
+      let form = {
+        id: this.data.form.id,
+        date: date,
+        remindNum: this.data.remindForm.remindNum,
+        remindPhone: this.data.remindForm.remindPhone
+      };
+      BarService.setRemind(form)
+        .then(res => {
+          this.toast.showToast({
+            content: '空位提醒设置成功',
+            icon: 'success'
+          });
+          this.setData({
+            remindLayer: false
+          });
+          setTimeout(() => {
+            let pages = getCurrentPages()
+            let prevPage = pages[pages.length - 2]; //上一个页面
+            prevPage.getBarOrder()
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1500)
+        })
+        .catch(error => {
+          this.toast.showToast({
+            content: error.msg
+          })
+        });
     }
   },
   //选择时间
