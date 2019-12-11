@@ -43,7 +43,7 @@
   <modal id="modal" bind:get="getResult"></modal>
   <view class='wx-modal-box' wx:if="{{remindLayer}}">
     <view class='wx-modal-content'>
-      <view class="wx-modal-title">设置提醒</view>
+      <view class="wx-modal-title">排位提醒</view>
       <input class="remind-input" bindinput='onInput' placeholder="请输入您的手机号" type="number" maxlength="11"></input>
       <input class="remind-input" bindinput='onNumInput' placeholder="请输入到店人数" type="number" maxlength="11"></input>
       <input class="remind-input" value="{{ remindForm.date }}" style="margin:0;" bindtap="onSelRemindTime" disabled="{{true}}" placeholder="请选择可接受到店时间"></input>
@@ -54,7 +54,7 @@
       <view class="remind-tips-frame">
         <view>温馨提示：</view>
         <view>1.防止错过空位，请填写正确的手机号</view>
-        <view>2.系统仅对您选择的日期进行空位提醒</view>
+        <view>2.系统仅对您选择的日期进行排位</view>
       </view>
     </view>
   </view>
