@@ -2,6 +2,69 @@
 <view class="buy-block">
   <view class="banner-block">
     <image src="https://dev.api.nightmodeplus.com/source/merchant/activity/banner/2019101121195429.jpg"></image>
-    <view class="shopping-info"></view>
+    <view class="shopping-info">
+      <view class="title-block">
+        <text>霓虹灯之夜 | 派对活动</text>
+        <text>¥34</text>
+      </view>
+      <view class="tip-block">
+        <text>特邀嘉宾：Chris Wu | Hack</text>
+        <text>2019.5.20 20:00</text>
+      </view>
+    </view>
+  </view>
+  <view class="item-block">
+    <view class="item-cell">
+      <view class="item-cell__left">
+        <text class="item-cell__left__label">购买数量</text>
+      </view>
+      <view class="item-cell__right">
+        <view class="add-block">
+          <image src="../../image/icon_add_redus.png"></image>
+          <view class="add-block__stratum">
+            <text class="add-block__stratum__btn"></text>
+            <text class="add-block__stratum__num">10</text>
+            <text class="add-block__stratum__btn"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="item-cell">
+      <view class="item-cell__left">
+        <text class="item-cell__left__label">总价</text>
+      </view>
+      <view class="item-cell__right">
+        <text class="item-cell__right__label">78.00元</text>
+      </view>
+    </view>
+    <view class="item-cell">
+      <view class="item-cell__left">
+        <text class="item-cell__left__label">抵用券/优惠码</text>
+      </view>
+      <view class="item-cell__right">
+        <text class="item-cell__right__label label-disabled">暂无可用</text>
+      </view>
+    </view>
+    <view class="item-cell">
+      <view class="item-cell__left">
+        <text class="item-cell__left__label">使用积分</text>
+      </view>
+      <view class="item-cell__right">
+        <text class="item-cell__right__label label-disabled">暂无积分可用</text>
+      </view>
+    </view>
+    <view class="item-cell">
+      <view class="item-cell__left">
+        <text class="item-cell__left__label">实付金额</text>
+      </view>
+      <view class="item-cell__right">
+        <text class="item-cell__right__label">78.00元</text>
+      </view>
+    </view>
+  </view>
+  <view class="btn-bottom-frame">
+    <view class="reserve-frame">
+      <view class="btn-reserve">￥78立即购买</view>
+    </view>
   </view>
 </view>
