@@ -173,7 +173,7 @@
   background: none;
   background-color: rgba(27, 33, 67, 0.62);
 }
-.btn-confirm{
+.btn-confirm-booking{
   width:686rpx;
   height: 84rpx;
   background:rgba(69,80,138,1);
@@ -183,7 +183,7 @@
   color:rgba(255, 255, 255, 1);
   font-size: 30rpx;
 }
-.btn-confirm.disable{
+.btn-confirm-booking.disable{
   background-color: rgba(27, 33, 67, 0.62);
   color:rgba(255, 255, 255, .2);
 }

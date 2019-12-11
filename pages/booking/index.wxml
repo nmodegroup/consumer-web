@@ -36,7 +36,7 @@
     </view>
     <view class="book-info" wx:if="{{!form.date || !form.areaId || !form.appointArriveTimeId}}">请完善预约信息</view>
     <view class="confirm-frame {{form.date && form.areaId && form.appointArriveTimeId ? '' : 'disable'}}">
-      <view class="btn-confirm {{form.date && form.areaId && form.appointArriveTimeId ? '' : 'disable'}}" bindtap="onBooking">确认</view>
+      <view class="btn-confirm-booking {{form.date && form.areaId && form.appointArriveTimeId ? '' : 'disable'}}" bindtap="onBooking">确认</view>
     </view>
   </view>
   <Toast id="toast"></Toast>

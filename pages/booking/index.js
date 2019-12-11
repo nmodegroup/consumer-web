@@ -119,7 +119,7 @@ Page({
   onSelTable: function (e) {
     if (!e.currentTarget.dataset.num) {
       this.modal.showModal({
-        content: '想订的座位没有空为了？来进入排位吧',
+        content: '想订的座位没有空位了？来进入排位吧',
         title: '温馨提示',
         cancelText: '取消',
         confirmText: '进入排位'
