@@ -13,3 +13,4 @@ export const Collect = '/pages/collect/index'// 我的收藏
 export const Search = '/pages/search/index'// 搜索
 export const Setting = '/pages/setting/index'// 授权页面
 export const Protocol = '/pages/protocol/protocol'// 用户协议页面
+export const Buy = '/pages/buy/buy'// 确认订单页

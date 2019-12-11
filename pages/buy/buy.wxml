@@ -1,0 +1,7 @@
+<!--pages/buy/buy.wxml-->
+<view class="buy-block">
+  <view class="banner-block">
+    <image src="https://dev.api.nightmodeplus.com/source/merchant/activity/banner/2019101121195429.jpg"></image>
+    <view class="shopping-info"></view>
+  </view>
+</view>

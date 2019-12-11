@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/buy/buy",
     "pages/index/index",
     "pages/setting/index",
     "pages/collect/index",
@@ -15,6 +16,7 @@
     "pages/index/activity",
     "pages/protocol/protocol",
     "pages/index/mine"
+    
   ],
   "permission": {
     "scope.userLocation": {
@@ -22,7 +24,7 @@
     }
   },
   "tabBar": {
-    "custom": true,
+    "custom": false,
     "color": "#FFFFFF",
     "selectedColor": "#FF26BA",
     "borderStyle": "black",
