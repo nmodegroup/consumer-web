@@ -173,7 +173,7 @@
   background: none;
   background-color: rgba(27, 33, 67, 0.62);
 }
-.btn-confirm{
+.btn-confirm-booking{
   width:686rpx;
   height: 84rpx;
   background:rgba(69,80,138,1);
@@ -183,7 +183,7 @@
   color:rgba(255, 255, 255, 1);
   font-size: 30rpx;
 }
-.btn-confirm.disable{
+.btn-confirm-booking.disable{
   background-color: rgba(27, 33, 67, 0.62);
   color:rgba(255, 255, 255, .2);
 }
@@ -193,3 +193,98 @@
   background-color: rgba(255, 255, 255, .8);
   margin: 0 30rpx;
 }
+.remind-input {
+  height: 72rpx;
+  border:1rpx solid rgba(255, 255, 255, .2);
+  border-radius: 36rpx;
+  font-size: 26rpx;
+  padding: 0 40rpx;
+  color:rgba(255, 255, 255, .5);
+  margin-bottom: 20rpx;
+}
+.remind-tips-frame {
+  padding-top: 20rpx;
+}
+.remind-tips-frame view{
+  font-size: 20rpx;
+  color:rgba(255, 255, 255, .5);
+  line-height: 30rpx;
+}
+.bar-booking-tag {
+  padding:0 10rpx;
+  border:1rpx solid rgba(255,255,255,1);
+  height: 32rpx;
+  line-height: 30rpx;
+  color:rgba(255, 255, 255, 1);
+}
+.bar-cancel-time {
+  color:rgba(255, 255, 255, 1);
+  padding-left:14rpx;
+  padding-right: 4rpx;
+}
+/* 修改vant下弹出框样式样式start */
+.van-picker__toolbar {
+  background: rgba(21, 21, 62, 1);
+  height: 100rpx !important;
+  box-shadow: 0px -1rpx 0 0 rgba(255, 255, 255, 0.1);
+  border-radius: 40rpx 40rpx 0 0 !important;
+}
+.van-picker__cancel {
+  font-size: 30rpx !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  line-height: 100rpx !important;
+}
+.van-picker__confirm {
+  font-size: 30rpx !important;
+  color: rgba(255, 255, 255, 1) !important;
+  line-height: 100rpx !important;
+}
+.van-picker__title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 30rpx !important;
+  line-height: 100rpx;
+}
+.van-picker {
+  background-color: #12122f !important;
+  border-radius: 40rpx 40rpx 0 0 !important;
+}
+.van-picker-column__item {
+  font-size: 28rpx;
+}
+.van-picker-column__item--selected {
+  font-size: 34rpx;
+  font-weight: 500 !important;
+  color: #fff !important;
+}
+.van-picker__toolbar::after {
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1) !important;
+  border-top: none !important;
+}
+.van-picker__cancel--hover,
+.van-picker__confirm--hover {
+  background-color: rgba(21, 21, 62, 1) !important;
+}
+.van-picker__frame::after {
+  content: '';
+  width: 750rpx !important;
+  height: 1rpx !important;
+  background: linear-gradient(to right, black, rgba(255, 255, 255, 0.5), black) !important;
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+  transform: scale(1) !important;
+  border: none !important;
+}
+.van-picker__frame::before {
+  content: '';
+  width: 750rpx;
+  height: 1rpx;
+  background: linear-gradient(to right, black, rgba(255, 255, 255, 0.5), black);
+  position: absolute;
+  top: 44px;
+  left: 0;
+}
+.van-popup {
+  background-color: transparent !important;
+}
+/* 修改vant样式end */

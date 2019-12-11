@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "Toast": "/component/toast/index"
+    "Toast": "/component/toast/index",
+    "modal": "/component/modal/index",
+    "van-datetime-picker": "/vant/datetime-picker/index",
+    "van-popup": "/vant/popup/index"
   },
   "navigationBarTitleText": "预订详情"
 }
