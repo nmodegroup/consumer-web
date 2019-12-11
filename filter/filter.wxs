@@ -134,7 +134,7 @@ function appointType (item) {
 //酒吧详情在线预订按钮
 function appointBtn (type) {
   if (type == 0) {
-    return '立即预定'
+    return '立即预订'
   } else if (type == 1) {
     return '设置提醒'
   } else if (type == 2) {
