@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/buy/buy",
+    "pages/payment/payment",
     "pages/index/index",
     "pages/setting/index",
     "pages/collect/index",
@@ -15,8 +15,8 @@
     "pages/barList/index",
     "pages/index/activity",
     "pages/protocol/protocol",
-    "pages/index/mine"
-    
+    "pages/index/mine",
+    "pages/buy/buy"
   ],
   "permission": {
     "scope.userLocation": {

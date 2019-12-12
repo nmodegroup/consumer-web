@@ -1,0 +1,39 @@
+<!--pages/payment/payment.wxml-->
+<view class="payment-block">
+  <view class="payment-success" wx:if="{{false}}">
+    <view class="payment-state">
+      <view class="state-block">
+        <image class="payment-state_icon" src="../../image/icon_success.png"></image>
+      </view>
+      <view class="state-block">
+        <view class="state-block__state">支付成功</view>
+        <view class="state-block__name">5.20情人节活动入场券</view>
+      </view>
+      <view class="line-block">
+      <image src="../../image/pay_bg.png" class="payment-state__bg"></image>
+      </view>
+      <view class="state-block code-block">
+        <view class="coupon-code">
+          <text class="coupon-code__tip">券码</text>
+          <view class="coupon-code__code">0456 7566 1381</view>
+          <view class="coupon-code__code">0456 7566 1381</view>
+          <view class="coupon-code__code">0456 7566 1381</view>
+        </view>
+        <view class="state-block__look">可在“我的-活动单”中查看</view>
+      </view>
+    </view>
+  </view>
+  <view class="payment-faill">
+    <view class="payment-faill__info">
+      <image src="../../image/icon_fail.png" class="payment-faill__info__icon"></image>
+      <view class="state-block__state">支付失败</view>
+      <view class="state-block__name">很遗憾，您的支付未成功！</view>
+    </view>
+  </view>
+   <view class="btn-bottom-frame">
+      <view class="reserve-frame">
+        <view class="btn-reserve look-more">查看更多活动</view>
+        <view class="btn-reserve hand-use">立即使用</view>
+      </view>
+    </view>
+</view> 
