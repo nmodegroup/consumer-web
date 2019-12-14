@@ -1,15 +1,16 @@
 <!--pages/buy/buy.wxml-->
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
 <view class="buy-block">
   <view class="banner-block">
-    <image src="https://dev.api.nightmodeplus.com/source/merchant/activity/banner/2019101121195429.jpg"></image>
+    <image src="{{ baseUrl + payInfo.banner }}"></image>
     <view class="shopping-info">
       <view class="title-block">
-        <text>霓虹灯之夜 | 派对活动</text>
-        <text>¥34</text>
+        <text>{{ payInfo.theme }}</text>
+        <text>¥{{ price }}</text>
       </view>
       <view class="tip-block">
-        <text>特邀嘉宾：Chris Wu | Hack</text>
-        <text>2019.5.20 20:00</text>
+        <text>特邀嘉宾：{{ payInfo.guest }}</text>
+        <text>{{ payInfo.beginTime }}</text>
       </view>
     </view>
   </view>
@@ -22,9 +23,9 @@
         <view class="add-block">
           <image src="../../image/icon_add_redus.png"></image>
           <view class="add-block__stratum">
-            <text class="add-block__stratum__btn"></text>
-            <text class="add-block__stratum__num">10</text>
-            <text class="add-block__stratum__btn"></text>
+            <text class="add-block__stratum__btn" bindtap="onReduceNum"></text>
+            <text class="add-block__stratum__num">{{ buyNum }}</text>
+            <text class="add-block__stratum__btn" bindtap="onAddNum"></text>
           </view>
         </view>
       </view>
@@ -34,7 +35,7 @@
         <text class="item-cell__left__label">总价</text>
       </view>
       <view class="item-cell__right">
-        <text class="item-cell__right__label">78.00元</text>
+        <text class="item-cell__right__label">{{ filter.parseFloatNumner(totalAmount) }}元</text>
       </view>
     </view>
     <view class="item-cell">
@@ -58,13 +59,14 @@
         <text class="item-cell__left__label">实付金额</text>
       </view>
       <view class="item-cell__right">
-        <text class="item-cell__right__label">78.00元</text>
+        <text class="item-cell__right__label">{{ filter.parseFloatNumner(entityAmount) }}元</text>
       </view>
     </view>
   </view>
   <view class="btn-bottom-frame">
     <view class="reserve-frame">
-      <view class="btn-reserve">￥78立即购买</view>
+      <view class="btn-reserve" bindtap="onPayment">￥{{ entityAmount }}立即购买</view>
     </view>
   </view>
+  <Toast id="toast"></Toast>
 </view>

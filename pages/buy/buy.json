@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "Toast": "/component/toast/index"
+  },
   "navigationBarTitleText": "确认订单"
 }

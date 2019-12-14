@@ -17,7 +17,8 @@ Page({
     },
     moreBtn: false,//正在载入更多提示
     noMoreBtn: false,//没有更多提示
-    goMore: true // 加载更多,
+    goMore: true, // 加载更多,
+    isCharge: 'free'
   },
 
   /**

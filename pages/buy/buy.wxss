@@ -92,7 +92,7 @@ image {
     color: #fff;
   }
 .item-cell__right__label.label-disabled {
-  color: #fefefe;
+  color: rgba(255,255,255,0.5);
 }
 .btn-bottom-frame {
   position: fixed;

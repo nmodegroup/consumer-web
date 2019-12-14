@@ -56,7 +56,19 @@ function activityDetailText(activity) {
   } else if (activity.num == 0) {
     return '预订已满'
   }  else {
-    return '立即预订'
+    if (activity.isCharge == 1) {
+      return "￥" + activity.charges + "立即购买"
+    } else {
+      return '立即预订'
+    }
+  }
+}
+// 活动费用
+function activityCharge(activity) {
+  if ( activity.isCharge == 1) {
+    return "Ticket：¥" + activity.charges
+  } else {
+    return "Free"
   }
 }
 
@@ -213,6 +225,10 @@ function isToday(item) {
   }
 }
 
+function parseFloatNumner(price, num=2){
+  return parseFloat(price).toFixed(num)
+}
+
 
 
 module.exports = {
@@ -221,6 +237,7 @@ module.exports = {
   barStyle: barStyle,
   activityStatus: activityStatus,
   activityDetailText: activityDetailText,
+  activityCharge: activityCharge,
   TobookStatus: TobookStatus,
   TmbookStatus: TmbookStatus,
   orderStatus: orderStatus,
@@ -229,5 +246,6 @@ module.exports = {
   appointBtn: appointBtn,
   cancelTime: cancelTime,
   isToday: isToday,
-  remindStatus: remindStatus
+  remindStatus: remindStatus,
+  parseFloatNumner: parseFloatNumner
 }

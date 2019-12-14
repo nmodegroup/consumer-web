@@ -68,6 +68,7 @@ Page({
   //预定
   onBooking: function () {
     let activity = this.data.activity
+    if (activity.isCharge == 0){ // 不收费
     if (activity.appointStatus == 0) {//我的预订状态(0已预定 1已取消  2未预定)，登陆后才有此字段
       this.modal.showModal({
         content: '确定要取消预订吗？\n取消后可能导致没有名额了哦~',
@@ -85,6 +86,23 @@ Page({
         WxManager.navigateTo(Router.BookingActivity, { id: activity.id, theme: activity.theme})
       } else {
         this.setBooking()
+      }
+    }
+    } else { // 收费
+      if (activity.status != 2 && activity.status != 3) {
+        this.toast.showToast({
+          content: '当前活动不可预订',
+          icon: 'warn'
+        })
+      } else {
+        if (activity.num == 0) {
+          this.toast.showToast({
+            content: '剩余数量不足，无法完成购买',
+            icon: 'warn'
+          })
+        } else {
+          WxManager.navigateTo(Router.Buy, { id: activity.id })
+        }
       }
     }
   },

@@ -79,3 +79,51 @@ export function getTable(params) {
       });
   });
 }
+
+/**
+ * 
+ * 购买活动
+*/
+
+export function gtePayInfo(params){
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/activity/info', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+/**
+ * 下单
+*/
+export function postPayment(params){
+  return new Promise((resolve, reject) => {
+    httpManager
+      .post('/consumer/activity/pay', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}
+/**
+ * 支付结果页
+*/
+export function getPayResult(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/activity/tickets', params)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(e => {
+        reject(e);
+      });
+  });
+}

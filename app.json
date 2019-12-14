@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/payment/payment",
     "pages/index/index",
     "pages/setting/index",
     "pages/collect/index",
@@ -16,6 +15,7 @@
     "pages/index/activity",
     "pages/protocol/protocol",
     "pages/index/mine",
+    "pages/payment/payment",
     "pages/buy/buy"
   ],
   "permission": {

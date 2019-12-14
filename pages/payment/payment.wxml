@@ -36,4 +36,6 @@
         <view class="btn-reserve hand-use">立即使用</view>
       </view>
     </view>
+    <qrcode></qrcode>
+    <Toast id="toast"></Toast>
 </view> 

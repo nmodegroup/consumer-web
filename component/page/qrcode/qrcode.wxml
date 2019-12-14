@@ -1,0 +1,23 @@
+<view class="dialog-block">
+  <view class="shade-cover"></view>
+  <view class="qrcode-block">
+    <view class="qrcode-block__info">
+      <view class="qrcode-block__info__tips">商家扫码券即可消费</view>
+      <swiper class="swiper-block"
+        duration="{{duration}}"
+        bindchange="changeIndicatorDots">
+        <block wx:for="{{qrcode}}" wx:key="*this">
+          <swiper-item class="swiper-block__item">
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="qrcode-block__info__code">券码：1209 3490 3400</view>
+    </view>
+    <view class="dot-block">
+      <block wx:for="{{qrcode}}" wx:key="*this">
+        <text class="dot-block__item {{ index === current?'active': ''}}"></text>
+      </block>
+    </view>
+  </view>
+</view>

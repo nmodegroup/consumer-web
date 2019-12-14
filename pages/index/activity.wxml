@@ -3,9 +3,10 @@
   <view class="activity-frame">
     <view class="activity-item" bindtap="onActivityDetail" data-item="{{item}}" wx:for="{{list}}" wx:key="{{index}}">
       <view class="activity-bg">
-        <view class="activity-price">
-         <view class="activity-price__tip">Ticket：¥39</view>
-         <image src="../../image/icon_biaoqian_chang.png" class="activity-price__image"></image>
+        <view class="activity-price {{ item.isCharge == 0? 'activity-free': ''}}">
+         <view class="activity-price__tip">{{ filter.activityCharge(item) }}</view>
+         <image src="../../image/icon_biaoqian_chang.png" class="activity-price__image" wx:if="{{item.isCharge == 1}}"></image>     
+         <image src="../../image/icon_biaoqian_duan.png" class="activity-price__image" wx:else></image>
         </view>
         <view class="activity-mun">{{filter.activityStatus(item)}}</view>
         <image class="bg-activity-img" src="{{baseUrl + item.banner}}"></image>

@@ -216,6 +216,28 @@ function makePhoneCall(phone) {
     phoneNumber: phone
   });
 }
+/**
+ * 支付
+ * 
+*/
+function requestPayment(params, successCallback, failCallback){
+  const { timeStamp, nonceStr, packageStr, signType, paySign } = params
+  wx.requestPayment({
+    timeStamp,
+    nonceStr,
+    package: packageStr,
+    signType,
+    paySign,
+    success(res){
+      console.log(res)
+      successCallback && successCallback()
+    },
+    fail(res){
+      console.error(res)
+      failCallback && failCallback()
+    }
+  })
+}
 
 module.exports = {
   navigateTo,
@@ -229,5 +251,6 @@ module.exports = {
   showLoading,
   hideLoading,
   stopRefreshAndLoading,
-  makePhoneCall
+  makePhoneCall,
+  requestPayment
 };
