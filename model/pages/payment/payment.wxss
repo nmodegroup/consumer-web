@@ -106,7 +106,7 @@
   line-height: 40rpx;
   margin-top: 28rpx;
 }
-.payment-faill {
+.payment-faill, .payment-loading {
   width: 100%;
   height: 100%;
   background-color: #15153E;
@@ -119,4 +119,28 @@
 .payment-faill__info__icon {
   width: 80rpx;
   height: 80rpx;
+}
+.payment-loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+}
+.payment-loading__block {
+  overflow: hidden;
+}
+.payment-loading__block__icon {
+  display: block;
+  width: 88rpx;
+  height: 88rpx;
+  margin:  190rpx auto 0;
+}
+.payment-loading__block__tips {
+  font-size: 28rpx;
+  color: #232323;
+  text-align: center;
+  margin-top: 80rpx;
 }

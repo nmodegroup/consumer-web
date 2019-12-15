@@ -1,5 +1,5 @@
 <!--pages/buy/buy.wxml-->
-<wxs module="filter" src="../../filter/filter.wxs"></wxs>
+<wxs module="filter" src="../../../filter/filter.wxs"></wxs>
 <view class="buy-block">
   <view class="banner-block">
     <image src="{{ baseUrl + payInfo.banner }}"></image>
@@ -21,7 +21,7 @@
       </view>
       <view class="item-cell__right">
         <view class="add-block">
-          <image src="../../image/icon_add_redus.png"></image>
+          <image src="../../../image/icon_add_redus.png"></image>
           <view class="add-block__stratum">
             <text class="add-block__stratum__btn" bindtap="onReduceNum"></text>
             <text class="add-block__stratum__num">{{ buyNum }}</text>

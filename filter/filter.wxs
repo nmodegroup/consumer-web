@@ -224,10 +224,20 @@ function isToday(item) {
     return item.week
   }
 }
-
+// 保留小数位
 function parseFloatNumner(price, num=2){
   return parseFloat(price).toFixed(num)
 }
+// 支付结果按钮文案
+function payResultBtnText(state){
+  if (state === "success") {
+    return "立即使用"
+  } else if (state === "fail") {
+    return "重新购买"
+  }
+}
+
+
 
 
 
@@ -247,5 +257,6 @@ module.exports = {
   cancelTime: cancelTime,
   isToday: isToday,
   remindStatus: remindStatus,
-  parseFloatNumner: parseFloatNumner
+  parseFloatNumner: parseFloatNumner,
+  payResultBtnText: payResultBtnText
 }

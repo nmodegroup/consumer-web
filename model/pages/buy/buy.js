@@ -1,6 +1,8 @@
 // pages/buy/buy.js
-const WxManager = require('../../utils/wxManager')
-const ActivityService = require('../../service/activity')
+const WxManager = require('../../../utils/wxManager')
+const ActivityService = require('../../../service/activity')
+const Router = require("../../../router/Router")
+
 const app = getApp()
 Page({
 
@@ -99,9 +101,9 @@ Page({
       const { timeStamp, nonceStr, signType, paySign, actOrderId } = res;
       const packageStr = res.package
       WxManager.requestPayment(
-        { timeStamp, nonceStr, packageStr, signType, paySign },
-        this.payResult(actOrderId),
-        this.payResult(actOrderId)
+        { timeStamp, nonceStr, packageStr, signType, paySign, actOrderId },
+        this.payResult,
+        this.payResult
       )
     }).catch( err => {
       console.error(err)
@@ -110,8 +112,8 @@ Page({
       })
     })
   },
-  payResult(actOrderId){
-    WxManager.navigateTo("/pages/payment/payment", { actOrderId })
+  payResult(actOrderId, state){
+    WxManager.navigateTo(Router.Payment, { actOrderId, state  })
   },
   /**
    * 生命周期函数--监听页面隐藏

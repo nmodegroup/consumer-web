@@ -20,7 +20,6 @@ image {
   left: 0;
   height: 140rpx;
   background-color:rgba(0,0,0,0.5);
-  filter:blur(2rpx);
   padding: 20rpx 30rpx 10rpx;
 }
 .title-block {

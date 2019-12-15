@@ -8,7 +8,22 @@ function navigateTo(url, params) {
     url: joinPath(url, params)
   });
 }
-
+/**
+ * 从定向
+*/
+function redirectTo(url, params) {
+  wx.redirectTo({
+    url: joinPath(url, params)
+  });
+}
+/**
+ * 返回
+*/
+function navigateBack(delta=1){
+  wx.navigateBack({
+    delta
+  })
+}
 /**
  * path 拼接
  */
@@ -216,12 +231,9 @@ function makePhoneCall(phone) {
     phoneNumber: phone
   });
 }
-/**
- * 支付
- * 
-*/
+
 function requestPayment(params, successCallback, failCallback){
-  const { timeStamp, nonceStr, packageStr, signType, paySign } = params
+  const { timeStamp, nonceStr, packageStr, signType, paySign, actOrderId } = params
   wx.requestPayment({
     timeStamp,
     nonceStr,
@@ -230,17 +242,24 @@ function requestPayment(params, successCallback, failCallback){
     paySign,
     success(res){
       console.log(res)
-      successCallback && successCallback()
+      if (res.errMsg === "requestPayment:ok") {
+        successCallback && successCallback(actOrderId, "success")
+      }
     },
     fail(res){
       console.error(res)
-      failCallback && failCallback()
+      failCallback && failCallback(actOrderId, "fail")
     }
   })
 }
+/**
+ * 
+*/
 
 module.exports = {
   navigateTo,
+  redirectTo,
+  navigateBack,
   checkSession,
   login,
   getUserInfo,

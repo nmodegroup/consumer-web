@@ -14,9 +14,16 @@
     "pages/barList/index",
     "pages/index/activity",
     "pages/protocol/protocol",
-    "pages/index/mine",
-    "pages/payment/payment",
-    "pages/buy/buy"
+    "pages/index/mine"
+  ],
+  "subpackages": [
+    {
+      "root": "model",
+      "pages": [
+        "pages/buy/buy",
+        "pages/payment/payment"
+      ]
+    }
   ],
   "permission": {
     "scope.userLocation": {
@@ -24,7 +31,7 @@
     }
   },
   "tabBar": {
-    "custom": false,
+    "custom": true,
     "color": "#FFFFFF",
     "selectedColor": "#FF26BA",
     "borderStyle": "black",

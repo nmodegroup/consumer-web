@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "Toast": "/component/toast/index",
     "qrcode": "/component/page/qrcode/qrcode"
   },
   "navigationBarTitleText": "支付结果"

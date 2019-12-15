@@ -1,5 +1,5 @@
-<view class="dialog-block">
-  <view class="shade-cover"></view>
+<view class="dialog-block" wx:if="{{ show }}">
+  <view class="shade-cover" bindtap="closeDialog"></view>
   <view class="qrcode-block">
     <view class="qrcode-block__info">
       <view class="qrcode-block__info__tips">商家扫码券即可消费</view>
@@ -8,13 +8,15 @@
         bindchange="changeIndicatorDots">
         <block wx:for="{{qrcode}}" wx:key="*this">
           <swiper-item class="swiper-block__item">
-            <view class="swiper-item {{item}}"></view>
+            <view class="swiper-item">
+              <image src="{{ baseUrl + item.url }}"></image>
+            </view>
           </swiper-item>
         </block>
       </swiper>
-      <view class="qrcode-block__info__code">券码：1209 3490 3400</view>
+      <view class="qrcode-block__info__code">券码：{{ qrcode[current].code }}</view>
     </view>
-    <view class="dot-block">
+    <view class="dot-block" wx:if="{{ qrcode.length >= 1}}">
       <block wx:for="{{qrcode}}" wx:key="*this">
         <text class="dot-block__item {{ index === current?'active': ''}}"></text>
       </block>
