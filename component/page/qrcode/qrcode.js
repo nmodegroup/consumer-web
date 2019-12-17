@@ -9,9 +9,13 @@ Component({
       type: Boolean,
       value: false
     },
-    qrcode: {
+    qrcodeList: {
       type: Array,
       value: []
+    },
+    qrcodeUrl: {
+      type: String,
+      value: ""
     }
   },
   /** 

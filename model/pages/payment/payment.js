@@ -15,6 +15,7 @@ Page({
     payState: "",
     qrcodeList: [],
     theme: "",
+    qrcodeUrl: "",
     showCode: false
   },
 
@@ -24,9 +25,9 @@ Page({
   onLoad: function (options) {
     this.toast = this.selectComponent("#toast")
     console.log(options)
-    const actOrderId = options.actOrderId;
+    const actOrderId = 154 //options.actOrderId;
     this.setData({ actOrderId })
-    if (options.state === "success") {
+    // if (options.state === "success") {
       this.setData({ payState: "loading" })
       const timer = setTimeout( () => {
         clearTimeout(timer)
@@ -34,9 +35,9 @@ Page({
           actOrderId
         })
       }, 3000)
-    } else {
-      this.setData({ payState: "fail" })
-    }
+    // } else {
+    //   this.setData({ payState: "fail" })
+    // }
   },
 
   /**
@@ -55,8 +56,9 @@ Page({
     ActivityService.getPayResult(params).then( res => {
       console.log(res)
       this.setData({ 
-        qrcodeList: res.tickets, 
+        qrcodeList: res.codes, 
         theme: res.theme, 
+        qrcodeUrl: res.url,
         payState: "success" })
     }).catch( err => {
       console.error(err)

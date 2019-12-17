@@ -6,20 +6,21 @@
       <swiper class="swiper-block"
         duration="{{duration}}"
         bindchange="changeIndicatorDots">
-        <block wx:for="{{qrcode}}" wx:key="*this">
+        <!-- <block wx:for="{{qrcodeList}}" wx:key="*this"> -->
+        <block>
           <swiper-item class="swiper-block__item">
             <view class="swiper-item">
-              <image src="{{ baseUrl + item.url }}"></image>
+              <image src="{{ baseUrl + qrcodeUrl }}"></image>
             </view>
           </swiper-item>
         </block>
       </swiper>
-      <view class="qrcode-block__info__code">券码：{{ qrcode[current].code }}</view>
+      <!-- <view class="qrcode-block__info__code">券码：{{ qrcode[current].code }}</view> -->
     </view>
-    <view class="dot-block" wx:if="{{ qrcode.length >= 1}}">
+    <!-- <view class="dot-block" wx:if="{{ qrcode.length >= 1}}">
       <block wx:for="{{qrcode}}" wx:key="*this">
         <text class="dot-block__item {{ index === current?'active': ''}}"></text>
       </block>
-    </view>
+    </view> -->
   </view>
 </view>

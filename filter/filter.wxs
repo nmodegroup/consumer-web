@@ -52,7 +52,11 @@ function activityDetailText(activity) {
   if (activity.status == 1) {
     return '暂停预订'
   } else if (activity.appointStatus == 0) {
-    return '取消预订'
+    if (activity.isCharge == 1) {
+      return "￥" + activity.charges + "立即购买"
+    } else {
+      return '取消预订'
+    }
   } else if (activity.num == 0) {
     return '预订已满'
   }  else {
@@ -236,9 +240,10 @@ function payResultBtnText(state){
     return "重新购买"
   }
 }
-
-
-
+// 券码数字分割
+function codeNumber(num){
+  return num
+}
 
 
 module.exports = {
@@ -258,5 +263,6 @@ module.exports = {
   isToday: isToday,
   remindStatus: remindStatus,
   parseFloatNumner: parseFloatNumner,
-  payResultBtnText: payResultBtnText
+  payResultBtnText: payResultBtnText,
+  codeNumber: codeNumber
 }

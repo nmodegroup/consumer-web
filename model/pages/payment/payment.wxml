@@ -19,7 +19,7 @@
           <view class="coupon-code__code" 
            wx:for="{{ qrcodeList }}"
            wx:key="{{ index }}"
-           >{{ item.code }}</view>
+           >{{ filter.codeNumber(item) }}</view>
         </view>
         <view class="state-block__look">可在“我的-活动单”中查看</view>
       </view>
@@ -45,7 +45,8 @@
       </view>
     </view>
     <qrcode 
-    qrcode="{{qrcodeList}}" 
+    qrcodeList="{{qrcodeList}}"
+    qrcodeUrl="{{qrcodeUrl}}" 
     show="{{showCode}}"
     bindcloseCode="closeCodeDialog"
     ></qrcode>
