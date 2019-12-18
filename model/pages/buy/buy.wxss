@@ -53,11 +53,17 @@ image {
   border-bottom: 1rpx solid rgba(255,255,255,0.5)
 }
 .item-cell__left {
-
+  display: flex;
+  align-items: center
 }
 .item-cell__left__label {
   color: #fff;
   font-size:28rpx;
+  margin-right: 10rpx;
+}
+.item-cell__left__icon {
+  width: 26rpx;
+  height: 28rpx;
 }
 .add-block {
   width: 166rpx;

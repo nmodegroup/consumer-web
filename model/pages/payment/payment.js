@@ -25,9 +25,9 @@ Page({
   onLoad: function (options) {
     this.toast = this.selectComponent("#toast")
     console.log(options)
-    const actOrderId = 154 //options.actOrderId;
+    const actOrderId = options.actOrderId;
     this.setData({ actOrderId })
-    // if (options.state === "success") {
+    if (options.state === "success") {
       this.setData({ payState: "loading" })
       const timer = setTimeout( () => {
         clearTimeout(timer)
@@ -35,9 +35,9 @@ Page({
           actOrderId
         })
       }, 3000)
-    // } else {
-    //   this.setData({ payState: "fail" })
-    // }
+    } else {
+      this.setData({ payState: "fail" })
+    }
   },
 
   /**
@@ -76,7 +76,9 @@ Page({
     })
   },
   handleLookMore(){
-    WxManager.navigateTo(Router.Activity)
+    wx.switchTab({
+      url: Router.Activity
+    })
   },
   handleBtnRight(){
     const { payState } = this.data;

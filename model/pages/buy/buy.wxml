@@ -49,6 +49,7 @@
     <view class="item-cell">
       <view class="item-cell__left">
         <text class="item-cell__left__label">使用积分</text>
+        <image src="../../../image/icon_scose.png" class="item-cell__left__icon"></image>
       </view>
       <view class="item-cell__right">
         <text class="item-cell__right__label label-disabled">暂无积分可用</text>
