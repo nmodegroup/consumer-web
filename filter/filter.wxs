@@ -46,10 +46,40 @@ function activityStatus(activity) {
     return '活动已结束'
   }
 }
-
+// status 0已约满  1已暂停  2预定中  3活动中  4活动已结束 只有status=2的时候能预定活动
+// appointStatus 我的预订状态(0已预定 1已取消  2未预定)，登陆后才有此字段
 //活动详情底部按钮文字
+// 后期写过这里
+// function activityDetailText(activity){
+//   if (activity.status == 0) {
+//     if (activity.appointStatus == 0) {
+//       return '取消预订'
+//     }
+//     return '预订已满'
+//   } else if (activity.status == 1){
+//     return "暂停预订"
+//   } else if (activity.status == 2 || activity.status == 3) {
+//     if (activity.isCharge == 1) {
+//       return "￥" + activity.charges + "立即购买"
+//     } else {
+//       if (activity.appointStatus == 0) {
+//         return "取消预订"
+//       }
+//       return "立即预订"
+//     }
+//   } else if (activity.status == 4) {
+//     if (activity.isCharge == 1) {
+//       return "￥" + activity.charges + "立即购买"
+//     }
+//     return "立即预订"
+//   }
+// }
+
 function activityDetailText(activity) {
   if (activity.status == 1) {
+    if (activity.appointStatus == 0) {
+      return '取消预订'
+    } 
     return '暂停预订'
   } else if (activity.appointStatus == 0) {
     if (activity.isCharge == 1) {
@@ -57,7 +87,7 @@ function activityDetailText(activity) {
     } else {
       return '取消预订'
     }
-  } else if (activity.num == 0) {
+  } else if (activity.status == 0) {
     return '预订已满'
   }  else {
     if (activity.isCharge == 1) {

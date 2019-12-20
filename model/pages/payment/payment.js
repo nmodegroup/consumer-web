@@ -55,24 +55,27 @@ Page({
   getPayResult(params){
     ActivityService.getPayResult(params).then( res => {
       console.log(res)
+      const CODES = res.codes || []
+      let codes = CODES.map( item => {
+        return item.replace(/\s/g, '').replace(/(.{4})/g, "$1 ")
+      })
       this.setData({ 
-        qrcodeList: res.codes, 
+        qrcodeList: codes, 
         theme: res.theme, 
         qrcodeUrl: res.url,
         payState: "success" })
     }).catch( err => {
       console.error(err)
-      // if ( err && Number(err.code) === CONSTANT.FAIL) {
-      //   this.setData({ payState: "loading" })
-      // } 
-      // this.toast.showToast({
-      //   content: err.msg
-      // })
       wx.showToast({
         title: err.msg,
         icon: 'none',
         duration: 3000
       })
+      if ( err && Number(err.code) === CONSTANT.FAIL) {
+        wx.switchTab({
+          url: Router.ActivityOrder
+        })
+      } 
     })
   },
   handleLookMore(){

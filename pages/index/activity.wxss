@@ -115,12 +115,13 @@
   z-index: 1;
 }
 .activity-price__tip {
-  width: 100%;
-  text-align: center;
+  line-height: 54rpx;
   position: absolute;
   left: 0;
   top: 0;
   color: #fff;
   font-size: 30rpx;
   z-index: 2;
+  padding-left: 20rpx;
+  box-sizing: border-box;
 }
