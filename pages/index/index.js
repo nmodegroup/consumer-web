@@ -125,6 +125,11 @@ Page({
   },
   //选择地址确认
   onAdreConfirm: function (e) {
+    if (this.data.cityList[e.detail.index].id != this.data.cid) {
+      app.aldstat.sendEvent('切换到非定位城市', {
+        "city": "not location city",
+      })
+    }
     this.setData({
       selAdre: false,
       selLocationText: e.detail.value,
@@ -147,11 +152,25 @@ Page({
   },
   //跳转酒吧列表页 
   onBarList: function (e) {
+    
     let webtype = e.currentTarget.dataset.webtype
+    if (webtype == 1) {
+      app.aldstat.sendEvent('查看更多人气酒吧', {
+        "click": "more bar",
+      })
+    } else {
+      app.aldstat.sendEvent('查看更多附近酒吧', {
+        "click": "more nearby bar",
+      })
+    }
     WxManager.navigateTo(Router.BarList, { type: webtype })
   },
   //跳转酒吧详情
   onBarDetail: function (e) {
+    const item = e.currentTarget.dataset.item
+    app.aldstat.sendEvent(item.name + ":被访问了", {
+      "click": item.name,
+    })
     let id = e.currentTarget.dataset.item.mid || e.currentTarget.dataset.item.id//订单的酒吧id是mid字段，酒吧列表的id是id字段
     let isForbid = e.currentTarget.dataset.item.isForbid //是否禁用（true 已被禁用  false 未被禁用）
     if (isForbid) {
@@ -171,13 +190,16 @@ Page({
   },
   //点击banner图跳转
   onDetail: function (e) {
+    app.aldstat.sendEvent('点击banner', {
+      "click": "banner",
+    })
     let type = e.currentTarget.dataset.item.type //关联类型（0商家 1活动）
     let objId = e.currentTarget.dataset.item.objId// 商铺或活动id
     if (type === 1) {
       WxManager.navigateTo(Router.ActivityDetail, { id: objId })
     } else if (type === 0) {
       WxManager.navigateTo(Router.BarDetail, { id: objId })
-    }
+    }``
   },
   //活动详情页
   onActivityDetail: function (e) {
@@ -330,6 +352,9 @@ Page({
     }
     this.getOrder()
     this.getBarList()
+    app.aldstat.sendEvent('进入首页', {
+      "visit": "index",
+    })
   },
 
   /**
