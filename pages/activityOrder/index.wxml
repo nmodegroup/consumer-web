@@ -1,3 +1,5 @@
+<wxs module="filter" src="../../filter/filter.wxs"></wxs>
+
 <view class="order-container">
   <view wx:for="{{list}}" wx:key="{{index}}">
     <view class="order-time-title">下单时间：{{item.appointTime}}</view>
@@ -5,7 +7,7 @@
       <view class="order-header">
         <view class="bar-info">
           <view class="bar-name">{{item.name}}</view>
-          <view class="order-status">{{item.status == 1 ? '已取消' : '已预订'}}</view>
+          <view class="order-status">{{ filter.orderListStatus(item.status) }}</view>
         </view>
         <view class="room-info">{{item.theme}}（{{item.area}}）</view>
       </view>
@@ -20,8 +22,15 @@
             <view class="adre-text">{{item.address}}</view>
           </view>
         </view>
-        <view class="cancel-frame" wx:if="{{item.status == 0 && item.orderStatus == 0}}">
-          <view class="btn-cancel" catchtap="onCancel" data-id="{{item.id}}">取消预订</view>
+        <view class="cancel-frame" 
+         wx:if="{{ (item.status == 0 && item.orderStatus == 0) || item.status == 4}}"
+        >
+          <view class="btn-cancel" catchtap="onCancel" 
+           data-id="{{item.id}}" 
+           data-status="{{item.status}}"
+          >
+            {{ filter.btnStatusText(item) }}
+          </view>
         </view>
       </view>
     </view>
@@ -30,4 +39,17 @@
   <modal id="modal" bind:get="getResult"></modal>
   <button wx:if="{{moreBtn}}"  type="primary" plain="true" loading="true">正在载入更多...</button>
   <button wx:if="{{noMoreBtn}}"  type="primary" plain="true">已经到底啦</button>
+  <code
+   show="{{ codesShow }}"
+   codes="{{ codes }}"
+   tips="{{ validTime }}"
+   bindclose="closeDialog"
+   bindusecode="useCode"
+  />
+  <qrcode
+   show="{{ qrCodeShow }}"
+   qrcodeUrl="{{ qrCodeUrl }}"
+   tips="{{ validTime }}"
+   bindcloseCode="closeCodeDialog"
+  />
 </view>

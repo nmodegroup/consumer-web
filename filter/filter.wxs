@@ -270,11 +270,35 @@ function payResultBtnText(state){
     return "重新购买"
   }
 }
-// 券码数字分割
-function codeNumber(num){
-  return num
+// 我的活动单--订单状态
+function orderListStatus(status){
+  switch (status) {
+    case 0:
+      return "已预定"
+    case 1:
+      return "已取消"
+    case 2:
+      return "已取消"
+    case 3:
+      return "已退款"
+    case 4:
+      return "待使用"
+    case 5:
+      return "已使用"
+    case 6:
+      return "已过期"
+  }
 }
-
+// 我的活动单--按钮文案
+function btnStatusText(item){
+  if (item.status == 4) {
+    return "待使用"
+  } else if (item.status == 0 && item.orderStatus == 0) {
+    return "取消预订"
+  } else {
+    return ""
+  }
+}
 
 module.exports = {
   formatDistance: formatDistance,
@@ -294,5 +318,6 @@ module.exports = {
   remindStatus: remindStatus,
   parseFloatNumner: parseFloatNumner,
   payResultBtnText: payResultBtnText,
-  codeNumber: codeNumber
+  orderListStatus: orderListStatus,
+  btnStatusText: btnStatusText
 }

@@ -2,7 +2,10 @@
   <view class="shade-cover" bindtap="closeDialog"></view>
   <view class="qrcode-block">
     <view class="qrcode-block__info">
-      <view class="qrcode-block__info__tips">商家扫码券即可消费</view>
+      <view class="qrcode-block__info__title">商家扫码券即可消费</view>
+      <view class="qrcode-block__info__tips" 
+       wx:if="{{ tips !== ''}}"
+      >有效期至：{{ tips }} 活动结束时</view>
       <swiper class="swiper-block"
         duration="{{duration}}"
         bindchange="changeIndicatorDots">

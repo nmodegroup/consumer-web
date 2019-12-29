@@ -16,7 +16,12 @@ Page({
     },
     moreBtn: false,//正在载入更多提示
     noMoreBtn: false,//没有更多提示
-    goMore: true // 加载更多,
+    goMore: true, // 加载更多,
+    validTime: "",
+    qrCodeUrl: "",
+    codes: [],
+    codesShow: false,
+    qrCodeShow: false
   },
 
   /**
@@ -60,8 +65,15 @@ Page({
   },
   //取消预订
   onCancel: function (e) {
+    const dataset = e.currentTarget.dataset;
+    if (dataset.status == 4) {
+      this.getOrderTicketsCode({
+        id: dataset.id
+      })
+      return 
+    }
     this.setData({
-      selId: e.currentTarget.dataset.id
+      selId: dataset.id
     })
     this.modal.showModal({
       content: '确定要取消预订吗？取消后可能导致没有名额了哦~',
@@ -102,6 +114,36 @@ Page({
     } else {
       WxManager.navigateTo(Router.ActivityDetail, { id: id })
     }
+  },
+  // 劵码
+  getOrderTicketsCode(params){
+    let that = this
+    mineService.getOrderTicketsCode(params).then(res => {
+      console.log(res)
+      let { validTime, qrCodeUrl, codes, codesShow } = that.data;
+      validTime = res.validTime;
+      qrCodeUrl = res.url;
+      codes = res.codes;
+      codesShow = true;
+      that.setData({ validTime, qrCodeUrl, codes, codesShow})
+
+    }).catch(error => {
+      console.error(error)
+      if (error && error.msg) {
+        this.toast.showToast({
+          content: error.msg
+        })
+      }
+    })
+  },
+  closeDialog(){
+    this.setData({ codesShow: false })
+  },
+  closeCodeDialog() {
+    this.setData({ qrCodeShow: false })
+  },
+  useCode(){
+    this.setData({ codesShow: false, qrCodeShow: true })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

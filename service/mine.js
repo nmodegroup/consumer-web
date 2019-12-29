@@ -112,3 +112,18 @@ export function getCollectOrder(params) {
   })
 }
 
+/**
+ * 我的活动单-查看劵码
+*/
+export function getOrderTicketsCode(params) {
+  return new Promise((resolve, reject) => {
+    httpManager
+      .get('/consumer/activity/order/tickets', params)
+      .then(res => {
+        resolve(res)
+      })
+      .catch(e => {
+        reject(e)
+      })
+  })
+}

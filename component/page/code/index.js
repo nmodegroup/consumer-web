@@ -9,13 +9,9 @@ Component({
       type: Boolean,
       value: false
     },
-    qrcodeList: {
+    codes: {
       type: Array,
       value: []
-    },
-    qrcodeUrl: {
-      type: String,
-      value: ""
     },
     tips: {
       type: String,
@@ -26,27 +22,19 @@ Component({
    * 私有数据,组件的初始数据 
    * 可用于模版渲染 
    */
-  data: { 
-    baseUrl: "",
-    current: 0,
-    duration: 500,
+  data: {
   },
   ready() {
-    this.setData({ baseUrl: app.globalData.baseImgUrl })
   },
   /**
    * 组件的方法列表 
    */
   methods: {
-    changeIndicatorDots(e){
-      console.log(e)
-      const detail = e.detail;
-      if (detail.source === "touch") {
-        this.setData({ current: detail.current })
-      }
+    closeDialog() {
+      this.triggerEvent("close", {})
     },
-    closeDialog(){
-      this.triggerEvent("closeCode", {})
+    useCode(){
+      this.triggerEvent("usecode", {})
     }
   }
 })

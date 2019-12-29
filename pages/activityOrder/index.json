@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "Toast": "/component/toast/index",
-    "modal": "/component/modal/index"
+    "modal": "/component/modal/index",
+    "code": "/component/page/code/index",
+    "qrcode": "/component/page/qrcode/qrcode"
   },
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "我的活动"

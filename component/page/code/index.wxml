@@ -1,0 +1,16 @@
+<view class="dialog-block" wx:if="{{ show }}">
+  <view class="shade-cover" bindtap="closeDialog"></view>
+  <view class="qrcode-block">
+    <view class="qrcode-block__info">
+      <view class="qrcode-block__info__title">商家扫码券即可消费</view>
+      <view class="qrcode-block__info__tips">有效期至：{{ tips }} 活动结束</view>
+      <view class="qrcode-block__info__wrap">
+        <view class="qrcode-block__info__wrap__item {{ item.status != 0?'over-item':''}}" 
+         wx:for="{{ codes }}"
+         wx:key="{{ index }}"
+        >{{ item.code }}</view>
+      </view>
+      <view class="code-btn" bindtap="useCode">立即使用</view>
+    </view>
+  </view>
+</view>

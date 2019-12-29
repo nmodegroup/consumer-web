@@ -9,8 +9,8 @@
     "pages/search/index",
     "pages/editPhone/index",
     "pages/bookOrder/index",
-    "pages/activityOrder/index",
     "pages/activityDetail/index",
+    "pages/activityOrder/index",
     "pages/barList/index",
     "pages/index/activity",
     "pages/protocol/protocol",
@@ -31,7 +31,7 @@
     }
   },
   "tabBar": {
-    "custom": false,
+    "custom": true,
     "color": "#FFFFFF",
     "selectedColor": "#FF26BA",
     "borderStyle": "black",
