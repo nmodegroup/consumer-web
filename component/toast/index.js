@@ -9,7 +9,7 @@ Component({
   data: {
     // 弹窗显示控制
     show: false,
-    content: '提示内容',
+    content: '网络开小差了',
     // 多行提示时，因为单个view换行文字不居中
     extraContent: '',
     iconImg: '', //图标
