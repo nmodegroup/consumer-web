@@ -80,7 +80,7 @@ Page({
         this.inBooking(item);
       }
     } else {
-      this.inBooking(item);
+      WxManager.navigateTo(Router.Setting);
     }
   },
   //调用接口

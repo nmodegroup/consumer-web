@@ -99,7 +99,7 @@ Page({
         this.activityBooking()
       }
     } else {
-      this.activityBooking()
+      WxManager.navigateTo(Router.Setting)
     }
   },
   //发起预订接口
