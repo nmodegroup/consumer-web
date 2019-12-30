@@ -124,6 +124,9 @@ Page({
       validTime = res.validTime;
       qrCodeUrl = res.url;
       codes = res.codes;
+      codes.map( item => {
+        item.code = item.code.replace(/\s/g, '').replace(/(.{4})/g, "$1 ")
+      })
       codesShow = true;
       that.setData({ validTime, qrCodeUrl, codes, codesShow})
 

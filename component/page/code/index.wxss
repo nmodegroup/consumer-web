@@ -41,7 +41,6 @@ image {
   width: 100%;
   min-height: 480rpx;
   max-height: 668rpx;
-  background:rgba(255,255,255,0.3);
   border-radius:16rpx;
   text-align: center;
   padding: 40rpx 50rpx 180rpx;

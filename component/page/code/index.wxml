@@ -1,4 +1,4 @@
-<view class="dialog-block" wx:if="{{ show }}">
+<view class="dialog-block" wx:if="{{ show }}" catchtouchmove='true'>
   <view class="shade-cover" bindtap="closeDialog"></view>
   <view class="qrcode-block">
     <view class="qrcode-block__info">
