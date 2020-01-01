@@ -13,6 +13,7 @@ Page({
     baseUrl: "",
     activityId: "",
     payInfo: {},
+    pic: "",
     buyNum: 1,
     price: 0,
     totalAmount: 0, // 总计
@@ -85,7 +86,7 @@ Page({
   getPayInfo(params){
     ActivityService.gtePayInfo(params).then( res => {
       console.log(res)
-      this.setData({ payInfo: res, price: res.charges }, () => {
+      this.setData({ payInfo: res, price: res.charges, pic: this.data.baseUrl + res.banner }, () => {
         this.computedAmount()
       })
     }).catch( err => {

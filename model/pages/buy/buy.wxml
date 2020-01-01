@@ -2,7 +2,7 @@
 <wxs module="filter" src="../../../filter/filter.wxs"></wxs>
 <view class="buy-block">
   <view class="banner-block">
-    <image src="{{ baseUrl + payInfo.banner }}"></image>
+    <image src="{{ pic }}"></image>
     <view class="shopping-info">
       <view class="title-block">
         <text>{{ payInfo.theme }}</text>
