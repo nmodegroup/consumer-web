@@ -16,7 +16,7 @@ image {
 .qrcode-block {
   width: 620rpx;
   height: auto;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 50%;
   right: 0;

@@ -292,7 +292,7 @@ function orderListStatus(status){
 // 我的活动单--按钮文案
 function btnStatusText(item){
   if (item.status == 4) {
-    return "待使用"
+    return "查看券码"
   } else if (item.status == 0 && item.orderStatus == 0) {
     return "取消预订"
   } else {
