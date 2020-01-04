@@ -101,12 +101,6 @@ Page({
             icon: 'warn'
           })
         } else {
-          if (!app.globalData.phone) {
-            this.setData({
-              phoneLayer: true
-            })
-            return
-          }
           WxManager.navigateTo(Router.Buy, { id: activity.id })
         }
       }

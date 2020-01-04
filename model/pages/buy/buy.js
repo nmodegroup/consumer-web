@@ -2,7 +2,9 @@
 const WxManager = require('../../../utils/wxManager')
 const ActivityService = require('../../../service/activity')
 const Router = require("../../../router/Router")
-
+const settingService = require('../../../service/setting')
+const { NOT_PHONE } = require('../../../lib/request/constant')
+console.log(NOT_PHONE)
 const app = getApp()
 Page({
 
@@ -25,7 +27,8 @@ Page({
       packageStr: "", 
       signType: "", 
       paySign: "" 
-    }
+    },
+    phoneLayer: false
   },
 
   /**
@@ -108,6 +111,10 @@ Page({
       )
     }).catch( err => {
       console.error(err)
+      if (err && err.code == NOT_PHONE) {
+        this.setData({ phoneLayer: true })
+        return
+      } 
       this.toast.showToast({
         content: err.msg
       })
@@ -115,6 +122,39 @@ Page({
   },
   payResult(actOrderId, state){
     WxManager.navigateTo(Router.Payment, { actOrderId, state  })
+  },
+  //获取手机号授权弹框取消按钮
+  phoneCancel: function () {
+    this.setData({
+      phoneLayer: false
+    })
+  },
+  //获取手机号
+  getPhoneNumber: function (e) {
+    this.setData({
+      phoneLayer: false
+    })
+    if (e.detail.errMsg == 'getPhoneNumber:ok') {
+      wx.login({
+        success: (res) => {
+          let form = {
+            code: res.code,
+            encrypted: e.detail.encryptedData,
+            iv: e.detail.iv
+          }
+          settingService.setPhone(form).then(res => {
+            app.globalData.phone = res
+          }).catch(error => {
+            this.toast.showToast({
+              content: error.msg
+            })
+          })
+        },
+        fail: (res) => {
+          console.log('login err:', res)
+        }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面隐藏
