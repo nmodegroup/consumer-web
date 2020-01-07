@@ -24,7 +24,10 @@
             <view class="activity-name">{{item.name}}</view>
             <view  class="activity-date">{{item.beginTime}}</view>
           </view>
-          <view class="activity-guest">特邀嘉宾：{{item.guest}}</view>
+          <view class="activity-guest">
+            <view class="activity-guest__label">特邀嘉宾：</view>
+            <view class="activity-guest__text">{{item.guest}}</view>
+          </view>
         </view>
       </view>
     </view>

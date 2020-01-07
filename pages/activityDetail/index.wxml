@@ -15,7 +15,10 @@
           <view class="bar-name">{{activity.theme}}</view>
           <view class="bar-distance">距离{{filter.formatDistance(activity.distance)}}</view>
         </view>
-        <view class="bar-price-frame">特邀嘉宾：{{activity.guest}}</view>
+        <view class="bar-price-frame bar-item">
+          <view class="bar-item__label">特邀嘉宾：</view>
+          <view class="bar-item__text">{{activity.guest}}</view>
+        </view>
       <view class="bar-join-frame">
         <view class="bar-time-adre">
           <view class="hot-bar-time">
