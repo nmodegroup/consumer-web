@@ -33,7 +33,10 @@ Page({
       'query.cid': app.globalData.cid,
       baseUrl: app.globalData.baseImgUrl
     })
-    this.getHistoryList()
+    this.getHistoryList();
+    app.aldstat.sendEvent('进入到搜索页了', {
+      "search": "in search",
+    })
   },
   //监听输入框搜索
   onInput: function (e) {
@@ -85,6 +88,9 @@ Page({
   },
   //点击搜索按钮或键盘搜索按钮
   getSearchList: function () {
+    app.aldstat.sendEvent('输入内容后点击搜索', {
+      "search": "search key",
+    })
     this.setData({
       'query.pageNum': 1,
       noMoreBtn: false

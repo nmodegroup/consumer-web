@@ -266,6 +266,9 @@ Page({
             content: '您已成功预定桌位',
             icon: 'success'
           })
+          app.aldstat.sendEvent('预订成功', {
+            "onBooking": "success",
+          })
         } else {
           this.toast.showToast({
             content: '您预订的桌位需要商家确认\n请耐心等待',

@@ -51,6 +51,9 @@ Page({
       return this.requestBarInfo(mid);
     }
     this.requestBarInfo(options.id);
+    app.aldstat.sendEvent('进入酒吧详情页', {
+      "barDetail": "barDetail",
+    })
   },
 
   initData() {
@@ -68,6 +71,9 @@ Page({
 
   //跳转酒店预订页面
   onBooking: function(e) {
+    app.aldstat.sendEvent('酒吧详情页触发立即预订按钮', {
+      "onBooking": "onBooking",
+    })
     let item = e.currentTarget.dataset.item;
     if (app.globalData.online) {
       //如果以登录
@@ -103,6 +109,9 @@ Page({
         confirmText: '确认取消'
       });
     } else if (item.appointType == 3) {
+      app.aldstat.sendEvent('在酒吧详情页触发取消预订', {
+        "booking": "will cancell",
+      })
       this.modal.showModal({
         content: '确定要取消预订吗？\n取消后可能导致没有桌位了哦~',
         title: '温馨提示',
@@ -142,6 +151,9 @@ Page({
   },
   //拨打电话
   onCall: function(e) {
+    app.aldstat.sendEvent('触发拨打电话', {
+      "makePhoneCall": "makePhoneCall",
+    })
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phone
     });
@@ -165,6 +177,9 @@ Page({
             content: '已取消收藏',
             icon: 'success'
           });
+          app.aldstat.sendEvent('在酒吧详情页取消了收藏', {
+            "onCollect": "cancel",
+          })
         })
         .catch(error => {
           this.toast.showToast({
@@ -179,6 +194,9 @@ Page({
             content: '收藏成功',
             icon: 'success'
           });
+          app.aldstat.sendEvent('在酒吧详情页收藏成功', {
+            "onCollect": "success",
+          })
         })
         .catch(error => {
           this.toast.showToast({
@@ -315,6 +333,9 @@ Page({
   cancelBarOrder: function() {
     BarService.cancelBarOrder({ id: this.data.selOrder.id })
       .then(res => {
+        app.aldstat.sendEvent('在酒吧详情页取消预订成功', {
+          "cancelBooking": "cancel booking",
+        })
         this.toast.showToast({
           content: '取消预订成功',
           icon: 'success'
@@ -392,6 +413,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function(res) {
+    app.aldstat.sendEvent('在酒吧详情页触发了分享', {
+      "share": "will share",
+    })
     return {
       title: this.data.bar.name,
       path: 'pages/index/index' + '?barId=' + this.data.bar.id
