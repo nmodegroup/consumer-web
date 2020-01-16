@@ -1,0 +1,30 @@
+<!--model/pages/wine-result/index.wxml-->
+<view class="poster-block">
+  <view class="poster-block__main">
+    <image 
+     src="/model/image/pic_poster.png"
+     class="poster-block__bg"
+    ></image>
+    <view class="poster-block__content">
+      <view class="poster-block__content__result">
+        <image 
+         src="/model/image/pic_word_kuang.png"
+         class="poster-block__content__bg"
+        ></image>
+        <view class="result-block">
+          <view>你将会成为酒神 喝遍天下无敌手</view>
+        </view>
+      </view>
+      <view class="image-block">
+        <image 
+         src="/model/image/btn_share.png"
+         class="share-image"
+        ></image>
+        <image 
+         src="/model/image/btn_save.png"
+         class="save-image"
+        ></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -4,6 +4,7 @@
     "van-picker": "/vant/picker/index",
     "van-popup": "/vant/popup/index",
     "modal": "/component/modal/index",
-    "Toast": "/component/toast/index"
+    "Toast": "/component/toast/index",
+    "wine-luck": "/component/page/index/wine-luck/index"
   }
 }

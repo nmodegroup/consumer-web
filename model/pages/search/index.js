@@ -1,6 +1,6 @@
-const homeService = require('../../service/home')
-const WxManager = require('../../utils/wxManager')
-const Router = require("../../router/Router")
+const homeService = require('../../../service/home')
+const WxManager = require('../../../utils/wxManager')
+const Router = require("../../../router/Router")
 const app = getApp()
 Page({
 

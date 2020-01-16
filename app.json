@@ -2,26 +2,27 @@
   "pages": [
     "pages/index/index",
     "pages/setting/index",
-    "pages/collect/index",
     "pages/barDetail/index",
     "pages/booking/index",
     "pages/bookingActivity/index",
-    "pages/search/index",
-    "pages/editPhone/index",
     "pages/bookOrder/index",
     "pages/activityDetail/index",
     "pages/activityOrder/index",
-    "pages/barList/index",
     "pages/index/activity",
-    "pages/protocol/protocol",
     "pages/index/mine"
   ],
   "subpackages": [
     {
       "root": "model",
       "pages": [
+        "pages/barList/index",
+        "pages/search/index",
+        "pages/collect/index",
+        "pages/editPhone/index",
+        "pages/protocol/protocol",
         "pages/buy/buy",
-        "pages/payment/payment"
+        "pages/payment/payment",
+        "pages/wine-result/index"
       ]
     }
   ],
@@ -31,7 +32,7 @@
     }
   },
   "tabBar": {
-    "custom": true,
+    "custom": false,
     "color": "#FFFFFF",
     "selectedColor": "#FF26BA",
     "borderStyle": "black",

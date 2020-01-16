@@ -1,0 +1,5 @@
+<dialog show="{{ false }}">
+  <view>
+    <image src="/image/pic_pop.png"></image>
+  </view>
+</dialog>

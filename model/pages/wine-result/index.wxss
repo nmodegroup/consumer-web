@@ -1,0 +1,53 @@
+/* model/pages/wine-result/index.wxss */
+.poster-block {
+  width: 100%;
+  height: 100%;
+}
+.poster-block__main {
+  padding: 24rpx 24rpx 32rpx;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #15153E;
+  position: relative;
+}
+.poster-block__bg {
+  width: 100%;
+  height: 100%
+}
+.poster-block__content{
+  position: absolute;
+  width: 608rpx;
+  left: 48rpx;
+  bottom: 148rpx;
+}
+.poster-block__content__result {
+  position: relative;
+  width: 608rpx;
+  height: 242rpx;
+}
+.poster-block__content__bg {
+  width: 100%;
+  height: 100%;
+}
+.result-block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color:rgba(255,255,255,1);
+  font-size: 40rpx;
+}
+.share-image,
+.save-image {
+  width: 274rpx;
+  height: 80rpx;
+}
+.image-block {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 0 22rpx;
+  margin-top: 50rpx;
+}

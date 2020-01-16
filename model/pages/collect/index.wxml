@@ -1,4 +1,4 @@
-<wxs module="filter" src="../../filter/filter.wxs"></wxs>
+<wxs module="filter" src="../../../filter/filter.wxs"></wxs>
 <view class="bar-container">
   <view class="bar-list-frame">
     <van-swipe-cell right-width="{{rightWidth}}" async-close bind:close="onDel" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}">

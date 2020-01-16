@@ -30,7 +30,8 @@ Page({
     routerInfo: {
       barId: null,//酒吧id
       activityId: null//活动id
-    }
+    },
+    wineShow: true
   },
 
   /**
@@ -48,6 +49,11 @@ Page({
     })
     this.wxLogin()
   },
+  // test
+  tapWineResult(){
+    WxManager.navigateTo(Router.WineResult)
+  },
+
   //微信登录
   wxLogin: function () {
     wx.login({

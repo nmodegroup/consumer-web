@@ -1,4 +1,4 @@
-<wxs module="filter" src="../../filter/filter.wxs"></wxs>
+<wxs module="filter" src="../../../filter/filter.wxs"></wxs>
 <view class="search-container">
   <view class="input-bar">
     <view class="input-frame">

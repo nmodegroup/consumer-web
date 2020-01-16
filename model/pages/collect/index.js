@@ -1,7 +1,7 @@
-const Router = require("../../router/Router")
-const WxManager = require('../../utils/wxManager')
-const mineService = require('../../service/mine')
-const BarService = require('../../service/bar')
+const Router = require("../../../router/Router")
+const WxManager = require('../../../utils/wxManager')
+const mineService = require('../../../service/mine')
+const BarService = require('../../../service/bar')
 const app = getApp()
 Page({
 

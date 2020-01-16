@@ -4,14 +4,14 @@
   <view class="payment-success" wx:if="{{ payState === 'success' }}">
     <view class="payment-state">
       <view class="state-block">
-        <image class="payment-state_icon" src="../../../image/icon_success.png"></image>
+        <image class="payment-state_icon" src="/model/image/icon_success.png"></image>
       </view>
       <view class="state-block">
         <view class="state-block__state">支付成功</view>
         <view class="state-block__name">{{ theme }}</view>
       </view>
       <view class="line-block">
-      <image src="../../../image/pay_bg.png" class="payment-state__bg"></image>
+      <image src="/model/image/pay_bg.png" class="payment-state__bg"></image>
       </view>
       <view class="state-block code-block">
         <view class="coupon-code">
@@ -27,14 +27,14 @@
   </view>
   <view class="payment-faill" wx:if="{{ payState === 'fail'}}">
     <view class="payment-faill__info">
-      <image src="../../../image/icon_fail.png" class="payment-faill__info__icon"></image>
+      <image src="/model/image/icon_fail.png" class="payment-faill__info__icon"></image>
       <view class="state-block__state">支付失败</view>
       <view class="state-block__name">很遗憾，您的支付未成功！</view>
     </view>
   </view>
   <view class="payment-loading" wx:if="{{ payState === 'loading'}}"> 
     <view class="payment-loading__block">
-      <image src="../../../image/loading.gif" class="payment-loading__block__icon"></image>
+      <image src="/model/image/loading.gif" class="payment-loading__block__icon"></image>
       <view class="payment-loading__block__tips">等待返回支付结果……</view>
     </view>
   </view>

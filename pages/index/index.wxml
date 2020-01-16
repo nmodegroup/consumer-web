@@ -15,6 +15,9 @@
     </view>
   </view>
   <view class="context-box">
+    <!-- 111 -->
+    <view bindtap="tapWineResult">测试11111</view>
+<!-- 222 -->
     <swiper class="booking-swiper" wx:if="{{tableOrder.length || activityOrder.length || remindOrder.length}}">
       <!-- 桌位预订订单 -->
       <block wx:for="{{tableOrder}}" wx:key="{{index}}">
@@ -174,6 +177,9 @@
       bind:cancel="onAdreCancel">
     </van-picker>
   </van-popup>
+  <!-- <van-popup show="{{ wineShow }}" position="bottom" overlay-style="background:rgba(0,0,0,0.5)"> -->
+    <wine-luck/>
+  <!-- </van-popup> -->
   <modal id="modal" bind:get="getResult"></modal>
   <Toast id="toast"></Toast>
 </view>

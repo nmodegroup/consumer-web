@@ -6,11 +6,11 @@ Component({
   properties: {
     title: {
       type: String,
-      value: '标题'
+      value: ''
     },
     content: {
       type: String,
-      value: '瑞荣'
+      value: ''
     },
     type: {
       type: String,
