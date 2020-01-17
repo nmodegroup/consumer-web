@@ -23,8 +23,13 @@
         <image 
          src="/model/image/btn_save.png"
          class="save-image"
+         bindtap="saveImage"
         ></image>
       </view>
     </view>
   </view>
+    <!-- canvas 绘制 -->
+  <canvas canvas-id='myCanvas' class='canvas'></canvas>
+  <Toast id="toast"></Toast>
+  <modal id="modal" bind:get="getResult"></modal>
 </view>
