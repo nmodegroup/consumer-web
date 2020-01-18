@@ -1,0 +1,52 @@
+<!--model/pages/wine-test/index.wxml-->
+<view class="wine-block">
+  <view class="wine-main">
+    <view class="wine-main_bg">
+      <image 
+      src="/model/image/pic_test_bg.png"
+      class="wine-main_bg__image"></image>
+    </view>
+    <view>
+      <view class="wine-group">
+        <view class="wine-group__item">
+          <group-cell 
+           type="sex"
+           title="性别" 
+           list="{{ sex }}" 
+           bindonSelect="onSelect"
+          />
+        </view>
+        <view class="wine-group__item">
+          <group-cell 
+           type="barType"
+           title="常去的酒吧类型" 
+           list="{{ barType }}" 
+           bindonSelect="onSelect"
+          />
+        </view>
+        <view class="wine-group__item">
+          <group-cell 
+           type="expense"
+           title="消费金额" 
+           list="{{ expense }}" 
+           bindonSelect="onSelect"
+          />
+        </view>
+        <view class="wine-group__item">
+          <group-cell 
+           type="frequency"
+           title="去酒吧频率" 
+           list="{{ frequency }}" 
+           bindonSelect="onSelect"
+          />
+        </view>
+      </view>
+      <view class="wine-btn" bindtap="submitInfo">
+        <image 
+         src="/model/image/btn_test.png"
+         class="wine-btn__image"></image>
+      </view>
+    </view>
+  </view>
+  <Toast id="toast"></Toast>
+</view>

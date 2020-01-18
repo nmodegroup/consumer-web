@@ -22,7 +22,8 @@
         "pages/protocol/protocol",
         "pages/buy/buy",
         "pages/payment/payment",
-        "pages/wine-result/index"
+        "pages/wine-result/index",
+        "pages/wine-test/index"
       ]
     }
   ],
@@ -32,7 +33,7 @@
     }
   },
   "tabBar": {
-    "custom": false,
+    "custom": true,
     "color": "#FFFFFF",
     "selectedColor": "#FF26BA",
     "borderStyle": "black",

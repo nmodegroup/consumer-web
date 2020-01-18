@@ -1,4 +1,3 @@
-const app = getApp()
 Component({
   options: {
     multipleSlots: true
@@ -9,23 +8,18 @@ Component({
       type: String,
       value: ''
     },
-    content: {
-      type: String,
-      value: ''
+    list: {
+      type: Array,
+      value: []
     },
     type: {
       type: String,
-      value: 'show' // show , confirm
-    },
-    show: {
-      type: Boolean,
-      value: false
+      value: ""
     }
   },
-
   data: {
-    showDialog: true
-  }, 
+    selectIndex: -1
+  },
 
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
@@ -46,12 +40,14 @@ Component({
   },
 
   methods: {
-    close(){
-      app.globalData.divinationShow = false;
-      this.setData({ showDialog: false })
-    },
-    maskLayer(){
-      this.setData({ showDialog: false })
+    tapSelect(e) {
+      const dataset = e.currentTarget.dataset;
+      const { index, type } = dataset;
+      this.setData({ selectIndex: index })
+      this.triggerEvent(
+        "onSelect", 
+        { type, label: this.data.type }
+      );
     }
   }
 })

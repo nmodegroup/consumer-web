@@ -1,0 +1,24 @@
+<view class="group-cell">
+  <view class="group-cell__label">{{ title }}</view>
+  <view class="group-cell__info">
+    <block wx:for="{{ list }}" wx:key="{{ index }}">
+      <view class="group-cell__info__item" 
+       bindtap="tapSelect" 
+       data-type="{{ item.type }}"
+       data-index="{{ index }}"
+      >
+        <image 
+        wx:if="{{ selectIndex === index }}"
+        src="/model/image/icon_select_click.png"
+        class="group-cell__info__item__image"
+        ></image>
+        <image 
+        wx:else
+        src="/model/image/icon_select_normal.png"
+        class="group-cell__info__item__image"
+        ></image>
+        <text class="group-cell__info__item__text">{{ item.label }}</text>
+      </view>
+    </block>
+  </view>
+</view>

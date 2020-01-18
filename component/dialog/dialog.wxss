@@ -10,9 +10,9 @@
   z-index: 2002;
 }
 .close {
-  width: 66rpx;
-  height: 66rpx;
-  margin: 25px auto 0;
+  width: 60rpx;
+  height: 60rpx;
+  margin: 44rpx auto 0;
 }
 .mask-layer{
     position: fixed;

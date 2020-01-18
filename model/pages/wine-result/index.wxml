@@ -12,14 +12,18 @@
          class="poster-block__content__bg"
         ></image>
         <view class="result-block">
-          <view>你将会成为酒神 喝遍天下无敌手</view>
+          <block wx:for="{{ textArr }}" wx:key="{{ index }}">
+            <view class="result-block__item">{{ item }}</view>
+          </block>
         </view>
       </view>
       <view class="image-block">
-        <image 
-         src="/model/image/btn_share.png"
-         class="share-image"
-        ></image>
+        <button open-type="share" class="btn-share">
+          <image 
+          src="/model/image/btn_share.png"
+          class="share-image"
+          ></image>
+        </button>
         <image 
          src="/model/image/btn_save.png"
          class="save-image"

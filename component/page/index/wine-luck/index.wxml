@@ -1,5 +1,12 @@
-<dialog show="{{ false }}">
-  <view>
+<dialog show="{{ true }}">
+  <view class="pop-block">
     <image src="/image/pic_pop.png"></image>
+    <image 
+     src="/image/btn_pop.png"
+     class="btn-image"
+     bindtap="tapTestFree"
+    >
+     
+    </image>
   </view>
 </dialog>

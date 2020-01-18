@@ -18,3 +18,4 @@ export const Protocol = '/model/pages/protocol/protocol'// 用户协议页面
 export const Buy = '/model/pages/buy/buy'// 确认订单页
 export const Payment = '/model/pages/payment/payment'// 支付结果页
 export const WineResult = '/model/pages/wine-result/index'// 酒运测试结果
+export const WineTest = '/model/pages/wine-test/index'// 酒运测试

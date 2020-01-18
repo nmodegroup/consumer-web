@@ -31,7 +31,7 @@ Page({
       barId: null,//酒吧id
       activityId: null//活动id
     },
-    wineShow: true
+    wineShow: false
   },
 
   /**
@@ -48,10 +48,19 @@ Page({
       'routerInfo.activityId': options.activityId || null
     })
     this.wxLogin()
+    console.log(app.globalData)
   },
   // test
-  tapWineResult(){
-    WxManager.navigateTo(Router.WineResult)
+  onTestFree(){
+    let url = ""
+    if (app.globalData.divination == "") {
+      url = Router.WineTest;
+    } else {
+      url = `${Router.WineResult}?divination=${app.globalData.divination}`
+    }
+    app.globalData.divinationShow = false;
+    this.setData({ wineShow: false })
+    WxManager.navigateTo(url)
   },
 
   //微信登录
@@ -104,6 +113,9 @@ Page({
       app.globalData.token = res.token //保存token
       app.globalData.phone = res.phone //保存电话号码
       app.globalData.online = true //保存以登录
+      if (res.divination) {
+        app.globalData.divination = res.divination;
+      }
       this.getOrder()
       this.routerGo()
     })
@@ -350,6 +362,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   const timer = setTimeout(() => {
+     clearTimeout(timer)
+      this.setData({ wineShow: app.globalData.divinationShow })
+    }, 1000)
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

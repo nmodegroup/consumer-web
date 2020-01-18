@@ -18,8 +18,8 @@
 .poster-block__content{
   position: absolute;
   width: 608rpx;
-  left: 48rpx;
-  bottom: 148rpx;
+  left: 71rpx;
+  bottom: 118rpx;
 }
 .poster-block__content__result {
   position: relative;
@@ -38,6 +38,10 @@
   height: 100%;
   color:rgba(255,255,255,1);
   font-size: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .share-image,
 .save-image {
@@ -51,10 +55,20 @@
   padding: 0 22rpx;
   margin-top: 50rpx;
 }
-
+.result-block__item {
+  font-size: 40rpx;
+  line-height: 60rpx;
+}
+.btn-share {
+  background-color: transparent!important;
+  border: none!important;
+  padding: 0!important;
+  line-height: 0!important;
+  margin: 0;
+}
 .canvas {
   width: 696px;
-  height: 1024px;
+  height: 1262px;
   position: fixed;
   top: 9999rpx;
   left: 0;

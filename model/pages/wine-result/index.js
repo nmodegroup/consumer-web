@@ -4,13 +4,16 @@ const httpManager = require('../../../lib/request/httpManager');
 // const ActivityService = require('../../../service/activity')
 // const Router = require("../../../router/Router")
 const CONSTANT = require("../../../lib/request/constant")
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    textTop: "",
+    textBottom: "",
+    textArr: []
   },
 
   /**
@@ -19,6 +22,9 @@ Page({
   onLoad: function (options) {
     this.modal = this.selectComponent("#modal")
     this.toast = this.selectComponent("#toast")
+    const arr = options.divination.split("|")
+    this.setData({ textArr: arr, textTop: arr[0], textBottom: arr[1] })
+    console.log(arr)
   },
 
   /**
@@ -38,6 +44,11 @@ Page({
     this.startDraw();
   },
   startDraw() {
+    wx.showToast({
+      title: "保存中",
+      icon: 'none',
+      duration: 3000
+    })
     Promise.all([this.queryCanvasRect()])
       .then(result => {
         console.log(result)
@@ -101,7 +112,7 @@ Page({
     const NU_COLOR = '#15153E';
     const WHITE_COLOR = '#FFFFFF';
     // code 半径
-    const codeRadius = 37.5;
+    // const codeRadius = 37.5;
 
     // canvas 上下文
     const ctx = wx.createCanvasContext('myCanvas', this);
@@ -109,23 +120,35 @@ Page({
     ctx.fillRect(0, 0, width, height);
 
     ctx.drawImage('/model/image/pic_poster_save.png', 0, 0, width, height);
-
-    // 绘制文字
-    ctx.setFontSize(40);
-    ctx.fillText("我是大神", 48, 608);
-    ctx.setFillStyle("#fff");
-    //
+    // 文字底图
     ctx.drawImage('/model/image/pic_word_kuang.png', 48, 658, 608, 246);
 
     // 二维码背景圆，圆的原点x坐标，y坐标，半径，起始弧度，终止弧度
-    const arcRadius = 44;
-    ctx.arc(0.5 * width, 368, arcRadius, 0, 2 * Math.PI);
+    // const arcRadius = 44;
+    // ctx.arc(0.5 * width, 368, arcRadius, 0, 2 * Math.PI);
+    // ctx.setFillStyle(WHITE_COLOR);
+    // ctx.fill();
+
+    // 绘制文字
+    
+    const nickName = app.globalData.userInfo.nickName;
+    ctx.setFontSize(28);
+    ctx.setTextAlign('center')
     ctx.setFillStyle(WHITE_COLOR);
-    ctx.fill();
+    ctx.setGlobalAlpha(0.8)
+    if (nickName) {
+      ctx.fillText(nickName + " 的年度运势", 352, 620);
+    }
+    const { textTop, textBottom } = this.data;
+    ctx.setFontSize(40);
+    ctx.setTextAlign('center')
+    ctx.setFillStyle(WHITE_COLOR);
+    ctx.fillText(textTop, 352, 760);// 40+15
+    ctx.fillText(textBottom, 352, 815);
 
     // 绘制二维码，图片路径，左上角x坐标，左上角y坐标，宽，高
     // ctx.drawImage(codeImagePath, 112, 330, 2 * codeRadius, 2 * codeRadius);
-    ctx.restore();
+    // ctx.restore();
 
     //绘制到 canvas 上
     ctx.draw(false, () => {
@@ -154,12 +177,14 @@ Page({
     wxManager
       .saveImageToPhotosAlbum(imageSource)
       .then(() => {
-        // PageHelper.showSuccessToast('保存成功');
+        this.toast.showToast({
+          content: "保存成功"
+        })
       })
       .catch(() => {
-        // PageHelper.showSaveAlbumModal().then(() => {
-        //   this.saveToAlbum(imageSource);
-        // });
+        this.toast.showToast({
+          content: "保存失败"
+        })
       });
   },
   /**
@@ -194,6 +219,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: "2020年酒场运势",
+      path: 'pages/index/index'
+    }
   }
 })

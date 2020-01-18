@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Toast": "/component/toast/index",
+    "group-cell": "/component/group-cell/index"
+    },
+  "navigationBarTitleText": "2020年酒场运势"
+}

@@ -1,0 +1,18 @@
+.pop-block {
+  width: 618rpx;
+  height: 640rpx;
+  position: relative;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.btn-image {
+  width: 442rpx;
+  height: 90rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 80rpx;
+}

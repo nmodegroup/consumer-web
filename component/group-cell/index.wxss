@@ -1,0 +1,30 @@
+.group-cell {
+
+}
+.group-cell__label {
+  height: 34rpx;
+  font-size: 24rpx;
+  color:rgba(255,255,255,0.8);
+  line-height: 34rpx;
+  margin-bottom: 30rpx;
+}
+.group-cell__info {
+  display: flex;
+  flex-wrap: wrap;
+}
+.group-cell__info__item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 35rpx;
+}
+.group-cell__info__item__image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+}
+.group-cell__info__item__text {
+  font-size: 30rpx;
+  height: 42rpx;
+  color:rgba(255,255,255,0.5);
+}
