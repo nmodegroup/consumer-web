@@ -66,7 +66,7 @@
   </view>
   <view class="btn-bottom-frame">
     <view class="reserve-frame">
-      <view class="btn-reserve" bindtap="onPayment">￥{{ entityAmount }}立即购买</view>
+      <view class="btn-reserve" bindtap="onPayment">￥{{ filter.parseFloatNumner(entityAmount) }}立即购买</view>
     </view>
   </view>
   <Toast id="toast"></Toast>
