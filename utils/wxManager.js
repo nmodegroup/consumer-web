@@ -147,12 +147,46 @@ function saveImageToPhotosAlbum(imagePath) {
             success: () => {
               saveImage(resolve, imagePath);
             },
-            fail: () => {
+            fail: (err) => {
+              console.log(err)
               // 授权失败
               reject();
             }
           });
         }
+      }
+    });
+  });
+}
+/**
+   * 保存相册授权失败提示弹窗
+   */
+function showSaveAlbumModal() {
+  return new Promise(resolve => {
+    this.currentPage().modal.showModal({
+      content: '保存相册授权失败，\n可打开设置页面进行手动授权',
+      title: '温馨提示',
+      cancelText: '取消',
+      confirmText: '去授权',
+      hideCancel: false,
+      onConfirm: () => {
+        openSetting().then(res => {
+          if (res.authSetting['scope.writePhotosAlbum']) {
+            resolve();
+          }
+        });
+      }
+    });
+  });
+}
+function openSetting() {
+  return new Promise((resolve, reject) => {
+    wx.openSetting({
+      success: result => {
+        resolve(result);
+      },
+      fail: () => {
+        reject('openSetting fail');
       }
     });
   });
@@ -271,5 +305,6 @@ module.exports = {
   hideLoading,
   stopRefreshAndLoading,
   makePhoneCall,
-  requestPayment
+  requestPayment,
+  showSaveAlbumModal
 };

@@ -116,6 +116,10 @@ Page({
       if (res.divination) {
         app.globalData.divination = res.divination;
       }
+      // const timer = setTimeout(() => {
+        // clearTimeout(timer)
+        this.setData({ wineShow: app.globalData.divinationShow })
+      // }, 1000)
       this.getOrder()
       this.routerGo()
     })
@@ -211,13 +215,15 @@ Page({
     app.aldstat.sendEvent('点击banner', {
       "click": "banner",
     })
-    let type = e.currentTarget.dataset.item.type //关联类型（0商家 1活动）
+    let type = e.currentTarget.dataset.item.type //关联类型（0商家 1活动, 2其他）
     let objId = e.currentTarget.dataset.item.objId// 商铺或活动id
     if (type === 1) {
       WxManager.navigateTo(Router.ActivityDetail, { id: objId })
     } else if (type === 0) {
       WxManager.navigateTo(Router.BarDetail, { id: objId })
-    }``
+    } else if (type === 2) {
+      this.onTestFree()
+    }
   },
   //活动详情页
   onActivityDetail: function (e) {
@@ -362,10 +368,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   const timer = setTimeout(() => {
-     clearTimeout(timer)
-      this.setData({ wineShow: app.globalData.divinationShow })
-    }, 1000)
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

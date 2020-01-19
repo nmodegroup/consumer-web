@@ -162,9 +162,10 @@ Page({
     wx.canvasToTempFilePath({
       canvasId: 'myCanvas',
       success: res => {
-        this.setData({
-          shareImageUrl: res.tempFilePath
-        });
+        // this.setData({
+        //   shareImageUrl: res.tempFilePath
+        // });
+        console.log(res.tempFilePath)
         this.saveToAlbum(res.tempFilePath);
       },
       complete: () => {
@@ -181,10 +182,14 @@ Page({
           content: "保存成功"
         })
       })
-      .catch(() => {
-        this.toast.showToast({
-          content: "保存失败"
+      .catch((err) => {
+        console.log(err)
+        wxManager.showSaveAlbumModal().then( () => {
+          saveToAlbum(imageSource)
         })
+        // this.toast.showToast({
+        //   content: "保存失败"
+        // })
       });
   },
   /**
