@@ -47,7 +47,6 @@ Page({
       'routerInfo.barId': options.barId || null,
       'routerInfo.activityId': options.activityId || null
     })
-    this.wxLogin()
     console.log(app.globalData)
   },
   // test
@@ -368,6 +367,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.wxLogin()
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({

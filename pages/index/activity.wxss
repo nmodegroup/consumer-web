@@ -41,13 +41,15 @@
 .activity-title {
   display: flex;
   justify-content: space-between;
-  height: 98rpx;
+  padding: 24rpx 0;
   align-items: center;
 }
 .activity-text {
   color:#fff;
   font-size: 36rpx;
   font-weight: 500;
+  flex: 1;
+  line-height: 50rpx;
 }
 .icon-location {
   width:22rpx;
@@ -56,6 +58,8 @@
 .activity-adre {
   display: flex;
   align-items: center;
+  width: 130rpx;
+  justify-content: flex-end;
 }
 .activity-adre-text {
   font-size: 24rpx;

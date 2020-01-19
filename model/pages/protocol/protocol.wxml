@@ -1,2 +1,10 @@
 <!--model/pages/protocol/protocol.wxml-->
-<text>model/pages/protocol/protocol.wxml</text>
+<view class="help-page">
+  <view class='QA-container'>
+    <view wx:for='{{ protocolList }}' class='item middle-margin' wx:key='title'>
+      <view class='QA-title'>{{ item.title }}</view>
+      <view wx:for='{{ item.content }}' class='QA-text little-margin' wx:for-item='subItem' wx:key='sub'>{{ subItem }}
+      </view>
+    </view>
+  </view>
+</view>
