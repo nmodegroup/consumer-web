@@ -28,6 +28,9 @@ Page({
     const actOrderId = options.actOrderId;
     this.setData({ actOrderId })
     if (options.state === "success") {
+      app.aldstat.sendEvent('支付成功', {
+        "paySuccess": "pay success",
+      })
       this.setData({ payState: "loading" })
       const timer = setTimeout( () => {
         clearTimeout(timer)

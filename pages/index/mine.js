@@ -110,6 +110,9 @@ Page({
   },
   //跳转到商家端
   onMch: function () {
+    app.aldstat.sendEvent('点击我是商家', {
+      " onMch": "click on mch",
+    })
     wx.navigateToMiniProgram({
       appId: 'wxf07f687748208034',
       path: '/pages/auth/auth',

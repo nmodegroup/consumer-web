@@ -4,8 +4,8 @@
     <view class="activity-banner-frame">
         <view class="activity-price {{ activity.isCharge == 0? 'activity-free': ''}}">
          <view class="activity-price__tip">{{ filter.activityCharge(activity) }}</view>
-         <image src="../../image/icon_biaoqian_chang.png" class="activity-price__image" wx:if="{{activity.isCharge == 1}}"></image>     
-         <image src="../../image/icon_biaoqian_duan.png" class="activity-price__image" wx:else></image>
+         <image src="/image/icon_biaoqian_chang.png" class="activity-price__image" wx:if="{{activity.isCharge == 1}}"></image>     
+         <image src="/image/icon_biaoqian_duan.png" class="activity-price__image" wx:else></image>
         </view>
       <view class="activity-banner-num">{{filter.activityStatus(activity)}}</view>
       <image wx:if='{{activity.banner}}' class="activity-banner" src="{{baseUrl + activity.banner}}"></image>

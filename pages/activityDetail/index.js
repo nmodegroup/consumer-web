@@ -53,8 +53,16 @@ Page({
   },
   //拨打电话
   onCall: function (e) {
+    app.aldstat.sendEvent('活动详情页点击拨打电话', {
+      "detail-call": "on call",
+    })
     wx.makePhoneCall({
-      phoneNumber: e.currentTarget.dataset.phone
+      phoneNumber: e.currentTarget.dataset.phone,
+      success(){
+        app.aldstat.sendEvent('呼叫电话', {
+          "call out": "call out",
+        })
+      }
     })
   },
   //开始导航
@@ -76,7 +84,13 @@ Page({
         cancelText: '再看看',
         confirmText: '确认取消',
       })
+      app.aldstat.sendEvent('弹起取消预订框', {
+        "whether cancel": "whether cancel book",
+      })
     } else {
+      app.aldstat.sendEvent('活动详情页点击立即预定', {
+        "onResereve": "onResereve",
+      })
       if (activity.status != 2) {// //0已约满  1已暂停  2预定中  3活动中  4活动已结束 只有status=2的时候能预定活动
         this.toast.showToast({
           content: '当前活动不可预订',
@@ -95,6 +109,9 @@ Page({
           icon: 'warn'
         })
       } else {
+        app.aldstat.sendEvent('活动详情页点击立即购买', {
+          "onBuy": "on buy",
+        })
         if (activity.num == 0) {
           this.toast.showToast({
             content: '剩余数量不足，无法完成购买',
@@ -123,6 +140,9 @@ Page({
   //发起预订接口
   activityBooking: function () {
     ActivityService.activityBooking({ id: this.data.id }).then(res => {
+      app.aldstat.sendEvent('免费预订成功', {
+        "free book": "free book successs",
+      })
       this.toast.showToast({
         content: '您已成功预定活动名额',
         icon: 'success'
@@ -146,6 +166,9 @@ Page({
       this.toast.showToast({
         content: '您已取消预订',
         icon: 'warn'
+      })
+      app.aldstat.sendEvent('取消预订成功', {
+        "cancel book": "cancel book success",
       })
       this.getActivityDetail()
     }).catch(error => {
@@ -203,7 +226,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.aldstat.sendEvent('进入活动详情页了', {
+      "activity-detail": "come detail",
+    })
   },
 
   /**
@@ -237,6 +262,9 @@ Page({
   * 用户点击右上角分享
   */
   onShareAppMessage: function (res) {
+    app.aldstat.sendEvent('活动详情页点击分享', {
+      "detail-share": "onShare",
+    })
     return {
       title: this.data.activity.theme,
       path: 'pages/index/index' + '?activityId=' + this.data.activity.id
