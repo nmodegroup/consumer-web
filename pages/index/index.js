@@ -10,7 +10,7 @@ Page({
    */
   data: {
     interval: 5000,
-    duration: 500,
+    duration: 300,
     columns: [],//城市名称列表
     selAdre: false,
     initLocation: {//默认位置
