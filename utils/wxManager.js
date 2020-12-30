@@ -17,6 +17,14 @@ function redirectTo(url, params) {
   });
 }
 /**
+ * 
+*/
+function reLaunch(url, params) {
+  wx.reLaunch({
+    url: joinPath(url, params)
+  });
+}
+/**
  * 返回
 */
 function navigateBack(delta=1){
@@ -293,6 +301,7 @@ function requestPayment(params, successCallback, failCallback){
 module.exports = {
   navigateTo,
   redirectTo,
+  reLaunch,
   navigateBack,
   checkSession,
   login,

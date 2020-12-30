@@ -121,7 +121,7 @@ Page({
     })
   },
   payResult(actOrderId, state){
-    WxManager.navigateTo(Router.Payment, { actOrderId, state  })
+    WxManager.reLaunch(Router.Payment, { actOrderId, state  })
   },
   //获取手机号授权弹框取消按钮
   phoneCancel: function () {
